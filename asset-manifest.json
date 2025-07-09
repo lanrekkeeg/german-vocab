@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/german-vocab/static/css/main.366e0672.css",
+    "main.js": "/german-vocab/static/js/main.387e9269.js",
+    "static/js/453.787f97ee.chunk.js": "/german-vocab/static/js/453.787f97ee.chunk.js",
+    "index.html": "/german-vocab/index.html",
+    "main.366e0672.css.map": "/german-vocab/static/css/main.366e0672.css.map",
+    "main.387e9269.js.map": "/german-vocab/static/js/main.387e9269.js.map",
+    "453.787f97ee.chunk.js.map": "/german-vocab/static/js/453.787f97ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.366e0672.css",
+    "static/js/main.387e9269.js"
+  ]
+}
