@@ -459,21 +459,23 @@ const CardControls = React.memo(({ t, onPrev, onNext, onShuffle, onReset }: {
     onShuffle: () => void,
     onReset: () => void
 }) => (
-    <div className="flex justify-between items-center mt-6">
-        <button onClick={onPrev} className="control-button bg-blue-500 hover:bg-blue-600">
-            <ChevronLeft size={20} /> {t.previous}
-        </button>
+    <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mt-6">
         <div className="flex gap-4">
-             <button onClick={onShuffle} className="control-button bg-purple-500 hover:bg-purple-600">
+          <button onClick={onPrev} className="control-button bg-blue-500 hover:bg-blue-600 !sm:w-28 !flex !sm:justify-center !items-center">
+              <ChevronLeft size={20} /> {t.previous}
+          </button>
+          <button onClick={onNext} className="control-button bg-blue-500 hover:bg-blue-600 sm:w-28 flex sm:justify-center !items-center">
+              {t.next} <ChevronRight size={20} />
+          </button>
+        </div>
+        <div className="flex gap-4">
+             <button onClick={onShuffle} className="control-button bg-purple-500 hover:bg-purple-600 sm:w-28 flex sm:justify-center items-center">
                 <Shuffle size={16} /> {t.shuffle}
             </button>
-            <button onClick={onReset} className="control-button bg-gray-500 hover:bg-gray-600">
+            <button onClick={onReset} className="control-button bg-gray-500 hover:bg-gray-600 sm:w-28 flex sm:justify-center items-center">
                 <RotateCcw size={16} /> {t.reset}
             </button>
         </div>
-        <button onClick={onNext} className="control-button bg-blue-500 hover:bg-blue-600">
-            {t.next} <ChevronRight size={20} />
-        </button>
     </div>
 ));
 
