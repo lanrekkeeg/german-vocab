@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add a few custom reusable styles if you want */
+@layer components {
+  .control-button {
+    @apply flex items-center gap-2 px-4 py-2 text-white rounded-lg transition-colors font-semibold text-sm;
+  }
+}
