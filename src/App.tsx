@@ -1,6 +1,23 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, RotateCcw, Shuffle, BookOpen, Globe } from 'lucide-react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import { 
+    ChevronLeft, ChevronRight, RotateCcw, Shuffle, BookOpen, Globe, 
+    Play, CheckCircle2, Eye, XCircle, Ear, Pause, User, Users // Added User, Users icons
+} from 'lucide-react';
+import passage1Audio from './audio/passage1.wav';
+import passage2Audio from './audio/passage2.wav';
+import passage3Audio from './audio/passage3.wav';
+import passage4Audio from './audio/passage4.wav';
+import passage5Audio from './audio/passage5.wav';
 
+import dialogue1Audio from './audio/1_restaurant_reservation.wav';
+// import dialogue2Audio from './audio/2_doctors_appointment.wav';
+import dialogue3Audio from './audio/3_job_interview.wav';
+import dialogue4Audio from './audio/4_apartment_viewing.wav';
+import dialogue5Audio from './audio/5_technical_support.wav';
+
+// --- TYPE DEFINITIONS ---
+// --- TYPE DEFINITIONS ---
+// --- TYPE DEFINITIONS ---
 // --- TYPE DEFINITIONS ---
 type Translations = {
   english: string;
@@ -15,6 +32,33 @@ type Card = {
 };
 
 type LanguageKey = keyof Translations;
+
+// UPDATED: More flexible type definitions for learning content
+type Blank = { answer: string; size: number };
+type SpeakerLabel = { speaker: string };
+type LearningContentPart = string | Blank | SpeakerLabel;
+
+type LearningContent = {
+    id: number;
+    title: string;
+    level: string;
+    type: 'passage' | 'dialogue'; // <-- NEW: Distinguishes content type
+    fullText: string;
+    parts: LearningContentPart[];
+    audioSrc: string;
+};
+
+type PassagePart = string | { answer: string; size: number };
+
+// UPDATED: Added audioSrc to the Passage type
+type Passage = {
+    id: number;
+    title: string;
+    level: string;
+    fullText: string;
+    parts: PassagePart[];
+    audioSrc: string; // <-- ADDED THIS LINE
+};
 
 type LanguageStrings = {
   name: string;
@@ -36,9 +80,18 @@ type LanguageStrings = {
   tip3: string;
   tip4: string;
   sections: { [key: number]: string };
+  flashcards: string;
+  passageCompletion: string;
+  listeningPractice: string;
+  selectPassage: string;
+  passageInstructions: string;
+  playAudio: string;
+  pauseAudio: string; // <-- NEW
+  checkAnswers: string;
+  showAnswers: string;
 };
 
-// --- CONSTANTS (Moved outside the component for performance) ---
+// --- CONSTANTS ---
 const languages: Record<LanguageKey, LanguageStrings> = {
   english: {
     name: 'English',
@@ -59,7 +112,16 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     tip2: 'Use the shuffle function to test your knowledge randomly.',
     tip3: 'Practice both German → Translation and Translation → German.',
     tip4: 'Focus extra time on cards you find difficult.',
-    sections: { 1: 'Basic Greetings & Questions', 2: 'Objects & School Items', 3: 'Home & Furniture', 4: 'Family & Activities', 5: 'Time & Daily Activities' }
+    sections: { 1: 'Basic Greetings & Questions', 2: 'Objects & School Items', 3: 'Home & Furniture', 4: 'Family & Activities', 5: 'Time & Daily Activities' },
+    flashcards: 'Flashcards',
+    passageCompletion: 'Passage Completion',
+    listeningPractice: 'A1 Listening Practice',
+    selectPassage: 'Select a Passage',
+    passageInstructions: 'Listen to the audio and fill in the blanks.',
+    playAudio: 'Play Audio',
+    pauseAudio: 'Pause Audio',
+    checkAnswers: 'Check Answers',
+    showAnswers: 'Show Answers',
   },
   ukrainian: {
     name: 'Українська',
@@ -80,7 +142,16 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     tip2: 'Використовуйте функцію перемішування для випадкової перевірки.',
     tip3: 'Практикуйте німецьку → переклад і переклад → німецьку.',
     tip4: 'Приділяйте більше часу складним карткам.',
-    sections: { 1: 'Базові привітання та питання', 2: 'Предмети та шкільні речі', 3: 'Дім і меблі', 4: 'Сім\'я та активності', 5: 'Час і щоденні справи' }
+    sections: { 1: 'Базові привітання та питання', 2: 'Предмети та шкільні речі', 3: 'Дім і меблі', 4: 'Сім\'я та активності', 5: 'Час і щоденні справи' },
+    flashcards: 'Флеш-картки',
+    passageCompletion: 'Заповнення уривку',
+    listeningPractice: 'Практика аудіювання A1',
+    selectPassage: 'Виберіть уривок',
+    passageInstructions: 'Прослухайте аудіо та заповніть пропуски.',
+    playAudio: 'Відтворити аудіо',
+    pauseAudio: 'Пауза',
+    checkAnswers: 'Перевірити відповіді',
+    showAnswers: 'Показати відповіді',
   },
   polish: {
     name: 'Polski',
@@ -101,7 +172,16 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     tip2: 'Użyj funkcji tasowania do losowego testowania wiedzy.',
     tip3: 'Ćwicz niemiecki → tłumaczenie i tłumaczenie → niemiecki.',
     tip4: 'Poświęć więcej czasu na trudne karty.',
-    sections: { 1: 'Podstawowe powitania i pytania', 2: 'Przedmioty i artykuły szkolne', 3: 'Dom i meble', 4: 'Rodzina i aktywności', 5: 'Czas i codzienne czynności' }
+    sections: { 1: 'Podstawowe powitania i pytania', 2: 'Przedmioty i artykuły szkolne', 3: 'Dom i meble', 4: 'Rodzina i aktywności', 5: 'Czas i codzienne czynności' },
+    flashcards: 'Fiszki',
+    passageCompletion: 'Uzupełnianie fragmentu',
+    listeningPractice: 'Ćwiczenia ze słuchu A1',
+    selectPassage: 'Wybierz fragment',
+    passageInstructions: 'Posłuchaj nagrania i uzupełnij luki.',
+    playAudio: 'Odtwórz audio',
+    pauseAudio: 'Pauza',
+    checkAnswers: 'Sprawdź odpowiedzi',
+    showAnswers: 'Pokaż odpowiedzi',
   },
   albanian: {
     name: 'Shqip',
@@ -122,7 +202,16 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     tip2: 'Përdorni funksionin e përzierjes për të testuar njohuritë në mënyrë të rastësishme.',
     tip3: 'Praktikoni gjermanisht → përkthim dhe përkthim → gjermanisht.',
     tip4: 'Fokusohuni më shumë te kartat që i gjeni të vështira.',
-    sections: { 1: 'Përshëndetje dhe pyetje bazike', 2: 'Objekte dhe artikuj shkolle', 3: 'Shtëpia dhe mobiliet', 4: 'Familja dhe aktivitetet', 5: 'Koha dhe aktivitetet e përditshme' }
+    sections: { 1: 'Përshëndetje dhe pyetje bazike', 2: 'Objekte dhe artikuj shkolle', 3: 'Shtëpia dhe mobiliet', 4: 'Familja dhe aktivitetet', 5: 'Koha dhe aktivitetet e përditshme' },
+    flashcards: 'Kartela',
+    passageCompletion: 'Plotësimi i pasazhit',
+    listeningPractice: 'Praktikë dëgjimi A1',
+    selectPassage: 'Zgjidhni një pasazh',
+    passageInstructions: 'Dëgjoni audion dhe plotësoni boshllëqet.',
+    playAudio: 'Luaj audion',
+    pauseAudio: 'Pauzë',
+    checkAnswers: 'Kontrollo përgjigjet',
+    showAnswers: 'Shfaq përgjigjet',
   }
 };
 
@@ -380,14 +469,183 @@ const allVocabulary: Record<number, Card[]> = {
 const ALL_SECTIONS = Object.keys(allVocabulary).map(Number);
 
 
+// ========================================================================
+// === NEW: DATA FOR PASSAGE COMPLETION ===================================
+// ========================================================================
+const learningContent: LearningContent[] = [
+    {
+        id: 1,type: 'passage', title: 'Mein Tag', level: 'A1', audioSrc: passage1Audio,
+        fullText: 'Ich heiße Anna und ich bin 25 Jahre alt. Ich stehe jeden Tag um 7 Uhr auf. Dann trinke ich Kaffee und esse Brot mit Marmelade. Um 8 Uhr fahre ich zur Arbeit. Ich arbeite in einem Büro von 9 bis 17 Uhr. Am Abend koche ich das Abendessen und sehe fern. Um 22 Uhr gehe ich schlafen.',
+        parts: [
+            'Ich heiße Anna und ich bin 25 Jahre alt. Ich ', { answer: 'stehe', size: 10 }, ' jeden Tag um 7 Uhr auf. Dann trinke ich ', { answer: 'Kaffee', size: 10 },
+            ' und esse Brot mit Marmelade. Um 8 Uhr fahre ich zur Arbeit. Ich arbeite in einem ', { answer: 'Büro', size: 8 }, ' von 9 bis 17 Uhr. Am Abend ',
+            { answer: 'koche', size: 10 }, ' ich das Abendessen und sehe fern. Um 22 Uhr gehe ich schlafen.'
+        ]
+    },
+    {
+        id: 2, type: 'passage',title: 'Meine Familie', level: 'A1', audioSrc: passage2Audio,
+        fullText: 'Das ist meine Familie. Mein Vater heißt Peter und ist 50 Jahre alt. Er ist Lehrer. Meine Mutter heißt Maria und ist 48 Jahre alt. Sie arbeitet im Krankenhaus. Ich habe einen Bruder. Er heißt Tom und ist 20 Jahre alt. Er studiert an der Universität. Wir wohnen in einem Haus in Berlin. Wir haben auch einen Hund. Er heißt Max.',
+        parts: [
+            'Das ist meine Familie. Mein Vater heißt Peter und ist 50 Jahre alt. Er ist ', { answer: 'Lehrer', size: 10 }, '. Meine Mutter heißt Maria und ist 48 Jahre alt. Sie arbeitet im ',
+            { answer: 'Krankenhaus', size: 15 }, '. Ich habe einen ', { answer: 'Bruder', size: 10 }, '. Er heißt Tom und ist 20 Jahre alt. Er studiert an der Universität. Wir ',
+            { answer: 'wohnen', size: 10 }, ' in einem Haus in Berlin. Wir haben auch einen Hund. Er heißt Max.'
+        ]
+    },
+    {
+        id: 3, type: 'passage',title: 'Im Supermarkt', level: 'A1', audioSrc: passage3Audio,
+        fullText: 'Heute gehe ich zum Supermarkt. Ich kaufe Brot, Milch und Äpfel. Das Brot kostet 2 Euro. Die Milch kostet 1,50 Euro. Die Äpfel kosten 3 Euro pro Kilo. Ich nehme auch Käse und Butter. An der Kasse zahle ich mit Karte. Die Verkäuferin ist sehr freundlich. Sie sagt "Haben Sie einen schönen Tag!"',
+        parts: [
+            'Heute gehe ich zum Supermarkt. Ich ', { answer: 'kaufe', size: 10 }, ' Brot, Milch und Äpfel. Das Brot kostet 2 Euro. Die Milch ',
+            { answer: 'kostet', size: 10 }, ' 1,50 Euro. Die Äpfel kosten 3 Euro pro Kilo. Ich nehme auch Käse und Butter. An der Kasse zahle ich mit ',
+            { answer: 'Karte', size: 8 }, '. Die Verkäuferin ist sehr ', { answer: 'freundlich', size: 14 }, '. Sie sagt "Haben Sie einen schönen Tag!"'
+        ]
+    },
+    {
+        id: 4, type: 'passage',title: 'Das Wetter', level: 'A1', audioSrc: passage4Audio,
+        fullText: 'Heute ist Montag. Das Wetter ist schön. Die Sonne scheint und es ist warm. Es sind 22 Grad. Ich trage ein T-Shirt und eine Jeans. Morgen wird es regnen. Es wird kalt und windig. Ich muss dann eine Jacke anziehen. Am Wochenende soll es wieder sonnig werden. Dann gehe ich in den Park spazieren.',
+        parts: [
+            'Heute ist Montag. Das Wetter ist ', { answer: 'schön', size: 8 }, '. Die Sonne scheint und es ist ', { answer: 'warm', size: 8 },
+            '. Es sind 22 Grad. Ich trage ein T-Shirt und eine Jeans. Morgen wird es ', { answer: 'regnen', size: 10 },
+            '. Es wird kalt und windig. Ich muss dann eine Jacke anziehen. Am Wochenende soll es wieder sonnig werden. Dann gehe ich in den Park ', { answer: 'spazieren', size: 12 }, '.'
+        ]
+    },
+    {
+        id: 5,type: 'passage', title: 'Mein Hobby', level: 'A1', audioSrc: passage5Audio,
+        fullText: 'Mein Hobby ist Lesen. Ich lese gerne Bücher. Jeden Abend lese ich eine Stunde. Ich mag Krimis und Romane. Meine Lieblingsbuchautorin ist Agatha Christie. Ich gehe oft zur Bibliothek. Dort kann ich kostenlos Bücher leihen. Am Wochenende besuche ich auch Buchläden. Lesen macht mir viel Spaß.',
+        parts: [
+            'Mein Hobby ist ', { answer: 'Lesen', size: 8 }, '. Ich lese gerne Bücher. Jeden Abend lese ich eine ', { answer: 'Stunde', size: 10 },
+            '. Ich mag Krimis und Romane. Meine Lieblingsbuchautorin ist Agatha Christie. Ich gehe oft zur ', { answer: 'Bibliothek', size: 14 },
+            '. Dort kann ich kostenlos Bücher leihen. Am Wochenende besuche ich auch Buchläden. Lesen macht mir viel ', { answer: 'Spaß', size: 8 }, '.'
+        ]
+    },
+    {
+        id: 6, type: 'dialogue', title: 'Restaurant Reservation', level: 'A1', audioSrc: dialogue1Audio,
+        fullText: `Kellner: Guten Abend, Restaurant "Zur Goldenen Krone", hier spricht Thomas Weber. Kundin: Guten Abend, hier ist Sandra Klein. Ich möchte gerne einen Tisch für morgen Abend reservieren. Kellner: Sehr gerne, Frau Klein. Für wie viele Personen denn? Kundin: Für vier Personen, bitte. Wäre 19:30 Uhr möglich? Kellner: Moment, ich schaue mal... Ja, das passt perfekt. Haben Sie besondere Wünsche? Kundin: Einen ruhigen Tisch, wenn möglich. Und gibt es auch vegetarische Gerichte? Kellner: Selbstverständlich. Wir haben eine große Auswahl an vegetarischen Speisen. Ich reserviere Ihnen Tisch Nummer 12, das ist unser ruhigster Platz. Kundin: Wunderbar! Kann ich Ihnen noch meine Telefonnummer geben? Kellner: Ja, bitte. Kundin: 0177 456 78 90. Kellner: Perfekt. Also morgen um 19:30 Uhr für vier Personen, Tisch 12. Vielen Dank für Ihre Reservierung, Frau Klein!`,
+        parts: [
+            { speaker: 'Kellner' }, 'Guten Abend, Restaurant "Zur Goldenen Krone", hier spricht Thomas Weber.',
+            { speaker: 'Kundin' }, 'Guten Abend, hier ist Sandra Klein. Ich möchte gerne einen Tisch für morgen Abend reservieren.',
+            { speaker: 'Kellner' }, 'Sehr gerne, Frau Klein. Für wie viele Personen denn?',
+            { speaker: 'Kundin' }, 'Für ', { answer: 'vier', size: 6 }, ' Personen, bitte. Wäre ', { answer: '19:30', size: 6 }, ' Uhr möglich?',
+            { speaker: 'Kellner' }, 'Moment, ich schaue mal... Ja, das passt perfekt. Haben Sie besondere Wünsche?',
+            { speaker: 'Kundin' }, 'Einen ruhigen Tisch, wenn möglich. Und gibt es auch ', { answer: 'vegetarische', size: 14 }, ' Gerichte?',
+            { speaker: 'Kellner' }, 'Selbstverständlich. Wir haben eine große Auswahl an vegetarischen Speisen. Ich reserviere Ihnen Tisch Nummer ', { answer: '12', size: 3 }, ', das ist unser ruhigster Platz.',
+            { speaker: 'Kundin' }, 'Wunderbar! Kann ich Ihnen noch meine Telefonnummer geben?',
+            { speaker: 'Kellner' }, 'Ja, bitte.',
+            { speaker: 'Kundin' }, { answer: '0177 456 78 90', size: 15 },
+            { speaker: 'Kellner' }, 'Perfekt. Also morgen um 19:30 Uhr für vier Personen, Tisch 12. Vielen Dank für Ihre Reservierung, Frau Klein!',
+        ]
+    },
+    // {
+    //     id: 7, type: 'dialogue', title: "Doctor's Appointment", level: 'A1', audioSrc: dialogue2Audio,
+    //     fullText: `Sprechstundenhilfe: Praxis Dr. Hoffmann, guten Tag, hier ist Petra Schneider. Patient: Guten Tag, hier ist Michael Braun. Ich bräuchte dringend einen Termin. Sprechstundenhilfe: Was für Beschwerden haben Sie denn, Herr Braun? Patient: Ich habe seit drei Tagen starke Kopfschmerzen und Fieber. Sprechstundenhilfe: Das klingt nicht gut. Moment, ich schaue... Können Sie heute um 15:30 Uhr kommen? Patient: Ja, das geht. Soll ich etwas mitbringen? Sprechstundenhilfe: Ihre Versichertenkarte und falls Sie Medikamente nehmen, bringen Sie die Liste mit. Patient: Alles klar. Wie ist noch mal die Adresse? Sprechstundenhilfe: Hauptstraße 45, zweiter Stock. Der Fahrstuhl ist rechts neben dem Eingang. Patient: Vielen Dank! Bis heute Nachmittag dann. Sprechstundenhilfe: Gerne, Herr Braun. Gute Besserung und bis später!`,
+    //     parts: [
+    //         { speaker: 'Sprechstundenhilfe' }, 'Praxis Dr. Hoffmann, guten Tag, hier ist Petra Schneider.',
+    //         { speaker: 'Patient' }, 'Guten Tag, hier ist Michael Braun. Ich bräuchte dringend einen ', { answer: 'Termin', size: 8}, '.',
+    //         { speaker: 'Sprechstundenhilfe' }, 'Was für Beschwerden haben Sie denn, Herr Braun?',
+    //         { speaker: 'Patient' }, 'Ich habe seit ', { answer: 'drei', size: 6 }, ' Tagen starke Kopfschmerzen und Fieber.',
+    //         { speaker: 'Sprechstundenhilfe' }, 'Das klingt nicht gut. Moment, ich schaue... Können Sie heute um ', { answer: '15:30', size: 6 }, ' Uhr kommen?',
+    //         { speaker: 'Patient' }, 'Ja, das geht. Soll ich etwas mitbringen?',
+    //         { speaker: 'Sprechstundenhilfe' }, 'Ihre ', { answer: 'Versichertenkarte', size: 18 }, ' und falls Sie Medikamente nehmen, bringen Sie die Liste mit.',
+    //         { speaker: 'Patient' }, 'Alles klar. Wie ist noch mal die Adresse?',
+    //         { speaker: 'Sprechstundenhilfe' }, 'Hauptstraße ', { answer: '45', size: 3 }, ', zweiter Stock. Der Fahrstuhl ist rechts neben dem Eingang.',
+    //         { speaker: 'Patient' }, 'Vielen Dank! Bis heute Nachmittag dann.',
+    //         { speaker: 'Sprechstundenhilfe' }, 'Gerne, Herr Braun. Gute Besserung und bis später!',
+    //     ]
+    // },
+    // {
+    //     id: 8, type: 'dialogue', title: 'Job Interview Scheduling', level: 'A2', audioSrc: dialogue3Audio,
+    //     fullText: `Personalerin: Firma Schmidt & Partner, Personalabteilung, hier ist Julia Becker. Bewerber: Guten Tag, Frau Becker. Hier ist David Müller. Sie hatten mir eine E-Mail wegen eines Vorstellungsgesprächs geschickt. Personalerin: Ach ja, Herr Müller! Schön, dass Sie anrufen. Wann würde es Ihnen denn passen? Bewerber: Ich bin nächste Woche ziemlich flexibel. Dienstag oder Mittwoch wäre ideal. Personalerin: Dienstag um 10:00 Uhr hätten wir einen Termin frei. Würde das gehen? Bewerber: Ja, das passt perfekt. Wie lange soll ich einplanen? Personalerin: Rechnen Sie mit etwa einer Stunde. Sie sprechen erst mit mir, dann mit dem Abteilungsleiter. Bewerber: Verstehe. Soll ich besondere Unterlagen mitbringen? Personalerin: Ihre Zeugnisse im Original und eine Kopie Ihres Lebenslaufs. Ach ja, und ein Foto für unsere Unterlagen. Bewerber: Alles notiert. Wie finde ich Sie denn? Personalerin: Melden Sie sich am Empfang, dritter Stock, Zimmer 312. Dort wird man Sie zu mir bringen. Bewerber: Perfekt. Dann bis Dienstag, 10:00 Uhr. Vielen Dank!`,
+    //     parts: [
+    //         { speaker: 'Personalerin' }, 'Firma Schmidt & Partner, Personalabteilung, hier ist Julia Becker.',
+    //         { speaker: 'Bewerber' }, 'Guten Tag, Frau Becker. Hier ist David Müller. Sie hatten mir eine E-Mail wegen eines ', { answer: 'Vorstellungsgesprächs', size: 20 }, ' geschickt.',
+    //         { speaker: 'Personalerin' }, 'Ach ja, Herr Müller! Schön, dass Sie anrufen. Wann würde es Ihnen denn passen?',
+    //         { speaker: 'Bewerber' }, 'Ich bin nächste Woche ziemlich flexibel. Dienstag oder Mittwoch wäre ideal.',
+    //         { speaker: 'Personalerin' }, { answer: 'Dienstag', size: 8 }, ' um ', { answer: '10:00', size: 6 }, ' Uhr hätten wir einen Termin frei. Würde das gehen?',
+    //         { speaker: 'Bewerber' }, 'Ja, das passt perfekt. Wie lange soll ich einplanen?',
+    //         { speaker: 'Personalerin' }, 'Rechnen Sie mit etwa einer ', { answer: 'Stunde', size: 7 }, '. Sie sprechen erst mit mir, dann mit dem Abteilungsleiter.',
+    //         { speaker: 'Bewerber' }, 'Verstehe. Soll ich besondere Unterlagen mitbringen?',
+    //         { speaker: 'Personalerin' }, 'Ihre ', { answer: 'Zeugnisse', size: 10 }, ' im Original und eine Kopie Ihres Lebenslaufs. Ach ja, und ein Foto für unsere Unterlagen.',
+    //         { speaker: 'Bewerber' }, 'Alles notiert. Wie finde ich Sie denn?',
+    //         { speaker: 'Personalerin' }, 'Melden Sie sich am Empfang, dritter Stock, Zimmer ', { answer: '312', size: 4 }, '. Dort wird man Sie zu mir bringen.',
+    //         { speaker: 'Bewerber' }, 'Perfekt. Dann bis Dienstag, 10:00 Uhr. Vielen Dank!',
+    //     ]
+    // },
+    
+    {
+        id: 9, type: 'dialogue', title: 'Apartment Viewing', level: 'A2', audioSrc: dialogue4Audio,
+        fullText: `Makler: Immobilienbüro Hartmann, guten Tag, hier ist Klaus Hartmann. Interessentin: Guten Tag, hier ist Anna Fischer. Ich interessiere mich für die Drei-Zimmer-Wohnung in der Mozartstraße. Makler: Ah, die schöne Wohnung im dritten Stock! Wann könnten Sie denn zur Besichtigung kommen? Interessentin: Wäre Samstag möglich? Ich arbeite unter der Woche bis 17:00 Uhr. Makler: Samstag ist gut. Sagen wir 14:00 Uhr? Dann haben wir genug Zeit. Interessentin: Perfekt. Kann ich meinen Freund mitbringen? Makler: Natürlich! Übrigens, die Wohnung ist frisch renoviert und hat eine neue Küche. Interessentin: Das klingt interessant. Wie hoch ist denn die Miete? Makler: 850 Euro kalt, plus etwa 150 Euro Nebenkosten. Kaution sind drei Monatsmieten. Interessentin: Okay. Und wo genau treffen wir uns? Makler: Direkt vor dem Haus, Mozartstraße 23. Ich warte im blauen BMW. Interessentin: Gut, dann bis Samstag um 14:00 Uhr. Auf Wiederhören!`,
+        parts: [
+            { speaker: 'Makler' }, 'Immobilienbüro Hartmann, guten Tag, hier ist Klaus Hartmann.',
+            { speaker: 'Interessentin' }, 'Guten Tag, hier ist Anna Fischer. Ich interessiere mich für die Drei-Zimmer-', { answer: 'Wohnung', size: 8 }, ' in der Mozartstraße.',
+            { speaker: 'Makler' }, 'Ah, die schöne Wohnung im dritten Stock! Wann könnten Sie denn zur ', { answer: 'Besichtigung', size: 13 }, ' kommen?',
+            { speaker: 'Interessentin' }, 'Wäre Samstag möglich? Ich arbeite unter der Woche bis 17:00 Uhr.',
+            { speaker: 'Makler' }, { answer: 'Samstag', size: 8 }, ' ist gut. Sagen wir ', { answer: '14:00', size: 6 }, ' Uhr? Dann haben wir genug Zeit.',
+            { speaker: 'Interessentin' }, 'Perfekt. Kann ich meinen Freund mitbringen?',
+            { speaker: 'Makler' }, 'Natürlich! Übrigens, die Wohnung ist frisch renoviert und hat eine neue Küche.',
+            { speaker: 'Interessentin' }, 'Das klingt interessant. Wie hoch ist denn die Miete?',
+            { speaker: 'Makler' }, { answer: '850', size: 4 }, ' Euro kalt, plus etwa 150 Euro Nebenkosten. Kaution sind drei Monatsmieten.',
+            { speaker: 'Interessentin' }, 'Okay. Und wo genau treffen wir uns?',
+            { speaker: 'Makler' }, 'Direkt vor dem Haus, Mozartstraße ', { answer: '23', size: 3 }, '. Ich warte im blauen BMW.',
+            { speaker: 'Interessentin' }, 'Gut, dann bis Samstag um 14:00 Uhr. Auf Wiederhören!',
+        ]
+    }
+    // {
+    //     id: 10, type: 'dialogue', title: 'Technical Support Call', level: 'A2', audioSrc: dialogue5Audio,
+    //     fullText: `Support: Computer-Hilfe-Service, guten Tag, hier ist Martin Krause. Kundin: Guten Tag, hier ist Elisabeth Weber. Mein Computer funktioniert nicht mehr richtig. Support: Was für Probleme haben Sie denn genau, Frau Weber? Kundin: Er startet nicht mehr. Ich drücke den Knopf, aber es passiert nichts. Support: Ist das Kabel richtig eingesteckt? Schauen Sie mal nach der Steckdose. Kundin: Moment... ja, alles ist eingesteckt. Aber es leuchtet kein Licht. Support: Hmm, das könnte das Netzteil sein. Können Sie das Gerät zu uns bringen? Kundin: Ja, das geht. Wann haben Sie denn geöffnet? Support: Montag bis Freitag von 9:00 bis 18:00 Uhr, samstags bis 14:00 Uhr. Kundin: Ich komme morgen Vormittag vorbei. Wie viel kostet eine Reparatur? Support: Die Diagnose ist kostenlos. Je nach Problem zwischen 50 und 150 Euro. Kundin: In Ordnung. Wo finde ich Sie denn? Support: Bahnhofstraße 12, direkt neben der Post. Großes Schild "PC-Service". Kundin: Perfekt. Bis morgen dann. Vielen Dank! Support: Gerne, Frau Weber. Bringen Sie alle Kabel mit. Bis morgen!`,
+    //     parts: [
+    //         { speaker: 'Support' }, 'Computer-Hilfe-Service, guten Tag, hier ist Martin Krause.',
+    //         { speaker: 'Kundin' }, 'Guten Tag, hier ist Elisabeth Weber. Mein ', { answer: 'Computer', size: 9 }, ' funktioniert nicht mehr richtig.',
+    //         { speaker: 'Support' }, 'Was für Probleme haben Sie denn genau, Frau Weber?',
+    //         { speaker: 'Kundin' }, 'Er startet nicht mehr. Ich drücke den ', { answer: 'Knopf', size: 6 }, ', aber es passiert nichts.',
+    //         { speaker: 'Support' }, 'Ist das ', { answer: 'Kabel', size: 6 }, ' richtig eingesteckt? Schauen Sie mal nach der Steckdose.',
+    //         { speaker: 'Kundin' }, 'Moment... ja, alles ist eingesteckt. Aber es leuchtet kein Licht.',
+    //         { speaker: 'Support' }, 'Hmm, das könnte das ', { answer: 'Netzteil', size: 9 }, ' sein. Können Sie das Gerät zu uns bringen?',
+    //         { speaker: 'Kundin' }, 'Ja, das geht. Wann haben Sie denn geöffnet?',
+    //         { speaker: 'Support' }, 'Montag bis Freitag von 9:00 bis 18:00 Uhr, samstags bis ', { answer: '14:00', size: 6 }, ' Uhr.',
+    //         { speaker: 'Kundin' }, 'Ich komme morgen Vormittag vorbei. Wie viel kostet eine Reparatur?',
+    //         { speaker: 'Support' }, 'Die ', { answer: 'Diagnose', size: 9 }, ' ist kostenlos. Je nach Problem zwischen 50 und 150 Euro.',
+    //         { speaker: 'Kundin' }, 'In Ordnung. Wo finde ich Sie denn?',
+    //         { speaker: 'Support' }, 'Bahnhofstraße ', { answer: '12', size: 3 }, ', direkt neben der Post. Großes Schild "PC-Service".',
+    //         { speaker: 'Kundin' }, 'Perfekt. Bis morgen dann. Vielen Dank!',
+    //         { speaker: 'Support' }, 'Gerne, Frau Weber. Bringen Sie alle Kabel mit. Bis morgen!',
+    //     ]
+    // }
+];
+
+
+
+
+// --- CHILD COMPONENTS ---
+
+// NEW: Mode switcher component
 // --- CHILD COMPONENTS ---
 
 const Header = React.memo(() => (
-  <div className="text-center mb-8">
-    <h1 className="text-4xl font-bold text-gray-800 mb-2">German Vocabulary Flashcards</h1>
-    <p className="text-lg text-gray-600">Multi-language support for effective learning</p>
+  <div className="text-center mb-4 sm:mb-8">
+    <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">German Learning Hub</h1>
+    <p className="text-md sm:text-lg text-gray-600">Flashcards & Listening Practice</p>
   </div>
 ));
+
+const ModeSwitcher = React.memo(({ mode, setMode, t }: { mode: string, setMode: (mode: string) => void, t: LanguageStrings }) => (
+    <div className="flex justify-center mb-8">
+        <div className="flex p-1 bg-gray-200 rounded-xl">
+            <button 
+                onClick={() => setMode('flashcards')}
+                className={`flex items-center gap-2 px-4 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'flashcards' ? 'bg-white text-blue-600 shadow-md' : 'text-gray-600'}`}
+            >
+                <BookOpen size={20} /> {t.flashcards}
+            </button>
+            <button 
+                onClick={() => setMode('passageCompletion')}
+                className={`flex items-center gap-2 px-4 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'passageCompletion' ? 'bg-white text-green-600 shadow-md' : 'text-gray-600'}`}
+            >
+                <Ear size={20} /> {t.passageCompletion}
+            </button>
+        </div>
+    </div>
+));
+
 
 const SectionSelector = React.memo(({ t, selectedSections, onToggle, onSelectAll }: {
   t: LanguageStrings,
@@ -461,18 +719,18 @@ const CardControls = React.memo(({ t, onPrev, onNext, onShuffle, onReset }: {
 }) => (
     <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mt-6">
         <div className="flex gap-4">
-          <button onClick={onPrev} className="control-button bg-blue-500 hover:bg-blue-600 !sm:w-28 !flex !sm:justify-center !items-center">
+          <button onClick={onPrev} className="control-button bg-blue-500 hover:bg-blue-600 sm:w-28 flex justify-center items-center">
               <ChevronLeft size={20} /> {t.previous}
           </button>
-          <button onClick={onNext} className="control-button bg-blue-500 hover:bg-blue-600 sm:w-28 flex sm:justify-center !items-center">
+          <button onClick={onNext} className="control-button bg-blue-500 hover:bg-blue-600 sm:w-28 flex justify-center items-center">
               {t.next} <ChevronRight size={20} />
           </button>
         </div>
         <div className="flex gap-4">
-             <button onClick={onShuffle} className="control-button bg-purple-500 hover:bg-purple-600 sm:w-28 flex sm:justify-center items-center">
+             <button onClick={onShuffle} className="control-button bg-purple-500 hover:bg-purple-600 sm:w-28 flex justify-center items-center">
                 <Shuffle size={16} /> {t.shuffle}
             </button>
-            <button onClick={onReset} className="control-button bg-gray-500 hover:bg-gray-600 sm:w-28 flex sm:justify-center items-center">
+            <button onClick={onReset} className="control-button bg-gray-500 hover:bg-gray-600 sm:w-28 flex justify-center items-center">
                 <RotateCcw size={16} /> {t.reset}
             </button>
         </div>
@@ -502,57 +760,260 @@ const StudyTips = React.memo(({ t }: { t: LanguageStrings }) => (
     </div>
 ));
 
+const PassageCompletionMode = ({ t }: { t: LanguageStrings }) => {
+    const [selectedContentId, setSelectedContentId] = useState<number>(learningContent[0].id);
+    const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
+    const [results, setResults] = useState<Record<number, 'correct' | 'incorrect' | null>>({});
+    const [showAnswers, setShowAnswers] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
+    
+    const audioRef = useRef(new Audio());
 
-// --- MAIN APP COMPONENT ---
+    const selectedContent = useMemo(() => learningContent.find(p => p.id === selectedContentId)!, [selectedContentId]);
+    const blanks = useMemo(() => selectedContent.parts.filter(p => typeof p !== 'string' && 'answer' in p), [selectedContent]);
 
-const GermanVocabularyApp = () => {
+    // This effect handles loading new audio and cleaning up
+    useEffect(() => {
+        const audio = audioRef.current;
+        audio.pause();
+        audio.currentTime = 0;
+        setIsPlaying(false);
+        audio.src = selectedContent.audioSrc;
+        
+        const handlePlay = () => setIsPlaying(true);
+        const handlePause = () => setIsPlaying(false);
+        const handleEnded = () => setIsPlaying(false);
+        
+        audio.addEventListener('play', handlePlay);
+        audio.addEventListener('pause', handlePause);
+        audio.addEventListener('ended', handleEnded);
+
+        return () => {
+            audio.pause();
+            audio.removeEventListener('play', handlePlay);
+            audio.removeEventListener('pause', handlePause);
+            audio.removeEventListener('ended', handleEnded);
+        };
+    }, [selectedContent.audioSrc]);
+
+
+    const resetState = useCallback(() => {
+        const initialAnswers: Record<number, string> = {};
+        blanks.forEach((_, index) => {
+            initialAnswers[index] = '';
+        });
+        setUserAnswers(initialAnswers);
+        setResults({});
+        setShowAnswers(false);
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+    }, [blanks]);
+    
+    useEffect(() => {
+        resetState();
+    }, [selectedContentId, resetState]);
+
+    const handleAnswerChange = (index: number, value: string) => {
+        setUserAnswers(prev => ({ ...prev, [index]: value }));
+        if (results[index]) {
+            setResults(prev => ({ ...prev, [index]: null }));
+        }
+    };
+    
+    const togglePlayPause = useCallback(() => {
+        if (isPlaying) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play().catch(error => console.error("Error playing audio:", error));
+        }
+    }, [isPlaying]);
+
+    const checkAnswers = () => {
+        const newResults: Record<number, 'correct' | 'incorrect' | null> = {};
+        blanks.forEach((blank, index) => {
+            const correctAnswer = (blank as Blank).answer;
+            const userAnswer = userAnswers[index] || '';
+            if (userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
+                newResults[index] = 'correct';
+            } else {
+                newResults[index] = 'incorrect';
+            }
+        });
+        setResults(newResults);
+        setShowAnswers(false);
+    };
+
+    let blankCounter = -1;
+
+    return (
+        <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Sidebar for Controls */}
+            <aside className="w-full lg:w-1/4">
+                <div className="p-6 bg-white rounded-xl shadow-lg">
+                    <h3 className="text-xl font-bold mb-4">{t.selectPassage}</h3>
+                    <div className="flex flex-col gap-2">
+                        {learningContent.map(content => (
+                            <button
+                                key={content.id}
+                                onClick={() => setSelectedContentId(content.id)}
+                                className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-200 text-sm flex items-center gap-3 ${
+                                    selectedContentId === content.id
+                                    ? 'bg-green-500 text-white shadow-sm'
+                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                }`}
+                            >
+                                {content.type === 'dialogue' ? <Users size={16} className="opacity-70"/> : <User size={16} className="opacity-70"/>}
+                                <span>
+                                    {content.title} <span className="text-xs opacity-70">({content.level})</span>
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </aside>
+            
+            {/* Main Content Area */}
+            <main className="w-full lg:w-3/4">
+                <div className="p-6 sm:p-8 bg-white rounded-xl shadow-lg">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-2">{selectedContent.title}</h2>
+                    <p className="text-gray-600 mb-6">{t.passageInstructions}</p>
+                    
+                    <div className="prose max-w-none mb-8 text-lg leading-relaxed">
+                        {selectedContent.parts.map((part, partIndex) => {
+                            // RENDER SPEAKER LABEL
+                            if (typeof part === 'object' && 'speaker' in part) {
+                                return (
+                                    <div key={partIndex} className="mt-4 first:mt-0">
+                                        <strong className="text-gray-800">{part.speaker}:</strong>
+                                    </div>
+                                );
+                            }
+
+                            // RENDER A BLANK
+                            if (typeof part === 'object' && 'answer' in part) {
+                                blankCounter++;
+                                const blankIndex = blankCounter;
+                                const result = results[blankIndex];
+                                const isCorrect = result === 'correct';
+                                const isIncorrect = result === 'incorrect';
+
+                                const inputClassName = `mx-1 inline-block bg-gray-100 rounded-md focus:ring-2 focus:bg-white focus:outline-none transition-all duration-200 text-lg
+                                    ${isCorrect ? 'ring-2 ring-green-500' : ''}
+                                    ${isIncorrect ? 'ring-2 ring-red-500' : ''}
+                                    ${!result ? 'focus:ring-blue-500' : ''}
+                                `;
+                                
+                                return (
+                                    <span key={partIndex} className="inline-block relative">
+                                        <input 
+                                            type="text"
+                                            value={showAnswers ? part.answer : userAnswers[blankIndex] || ''}
+                                            onChange={e => handleAnswerChange(blankIndex, e.target.value)}
+                                            disabled={showAnswers}
+                                            style={{ width: `${part.size}ch` }}
+                                            className={inputClassName}
+                                        />
+                                        {isCorrect && <CheckCircle2 size={18} className="absolute -right-1 -top-1 text-green-500 bg-white rounded-full"/>}
+                                        {isIncorrect && <XCircle size={18} className="absolute -right-1 -top-1 text-red-500 bg-white rounded-full"/>}
+                                    </span>
+                                );
+                            }
+                            
+                            // RENDER NORMAL TEXT
+                            return <span key={partIndex}>{part}</span>;
+                        })}
+                    </div>
+
+                    <div className="flex flex-wrap gap-4 justify-center">
+                    <div className="mt-8 pt-6 border-t border-gray-200 flex flex-wrap gap-4 justify-center">
+    <button
+        onClick={togglePlayPause}
+        className="px-6 py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2 transition-colors bg-blue-500 hover:bg-blue-600"
+    >
+        {isPlaying ? <Pause size={18} /> : <Play size={18} />}
+        <span>{isPlaying ? t.pauseAudio : t.playAudio}</span>
+    </button>
+    <button
+        onClick={checkAnswers}
+        className="px-6 py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2 transition-colors bg-green-500 hover:bg-green-600"
+    >
+        <CheckCircle2 size={18} />
+        <span>{t.checkAnswers}</span>
+    </button>
+    <button
+        onClick={() => {
+            setShowAnswers(prev => !prev);
+            // If showing answers, also populate the inputs
+            if (!showAnswers) {
+                const newAnswers: Record<number, string> = {};
+                blanks.forEach((blank, index) => {
+                    newAnswers[index] = (blank as Blank).answer;
+                });
+                setUserAnswers(newAnswers);
+                setResults({}); // Clear previous results
+            }
+        }}
+        className="px-6 py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2 transition-colors bg-yellow-500 hover:bg-yellow-600"
+    >
+        <Eye size={18} />
+        <span>{t.showAnswers}</span>
+    </button>
+</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    );
+};
+
+
+// ========================================================================
+// === REFACTORED: FLASHCARD MODE COMPONENT ===============================
+// ========================================================================
+const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLanguage: LanguageKey }) => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showGermanFirst, setShowGermanFirst] = useState(true);
   const [selectedSections, setSelectedSections] = useState(ALL_SECTIONS);
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageKey>('english');
   const [shuffledCards, setShuffledCards] = useState<Card[]>([]);
-  
-  const t = languages[currentLanguage];
 
   const filteredCards = useMemo(() => {
     const cards = selectedSections.flatMap(section => allVocabulary[section] || []);
-    setShuffledCards([...cards]); // Keep an unshuffled copy
     return cards;
   }, [selectedSections]);
 
   useEffect(() => {
-    setCurrentCardIndex(0);
-    setIsFlipped(false);
+    setShuffledCards([...filteredCards]);
   }, [filteredCards]);
 
+  useEffect(() => {
+    setCurrentCardIndex(0);
+    setIsFlipped(false);
+  }, [shuffledCards]);
+
   const nextCard = useCallback(() => {
-    if(shuffledCards.length === 0) return;
+    if (shuffledCards.length === 0) return;
     setCurrentCardIndex((prev) => (prev + 1) % shuffledCards.length);
     setIsFlipped(false);
   }, [shuffledCards.length]);
 
   const prevCard = useCallback(() => {
-    if(shuffledCards.length === 0) return;
+    if (shuffledCards.length === 0) return;
     setCurrentCardIndex((prev) => (prev - 1 + shuffledCards.length) % shuffledCards.length);
     setIsFlipped(false);
   }, [shuffledCards.length]);
 
   const shuffleCards = useCallback(() => {
     setShuffledCards(prev => [...prev].sort(() => Math.random() - 0.5));
-    setCurrentCardIndex(0);
-    setIsFlipped(false);
   }, []);
 
   const resetCards = useCallback(() => {
     setShuffledCards([...filteredCards]);
-    setCurrentCardIndex(0);
-    setIsFlipped(false);
   }, [filteredCards]);
 
   const toggleSection = useCallback((section: number) => {
-    setSelectedSections(prev => 
-      prev.includes(section) 
+    setSelectedSections(prev =>
+      prev.includes(section)
         ? prev.length > 1 ? prev.filter(s => s !== section) : prev
         : [...prev, section].sort((a, b) => a - b)
     );
@@ -566,16 +1027,16 @@ const GermanVocabularyApp = () => {
 
   if (!currentFlashcard) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-8 flex items-center justify-center">
-        <div className="text-center p-10 bg-white rounded-xl shadow-lg">
+      <div className="flex items-start justify-center">
+        <div className="text-center p-10 bg-white rounded-xl shadow-lg max-w-md">
           <BookOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Select a Section</h2>
           <p className="text-gray-600 mb-4">Please choose at least one vocabulary section to begin.</p>
-          <SectionSelector 
-            t={t} 
-            selectedSections={selectedSections} 
-            onToggle={toggleSection} 
-            onSelectAll={selectAllSections} 
+          <SectionSelector
+            t={t}
+            selectedSections={selectedSections}
+            onToggle={toggleSection}
+            onSelectAll={selectAllSections}
           />
         </div>
       </div>
@@ -586,72 +1047,97 @@ const GermanVocabularyApp = () => {
   const backText = showGermanFirst ? currentFlashcard.translations[currentLanguage] : currentFlashcard.german;
 
   return (
+    <div className="flex flex-col lg:flex-row gap-8">
+      {/* Left Sidebar for Controls */}
+      <div className="w-full lg:w-1/4">
+        <SectionSelector
+          t={t}
+          selectedSections={selectedSections}
+          onToggle={toggleSection}
+          onSelectAll={selectAllSections}
+        />
+      </div>
+
+      {/* Main Content Area */}
+      <main className="w-full lg:w-2/3 xl:w-3/4">
+        <div className="p-6 bg-white rounded-xl shadow-lg">
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-gray-600">
+              {t.currentCard} {currentCardIndex + 1} {t.of} {shuffledCards.length}
+            </span>
+            <button
+              onClick={() => { setShowGermanFirst(p => !p); setIsFlipped(false); }}
+              className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm font-semibold"
+            >
+              {t.startWith}: {showGermanFirst ? 'Deutsch' : t.name}
+            </button>
+          </div>
+
+          <Flashcard
+            isFlipped={isFlipped}
+            onFlip={() => setIsFlipped(p => !p)}
+            frontText={frontText}
+            backText={backText}
+            t={t}
+          />
+
+          <CardControls
+            t={t}
+            onPrev={prevCard}
+            onNext={nextCard}
+            onShuffle={shuffleCards}
+            onReset={resetCards}
+          />
+
+          <ProgressBar current={currentCardIndex + 1} total={shuffledCards.length} />
+        </div>
+        <StudyTips t={t} />
+      </main>
+    </div>
+  );
+};
+
+
+// --- MAIN APP COMPONENT ---
+
+const GermanVocabularyApp = () => {
+  const [currentLanguage, setCurrentLanguage] = useState<LanguageKey>('english');
+  const [mode, setMode] = useState('flashcards'); // 'flashcards' or 'passageCompletion'
+  const t = languages[currentLanguage];
+
+  return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-4 sm:p-8 font-sans">
       <div className="max-w-7xl mx-auto">
         <Header />
-        <div className="flex flex-col lg:flex-row gap-8">
-          
-          {/* Left Sidebar for Controls */}
-          <div className="w-full xl:w-1/4">
-             <div className="p-6 bg-white rounded-xl shadow-lg mb-6">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Globe size={20}/> {t.language}</h3>
-                <div className="flex flex-wrap gap-2">
-                    {(Object.keys(languages) as LanguageKey[]).map(lang => (
-                        <button key={lang} onClick={() => setCurrentLanguage(lang)}
-                            className={`px-3 py-1 rounded-md text-sm transition-colors ${currentLanguage === lang ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}>
-                            {lang.toUpperCase()}
-                        </button>
-                    ))}
-                </div>
+        
+        <div className="p-6 bg-white rounded-xl shadow-lg mb-8 max-w-md mx-auto">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Globe size={20}/> {t.language}</h3>
+            <div className="flex flex-wrap gap-2 justify-center">
+                {(Object.keys(languages) as LanguageKey[]).map(lang => (
+                    <button key={lang} onClick={() => setCurrentLanguage(lang)}
+                        className={`px-3 py-1 rounded-md text-sm transition-colors ${currentLanguage === lang ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}>
+                        {lang.toUpperCase()}
+                    </button>
+                ))}
             </div>
-            <SectionSelector 
-              t={t} 
-              selectedSections={selectedSections} 
-              onToggle={toggleSection} 
-              onSelectAll={selectAllSections} 
-            />
-          </div>
-
-          {/* Main Content Area */}
-          <main className="w-full lg:w-2/3 xl:w-3/4">
-            <div className="p-6 bg-white rounded-xl shadow-lg">
-              <div className="flex justify-between items-center mb-4">
-                 <span className="text-gray-600">
-                    {t.currentCard} {currentCardIndex + 1} {t.of} {shuffledCards.length}
-                </span>
-                <button
-                    onClick={() => { setShowGermanFirst(p => !p); setIsFlipped(false); }}
-                    className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm font-semibold"
-                >
-                    {t.startWith}: {showGermanFirst ? 'Deutsch' : t.name}
-                </button>
-              </div>
-
-              <Flashcard 
-                isFlipped={isFlipped} 
-                onFlip={() => setIsFlipped(p => !p)} 
-                frontText={frontText} 
-                backText={backText} 
-                t={t}
-              />
-              
-              <CardControls 
-                t={t} 
-                onPrev={prevCard} 
-                onNext={nextCard} 
-                onShuffle={shuffleCards}
-                onReset={resetCards}
-              />
-
-              <ProgressBar current={currentCardIndex + 1} total={shuffledCards.length} />
-            </div>
-
-            <StudyTips t={t} />
-          </main>
         </div>
+
+        <ModeSwitcher mode={mode} setMode={setMode} t={t} />
+
+        {mode === 'flashcards' && <FlashcardMode t={t} currentLanguage={currentLanguage} />}
+        {mode === 'passageCompletion' && <PassageCompletionMode t={t} />}
+      
       </div>
     </div>
   );
 };
+// Hidden components for brevity
+SectionSelector.displayName = "SectionSelector";
+Flashcard.displayName = "Flashcard";
+CardControls.displayName = "CardControls";
+ProgressBar.displayName = "ProgressBar";
+StudyTips.displayName = "StudyTips";
+
+
 
 export default GermanVocabularyApp;
