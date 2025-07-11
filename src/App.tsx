@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+// import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef, Dispatch, SetStateAction } from 'react';
 import { 
     ChevronLeft, ChevronRight, RotateCcw, Shuffle, BookOpen, Globe, 
     Play, CheckCircle2, Eye, XCircle, Ear, Pause, User, Users // Added User, Users icons
@@ -1105,57 +1106,190 @@ const VocabularyList = React.memo(({ vocab, currentLanguage, t }: { vocab: Card[
 ));
 VocabularyList.displayName = "VocabularyList";
 
+interface AudioProgressBarProps {
+    duration: number;
+    currentTime: number;
+    onSeek: (time: number) => void;
+}
 
-// UPDATED: Renamed and Refactored Listening Practice Component
+
+// --- NEW ---: Component for the audio progress bar
+const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: AudioProgressBarProps) => {
+    const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+    // --- FIX: Add type for the event object ---
+    const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+        const progressBar = e.currentTarget;
+        const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
+        const percentage = clickPosition / progressBar.offsetWidth;
+        onSeek(duration * percentage);
+    };
+
+    // --- FIX: Add type for the seconds parameter ---
+    const formatTime = (seconds: number) => {
+        if (isNaN(seconds) || seconds < 0) return '0:00';
+        const floorSeconds = Math.floor(seconds);
+        const mins = Math.floor(floorSeconds / 60);
+        const secs = floorSeconds % 60;
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    };
+
+    return (
+        <div className="flex items-center gap-3 w-full">
+            <span className="text-xs font-mono text-gray-500 w-10 text-right">{formatTime(currentTime)}</span>
+            <div 
+                className="w-full bg-gray-200 rounded-full h-2 cursor-pointer group"
+                onClick={handleSeek}
+            >
+                <div 
+                    className="bg-blue-500 h-2 rounded-full relative" 
+                    style={{ width: `${progress}%` }}
+                >
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+            </div>
+            <span className="text-xs font-mono text-gray-500 w-10">{formatTime(duration)}</span>
+        </div>
+    );
+});
+AudioProgressBar.displayName = "AudioProgressBar";
+
+// --- FIX: Define props type for AudioControlBar ---
+interface AudioControlBarProps {
+    t: LanguageStrings;
+    title: string;
+    isPlaying: boolean;
+    togglePlayPause: () => void;
+    duration: number;
+    currentTime: number;
+    onSeek: (time: number) => void;
+    checkAnswers: () => void;
+    setShowAnswers: Dispatch<SetStateAction<boolean>>;
+    setIsVocabVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+const AudioControlBar = React.memo(({ 
+    t, 
+    title, 
+    isPlaying, 
+    togglePlayPause,
+    duration,
+    currentTime,
+    onSeek,
+    checkAnswers,
+    setShowAnswers,
+    setIsVocabVisible,
+}: AudioControlBarProps) => (
+    <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-sm shadow-md p-4 rounded-xl mb-6 -mx-6 -mt-8 sm:-mx-8 sm:-mt-8">
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+            <button
+                onClick={togglePlayPause}
+                className="flex-shrink-0 w-14 h-14 rounded-full text-white font-semibold flex items-center justify-center transition-colors bg-blue-500 hover:bg-blue-600 shadow-lg"
+                aria-label={isPlaying ? t.pauseAudio : t.playAudio}
+            >
+                {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
+            </button>
+            <div className="w-full flex flex-col gap-2">
+                <div className="flex justify-between items-center">
+                    <h3 className="text-lg font-bold text-gray-800 truncate" title={title}>{title}</h3>
+                    <div className="flex items-center gap-1 sm:gap-2">
+                         <button
+                            onClick={checkAnswers}
+                            className="p-2 rounded-full text-gray-600 hover:bg-green-100 hover:text-green-600 transition-colors"
+                            title={t.checkAnswers}
+                        >
+                            <CheckCircle2 size={20} />
+                        </button>
+                        <button
+                            onClick={() => setShowAnswers(prev => !prev)}
+                             className="p-2 rounded-full text-gray-600 hover:bg-yellow-100 hover:text-yellow-600 transition-colors"
+                             title={t.showAnswers}
+                        >
+                            <Eye size={20} />
+                        </button>
+                        <button
+                            onClick={() => setIsVocabVisible(prev => !prev)}
+                             className="p-2 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-colors"
+                             title={t.keyVocabulary}
+                        >
+                            <BookOpen size={20} />
+                        </button>
+                    </div>
+                </div>
+                <AudioProgressBar duration={duration} currentTime={currentTime} onSeek={onSeek} />
+            </div>
+        </div>
+    </div>
+));
+AudioControlBar.displayName = "AudioControlBar";
+
 const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLanguage: LanguageKey }) => {
     const [selectedContentId, setSelectedContentId] = useState<number>(learningContent[0].id);
     const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
     const [results, setResults] = useState<Record<number, 'correct' | 'incorrect' | null>>({});
     const [showAnswers, setShowAnswers] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isVocabVisible, setIsVocabVisible] = useState(false); // <-- NEW STATE
+    const [isVocabVisible, setIsVocabVisible] = useState(false);
     
+    // --- NEW states for audio progress ---
+    const [duration, setDuration] = useState(0);
+    const [currentTime, setCurrentTime] = useState(0);
+
     const audioRef = useRef(new Audio());
+    const mainContentRef = useRef<HTMLElement>(null); // Ref for scrolling
 
     const selectedContent = useMemo(() => learningContent.find(p => p.id === selectedContentId)!, [selectedContentId]);
     const blanks = useMemo(() => selectedContent.parts.filter(p => typeof p === 'object' && 'answer' in p) as Blank[], [selectedContent]);
 
-    // This effect handles loading new audio and cleaning up
+    // This effect handles audio loading, events, and cleanup
     useEffect(() => {
         const audio = audioRef.current;
         audio.pause();
-        audio.currentTime = 0;
-        setIsPlaying(false);
         audio.src = selectedContent.audioSrc;
         
+        const setAudioData = () => {
+            setDuration(audio.duration);
+            setCurrentTime(audio.currentTime);
+        }
+        const setAudioTime = () => setCurrentTime(audio.currentTime);
+
         const handlePlay = () => setIsPlaying(true);
         const handlePause = () => setIsPlaying(false);
-        const handleEnded = () => setIsPlaying(false);
+        const handleEnded = () => {
+          setIsPlaying(false);
+          setCurrentTime(0); // Reset on end
+        };
         
+        audio.addEventListener('loadedmetadata', setAudioData);
+        audio.addEventListener('timeupdate', setAudioTime);
         audio.addEventListener('play', handlePlay);
         audio.addEventListener('pause', handlePause);
         audio.addEventListener('ended', handleEnded);
 
         return () => {
             audio.pause();
+            audio.removeEventListener('loadedmetadata', setAudioData);
+            audio.removeEventListener('timeupdate', setAudioTime);
             audio.removeEventListener('play', handlePlay);
             audio.removeEventListener('pause', handlePause);
             audio.removeEventListener('ended', handleEnded);
         };
     }, [selectedContent.audioSrc]);
 
-    // UPDATED RESET FUNCTION
     const resetState = useCallback(() => {
         const initialAnswers: Record<number, string> = {};
-        blanks.forEach((_, index) => {
-            initialAnswers[index] = '';
-        });
+        blanks.forEach((_, index) => { initialAnswers[index] = ''; });
         setUserAnswers(initialAnswers);
         setResults({});
         setShowAnswers(false);
-        setIsVocabVisible(false); // <-- Reset vocab visibility
-        audioRef.current.pause();
+        setIsVocabVisible(false);
+        setCurrentTime(0);
         audioRef.current.currentTime = 0;
+        audioRef.current.pause();
+        // Scroll to top of content area on change
+        if(mainContentRef.current) {
+          mainContentRef.current.parentElement?.scrollTo(0, 0);
+        }
     }, [blanks]);
     
     useEffect(() => {
@@ -1177,16 +1311,17 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
         }
     }, [isPlaying]);
 
+    const handleSeek = useCallback((time: number) => {
+        audioRef.current.currentTime = time;
+        setCurrentTime(time);
+    }, []);
+
     const checkAnswers = () => {
         const newResults: Record<number, 'correct' | 'incorrect' | null> = {};
         blanks.forEach((blank, index) => {
             const correctAnswer = blank.answer;
             const userAnswer = userAnswers[index] || '';
-            if (userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
-                newResults[index] = 'correct';
-            } else {
-                newResults[index] = 'incorrect';
-            }
+            newResults[index] = userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase() ? 'correct' : 'incorrect';
         });
         setResults(newResults);
         setShowAnswers(false);
@@ -1196,8 +1331,8 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
 
     return (
         <div className="flex flex-col lg:flex-row gap-8">
-            {/* Left Sidebar for Controls */}
-            <aside className="w-full lg:w-1/3">
+            {/* Left Sidebar for Passage Selection */}
+            <aside className="w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto custom-scrollbar">
                 <div className="p-6 bg-white rounded-xl shadow-lg">
                     <h3 className="text-xl font-bold mb-4">{t.selectPassage}</h3>
                     <div className="flex flex-col gap-2">
@@ -1205,15 +1340,15 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
                             <button
                                 key={content.id}
                                 onClick={() => setSelectedContentId(content.id)}
-                                className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-200 text-sm flex items-center gap-3 ${
+                                className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm flex items-center gap-3 ${
                                     selectedContentId === content.id
-                                    ? 'bg-green-500 text-white shadow-sm'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                    ? 'bg-green-500 text-white shadow-md'
+                                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
                                 }`}
                             >
-                                {content.type === 'dialogue' ? <Users size={16} className="opacity-70"/> : <User size={16} className="opacity-70"/>}
-                                <span>
-                                    {content.title} <span className="text-xs opacity-70">({content.level})</span>
+                                {content.type === 'dialogue' ? <Users size={16} className="opacity-70 flex-shrink-0"/> : <User size={16} className="opacity-70 flex-shrink-0"/>}
+                                <span className="flex-grow font-semibold">
+                                    {content.title} <span className="font-normal opacity-80">({content.level})</span>
                                 </span>
                             </button>
                         ))}
@@ -1222,17 +1357,31 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
             </aside>
             
             {/* Main Content Area */}
-            <main className="w-full lg:w-2/3">
-                <div className="p-6 sm:p-8 bg-white rounded-xl shadow-lg">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-2">{selectedContent.title}</h2>
-                    <p className="text-gray-600 mb-6">{t.passageInstructions}</p>
+            <div className="w-full lg:w-2/3 lg:max-h-[80vh] overflow-y-auto custom-scrollbar rounded-xl shadow-lg bg-white">
+                <main ref={mainContentRef} className="p-6 sm:p-8 relative">
+                    {/* --- Sticky control bar --- */}
+                    <AudioControlBar
+                        t={t}
+                        title={selectedContent.title}
+                        isPlaying={isPlaying}
+                        togglePlayPause={togglePlayPause}
+                        duration={duration}
+                        currentTime={currentTime}
+                        onSeek={handleSeek}
+                        checkAnswers={checkAnswers}
+                        setShowAnswers={setShowAnswers}
+                        setIsVocabVisible={setIsVocabVisible}
+                    />
+
+                    <p className="text-gray-600 mb-8 text-center">{t.passageInstructions}</p>
                     
-                    <div className="prose max-w-none mb-8 text-lg leading-relaxed">
+                    {/* --- Text styling for better readability --- */}
+                    <div className="prose max-w-none text-xl leading-loose">
                         {selectedContent.parts.map((part, partIndex) => {
                             if (typeof part === 'object' && 'speaker' in part) {
                                 return (
-                                    <div key={partIndex} className="mt-4 first:mt-0">
-                                        <strong className="text-gray-800">{part.speaker}:</strong>
+                                    <div key={partIndex} className="mt-5 first:mt-0">
+                                        <strong className="font-semibold text-gray-900 block mb-1">{part.speaker}:</strong>
                                     </div>
                                 );
                             }
@@ -1244,25 +1393,25 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
                                 const isCorrect = result === 'correct';
                                 const isIncorrect = result === 'incorrect';
 
-                                const inputClassName = `mx-1 inline-block bg-gray-100 rounded-md focus:ring-2 focus:bg-white focus:outline-none transition-all duration-200 text-lg
-                                    ${isCorrect ? 'ring-2 ring-green-500' : ''}
-                                    ${isIncorrect ? 'ring-2 ring-red-500' : ''}
+                                const inputClassName = `mx-1.5 inline-block bg-gray-100 rounded-md border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 text-xl px-2 py-0.5
+                                    ${isCorrect ? 'ring-2 ring-green-500 border-transparent' : ''}
+                                    ${isIncorrect ? 'ring-2 ring-red-500 border-transparent' : ''}
                                     ${!result ? 'focus:ring-blue-500' : ''}
                                 `;
                                 
                                 return (
-                                    <span key={partIndex} className="inline-block relative">
+                                    <span key={partIndex} className="inline-block relative align-baseline">
                                         <input 
                                             type="text"
                                             value={showAnswers ? part.answer : (userAnswers[blankIndex] || '')}
                                             onChange={e => handleAnswerChange(blankIndex, e.target.value)}
                                             disabled={showAnswers}
-                                            style={{ width: `${part.size}ch`, minWidth: '4ch' }}
+                                            style={{ width: `${part.size * 1.1}ch`, minWidth: '5ch' }}
                                             className={inputClassName}
                                             aria-label={`Blank ${blankIndex + 1}`}
                                         />
-                                        {isCorrect && <CheckCircle2 size={18} className="absolute -right-1 -top-1 text-green-500 bg-white rounded-full"/>}
-                                        {isIncorrect && <XCircle size={18} className="absolute -right-1 -top-1 text-red-500 bg-white rounded-full"/>}
+                                        {isCorrect && <CheckCircle2 size={18} className="absolute -right-2 top-0 text-green-500 bg-white rounded-full"/>}
+                                        {isIncorrect && <XCircle size={18} className="absolute -right-2 top-0 text-red-500 bg-white rounded-full"/>}
                                     </span>
                                 );
                             }
@@ -1271,52 +1420,22 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
                         })}
                     </div>
 
-                    <div className="mt-8 pt-6 border-t border-gray-200 flex flex-wrap gap-4 justify-center">
-                        <button
-                            onClick={togglePlayPause}
-                            className="px-6 py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2 transition-colors bg-blue-500 hover:bg-blue-600"
-                        >
-                            {isPlaying ? <Pause size={18} /> : <Play size={18} />}
-                            <span>{isPlaying ? t.pauseAudio : t.playAudio}</span>
-                        </button>
-                        <button
-                            onClick={checkAnswers}
-                            className="px-6 py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2 transition-colors bg-green-500 hover:bg-green-600"
-                        >
-                            <CheckCircle2 size={18} />
-                            <span>{t.checkAnswers}</span>
-                        </button>
-                        <button
-                            onClick={() => setShowAnswers(prev => !prev)}
-                            className="px-6 py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2 transition-colors bg-yellow-500 hover:bg-yellow-600"
-                        >
-                            <Eye size={18} />
-                            <span>{t.showAnswers}</span>
-                        </button>
-                        <button
-                            onClick={() => setIsVocabVisible(prev => !prev)}
-                            className="px-6 py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2 transition-colors bg-purple-500 hover:bg-purple-600"
-                        >
-                            <BookOpen size={18} />
-                            <span>{t.keyVocabulary}</span>
-                        </button>
-                    </div>
-
                     {isVocabVisible && selectedContent.vocabulary && (
-                        <VocabularyList 
-                            vocab={selectedContent.vocabulary} 
-                            currentLanguage={currentLanguage}
-                            t={t}
-                        />
+                        <div className="mt-10 pt-6 border-t">
+                            <VocabularyList 
+                                vocab={selectedContent.vocabulary} 
+                                currentLanguage={currentLanguage}
+                                t={t}
+                            />
+                        </div>
                     )}
 
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
     );
 };
 ListeningPracticeMode.displayName = "ListeningPracticeMode";
-
 // ========================================================================
 // === FLASHCARD MODE COMPONENT ===========================================
 // ========================================================================
