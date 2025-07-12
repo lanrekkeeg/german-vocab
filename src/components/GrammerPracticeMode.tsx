@@ -323,24 +323,39 @@ export const GrammarPracticeMode = ({ t, topics, languageKey }: GrammarPracticeM
     };
 
     const checkAnswer = () => {
-        if (!currentExercise) return;
-        
-        let correct = false;
-        if (currentExercise.type === 'matching' && Array.isArray(currentExercise.correctAnswer)) {
-            const answersToCheck = Array.isArray(userAnswers) ? userAnswers : [];
-            correct = currentExercise.correctAnswer.every((ans, i) => ans === answersToCheck[i]);
-        } else if (Array.isArray(currentExercise.correctAnswer)) {
-            correct = currentExercise.correctAnswer.every((ans, i) => (ans || '').trim().toLowerCase() === (userAnswers[i] || '').trim().toLowerCase());
-        } else {
-            correct = (currentExercise.correctAnswer || '').trim().toLowerCase() === (userAnswers[0] || '').trim().toLowerCase();
-        }
-
-        setIsCorrect(correct);
-        if(correct) {
-            setScore(s => s + 1);
-        }
-        setShowResult(true);
+    if (!currentExercise) return;
+    
+    // Helper function to normalize text for comparison
+    const normalizeText = (text: string): string => {
+        return text
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, ' ')  // Replace multiple spaces with single space
+            .replace(/\s+([?.!,;:])/g, '$1')  // Remove spaces before punctuation
+            .replace(/([?.!,;:])\s*$/, ' $1');  // Ensure space before final punctuation
     };
+    
+    let correct = false;
+    
+    if (currentExercise.type === 'matching' && Array.isArray(currentExercise.correctAnswer)) {
+        const answersToCheck = Array.isArray(userAnswers) ? userAnswers : [];
+        correct = currentExercise.correctAnswer.every((ans, i) => 
+            normalizeText(ans || '') === normalizeText(answersToCheck[i] || '')
+        );
+    } else if (Array.isArray(currentExercise.correctAnswer)) {
+        correct = currentExercise.correctAnswer.every((ans, i) => 
+            normalizeText(ans || '') === normalizeText(userAnswers[i] || '')
+        );
+    } else {
+        correct = normalizeText(currentExercise.correctAnswer || '') === normalizeText(userAnswers[0] || '');
+    }
+
+    setIsCorrect(correct);
+    if(correct) {
+        setScore(s => s + 1);
+    }
+    setShowResult(true);
+};
     
     const nextExercise = () => {
         setShowResult(false);
