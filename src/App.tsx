@@ -1,9 +1,9 @@
-// import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import React, { useState, useEffect, useMemo, useCallback, useRef, Dispatch, SetStateAction } from 'react';
 import { 
     ChevronLeft, ChevronRight, RotateCcw, Shuffle, BookOpen, Globe, 
-    Play, CheckCircle2, Eye, XCircle, Ear, Pause, User, Users // Added User, Users icons
+    Play, CheckCircle2, Eye, XCircle, Ear, Pause, User, Users, BrainCircuit
 } from 'lucide-react';
+
 import passage1Audio from './audio/passage1.wav';
 import passage2Audio from './audio/passage2.wav';
 import passage3Audio from './audio/passage3.wav';
@@ -26,10 +26,11 @@ import dialogue13Audio from './audio/13_clothing_store.wav';
 import dialogue14Audio from './audio/14_post_office.wav';
 import dialogue15Audio from './audio/15_bank_appointment.wav';
 
-// --- TYPE DEFINITIONS ---
-// --- TYPE DEFINITIONS ---
-// --- TYPE DEFINITIONS ---
-// --- TYPE DEFINITIONS ---
+// Import new grammar components and data
+import { module7Grammar } from './data/grammarExercises';
+import { GrammarPracticeMode } from './components/GrammerPracticeMode';
+
+
 type Translations = {
   english: string;
   ukrainian: string;
@@ -44,7 +45,6 @@ type Card = {
 
 type LanguageKey = keyof Translations;
 
-// UPDATED: More flexible type definitions for learning content
 type Blank = { answer: string; size: number };
 type SpeakerLabel = { speaker: string };
 type LearningContentPart = string | Blank | SpeakerLabel;
@@ -53,24 +53,22 @@ type LearningContent = {
     id: number;
     title: string;
     level: string;
-    type: 'passage' | 'dialogue'; // <-- NEW: Distinguishes content type
+    type: 'passage' | 'dialogue';
     fullText: string;
     parts: LearningContentPart[];
     audioSrc: string;
-    vocabulary: Card[]; // <-- ADDED THIS PROPERTY
-
+    vocabulary: Card[];
 };
 
 type PassagePart = string | { answer: string; size: number };
 
-// UPDATED: Added audioSrc to the Passage type
 type Passage = {
     id: number;
     title: string;
     level: string;
     fullText: string;
     parts: PassagePart[];
-    audioSrc: string; // <-- ADDED THIS LINE
+    audioSrc: string;
 };
 
 type LanguageStrings = {
@@ -94,14 +92,28 @@ type LanguageStrings = {
   tip4: string;
   sections: { [key: number]: string };
   flashcards: string;
-  listeningPractice: string; // <-- Renamed for clarity
+  listeningPractice: string;
   selectPassage: string;
   passageInstructions: string;
   playAudio: string;
   pauseAudio: string;
   checkAnswers: string;
   showAnswers: string;
-  keyVocabulary: string; // <-- NEW
+  keyVocabulary: string;
+  grammarPractice: string;
+  selectTopic: string;
+  checkAnswer: string;
+  nextExercise: string;
+  correct: string;
+  incorrect: string;
+  showCorrectAnswer: string;
+  finalScore: string;
+  practiceAgain: string;
+  question: string;
+   // New strings for grammar welcome screen
+  grammarWelcomeTitle: string;
+  grammarWelcomeText: string;
+
 };
 
 const languages: Record<LanguageKey, LanguageStrings> = {
@@ -117,6 +129,10 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     flashcards: 'Flashcards', listeningPractice: 'Listening Practice', selectPassage: 'Select a Passage',
     passageInstructions: 'Listen to the audio and fill in the blanks.', playAudio: 'Play Audio', pauseAudio: 'Pause Audio',
     checkAnswers: 'Check Answers', showAnswers: 'Show Answers', keyVocabulary: 'Key Vocabulary',
+    grammarPractice: 'Grammar Practice', selectTopic: 'Select a Topic', checkAnswer: 'Check Answer',
+    nextExercise: 'Next', correct: 'Correct!', incorrect: 'Incorrect.',
+    showCorrectAnswer: 'Show Answer', finalScore: 'Final Score', practiceAgain: 'Practice Again', question: 'Question',
+    grammarWelcomeTitle: 'Welcome to Grammar Practice', grammarWelcomeText: 'Please choose a topic from the left to begin.',
   },
   ukrainian: {
     name: 'Українська',
@@ -130,6 +146,10 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     flashcards: 'Флеш-картки', listeningPractice: 'Практика аудіювання', selectPassage: 'Виберіть уривок',
     passageInstructions: 'Прослухайте аудіо та заповніть пропуски.', playAudio: 'Відтворити аудіо', pauseAudio: 'Пауза',
     checkAnswers: 'Перевірити відповіді', showAnswers: 'Показати відповіді', keyVocabulary: 'Ключова лексика',
+    grammarPractice: 'Практика граматики', selectTopic: 'Виберіть тему', checkAnswer: 'Перевірити',
+    nextExercise: 'Далі', correct: 'Правильно!', incorrect: 'Неправильно.',
+    showCorrectAnswer: 'Показати відповідь', finalScore: 'Підсумковий рахунок', practiceAgain: 'Спробувати знову', question: 'Питання',
+    grammarWelcomeTitle: 'Ласкаво просимо до практики граматики', grammarWelcomeText: 'Будь ласка, оберіть тему зліва, щоб почати.',
   },
   polish: {
     name: 'Polski',
@@ -143,6 +163,10 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     flashcards: 'Fiszki', listeningPractice: 'Ćwiczenia ze słuchu', selectPassage: 'Wybierz fragment',
     passageInstructions: 'Posłuchaj nagrania i uzupełnij luki.', playAudio: 'Odtwórz audio', pauseAudio: 'Pauza',
     checkAnswers: 'Sprawdź odpowiedzi', showAnswers: 'Pokaż odpowiedzi', keyVocabulary: 'Kluczowe słownictwo',
+    grammarPractice: 'Ćwiczenia gramatyczne', selectTopic: 'Wybierz temat', checkAnswer: 'Sprawdź',
+    nextExercise: 'Dalej', correct: 'Poprawnie!', incorrect: 'Niepoprawnie.',
+    showCorrectAnswer: 'Pokaż odpowiedź', finalScore: 'Wynik końcowy', practiceAgain: 'Ćwicz ponownie', question: 'Pytanie',
+    grammarWelcomeTitle: 'Witaj w ćwiczeniach gramatycznych', grammarWelcomeText: 'Proszę wybrać temat z lewej strony, aby rozpocząć.',
   },
   albanian: {
     name: 'Shqip',
@@ -156,6 +180,10 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     flashcards: 'Kartela', listeningPractice: 'Praktikë dëgjimi', selectPassage: 'Zgjidhni një pasazh',
     passageInstructions: 'Dëgjoni audion dhe plotësoni boshllëqet.', playAudio: 'Luaj audion', pauseAudio: 'Pauzë',
     checkAnswers: 'Kontrollo përgjigjet', showAnswers: 'Shfaq përgjigjet', keyVocabulary: 'Fjalori kyç',
+    grammarPractice: 'Praktikë gramatikore', selectTopic: 'Zgjidh një temë', checkAnswer: 'Kontrollo',
+    nextExercise: 'Tjetra', correct: 'Saktë!', incorrect: 'Gabim.',
+    showCorrectAnswer: 'Shfaq përgjigjen', finalScore: 'Rezultati final', practiceAgain: 'Praktiko përsëri', question: 'Pyetja',
+    grammarWelcomeTitle: 'Mirë se vini në praktikën e gramatikës', grammarWelcomeText: 'Ju lutemi zgjidhni një temë nga e majta për të filluar.',
   }
 };
 
@@ -412,10 +440,6 @@ const allVocabulary: Record<number, Card[]> = {
 };
 const ALL_SECTIONS = Object.keys(allVocabulary).map(Number);
 
-
-// ========================================================================
-// === NEW: DATA FOR PASSAGE COMPLETION ===================================
-// ========================================================================
 const learningContent: LearningContent[] = [
     {
         id: 1, type: 'passage', title: 'Mein Tag', level: 'A1', audioSrc: passage1Audio,
@@ -935,39 +959,39 @@ const learningContent: LearningContent[] = [
 
 // --- CHILD COMPONENTS ---
 
-// NEW: Mode switcher component
-// --- CHILD COMPONENTS ---
-
 const Header = React.memo(() => (
   <div className="text-center mb-4 sm:mb-8">
     <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">German Learning Hub</h1>
-    <p className="text-md sm:text-lg text-gray-600">Flashcards & Listening Practice</p>
+    <p className="text-md sm:text-lg text-gray-600">Flashcards, Listening & Grammar</p>
   </div>
 ));
 Header.displayName = "Header";
 
 const ModeSwitcher = React.memo(({ mode, setMode, t }: { mode: string, setMode: (mode: string) => void, t: LanguageStrings }) => (
     <div className="flex justify-center mb-8">
-        <div className="flex p-1 bg-gray-200 rounded-xl">
+        <div className="flex flex-wrap justify-center p-1 bg-gray-200 rounded-xl gap-1">
             <button 
                 onClick={() => setMode('flashcards')}
-                className={`flex items-center gap-2 px-4 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'flashcards' ? 'bg-white text-blue-600 shadow-md' : 'text-gray-600'}`}
+                className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'flashcards' ? 'bg-white text-blue-600 shadow-md' : 'text-gray-600'}`}
             >
                 <BookOpen size={20} /> {t.flashcards}
             </button>
             <button 
                 onClick={() => setMode('listeningPractice')}
-                className={`flex items-center gap-2 px-4 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'listeningPractice' ? 'bg-white text-green-600 shadow-md' : 'text-gray-600'}`}
+                className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'listeningPractice' ? 'bg-white text-green-600 shadow-md' : 'text-gray-600'}`}
             >
                 <Ear size={20} /> {t.listeningPractice}
+            </button>
+            <button 
+                onClick={() => setMode('grammarPractice')}
+                className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'grammarPractice' ? 'bg-white text-purple-600 shadow-md' : 'text-gray-600'}`}
+            >
+                <BrainCircuit size={20} /> {t.grammarPractice}
             </button>
         </div>
     </div>
 ));
-
 ModeSwitcher.displayName = "ModeSwitcher";
-
-
 
 const SectionSelector = React.memo(({ t, selectedSections, onToggle, onSelectAll }: {
   t: LanguageStrings,
@@ -1015,14 +1039,12 @@ const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t }: {
       style={{ transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
       onClick={onFlip}
     >
-      {/* Front of Card */}
       <div className="absolute w-full h-full bg-white rounded-xl shadow-lg flex items-center justify-center p-8 backface-hidden">
         <div className="text-center">
           <p className="text-3xl font-bold text-gray-800">{frontText}</p>
           <span className="mt-4 text-sm text-gray-500 block">{t.clickToFlip}</span>
         </div>
       </div>
-      {/* Back of Card */}
       <div className="absolute w-full h-full bg-white rounded-xl shadow-lg flex items-center justify-center p-8 backface-hidden" style={{ transform: 'rotateY(180deg)' }}>
         <div className="text-center">
           <p className="text-3xl font-bold text-green-700">{backText}</p>
@@ -1089,8 +1111,6 @@ const StudyTips = React.memo(({ t }: { t: LanguageStrings }) => (
 ));
 StudyTips.displayName = "StudyTips";
 
-
-// NEW: Vocabulary List Component
 const VocabularyList = React.memo(({ vocab, currentLanguage, t }: { vocab: Card[], currentLanguage: LanguageKey, t: LanguageStrings }) => (
     <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg animate-fade-in">
         <h4 className="font-bold text-blue-800 mb-3">{t.keyVocabulary}</h4>
@@ -1112,20 +1132,14 @@ interface AudioProgressBarProps {
     onSeek: (time: number) => void;
 }
 
-
-// --- NEW ---: Component for the audio progress bar
 const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: AudioProgressBarProps) => {
     const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
-
-    // --- FIX: Add type for the event object ---
     const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
         const progressBar = e.currentTarget;
         const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
         const percentage = clickPosition / progressBar.offsetWidth;
         onSeek(duration * percentage);
     };
-
-    // --- FIX: Add type for the seconds parameter ---
     const formatTime = (seconds: number) => {
         if (isNaN(seconds) || seconds < 0) return '0:00';
         const floorSeconds = Math.floor(seconds);
@@ -1133,7 +1147,6 @@ const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: AudioPro
         const secs = floorSeconds % 60;
         return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     };
-
     return (
         <div className="flex items-center gap-3 w-full">
             <span className="text-xs font-mono text-gray-500 w-10 text-right">{formatTime(currentTime)}</span>
@@ -1154,7 +1167,6 @@ const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: AudioPro
 });
 AudioProgressBar.displayName = "AudioProgressBar";
 
-// --- FIX: Define props type for AudioControlBar ---
 interface AudioControlBarProps {
     t: LanguageStrings;
     title: string;
@@ -1231,17 +1243,15 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
     const [isPlaying, setIsPlaying] = useState(false);
     const [isVocabVisible, setIsVocabVisible] = useState(false);
     
-    // --- NEW states for audio progress ---
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
 
     const audioRef = useRef(new Audio());
-    const mainContentRef = useRef<HTMLElement>(null); // Ref for scrolling
+    const mainContentRef = useRef<HTMLElement>(null);
 
     const selectedContent = useMemo(() => learningContent.find(p => p.id === selectedContentId)!, [selectedContentId]);
     const blanks = useMemo(() => selectedContent.parts.filter(p => typeof p === 'object' && 'answer' in p) as Blank[], [selectedContent]);
 
-    // This effect handles audio loading, events, and cleanup
     useEffect(() => {
         const audio = audioRef.current;
         audio.pause();
@@ -1257,7 +1267,7 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
         const handlePause = () => setIsPlaying(false);
         const handleEnded = () => {
           setIsPlaying(false);
-          setCurrentTime(0); // Reset on end
+          setCurrentTime(0);
         };
         
         audio.addEventListener('loadedmetadata', setAudioData);
@@ -1286,7 +1296,6 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
         setCurrentTime(0);
         audioRef.current.currentTime = 0;
         audioRef.current.pause();
-        // Scroll to top of content area on change
         if(mainContentRef.current) {
           mainContentRef.current.parentElement?.scrollTo(0, 0);
         }
@@ -1331,7 +1340,6 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
 
     return (
         <div className="flex flex-col lg:flex-row gap-8">
-            {/* Left Sidebar for Passage Selection */}
             <aside className="w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto custom-scrollbar">
                 <div className="p-6 bg-white rounded-xl shadow-lg">
                     <h3 className="text-xl font-bold mb-4">{t.selectPassage}</h3>
@@ -1356,10 +1364,8 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
                 </div>
             </aside>
             
-            {/* Main Content Area */}
             <div className="w-full lg:w-2/3 lg:max-h-[80vh] overflow-y-auto custom-scrollbar rounded-xl shadow-lg bg-white">
                 <main ref={mainContentRef} className="p-6 sm:p-8 relative">
-                    {/* --- Sticky control bar --- */}
                     <AudioControlBar
                         t={t}
                         title={selectedContent.title}
@@ -1375,7 +1381,6 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
 
                     <p className="text-gray-600 mb-8 text-center">{t.passageInstructions}</p>
                     
-                    {/* --- Text styling for better readability --- */}
                     <div className="prose max-w-none text-xl leading-loose">
                         {selectedContent.parts.map((part, partIndex) => {
                             if (typeof part === 'object' && 'speaker' in part) {
@@ -1429,16 +1434,13 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
                             />
                         </div>
                     )}
-
                 </main>
             </div>
         </div>
     );
 };
 ListeningPracticeMode.displayName = "ListeningPracticeMode";
-// ========================================================================
-// === FLASHCARD MODE COMPONENT ===========================================
-// ========================================================================
+
 const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLanguage: LanguageKey }) => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -1498,7 +1500,6 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
-      {/* Left Sidebar for Controls */}
       <div className="w-full lg:w-1/3">
         <SectionSelector
           t={t}
@@ -1507,8 +1508,6 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
           onSelectAll={selectAllSections}
         />
       </div>
-
-      {/* Main Content Area */}
       <main className="w-full lg:w-2/3">
         {!currentFlashcard ? (
             <div className="text-center p-10 bg-white rounded-xl shadow-lg h-full flex flex-col justify-center items-center">
@@ -1559,11 +1558,9 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
 FlashcardMode.displayName = "FlashcardMode";
 
 
-// --- MAIN APP COMPONENT ---
-
 const GermanVocabularyApp = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageKey>('english');
-  const [mode, setMode] = useState('flashcards'); // 'flashcards' or 'listeningPractice'
+  const [mode, setMode] = useState('flashcards');
   const t = languages[currentLanguage];
 
   return (
@@ -1587,7 +1584,7 @@ const GermanVocabularyApp = () => {
 
         {mode === 'flashcards' && <FlashcardMode t={t} currentLanguage={currentLanguage} />}
         {mode === 'listeningPractice' && <ListeningPracticeMode t={t} currentLanguage={currentLanguage} />}
-      
+        {mode === 'grammarPractice' && <GrammarPracticeMode t={t} topics={module7Grammar} languageKey={currentLanguage} />}      
       </div>
     </div>
   );
