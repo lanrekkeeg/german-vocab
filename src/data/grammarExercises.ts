@@ -392,7 +392,7 @@ export const module7Grammar: GrammarTopic[] = [
           sq: "Ndërtoni pyetje me 'haben'."
         },
         context: ["Haben", "Sie", "Kinder", "?"],
-        correctAnswer: "Haben Sie Kinder?",
+        correctAnswer: "Haben Sie Kinder ?",
       },
       {
         id: 'm1-aux-9',
