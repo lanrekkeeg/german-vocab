@@ -218,19 +218,13 @@ sections: {
   }
 };
 
-// This is used to dynamically generate the path to the audio files.
 const sanitizeFilename = (text: string): string => {
-    let sanitized = text.toLowerCase();
-    // Replace German characters for broader compatibility
-    sanitized = sanitized
-        .replace(/ä/g, 'ae')
-        .replace(/ö/g, 'oe')
-        .replace(/ü/g, 'ue')
-        .replace(/ß/g, 'ss');
     // Replace spaces with underscores
-    sanitized = sanitized.replace(/\s+/g, '_');
-    // Remove any character that is not a letter, number, underscore, or hyphen
-    sanitized = sanitized.replace(/[^a-z0-9_-]/g, '');
+    let sanitized = text.replace(/\s+/g, '_');
+    
+    // Remove characters that are not letters, numbers, underscores, or German umlauts/ß
+    sanitized = sanitized.replace(/[^a-zA-Z0-9_äöüÄÖÜß]/g, '');
+    
     return sanitized;
 };
 
@@ -656,6 +650,7 @@ const allVocabulary: Record<number, Card[]> = addAudioPaths({
     { "german": "die Gebühr", "translations": { "english": "fee", "ukrainian": "комісія, збір", "polish": "opłata", "albanian": "tarifë" }}
   ]
 });
+console.log(allVocabulary)
 const ALL_SECTIONS = Object.keys(allVocabulary).map(Number);
 
 const learningContent: LearningContent[] = [
@@ -1871,7 +1866,24 @@ const GermanVocabularyApp = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageKey>('english');
   const [mode, setMode] = useState('flashcards');
   const t = languages[currentLanguage];
-
+  const contentRef = useRef<HTMLDivElement>(null);
+useEffect(() => {
+    if (contentRef.current) {
+      // Use requestAnimationFrame to delay the scroll until after the next browser paint.
+      // This is more reliable than a simple setTimeout(0).
+      const animationFrameId = requestAnimationFrame(() => {
+        // We can check the screen width here as well, or decide to scroll on all devices
+        // if the content is always below the switcher. Let's keep the check for mobile-only.
+        if (window.innerWidth < 768) {
+          contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+      
+      // Cleanup function to cancel the animation frame if the component unmounts
+      // or if the effect re-runs before the frame is painted.
+      return () => cancelAnimationFrame(animationFrameId);
+    }
+  }, [mode]); // The dependency array is correct.
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-4 sm:p-8 font-sans">
       <div className="max-w-7xl mx-auto">
@@ -1890,11 +1902,13 @@ const GermanVocabularyApp = () => {
         </div>
 
         <ModeSwitcher mode={mode} setMode={setMode} t={t} />
+                <div ref={contentRef} className="mt-8">
 
         {mode === 'flashcards' && <FlashcardMode t={t} currentLanguage={currentLanguage} />}
         {mode === 'listeningPractice' && <ListeningPracticeMode t={t} currentLanguage={currentLanguage} />}
         {mode === 'grammarPractice' && <GrammarPracticeMode t={t} topics={module7Grammar} languageKey={currentLanguage} />}      
       </div>
+    </div>
     </div>
   );
 };

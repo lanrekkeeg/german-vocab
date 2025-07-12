@@ -3322,5 +3322,201 @@ export const module7Grammar: GrammarTopic[] = [
         correctAnswer: "immer",
       }
     ]
+  },
+  {
+    id: 'telling-time',
+    moduleId: 3,
+    title: 'Telling Time (Uhrzeit)',
+    description: "Official time uses the 24-hour clock ('Es ist 14:30 Uhr' → vierzehn Uhr dreißig). Unofficial/colloquial time uses a 12-hour clock with prepositions: nach (after), vor (before), Viertel (quarter), halb (half). Note: 'halb drei' means 2:30, not 3:30!",
+    exercises: [
+      {
+        id: 'm3-time-1',
+        type: 'matching',
+        question: {
+          en: "Match official times to unofficial times.",
+          pl: "Dopasuj oficjalne godziny do nieoficjalnych.",
+          uk: "Зіставте офіційний час з неофіційним.",
+          sq: "Përputhni orët zyrtare me ato jozyrtare."
+        },
+        context: ["14:30", "08:15", "19:45", "11:55"],
+        options: ["fünf vor zwölf", "Viertel vor acht", "Viertel nach acht", "halb drei"],
+        correctAnswer: ["halb drei", "Viertel nach acht", "Viertel vor acht", "fünf vor zwölf"],
+      },
+      {
+        id: 'm3-time-2',
+        type: 'fill-in-the-blank',
+        question: {
+          en: "Complete with 'nach' or 'vor'.",
+          pl: "Uzupełnij 'nach' lub 'vor'.",
+          uk: "Доповніть 'nach' або 'vor'.",
+          sq: "Plotësoni me 'nach' ose 'vor'."
+        },
+        context: "Es ist 10:20 Uhr. Es ist zwanzig ______ zehn.",
+        correctAnswer: "nach",
+      },
+      {
+        id: 'm3-time-3',
+        type: 'fill-in-the-blank',
+        question: {
+          en: "Complete with 'nach' or 'vor'.",
+          pl: "Uzupełnij 'nach' lub 'vor'.",
+          uk: "Доповніть 'nach' або 'vor'.",
+          sq: "Plotësoni me 'nach' ose 'vor'."
+        },
+        context: "Es ist 15:40 Uhr. Es ist zwanzig ______ vier.",
+        correctAnswer: "vor",
+      },
+      {
+        id: 'm3-time-4',
+        type: 'multiple-choice',
+        question: {
+          en: "How do you say 5:30 (unofficially)?",
+          pl: "Jak powiesz 5:30 (nieoficjalnie)?",
+          uk: "Як сказати 5:30 (неофіційно)?",
+          sq: "Si thua 5:30 (jozyrtarisht)?"
+        },
+        context: "Es ist 5:30 Uhr. Es ist ______.",
+        options: ["halb fünf", "halb sechs", "dreißig nach fünf"],
+        correctAnswer: "halb sechs",
+        hint: "In German, 'halb' refers to the next hour.",
+      },
+      {
+        id: 'm3-time-5',
+        type: 'sentence-scramble',
+        question: {
+          en: "Ask for the time.",
+          pl: "Zapytaj o godzinę.",
+          uk: "Запитайте про час.",
+          sq: "Pyetni për orën."
+        },
+        context: ["Wie", "spät", "ist", "es", "?"],
+        correctAnswer: "Wie spät ist es?",
+      },
+      {
+        id: 'm3-time-6',
+        type: 'fill-in-the-blank',
+        question: {
+          en: "Write the time officially.",
+          pl: "Napisz godzinę oficjalnie.",
+          uk: "Напишіть час офіційно.",
+          sq: "Shkruani orën zyrtarisht."
+        },
+        context: "Der Zug fährt um ______. (19:05)",
+        correctAnswer: "neunzehn Uhr fünf",
+      },
+      {
+        id: 'm3-time-7',
+        type: 'multiple-choice',
+        question: {
+          en: "What is 2:45 unofficially?",
+          pl: "Jak jest 2:45 nieoficjalnie?",
+          uk: "Як буде 2:45 неофіційно?",
+          sq: "Sa është ora 2:45 jozyrtarisht?"
+        },
+        context: "Es ist 2:45 Uhr. Es ist ______.",
+        options: ["Viertel nach drei", "drei Viertel drei", "Viertel vor drei"],
+        correctAnswer: "Viertel vor drei",
+      },
+      {
+        id: 'm3-time-8',
+        type: 'fill-in-the-blank',
+        question: {
+          en: "Answer the question with the correct preposition.",
+          pl: "Odpowiedz na pytanie, używając poprawnego przyimka.",
+          uk: "Дайте відповідь на запитання, використовуючи правильний прийменник.",
+          sq: "Përgjigjjuni pyetjes me parafjalën e saktë."
+        },
+        context: "Wann beginnt der Film? - ______ halb acht.",
+        correctAnswer: "Um",
+      },
+      {
+        id: 'm3-time-9',
+        type: 'fill-in-the-blank',
+        question: {
+          en: "Write the unofficial time.",
+          pl: "Napisz nieoficjalną godzinę.",
+          uk: "Напишіть неофіційний час.",
+          sq: "Shkruani orën jozyrtare."
+        },
+        context: "Es ist 7:25 Uhr. Es ist fünf vor halb ______.",
+        correctAnswer: "acht",
+      },
+      {
+        id: 'm3-time-10',
+        type: 'matching',
+        question: {
+          en: "Match the official time to the unofficial phrase.",
+          pl: "Dopasuj oficjalny czas do nieoficjalnej frazy.",
+          uk: "Зіставте офіційний час з неофіційною фразою.",
+          sq: "Përputhni orën zyrtare me frazën jozyrtare."
+        },
+        context: ["13:00", "20:15", "09:30", "16:50"],
+        options: ["zehn vor fünf", "Viertel nach acht", "halb zehn", "ein Uhr"],
+        correctAnswer: ["ein Uhr", "Viertel nach acht", "halb zehn", "zehn vor fünf"],
+      },
+      {
+        id: 'm3-time-11',
+        type: 'sentence-scramble',
+        question: {
+          en: "Build a sentence about an appointment.",
+          pl: "Zbuduj zdanie o spotkaniu.",
+          uk: "Побудуйте речення про зустріч.",
+          sq: "Ndërtoni një fjali për një takim."
+        },
+        context: ["Der", "Termin", "ist", "um", "Viertel", "vor", "zehn"],
+        correctAnswer: "Der Termin ist um Viertel vor zehn",
+      },
+      {
+        id: 'm3-time-12',
+        type: 'multiple-choice',
+        question: {
+          en: "When do we use the word 'Uhr'?",
+          pl: "Kiedy używamy słowa 'Uhr'?",
+          uk: "Коли ми використовуємо слово 'Uhr'?",
+          sq: "Kur e përdorim fjalën 'Uhr'?"
+        },
+        context: "Select the sentence where 'Uhr' is used correctly in colloquial speech.",
+        options: ["Es ist halb drei Uhr.", "Es ist Viertel nach vier Uhr.", "Es ist genau zehn Uhr.", "Es ist zwanzig vor sechs Uhr."],
+        correctAnswer: "Es ist genau zehn Uhr.",
+        hint: "'Uhr' is used with official times and for times exactly on the hour.",
+      },
+      {
+        id: 'm3-time-13',
+        type: 'fill-in-the-blank',
+        question: {
+          en: "Complete the sentence about a duration.",
+          pl: "Uzupełnij zdanie o czasie trwania.",
+          uk: "Доповніть речення про тривалість.",
+          sq: "Plotësoni fjalinë për kohëzgjatjen."
+        },
+        context: "Die Öffnungszeiten sind ______ 9 Uhr ______ 17 Uhr.",
+        correctAnswer: ["von", "bis"],
+      },
+      {
+        id: 'm3-time-14',
+        type: 'fill-in-the-blank',
+        question: {
+          en: "Complete the phrase for 'shortly after'.",
+          pl: "Uzupełnij wyrażenie 'chwilę po'.",
+          uk: "Доповніть фразу 'незабаром після'.",
+          sq: "Plotësoni frazën 'pak pas'."
+        },
+        context: "Es ist 16:03. Es ist kurz ______ vier.",
+        correctAnswer: "nach",
+      },
+      {
+        id: 'm3-time-15',
+        type: 'matching',
+        question: {
+          en: "Match the question to the best answer.",
+          pl: "Dopasuj pytanie do najlepszej odpowiedzi.",
+          uk: "Зіставте запитання з найкращою відповіддю.",
+          sq: "Përputhni pyetjen me përgjigjen më të mirë."
+        },
+        context: ["Wie spät ist es?", "Wann kommst du?", "Wie lange dauert der Film?", "Um wie viel Uhr treffen wir uns?"],
+        options: ["Ungefähr zwei Stunden.", "Punkt 19 Uhr.", "Es ist halb drei.", "Gegen Mittag."],
+        correctAnswer: ["Es ist halb drei.", "Gegen Mittag.", "Ungefähr zwei Stunden.", "Punkt 19 Uhr."],
+      }
+    ]
   }
 ];

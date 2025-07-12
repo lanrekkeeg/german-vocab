@@ -158,6 +158,7 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
 
     useEffect(() => {
         if (Array.isArray(exercise.options)) {
+            // Create a shuffled copy for display
             setRightItems([...exercise.options].sort(() => Math.random() - 0.5));
         }
     }, [exercise]);
@@ -169,39 +170,96 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
 
     const handleRightClick = (item: string) => {
         if (selectedLeft === null || showResult) return;
+        // The userAnswer is an array where the index corresponds to the leftItems index
         const newAnswers = [...(userAnswer || Array(leftItems.length).fill(null))];
         newAnswers[selectedLeft] = item;
         onAnswerChange(null, newAnswers);
         setSelectedLeft(null);
     };
 
-    return (
+// --- START OF FIX ---
+
+    // 1. Count how many times each answer value has been used in the userAnswer array.
+    // e.g., { "heißt": 1, "heiße": 1 }
+    const matchedValueCounts = useMemo(() => {
+        const counts: { [key: string]: number } = {};
+        (userAnswer || []).forEach(answer => {
+            if (answer) {
+                counts[answer] = (counts[answer] || 0) + 1;
+            }
+        });
+        return counts;
+    }, [userAnswer]);
+
+    // This object will track how many times we've rendered each right-side option string.
+    // It's declared outside the map so its state persists across iterations of the map.
+    const renderedRightItemCounts: { [key: string]: number } = {};
+
+    // --- END OF FIX ---
+
+     return (
         <div>
             <p className="text-lg mb-4 text-gray-700">{exercise.question[questionKey]}</p>
             <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
                     {leftItems.map((item, index) => (
-                        <button key={index} onClick={() => handleLeftClick(index)} disabled={showResult || !!userAnswer[index]}
-                            className={`p-3 rounded-lg border-2 text-left transition-all ${selectedLeft === index ? 'bg-purple-200 border-purple-500 scale-105' : 'bg-gray-100 border-gray-300'} ${userAnswer[index] ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'hover:border-purple-400'}`}>
+                        <button 
+                            key={index} 
+                            onClick={() => handleLeftClick(index)} 
+                            disabled={showResult || !!userAnswer[index]}
+                            className={`p-3 rounded-lg border-2 text-left transition-all ${
+                                selectedLeft === index 
+                                ? 'bg-purple-200 border-purple-500 scale-105' 
+                                : 'bg-gray-100 border-gray-300'
+                            } ${
+                                userAnswer[index] 
+                                ? 'bg-gray-200 text-gray-500 cursor-not-allowed' 
+                                : 'hover:border-purple-400'
+                            }`}
+                        >
                             {item}
                         </button>
                     ))}
                 </div>
                 <div className="flex flex-col gap-2">
                     {rightItems.map((item, index) => {
-                        const matchedIndex = userAnswer?.indexOf(item);
-                        const isMatched = matchedIndex > -1;
-                        const isCorrect = showResult && Array.isArray(exercise.correctAnswer) && exercise.correctAnswer[matchedIndex] === item;
+                        // --- REPLACEMENT LOGIC ---
+
+                        // 2. Get the number of times we've ALREADY rendered this specific item string.
+                        const countOfThisItemRendered = renderedRightItemCounts[item] || 0;
+
+                        // 3. An item instance is considered "matched" if the number of times it has been
+                        //    selected as an answer is greater than the number of times we've already
+                        //    rendered it.
+                        const isMatched = (matchedValueCounts[item] || 0) > countOfThisItemRendered;
+
+                        // 4. Increment the render count for the next iteration.
+                        renderedRightItemCounts[item] = countOfThisItemRendered + 1;
+
+                        // The rest of the logic can now use the corrected `isMatched` variable.
+                        const correctAnswerForThisMatch = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer.find((_, i) => userAnswer[i] === item) : undefined;
+                        const isCorrect = showResult && isMatched && correctAnswerForThisMatch === item;
                         
                         let buttonClass = 'p-3 rounded-lg border-2 text-left transition-colors ';
                         if (isMatched) {
-                            buttonClass += `cursor-not-allowed ${showResult && isCorrect ? 'bg-green-100 !border-green-400' : ''} ${showResult && !isCorrect ? 'bg-red-100 !border-red-400' : 'bg-purple-100 border-purple-400'}`;
+                            // This logic is slightly simplified for clarity. Your original was fine too.
+                            if (showResult) {
+                                buttonClass += isCorrect ? 'bg-green-100 !border-green-400' : 'bg-red-100 !border-red-400';
+                            } else {
+                                buttonClass += 'bg-purple-100 border-purple-400';
+                            }
+                            buttonClass += ' cursor-not-allowed';
                         } else {
                             buttonClass += 'bg-white border-gray-300 hover:border-purple-400';
                         }
                         
                         return (
-                            <button key={index} onClick={() => handleRightClick(item)} disabled={isMatched || showResult} className={buttonClass}>
+                            <button 
+                                key={index} 
+                                onClick={() => handleRightClick(item)} 
+                                disabled={isMatched || showResult} 
+                                className={buttonClass}
+                            >
                                 {item}
                             </button>
                         );
@@ -211,6 +269,7 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
         </div>
     );
 };
+
 
 const ExerciseEngine: React.FC<ExerciseComponentProps> = (props) => {
     switch (props.exercise.type) {
