@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef, Dispatch, SetStateAction } from 'react';
 import { 
     ChevronLeft, ChevronRight, RotateCcw, Shuffle, BookOpen, Globe, 
-    Play, CheckCircle2, Eye, XCircle, Ear, Pause, User, Users, BrainCircuit
+    Play, CheckCircle2, Eye, XCircle, Ear, Pause, User, Users, BrainCircuit, Menu, X
 } from 'lucide-react';
 
 import passage1Audio from './audio/passage1.wav';
@@ -14,7 +14,7 @@ import dialogue1Audio from './audio/1_restaurant_reservation.wav';
 import dialogue2Audio from './audio/2_doctors_appointment.wav';
 import dialogue3Audio from './audio/3_job_interview.wav';
 import dialogue4Audio from './audio/4_apartment_viewing.wav';
-import dialogue5Audio from './audio/5_technical_support.wav';
+// import dialogue5Audio from './audio/5_technical_support.wav';
 import dialogue6Audio from './audio/6_supermarket_shopping.wav';
 import dialogue7Audio from './audio/7_asking_directions.wav';
 import dialogue8Audio from './audio/8_cafe_ordering.wav';
@@ -859,37 +859,37 @@ const learningContent: LearningContent[] = [
             { german: "die Kaution", translations: { english: "the security deposit", ukrainian: "застава", polish: "kaucja", albanian: "depozita" }},
         ]
     },
-    {
-        id: 10, type: 'dialogue', title: 'Technical Support Call', level: 'A2', audioSrc: dialogue5Audio,
-        fullText: `Support: Computer-Hilfe-Service, guten Tag, hier ist Martin Krause. Kundin: Guten Tag, hier ist Elisabeth Weber. Mein Computer funktioniert nicht mehr richtig. Support: Was für Probleme haben Sie denn genau, Frau Weber? Kundin: Er startet nicht mehr. Ich drücke den Knopf, aber es passiert nichts. Support: Ist das Kabel richtig eingesteckt? Schauen Sie mal nach der Steckdose. Kundin: Moment... ja, alles ist eingesteckt. Aber es leuchtet kein Licht. Support: Hmm, das könnte das Netzteil sein. Können Sie das Gerät zu uns bringen? Kundin: Ja, das geht. Wann haben Sie denn geöffnet? Support: Montag bis Freitag von 9:00 bis 18:00 Uhr, samstags bis 14:00 Uhr. Kundin: Ich komme morgen Vormittag vorbei. Wie viel kostet eine Reparatur? Support: Die Diagnose ist kostenlos. Je nach Problem zwischen 50 und 150 Euro. Kundin: In Ordnung. Wo finde ich Sie denn? Support: Bahnhofstraße 12, direkt neben der Post. Großes Schild "PC-Service". Kundin: Perfekt. Bis morgen dann. Vielen Dank! Support: Gerne, Frau Weber. Bringen Sie alle Kabel mit. Bis morgen!`,
-        parts: [
-            { speaker: 'Support' }, 'Computer-Hilfe-Service, guten Tag, hier ist Martin Krause.',
-            { speaker: 'Kundin' }, 'Guten Tag. Mein Computer ', { answer: 'funktioniert', size: 13 }, ' nicht mehr richtig.',
-            { speaker: 'Support' }, 'Was für ', { answer: 'Probleme', size: 9 }, ' haben Sie denn genau, Frau Weber?',
-            { speaker: 'Kundin' }, 'Er startet nicht mehr. Ich drücke den Knopf, aber es passiert nichts.',
-            { speaker: 'Support' }, 'Ist das ', { answer: 'Kabel', size: 6 }, ' richtig eingesteckt? Schauen Sie mal nach der Steckdose.',
-            { speaker: 'Kundin' }, 'Moment... ja, alles ist eingesteckt. Aber es leuchtet kein Licht.',
-            { speaker: 'Support' }, 'Hmm, das könnte das ', { answer: 'Netzteil', size: 9 }, ' sein. Können Sie das Gerät zu uns bringen?',
-            { speaker: 'Kundin' }, 'Ja, das geht. Wann haben Sie denn ', { answer: 'geöffnet', size: 9 }, '?',
-            { speaker: 'Support' }, 'Montag bis Freitag von 9:00 bis 18:00 Uhr, samstags bis 14:00 Uhr.',
-            { speaker: 'Kundin' }, 'Ich komme morgen Vormittag vorbei. Wie viel kostet eine ', { answer: 'Reparatur', size: 10 }, '?',
-            { speaker: 'Support' }, 'Die Diagnose ist kostenlos. Je nach Problem zwischen 50 und 150 Euro.',
-            { speaker: 'Kundin' }, 'In Ordnung. Wo finde ich Sie denn?',
-            { speaker: 'Support' }, 'Bahnhofstraße 12, direkt neben der Post.',
-            { speaker: 'Kundin' }, 'Perfekt. Bis morgen dann. Vielen Dank!',
-            { speaker: 'Support' }, 'Gerne, Frau Weber. Bringen Sie alle Kabel mit. Bis morgen!',
-        ],
-        vocabulary: [
-            { german: "funktionieren", translations: { english: "to work / function", ukrainian: "працювати / функціонувати", polish: "działać", albanian: "të funksionoj" }},
-            { german: "das Problem", translations: { english: "the problem", ukrainian: "проблема", polish: "problem", albanian: "problemi" }},
-            { german: "starten", translations: { english: "to start", ukrainian: "запускати", polish: "uruchamiać", albanian: "të nis" }},
-            { german: "das Kabel", translations: { english: "the cable", ukrainian: "кабель", polish: "kabel", albanian: "kablloja" }},
-            { german: "eingesteckt", translations: { english: "plugged in", ukrainian: "включений в розетку", polish: "podłączony", albanian: "i futur në prizë" }},
-            { german: "das Netzteil", translations: { english: "the power supply", ukrainian: "блок живлення", polish: "zasilacz", albanian: "furnizuesi i energjisë" }},
-            { german: "das Gerät", translations: { english: "the device", ukrainian: "пристрій", polish: "urządzenie", albanian: "pajisja" }},
-            { german: "die Diagnose", translations: { english: "the diagnosis", ukrainian: "діагностика", polish: "diagnoza", albanian: "diagnoza" }},
-        ]
-    },
+    // {
+    //     id: 10, type: 'dialogue', title: 'Technical Support Call', level: 'A2', audioSrc: dialogue5Audio,
+    //     fullText: `Support: Computer-Hilfe-Service, guten Tag, hier ist Martin Krause. Kundin: Guten Tag, hier ist Elisabeth Weber. Mein Computer funktioniert nicht mehr richtig. Support: Was für Probleme haben Sie denn genau, Frau Weber? Kundin: Er startet nicht mehr. Ich drücke den Knopf, aber es passiert nichts. Support: Ist das Kabel richtig eingesteckt? Schauen Sie mal nach der Steckdose. Kundin: Moment... ja, alles ist eingesteckt. Aber es leuchtet kein Licht. Support: Hmm, das könnte das Netzteil sein. Können Sie das Gerät zu uns bringen? Kundin: Ja, das geht. Wann haben Sie denn geöffnet? Support: Montag bis Freitag von 9:00 bis 18:00 Uhr, samstags bis 14:00 Uhr. Kundin: Ich komme morgen Vormittag vorbei. Wie viel kostet eine Reparatur? Support: Die Diagnose ist kostenlos. Je nach Problem zwischen 50 und 150 Euro. Kundin: In Ordnung. Wo finde ich Sie denn? Support: Bahnhofstraße 12, direkt neben der Post. Großes Schild "PC-Service". Kundin: Perfekt. Bis morgen dann. Vielen Dank! Support: Gerne, Frau Weber. Bringen Sie alle Kabel mit. Bis morgen!`,
+    //     parts: [
+    //         { speaker: 'Support' }, 'Computer-Hilfe-Service, guten Tag, hier ist Martin Krause.',
+    //         { speaker: 'Kundin' }, 'Guten Tag. Mein Computer ', { answer: 'funktioniert', size: 13 }, ' nicht mehr richtig.',
+    //         { speaker: 'Support' }, 'Was für ', { answer: 'Probleme', size: 9 }, ' haben Sie denn genau, Frau Weber?',
+    //         { speaker: 'Kundin' }, 'Er startet nicht mehr. Ich drücke den Knopf, aber es passiert nichts.',
+    //         { speaker: 'Support' }, 'Ist das ', { answer: 'Kabel', size: 6 }, ' richtig eingesteckt? Schauen Sie mal nach der Steckdose.',
+    //         { speaker: 'Kundin' }, 'Moment... ja, alles ist eingesteckt. Aber es leuchtet kein Licht.',
+    //         { speaker: 'Support' }, 'Hmm, das könnte das ', { answer: 'Netzteil', size: 9 }, ' sein. Können Sie das Gerät zu uns bringen?',
+    //         { speaker: 'Kundin' }, 'Ja, das geht. Wann haben Sie denn ', { answer: 'geöffnet', size: 9 }, '?',
+    //         { speaker: 'Support' }, 'Montag bis Freitag von 9:00 bis 18:00 Uhr, samstags bis 14:00 Uhr.',
+    //         { speaker: 'Kundin' }, 'Ich komme morgen Vormittag vorbei. Wie viel kostet eine ', { answer: 'Reparatur', size: 10 }, '?',
+    //         { speaker: 'Support' }, 'Die Diagnose ist kostenlos. Je nach Problem zwischen 50 und 150 Euro.',
+    //         { speaker: 'Kundin' }, 'In Ordnung. Wo finde ich Sie denn?',
+    //         { speaker: 'Support' }, 'Bahnhofstraße 12, direkt neben der Post.',
+    //         { speaker: 'Kundin' }, 'Perfekt. Bis morgen dann. Vielen Dank!',
+    //         { speaker: 'Support' }, 'Gerne, Frau Weber. Bringen Sie alle Kabel mit. Bis morgen!',
+    //     ],
+    //     vocabulary: [
+    //         { german: "funktionieren", translations: { english: "to work / function", ukrainian: "працювати / функціонувати", polish: "działać", albanian: "të funksionoj" }},
+    //         { german: "das Problem", translations: { english: "the problem", ukrainian: "проблема", polish: "problem", albanian: "problemi" }},
+    //         { german: "starten", translations: { english: "to start", ukrainian: "запускати", polish: "uruchamiać", albanian: "të nis" }},
+    //         { german: "das Kabel", translations: { english: "the cable", ukrainian: "кабель", polish: "kabel", albanian: "kablloja" }},
+    //         { german: "eingesteckt", translations: { english: "plugged in", ukrainian: "включений в розетку", polish: "podłączony", albanian: "i futur në prizë" }},
+    //         { german: "das Netzteil", translations: { english: "the power supply", ukrainian: "блок живлення", polish: "zasilacz", albanian: "furnizuesi i energjisë" }},
+    //         { german: "das Gerät", translations: { english: "the device", ukrainian: "пристрій", polish: "urządzenie", albanian: "pajisja" }},
+    //         { german: "die Diagnose", translations: { english: "the diagnosis", ukrainian: "діагностика", polish: "diagnoza", albanian: "diagnoza" }},
+    //     ]
+    // },
     {
         id: 11, type: 'dialogue', title: 'Im Supermarkt einkaufen', level: 'A1', audioSrc: dialogue6Audio,
         fullText: `Verkäuferin: Guten Tag! Kann ich Ihnen helfen? Kunde: Ja, gerne. Wo finde ich denn die Milch? Verkäuferin: Die Milchprodukte sind ganz hinten rechts, neben dem Fleisch. Kunde: Danke schön. Und haben Sie auch Bio-Äpfel? Verkäuferin: Ja, die Bio-Äpfel sind im Obst- und Gemüsebereich, gleich am Eingang links. Kunde: Perfekt! Was kostet ein Kilo Äpfel? Verkäuferin: Die Bio-Äpfel kosten 3,50 Euro pro Kilo. Kunde: Das ist okay. Können Sie mir noch sagen, wo ich Brot finde? Verkäuferin: Natürlich! Die Bäckerei ist dort drüben, neben der Kasse. Kunde: Vielen Dank für Ihre Hilfe! Verkäuferin: Gern geschehen. Einen schönen Tag noch!`,
@@ -1173,40 +1173,69 @@ const learningContent: LearningContent[] = [
 
 
 // --- CHILD COMPONENTS ---
-
+// Component implementations
 const Header = React.memo(() => (
   <div className="text-center mb-4 sm:mb-8">
     <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">German Learning Hub</h1>
     <p className="text-md sm:text-lg text-gray-600">Flashcards, Listening & Grammar</p>
   </div>
 ));
-Header.displayName = "Header";
 
 const ModeSwitcher = React.memo(({ mode, setMode, t }: { mode: string, setMode: (mode: string) => void, t: LanguageStrings }) => (
-    <div className="flex justify-center mb-8">
-        <div className="flex flex-wrap justify-center p-1 bg-gray-200 rounded-xl gap-1">
-            <button 
-                onClick={() => setMode('flashcards')}
-                className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'flashcards' ? 'bg-white text-blue-600 shadow-md' : 'text-gray-600'}`}
-            >
-                <BookOpen size={20} /> {t.flashcards}
-            </button>
-            <button 
-                onClick={() => setMode('listeningPractice')}
-                className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'listeningPractice' ? 'bg-white text-green-600 shadow-md' : 'text-gray-600'}`}
-            >
-                <Ear size={20} /> {t.listeningPractice}
-            </button>
-            <button 
-                onClick={() => setMode('grammarPractice')}
-                className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'grammarPractice' ? 'bg-white text-purple-600 shadow-md' : 'text-gray-600'}`}
-            >
-                <BrainCircuit size={20} /> {t.grammarPractice}
-            </button>
-        </div>
+  <div className="flex justify-center mb-6">
+    <div className="flex flex-wrap justify-center p-1 bg-gray-200 rounded-xl gap-1">
+      <button 
+        onClick={() => setMode('flashcards')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'flashcards' ? 'bg-white text-blue-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <BookOpen size={20} /> {t.flashcards}
+      </button>
+      <button 
+        onClick={() => setMode('listeningPractice')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'listeningPractice' ? 'bg-white text-green-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <Ear size={20} /> {t.listeningPractice}
+      </button>
+      <button 
+        onClick={() => setMode('grammarPractice')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'grammarPractice' ? 'bg-white text-purple-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <BrainCircuit size={20} /> {t.grammarPractice}
+      </button>
     </div>
+  </div>
 ));
-ModeSwitcher.displayName = "ModeSwitcher";
+
+// Mobile Sidebar Component
+const MobileSidebar = ({ isOpen, onClose, children }: { isOpen: boolean, onClose: () => void, children: React.ReactNode }) => (
+  <>
+    {/* Backdrop */}
+    {isOpen && (
+      <div 
+        className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+        onClick={onClose}
+      />
+    )}
+    
+    {/* Sidebar */}
+    <div className={`fixed top-0 left-0 h-full w-80 bg-white shadow-xl z-50 transform transition-transform duration-300 lg:hidden ${
+      isOpen ? 'translate-x-0' : '-translate-x-full'
+    }`}>
+      <div className="p-4 border-b flex justify-between items-center">
+        <h3 className="text-lg font-semibold">Menu</h3>
+        <button
+          onClick={onClose}
+          className="p-2 hover:bg-gray-100 rounded-lg"
+        >
+          <X size={20} />
+        </button>
+      </div>
+      <div className="p-4 overflow-y-auto h-full">
+        {children}
+      </div>
+    </div>
+  </>
+);
 
 const SectionSelector = React.memo(({ t, selectedSections, onToggle, onSelectAll }: {
   t: LanguageStrings,
@@ -1214,7 +1243,7 @@ const SectionSelector = React.memo(({ t, selectedSections, onToggle, onSelectAll
   onToggle: (section: number) => void,
   onSelectAll: () => void
 }) => (
-  <aside className="w-full p-6 bg-white rounded-xl shadow-lg">
+  <div className="bg-white rounded-xl shadow-lg p-6">
     <h3 className="text-xl font-bold mb-4">{t.selectSections}</h3>
     <div className="flex flex-col gap-2 mb-4">
       {ALL_SECTIONS.map(section => (
@@ -1237,11 +1266,9 @@ const SectionSelector = React.memo(({ t, selectedSections, onToggle, onSelectAll
     >
       {t.allSections}
     </button>
-  </aside>
+  </div>
 ));
-SectionSelector.displayName = "SectionSelector";
 
-// NEW: The Flashcard component is updated to display a play button.
 const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t, audioSrc, onPlayAudio }: {
   isFlipped: boolean,
   onFlip: () => void,
@@ -1258,10 +1285,9 @@ const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t, audio
       onClick={onFlip}
     >
       <div className="absolute w-full h-full bg-white rounded-xl shadow-lg flex items-center justify-center p-8 backface-hidden">
-        {/* NEW: Play Audio Button */}
         {audioSrc && (
           <button
-            onClick={onPlayAudio} // This handler function will stop propagation
+            onClick={onPlayAudio}
             className="absolute top-4 right-4 p-2 rounded-full text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-colors z-10"
             aria-label="Play audio"
           >
@@ -1282,408 +1308,415 @@ const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t, audio
     </div>
   </div>
 ));
-Flashcard.displayName = "Flashcard";
-
 
 const CardControls = React.memo(({ t, onPrev, onNext, onShuffle, onReset }: {
-    t: LanguageStrings,
-    onPrev: () => void,
-    onNext: () => void,
-    onShuffle: () => void,
-    onReset: () => void
+  t: LanguageStrings,
+  onPrev: () => void,
+  onNext: () => void,
+  onShuffle: () => void,
+  onReset: () => void
 }) => (
-    <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mt-6">
-        <div className="flex gap-4">
-          <button onClick={onPrev} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-blue-500 hover:bg-blue-600 sm:w-28">
-              <ChevronLeft size={20} /> {t.previous}
-          </button>
-          <button onClick={onNext} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-blue-500 hover:bg-blue-600 sm:w-28">
-              {t.next} <ChevronRight size={20} />
-          </button>
-        </div>
-        <div className="flex gap-4">
-             <button onClick={onShuffle} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-purple-500 hover:bg-purple-600 sm:w-28">
-                <Shuffle size={16} /> {t.shuffle}
-            </button>
-            <button onClick={onReset} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-gray-500 hover:bg-gray-600 sm:w-28">
-                <RotateCcw size={16} /> {t.reset}
-            </button>
-        </div>
+  <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mt-6">
+    <div className="flex gap-4">
+      <button onClick={onPrev} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-blue-500 hover:bg-blue-600 sm:w-28">
+        <ChevronLeft size={20} /> {t.previous}
+      </button>
+      <button onClick={onNext} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-blue-500 hover:bg-blue-600 sm:w-28">
+        {t.next} <ChevronRight size={20} />
+      </button>
     </div>
+    <div className="flex gap-4">
+      <button onClick={onShuffle} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-purple-500 hover:bg-purple-600 sm:w-28">
+        <Shuffle size={16} /> {t.shuffle}
+      </button>
+      <button onClick={onReset} className="px-4 py-2 text-white font-semibold rounded-lg transition-colors flex justify-center items-center gap-2 bg-gray-500 hover:bg-gray-600 sm:w-28">
+        <RotateCcw size={16} /> {t.reset}
+      </button>
+    </div>
+  </div>
 ));
-CardControls.displayName = "CardControls";
-
 
 const ProgressBar = React.memo(({ current, total }: { current: number, total: number }) => (
-    <div className="mt-6">
-        <div className="w-full bg-gray-200 rounded-full h-2.5">
-            <div
-                className="bg-green-500 h-2.5 rounded-full transition-all duration-300"
-                style={{ width: total > 0 ? `${(current / total) * 100}%` : '0%' }}
-            />
-        </div>
+  <div className="mt-6">
+    <div className="w-full bg-gray-200 rounded-full h-2.5">
+      <div
+        className="bg-green-500 h-2.5 rounded-full transition-all duration-300"
+        style={{ width: total > 0 ? `${(current / total) * 100}%` : '0%' }}
+      />
     </div>
+  </div>
 ));
-ProgressBar.displayName = "ProgressBar";
 
 const StudyTips = React.memo(({ t }: { t: LanguageStrings }) => (
-    <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-        <h3 className="font-semibold text-yellow-800 mb-2">{t.studyTips}:</h3>
-        <ul className="text-sm text-yellow-700 space-y-1 list-disc list-inside">
-            <li>{t.tip1}</li>
-            <li>{t.tip2}</li>
-            <li>{t.tip3}</li>
-            <li>{t.tip4}</li>
-        </ul>
-    </div>
+  <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+    <h3 className="font-semibold text-yellow-800 mb-2">{t.studyTips}:</h3>
+    <ul className="text-sm text-yellow-700 space-y-1 list-disc list-inside">
+      <li>{t.tip1}</li>
+      <li>{t.tip2}</li>
+      <li>{t.tip3}</li>
+      <li>{t.tip4}</li>
+    </ul>
+  </div>
 ));
-StudyTips.displayName = "StudyTips";
 
 const VocabularyList = React.memo(({ vocab, currentLanguage, t }: { vocab: Card[], currentLanguage: LanguageKey, t: LanguageStrings }) => (
-    <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg animate-fade-in">
-        <h4 className="font-bold text-blue-800 mb-3">{t.keyVocabulary}</h4>
-        <ul className="space-y-2">
-            {vocab.map((item, index) => (
-                <li key={index} className="flex justify-between items-center text-sm">
-                    <span className="font-semibold text-gray-700">{item.german}</span>
-                    <span className="text-blue-700 text-right">{item.translations[currentLanguage]}</span>
-                </li>
-            ))}
-        </ul>
-    </div>
+  <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+    <h4 className="font-bold text-blue-800 mb-3">{t.keyVocabulary}</h4>
+    <ul className="space-y-2">
+      {vocab.map((item, index) => (
+        <li key={index} className="flex justify-between items-center text-sm">
+          <span className="font-semibold text-gray-700">{item.german}</span>
+          <span className="text-blue-700 text-right">{item.translations[currentLanguage]}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
 ));
-VocabularyList.displayName = "VocabularyList";
 
-interface AudioProgressBarProps {
-    duration: number;
-    currentTime: number;
-    onSeek: (time: number) => void;
-}
-
-const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: AudioProgressBarProps) => {
-    const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
-    const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
-        const progressBar = e.currentTarget;
-        const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
-        const percentage = clickPosition / progressBar.offsetWidth;
-        onSeek(duration * percentage);
-    };
-    const formatTime = (seconds: number) => {
-        if (isNaN(seconds) || seconds < 0) return '0:00';
-        const floorSeconds = Math.floor(seconds);
-        const mins = Math.floor(floorSeconds / 60);
-        const secs = floorSeconds % 60;
-        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-    };
-    return (
-        <div className="flex items-center gap-3 w-full">
-            <span className="text-xs font-mono text-gray-500 w-10 text-right">{formatTime(currentTime)}</span>
-            <div 
-                className="w-full bg-gray-200 rounded-full h-2 cursor-pointer group"
-                onClick={handleSeek}
-            >
-                <div 
-                    className="bg-blue-500 h-2 rounded-full relative" 
-                    style={{ width: `${progress}%` }}
-                >
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-            </div>
-            <span className="text-xs font-mono text-gray-500 w-10">{formatTime(duration)}</span>
+const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: {
+  duration: number;
+  currentTime: number;
+  onSeek: (time: number) => void;
+}) => {
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+    const progressBar = e.currentTarget;
+    const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
+    const percentage = clickPosition / progressBar.offsetWidth;
+    onSeek(duration * percentage);
+  };
+  const formatTime = (seconds: number) => {
+    if (isNaN(seconds) || seconds < 0) return '0:00';
+    const floorSeconds = Math.floor(seconds);
+    const mins = Math.floor(floorSeconds / 60);
+    const secs = floorSeconds % 60;
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+  return (
+    <div className="flex items-center gap-3 w-full">
+      <span className="text-xs font-mono text-gray-500 w-10 text-right">{formatTime(currentTime)}</span>
+      <div 
+        className="w-full bg-gray-200 rounded-full h-2 cursor-pointer group"
+        onClick={handleSeek}
+      >
+        <div 
+          className="bg-blue-500 h-2 rounded-full relative" 
+          style={{ width: `${progress}%` }}
+        >
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
-    );
+      </div>
+      <span className="text-xs font-mono text-gray-500 w-10">{formatTime(duration)}</span>
+    </div>
+  );
 });
-AudioProgressBar.displayName = "AudioProgressBar";
-
-interface AudioControlBarProps {
-    t: LanguageStrings;
-    title: string;
-    isPlaying: boolean;
-    togglePlayPause: () => void;
-    duration: number;
-    currentTime: number;
-    onSeek: (time: number) => void;
-    checkAnswers: () => void;
-    setShowAnswers: Dispatch<SetStateAction<boolean>>;
-    setIsVocabVisible: Dispatch<SetStateAction<boolean>>;
-}
 
 const AudioControlBar = React.memo(({ 
-    t, 
-    title, 
-    isPlaying, 
-    togglePlayPause,
-    duration,
-    currentTime,
-    onSeek,
-    checkAnswers,
-    setShowAnswers,
-    setIsVocabVisible,
-}: AudioControlBarProps) => (
-    <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-sm shadow-md p-4 rounded-xl mb-6 -mx-6 -mt-8 sm:-mx-8 sm:-mt-8">
-        <div className="flex flex-col sm:flex-row items-center gap-4">
+  t, 
+  title, 
+  isPlaying, 
+  togglePlayPause,
+  duration,
+  currentTime,
+  onSeek,
+  checkAnswers,
+  setShowAnswers,
+  setIsVocabVisible,
+}: {
+  t: LanguageStrings;
+  title: string;
+  isPlaying: boolean;
+  togglePlayPause: () => void;
+  duration: number;
+  currentTime: number;
+  onSeek: (time: number) => void;
+  checkAnswers: () => void;
+  setShowAnswers: Dispatch<SetStateAction<boolean>>;
+  setIsVocabVisible: Dispatch<SetStateAction<boolean>>;
+}) => (
+  <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-sm shadow-md p-4 rounded-xl mb-6">
+    <div className="flex flex-col sm:flex-row items-center gap-4">
+      <button
+        onClick={togglePlayPause}
+        className="flex-shrink-0 w-14 h-14 rounded-full text-white font-semibold flex items-center justify-center transition-colors bg-blue-500 hover:bg-blue-600 shadow-lg"
+        aria-label={isPlaying ? t.pauseAudio : t.playAudio}
+      >
+        {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
+      </button>
+      <div className="w-full flex flex-col gap-2">
+        <div className="flex justify-between items-center">
+          <h3 className="text-lg font-bold text-gray-800 truncate" title={title}>{title}</h3>
+          <div className="flex items-center gap-1 sm:gap-2">
             <button
-                onClick={togglePlayPause}
-                className="flex-shrink-0 w-14 h-14 rounded-full text-white font-semibold flex items-center justify-center transition-colors bg-blue-500 hover:bg-blue-600 shadow-lg"
-                aria-label={isPlaying ? t.pauseAudio : t.playAudio}
+              onClick={checkAnswers}
+              className="p-2 rounded-full text-gray-600 hover:bg-green-100 hover:text-green-600 transition-colors"
+              title={t.checkAnswers}
             >
-                {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
+              <CheckCircle2 size={20} />
             </button>
-            <div className="w-full flex flex-col gap-2">
-                <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-bold text-gray-800 truncate" title={title}>{title}</h3>
-                    <div className="flex items-center gap-1 sm:gap-2">
-                         <button
-                            onClick={checkAnswers}
-                            className="p-2 rounded-full text-gray-600 hover:bg-green-100 hover:text-green-600 transition-colors"
-                            title={t.checkAnswers}
-                        >
-                            <CheckCircle2 size={20} />
-                        </button>
-                        <button
-                            onClick={() => setShowAnswers(prev => !prev)}
-                             className="p-2 rounded-full text-gray-600 hover:bg-yellow-100 hover:text-yellow-600 transition-colors"
-                             title={t.showAnswers}
-                        >
-                            <Eye size={20} />
-                        </button>
-                        <button
-                            onClick={() => setIsVocabVisible(prev => !prev)}
-                             className="p-2 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-colors"
-                             title={t.keyVocabulary}
-                        >
-                            <BookOpen size={20} />
-                        </button>
-                    </div>
-                </div>
-                <AudioProgressBar duration={duration} currentTime={currentTime} onSeek={onSeek} />
-            </div>
+            <button
+              onClick={() => setShowAnswers(prev => !prev)}
+              className="p-2 rounded-full text-gray-600 hover:bg-yellow-100 hover:text-yellow-600 transition-colors"
+              title={t.showAnswers}
+            >
+              <Eye size={20} />
+            </button>
+            <button
+              onClick={() => setIsVocabVisible(prev => !prev)}
+              className="p-2 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-colors"
+              title={t.keyVocabulary}
+            >
+              <BookOpen size={20} />
+            </button>
+          </div>
         </div>
+        <AudioProgressBar duration={duration} currentTime={currentTime} onSeek={onSeek} />
+      </div>
     </div>
+  </div>
 ));
-AudioControlBar.displayName = "AudioControlBar";
 
 const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLanguage: LanguageKey }) => {
-    const [selectedContentId, setSelectedContentId] = useState<number>(learningContent[0].id);
-    const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
-    const [results, setResults] = useState<Record<number, 'correct' | 'incorrect' | null>>({});
-    const [showAnswers, setShowAnswers] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isVocabVisible, setIsVocabVisible] = useState(false);
+  const [selectedContentId, setSelectedContentId] = useState<number>(learningContent[0].id);
+  const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
+  const [results, setResults] = useState<Record<number, 'correct' | 'incorrect' | null>>({});
+  const [showAnswers, setShowAnswers] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isVocabVisible, setIsVocabVisible] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const audioRef = useRef(new Audio());
+  const mainContentRef = useRef<HTMLElement>(null);
+
+  const selectedContent = useMemo(() => learningContent.find(p => p.id === selectedContentId)!, [selectedContentId]);
+  const blanks = useMemo(() => selectedContent.parts.filter(p => typeof p === 'object' && 'answer' in p) as Blank[], [selectedContent]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    audio.pause();
+    audio.src = selectedContent.audioSrc;
     
-    const [duration, setDuration] = useState(0);
-    const [currentTime, setCurrentTime] = useState(0);
-
-    const audioRef = useRef(new Audio());
-    const mainContentRef = useRef<HTMLElement>(null);
-
-    const selectedContent = useMemo(() => learningContent.find(p => p.id === selectedContentId)!, [selectedContentId]);
-    const blanks = useMemo(() => selectedContent.parts.filter(p => typeof p === 'object' && 'answer' in p) as Blank[], [selectedContent]);
-
-    useEffect(() => {
-        const audio = audioRef.current;
-        audio.pause();
-        audio.src = selectedContent.audioSrc;
-        
-        const setAudioData = () => {
-            setDuration(audio.duration);
-            setCurrentTime(audio.currentTime);
-        }
-        const setAudioTime = () => setCurrentTime(audio.currentTime);
-
-        const handlePlay = () => setIsPlaying(true);
-        const handlePause = () => setIsPlaying(false);
-        const handleEnded = () => {
-          setIsPlaying(false);
-          setCurrentTime(0);
-        };
-        
-        audio.addEventListener('loadedmetadata', setAudioData);
-        audio.addEventListener('timeupdate', setAudioTime);
-        audio.addEventListener('play', handlePlay);
-        audio.addEventListener('pause', handlePause);
-        audio.addEventListener('ended', handleEnded);
-
-        return () => {
-            audio.pause();
-            audio.removeEventListener('loadedmetadata', setAudioData);
-            audio.removeEventListener('timeupdate', setAudioTime);
-            audio.removeEventListener('play', handlePlay);
-            audio.removeEventListener('pause', handlePause);
-            audio.removeEventListener('ended', handleEnded);
-        };
-    }, [selectedContent.audioSrc]);
-
-    const resetState = useCallback(() => {
-        const initialAnswers: Record<number, string> = {};
-        blanks.forEach((_, index) => { initialAnswers[index] = ''; });
-        setUserAnswers(initialAnswers);
-        setResults({});
-        setShowAnswers(false);
-        setIsVocabVisible(false);
-        setCurrentTime(0);
-        audioRef.current.currentTime = 0;
-        audioRef.current.pause();
-        if(mainContentRef.current) {
-          mainContentRef.current.parentElement?.scrollTo(0, 0);
-        }
-    }, [blanks]);
-    
-    useEffect(() => {
-        resetState();
-    }, [selectedContentId, resetState]);
-
-    const handleAnswerChange = (index: number, value: string) => {
-        setUserAnswers(prev => ({ ...prev, [index]: value }));
-        if (results[index]) {
-            setResults(prev => ({ ...prev, [index]: null }));
-        }
+    const setAudioData = () => {
+      setDuration(audio.duration);
+      setCurrentTime(audio.currentTime);
+    }
+    const setAudioTime = () => setCurrentTime(audio.currentTime);
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setCurrentTime(0);
     };
     
-    const togglePlayPause = useCallback(() => {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play().catch(error => console.error("Error playing audio:", error));
-        }
-    }, [isPlaying]);
+    audio.addEventListener('loadedmetadata', setAudioData);
+    audio.addEventListener('timeupdate', setAudioTime);
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('ended', handleEnded);
 
-    const handleSeek = useCallback((time: number) => {
-        audioRef.current.currentTime = time;
-        setCurrentTime(time);
-    }, []);
-
-    const checkAnswers = () => {
-        const newResults: Record<number, 'correct' | 'incorrect' | null> = {};
-        blanks.forEach((blank, index) => {
-            const correctAnswer = blank.answer;
-            const userAnswer = userAnswers[index] || '';
-            newResults[index] = userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase() ? 'correct' : 'incorrect';
-        });
-        setResults(newResults);
-        setShowAnswers(false);
+    return () => {
+      audio.pause();
+      audio.removeEventListener('loadedmetadata', setAudioData);
+      audio.removeEventListener('timeupdate', setAudioTime);
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('ended', handleEnded);
     };
+  }, [selectedContent.audioSrc]);
 
-    let blankCounter = -1;
+  const resetState = useCallback(() => {
+    const initialAnswers: Record<number, string> = {};
+    blanks.forEach((_, index) => { initialAnswers[index] = ''; });
+    setUserAnswers(initialAnswers);
+    setResults({});
+    setShowAnswers(false);
+    setIsVocabVisible(false);
+    setCurrentTime(0);
+    audioRef.current.currentTime = 0;
+    audioRef.current.pause();
+    if(mainContentRef.current) {
+      mainContentRef.current.parentElement?.scrollTo(0, 0);
+    }
+  }, [blanks]);
+  
+  useEffect(() => {
+    resetState();
+  }, [selectedContentId, resetState]);
 
-    return (
-        <div className="flex flex-col lg:flex-row gap-8">
-            <aside className="w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto custom-scrollbar">
-                <div className="p-6 bg-white rounded-xl shadow-lg">
-                    <h3 className="text-xl font-bold mb-4">{t.selectPassage}</h3>
-                    <div className="flex flex-col gap-2">
-                        {learningContent.map(content => (
-                            <button
-                                key={content.id}
-                                onClick={() => setSelectedContentId(content.id)}
-                                className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm flex items-center gap-3 ${
-                                    selectedContentId === content.id
-                                    ? 'bg-green-500 text-white shadow-md'
-                                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                                }`}
-                            >
-                                {content.type === 'dialogue' ? <Users size={16} className="opacity-70 flex-shrink-0"/> : <User size={16} className="opacity-70 flex-shrink-0"/>}
-                                <span className="flex-grow font-semibold">
-                                    {content.title} <span className="font-normal opacity-80">({content.level})</span>
-                                </span>
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </aside>
-            
-            <div className="w-full lg:w-2/3 lg:max-h-[80vh] overflow-y-auto custom-scrollbar rounded-xl shadow-lg bg-white">
-                <main ref={mainContentRef} className="p-6 sm:p-8 relative">
-                    <AudioControlBar
-                        t={t}
-                        title={selectedContent.title}
-                        isPlaying={isPlaying}
-                        togglePlayPause={togglePlayPause}
-                        duration={duration}
-                        currentTime={currentTime}
-                        onSeek={handleSeek}
-                        checkAnswers={checkAnswers}
-                        setShowAnswers={setShowAnswers}
-                        setIsVocabVisible={setIsVocabVisible}
+  const handleAnswerChange = (index: number, value: string) => {
+    setUserAnswers(prev => ({ ...prev, [index]: value }));
+    if (results[index]) {
+      setResults(prev => ({ ...prev, [index]: null }));
+    }
+  };
+  
+  const togglePlayPause = useCallback(() => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch(error => console.error("Error playing audio:", error));
+    }
+  }, [isPlaying]);
+
+  const handleSeek = useCallback((time: number) => {
+    audioRef.current.currentTime = time;
+    setCurrentTime(time);
+  }, []);
+
+  const checkAnswers = () => {
+    const newResults: Record<number, 'correct' | 'incorrect' | null> = {};
+    blanks.forEach((blank, index) => {
+      const correctAnswer = blank.answer;
+      const userAnswer = userAnswers[index] || '';
+      newResults[index] = userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase() ? 'correct' : 'incorrect';
+    });
+    setResults(newResults);
+    setShowAnswers(false);
+  };
+
+  const handleContentSelect = (contentId: number) => {
+    setSelectedContentId(contentId);
+    setIsSidebarOpen(false); // Close sidebar on mobile after selection
+  };
+
+  let blankCounter = -1;
+
+  const sidebarContent = (
+    <div className="bg-white rounded-xl shadow-lg p-6 lg:p-6">
+      <h3 className="text-xl font-bold mb-4">{t.selectPassage}</h3>
+      <div className="flex flex-col gap-2">
+        {learningContent.map(content => (
+          <button
+            key={content.id}
+            onClick={() => handleContentSelect(content.id)}
+            className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm flex items-center gap-3 ${
+              selectedContentId === content.id
+              ? 'bg-green-500 text-white shadow-md'
+              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+            }`}
+          >
+            {content.type === 'dialogue' ? <Users size={16} className="opacity-70 flex-shrink-0"/> : <User size={16} className="opacity-70 flex-shrink-0"/>}
+            <span className="flex-grow font-semibold">
+              {content.title} <span className="font-normal opacity-80">({content.level})</span>
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col lg:flex-row gap-8">
+      {/* Mobile menu button */}
+      <button
+        onClick={() => setIsSidebarOpen(true)}
+        className="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center z-30 hover:bg-blue-600 transition-colors"
+      >
+        <Menu size={24} />
+      </button>
+
+      {/* Mobile Sidebar */}
+      <MobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
+        {sidebarContent}
+      </MobileSidebar>
+
+      {/* Desktop Sidebar */}
+      <aside className="hidden lg:block w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto">
+        {sidebarContent}
+      </aside>
+      
+      {/* Main Content */}
+      <div className="w-full lg:w-2/3 lg:max-h-[80vh] overflow-y-auto rounded-xl shadow-lg bg-white">
+        <main ref={mainContentRef} className="p-6 sm:p-8 relative">
+          <AudioControlBar
+            t={t}
+            title={selectedContent.title}
+            isPlaying={isPlaying}
+            togglePlayPause={togglePlayPause}
+            duration={duration}
+            currentTime={currentTime}
+            onSeek={handleSeek}
+            checkAnswers={checkAnswers}
+            setShowAnswers={setShowAnswers}
+            setIsVocabVisible={setIsVocabVisible}
+          />
+
+          <p className="text-gray-600 mb-8 text-center">{t.passageInstructions}</p>
+          
+          <div className="prose max-w-none text-xl leading-loose">
+            {selectedContent.parts.map((part, partIndex) => {
+              if (typeof part === 'object' && 'speaker' in part) {
+                return (
+                  <div key={partIndex} className="mt-5 first:mt-0">
+                    <strong className="font-semibold text-gray-900 block mb-1">{part.speaker}:</strong>
+                  </div>
+                );
+              }
+
+              if (typeof part === 'object' && 'answer' in part) {
+                blankCounter++;
+                const blankIndex = blankCounter;
+                const result = results[blankIndex];
+                const isCorrect = result === 'correct';
+                const isIncorrect = result === 'incorrect';
+
+                const inputClassName = `mx-1.5 inline-block bg-gray-100 rounded-md border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 text-xl px-2 py-0.5
+                    ${isCorrect ? 'ring-2 ring-green-500 border-transparent' : ''}
+                    ${isIncorrect ? 'ring-2 ring-red-500 border-transparent' : ''}
+                    ${!result ? 'focus:ring-blue-500' : ''}
+                `;
+                
+                return (
+                  <span key={partIndex} className="inline-block relative align-baseline">
+                    <input 
+                      type="text"
+                      value={showAnswers ? part.answer : (userAnswers[blankIndex] || '')}
+                      onChange={e => handleAnswerChange(blankIndex, e.target.value)}
+                      disabled={showAnswers}
+                      style={{ width: `${part.size * 1.1}ch`, minWidth: '5ch' }}
+                      className={inputClassName}
+                      aria-label={`Blank ${blankIndex + 1}`}
                     />
+                    {isCorrect && <CheckCircle2 size={18} className="absolute -right-2 top-0 text-green-500 bg-white rounded-full"/>}
+                    {isIncorrect && <XCircle size={18} className="absolute -right-2 top-0 text-red-500 bg-white rounded-full"/>}
+                  </span>
+                );
+              }
+              
+              return <span key={partIndex}>{part}</span>;
+            })}
+          </div>
 
-                    <p className="text-gray-600 mb-8 text-center">{t.passageInstructions}</p>
-                    
-                    <div className="prose max-w-none text-xl leading-loose">
-                        {selectedContent.parts.map((part, partIndex) => {
-                            if (typeof part === 'object' && 'speaker' in part) {
-                                return (
-                                    <div key={partIndex} className="mt-5 first:mt-0">
-                                        <strong className="font-semibold text-gray-900 block mb-1">{part.speaker}:</strong>
-                                    </div>
-                                );
-                            }
-
-                            if (typeof part === 'object' && 'answer' in part) {
-                                blankCounter++;
-                                const blankIndex = blankCounter;
-                                const result = results[blankIndex];
-                                const isCorrect = result === 'correct';
-                                const isIncorrect = result === 'incorrect';
-
-                                const inputClassName = `mx-1.5 inline-block bg-gray-100 rounded-md border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 text-xl px-2 py-0.5
-                                    ${isCorrect ? 'ring-2 ring-green-500 border-transparent' : ''}
-                                    ${isIncorrect ? 'ring-2 ring-red-500 border-transparent' : ''}
-                                    ${!result ? 'focus:ring-blue-500' : ''}
-                                `;
-                                
-                                return (
-                                    <span key={partIndex} className="inline-block relative align-baseline">
-                                        <input 
-                                            type="text"
-                                            value={showAnswers ? part.answer : (userAnswers[blankIndex] || '')}
-                                            onChange={e => handleAnswerChange(blankIndex, e.target.value)}
-                                            disabled={showAnswers}
-                                            style={{ width: `${part.size * 1.1}ch`, minWidth: '5ch' }}
-                                            className={inputClassName}
-                                            aria-label={`Blank ${blankIndex + 1}`}
-                                        />
-                                        {isCorrect && <CheckCircle2 size={18} className="absolute -right-2 top-0 text-green-500 bg-white rounded-full"/>}
-                                        {isIncorrect && <XCircle size={18} className="absolute -right-2 top-0 text-red-500 bg-white rounded-full"/>}
-                                    </span>
-                                );
-                            }
-                            
-                            return <span key={partIndex}>{part}</span>;
-                        })}
-                    </div>
-
-                    {isVocabVisible && selectedContent.vocabulary && (
-                        <div className="mt-10 pt-6 border-t">
-                            <VocabularyList 
-                                vocab={selectedContent.vocabulary} 
-                                currentLanguage={currentLanguage}
-                                t={t}
-                            />
-                        </div>
-                    )}
-                </main>
+          {isVocabVisible && selectedContent.vocabulary && (
+            <div className="mt-10 pt-6 border-t">
+              <VocabularyList 
+                vocab={selectedContent.vocabulary} 
+                currentLanguage={currentLanguage}
+                t={t}
+              />
             </div>
-        </div>
-    );
+          )}
+        </main>
+      </div>
+    </div>
+  );
 };
-ListeningPracticeMode.displayName = "ListeningPracticeMode";
 
-// NEW: FlashcardMode is updated to handle audio playback.
 const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLanguage: LanguageKey }) => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showGermanFirst, setShowGermanFirst] = useState(true);
   const [selectedSections, setSelectedSections] = useState(ALL_SECTIONS);
   const [shuffledCards, setShuffledCards] = useState<Card[]>([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
-  // NEW: Ref to hold the single audio player instance.
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // NEW: Initialize the audio player on component mount.
   useEffect(() => {
     audioRef.current = new Audio();
-    // Clean up on unmount
     return () => {
         if (audioRef.current) {
             audioRef.current.pause();
@@ -1731,184 +1764,164 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
         ? prev.length > 1 ? prev.filter(s => s !== section) : prev
         : [...prev, section].sort((a, b) => a - b)
     );
+    setIsSidebarOpen(false); // Close sidebar after selection on mobile
   }, []);
 
   const selectAllSections = useCallback(() => {
     setSelectedSections(ALL_SECTIONS);
+    setIsSidebarOpen(false); // Close sidebar after selection on mobile
   }, []);
 
   const currentFlashcard = shuffledCards[currentCardIndex];
 
-const handlePlayAudio = useCallback((event: React.MouseEvent) => {
-    // 1. Stop the event from flipping the card
+  const handlePlayAudio = useCallback((event: React.MouseEvent) => {
     event.stopPropagation(); 
-
     const audio = audioRef.current;
     const audioSrc = currentFlashcard?.audioSrc;
 
-    // 2. Make sure we have everything we need
     if (!audio || !audioSrc) {
         console.error("Audio player or audio source is missing.");
         return;
     }
     
-    // 3. Simple function to play the audio and catch errors
     const playAudio = () => {
-        // We set currentTime to 0 to allow replaying the same sound
         audio.currentTime = 0;
         audio.play().catch(e => {
             console.error("Error playing audio:", e);
-            // This provides detailed debug info if it still fails
-            console.log("Audio Element State:", { 
-                src: audio.src, 
-                error: audio.error, 
-                readyState: audio.readyState 
-            });
         });
     };
 
-    // 4. Check if the correct audio is already loaded
     if (audio.src.endsWith(audioSrc)) {
-        // If it's the right audio, just play it again.
         playAudio();
     } else {
-        // If it's a new audio file, we need to load it first.
         audio.src = audioSrc;
-
-        // Create a one-time event listener to play the audio as soon as it's ready.
-        // 'canplaythrough' is the most reliable event for this.
         const onCanPlay = () => {
             playAudio();
-            // Clean up the listener so it doesn't fire again for this audio file.
             audio.removeEventListener('canplaythrough', onCanPlay);
         };
-        
         audio.addEventListener('canplaythrough', onCanPlay);
-
-        // Also, add an error listener in case the file can't be found or is corrupt
-        const onError = () => {
-            console.error("Failed to load audio source:", audioSrc);
-            audio.removeEventListener('error', onError);
-        }
-        audio.addEventListener('error', onError);
     }
-
-}, [currentFlashcard]); // Dependency is correct
+  }, [currentFlashcard]);
 
   const frontText = showGermanFirst ? currentFlashcard?.german : currentFlashcard?.translations[currentLanguage];
   const backText = showGermanFirst ? currentFlashcard?.translations[currentLanguage] : currentFlashcard?.german;
 
+  const sidebarContent = (
+    <SectionSelector
+      t={t}
+      selectedSections={selectedSections}
+      onToggle={toggleSection}
+      onSelectAll={selectAllSections}
+    />
+  );
+
   return (
     <div className="flex flex-col lg:flex-row gap-8">
-      <div className="w-full lg:w-1/3">
-        <SectionSelector
-          t={t}
-          selectedSections={selectedSections}
-          onToggle={toggleSection}
-          onSelectAll={selectAllSections}
-        />
+      {/* Mobile menu button */}
+      <button
+        onClick={() => setIsSidebarOpen(true)}
+        className="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center z-30 hover:bg-blue-600 transition-colors"
+      >
+        <Menu size={24} />
+      </button>
+
+      {/* Mobile Sidebar */}
+      <MobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
+        {sidebarContent}
+      </MobileSidebar>
+
+      {/* Desktop Sidebar */}
+      <div className="hidden lg:block w-full lg:w-1/3">
+        {sidebarContent}
       </div>
+
+      {/* Main Content */}
       <main className="w-full lg:w-2/3">
         {!currentFlashcard ? (
-            <div className="text-center p-10 bg-white rounded-xl shadow-lg h-full flex flex-col justify-center items-center">
-                <BookOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">Select a Section</h2>
-                <p className="text-gray-600">Please choose a vocabulary section to start learning.</p>
-            </div>
+          <div className="text-center p-10 bg-white rounded-xl shadow-lg h-full flex flex-col justify-center items-center">
+            <BookOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Select a Section</h2>
+            <p className="text-gray-600">Please choose a vocabulary section to start learning.</p>
+            <button
+              onClick={() => setIsSidebarOpen(true)}
+              className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold lg:hidden"
+            >
+              Choose Sections
+            </button>
+          </div>
         ) : (
-            <>
-                <div className="p-6 bg-white rounded-xl shadow-lg">
-                    <div className="flex justify-between items-center mb-4">
-                        <span className="text-gray-600">
-                        {t.currentCard} {currentCardIndex + 1} {t.of} {shuffledCards.length}
-                        </span>
-                        <button
-                        onClick={() => { setShowGermanFirst(p => !p); setIsFlipped(false); }}
-                        className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm font-semibold"
-                        >
-                        {t.startWith}: {showGermanFirst ? 'Deutsch' : t.name}
-                        </button>
-                    </div>
+          <>
+            <div className="p-6 bg-white rounded-xl shadow-lg">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">
+                  {t.currentCard} {currentCardIndex + 1} {t.of} {shuffledCards.length}
+                </span>
+                <button
+                  onClick={() => { setShowGermanFirst(p => !p); setIsFlipped(false); }}
+                  className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm font-semibold"
+                >
+                  {t.startWith}: {showGermanFirst ? 'Deutsch' : t.name}
+                </button>
+              </div>
 
-                    <Flashcard
-                        isFlipped={isFlipped}
-                        onFlip={() => setIsFlipped(p => !p)}
-                        frontText={frontText || ''}
-                        backText={backText || ''}
-                        t={t}
-                        // NEW: Pass the audio source and play handler to the Flashcard component.
-                        // The audio source is only provided if the German side is showing.
-                        audioSrc={showGermanFirst ? currentFlashcard?.audioSrc : undefined}
-                        onPlayAudio={handlePlayAudio}
-                    />
+              <Flashcard
+                isFlipped={isFlipped}
+                onFlip={() => setIsFlipped(p => !p)}
+                frontText={frontText || ''}
+                backText={backText || ''}
+                t={t}
+                audioSrc={showGermanFirst ? currentFlashcard?.audioSrc : undefined}
+                onPlayAudio={handlePlayAudio}
+              />
 
-                    <CardControls
-                        t={t}
-                        onPrev={prevCard}
-                        onNext={nextCard}
-                        onShuffle={shuffleCards}
-                        onReset={resetCards}
-                    />
+              <CardControls
+                t={t}
+                onPrev={prevCard}
+                onNext={nextCard}
+                onShuffle={shuffleCards}
+                onReset={resetCards}
+              />
 
-                    <ProgressBar current={currentCardIndex + 1} total={shuffledCards.length} />
-                </div>
-                <StudyTips t={t} />
-            </>
+              <ProgressBar current={currentCardIndex + 1} total={shuffledCards.length} />
+            </div>
+            <StudyTips t={t} />
+          </>
         )}
       </main>
     </div>
   );
 };
-FlashcardMode.displayName = "FlashcardMode";
-
 
 const GermanVocabularyApp = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageKey>('english');
   const [mode, setMode] = useState('flashcards');
   const t = languages[currentLanguage];
-  const contentRef = useRef<HTMLDivElement>(null);
-useEffect(() => {
-    if (contentRef.current) {
-      // Use requestAnimationFrame to delay the scroll until after the next browser paint.
-      // This is more reliable than a simple setTimeout(0).
-      const animationFrameId = requestAnimationFrame(() => {
-        // We can check the screen width here as well, or decide to scroll on all devices
-        // if the content is always below the switcher. Let's keep the check for mobile-only.
-        if (window.innerWidth < 768) {
-          contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-      
-      // Cleanup function to cancel the animation frame if the component unmounts
-      // or if the effect re-runs before the frame is painted.
-      return () => cancelAnimationFrame(animationFrameId);
-    }
-  }, [mode]); // The dependency array is correct.
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-4 sm:p-8 font-sans">
       <div className="max-w-7xl mx-auto">
         <Header />
         
         <div className="p-6 bg-white rounded-xl shadow-lg mb-8 max-w-md mx-auto">
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Globe size={20}/> {t.language}</h3>
-            <div className="flex flex-wrap gap-2 justify-center">
-                {(Object.keys(languages) as LanguageKey[]).map(lang => (
-                    <button key={lang} onClick={() => setCurrentLanguage(lang)}
-                        className={`px-3 py-1 rounded-md text-sm transition-colors ${currentLanguage === lang ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}>
-                        {lang.toUpperCase()}
-                    </button>
-                ))}
-            </div>
+          <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Globe size={20}/> {t.language}</h3>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {(Object.keys(languages) as LanguageKey[]).map(lang => (
+              <button key={lang} onClick={() => setCurrentLanguage(lang)}
+                className={`px-3 py-1 rounded-md text-sm transition-colors ${currentLanguage === lang ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}>
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
 
         <ModeSwitcher mode={mode} setMode={setMode} t={t} />
-                <div ref={contentRef} className="mt-8">
 
-        {mode === 'flashcards' && <FlashcardMode t={t} currentLanguage={currentLanguage} />}
-        {mode === 'listeningPractice' && <ListeningPracticeMode t={t} currentLanguage={currentLanguage} />}
+        <div className="mt-8">
+          {mode === 'flashcards' && <FlashcardMode t={t} currentLanguage={currentLanguage} />}
+          {mode === 'listeningPractice' && <ListeningPracticeMode t={t} currentLanguage={currentLanguage} />}
         {mode === 'grammarPractice' && <GrammarPracticeMode t={t} topics={module7Grammar} languageKey={currentLanguage} />}      
+        </div>
       </div>
-    </div>
     </div>
   );
 };

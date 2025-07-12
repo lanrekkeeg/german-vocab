@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 // Make sure this import points to your actual data file
 import { GrammarTopic, Exercise } from '../data/grammarExercises'; 
-import { CheckCircle2, XCircle, BrainCircuit, ChevronRight, RotateCcw, Award } from 'lucide-react';
+import { CheckCircle2, XCircle, BrainCircuit, ChevronRight, RotateCcw, Award, Menu, X } from 'lucide-react';
 
 type LanguageKey = 'english' | 'ukrainian' | 'polish' | 'albanian';
 type QuestionKey = 'en' | 'pl' | 'uk' | 'sq';
@@ -40,6 +40,37 @@ const languageMap: Record<LanguageKey, QuestionKey> = {
     ukrainian: 'uk',
     albanian: 'sq'
 };
+
+// Mobile Sidebar Component for Grammar
+const GrammarMobileSidebar = ({ isOpen, onClose, children }: { isOpen: boolean, onClose: () => void, children: React.ReactNode }) => (
+    <>
+        {/* Backdrop */}
+        {isOpen && (
+            <div 
+                className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+                onClick={onClose}
+            />
+        )}
+        
+        {/* Sidebar */}
+        <div className={`fixed top-0 left-0 h-full w-80 bg-white shadow-xl z-50 transform transition-transform duration-300 lg:hidden ${
+            isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}>
+            <div className="p-4 border-b flex justify-between items-center">
+                <h3 className="text-lg font-semibold">Grammar Topics</h3>
+                <button
+                    onClick={onClose}
+                    className="p-2 hover:bg-gray-100 rounded-lg"
+                >
+                    <X size={20} />
+                </button>
+            </div>
+            <div className="p-4 overflow-y-auto h-full">
+                {children}
+            </div>
+        </div>
+    </>
+);
 
 // --- SUB-COMPONENTS for specific exercise types ---
 
@@ -177,10 +208,7 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
         setSelectedLeft(null);
     };
 
-// --- START OF FIX ---
-
-    // 1. Count how many times each answer value has been used in the userAnswer array.
-    // e.g., { "heißt": 1, "heiße": 1 }
+    // Count how many times each answer value has been used in the userAnswer array.
     const matchedValueCounts = useMemo(() => {
         const counts: { [key: string]: number } = {};
         (userAnswer || []).forEach(answer => {
@@ -192,10 +220,7 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
     }, [userAnswer]);
 
     // This object will track how many times we've rendered each right-side option string.
-    // It's declared outside the map so its state persists across iterations of the map.
     const renderedRightItemCounts: { [key: string]: number } = {};
-
-    // --- END OF FIX ---
 
      return (
         <div>
@@ -223,17 +248,15 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
                 </div>
                 <div className="flex flex-col gap-2">
                     {rightItems.map((item, index) => {
-                        // --- REPLACEMENT LOGIC ---
-
-                        // 2. Get the number of times we've ALREADY rendered this specific item string.
+                        // Get the number of times we've ALREADY rendered this specific item string.
                         const countOfThisItemRendered = renderedRightItemCounts[item] || 0;
 
-                        // 3. An item instance is considered "matched" if the number of times it has been
-                        //    selected as an answer is greater than the number of times we've already
-                        //    rendered it.
+                        // An item instance is considered "matched" if the number of times it has been
+                        // selected as an answer is greater than the number of times we've already
+                        // rendered it.
                         const isMatched = (matchedValueCounts[item] || 0) > countOfThisItemRendered;
 
-                        // 4. Increment the render count for the next iteration.
+                        // Increment the render count for the next iteration.
                         renderedRightItemCounts[item] = countOfThisItemRendered + 1;
 
                         // The rest of the logic can now use the corrected `isMatched` variable.
@@ -242,7 +265,6 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
                         
                         let buttonClass = 'p-3 rounded-lg border-2 text-left transition-colors ';
                         if (isMatched) {
-                            // This logic is slightly simplified for clarity. Your original was fine too.
                             if (showResult) {
                                 buttonClass += isCorrect ? 'bg-green-100 !border-green-400' : 'bg-red-100 !border-red-400';
                             } else {
@@ -270,7 +292,6 @@ const MatchingExercise: React.FC<ExerciseComponentProps> = ({ exercise, userAnsw
     );
 };
 
-
 const ExerciseEngine: React.FC<ExerciseComponentProps> = (props) => {
     switch (props.exercise.type) {
         case 'fill-in-the-blank': return <FillInTheBlankExercise {...props} />;
@@ -289,27 +310,25 @@ interface TopicSelectorProps {
 }
 
 const GrammarTopicSelector: React.FC<TopicSelectorProps> = ({ topics, selectedTopicId, onSelectTopic, t }) => (
-    <aside className="w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto custom-scrollbar">
-        <div className="p-6 bg-white rounded-xl shadow-lg">
-            <h3 className="text-xl font-bold mb-4 text-gray-800">{t.selectTopic}</h3>
-            <div className="flex flex-col gap-2">
-                {topics.map(topic => (
-                    <button
-                        key={topic.id}
-                        onClick={() => onSelectTopic(topic.id)}
-                        className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm font-semibold flex justify-between items-center ${
-                            selectedTopicId === topic.id
-                            ? 'bg-purple-600 text-white shadow-md'
-                            : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                        }`}
-                    >
-                        <span>{topic.title}</span>
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${ selectedTopicId === topic.id ? 'bg-white/20' : 'bg-gray-300/80'}`}>{topic.exercises.length}</span>
-                    </button>
-                ))}
-            </div>
+    <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-bold mb-4 text-gray-800">{t.selectTopic}</h3>
+        <div className="flex flex-col gap-2">
+            {topics.map(topic => (
+                <button
+                    key={topic.id}
+                    onClick={() => onSelectTopic(topic.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm font-semibold flex justify-between items-center ${
+                        selectedTopicId === topic.id
+                        ? 'bg-purple-600 text-white shadow-md'
+                        : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                    }`}
+                >
+                    <span>{topic.title}</span>
+                    <span className={`text-xs px-2 py-0.5 rounded-full ${ selectedTopicId === topic.id ? 'bg-white/20' : 'bg-gray-300/80'}`}>{topic.exercises.length}</span>
+                </button>
+            ))}
         </div>
-    </aside>
+    </div>
 );
 
 interface FinalScoreScreenProps {
@@ -350,6 +369,7 @@ export const GrammarPracticeMode = ({ t, topics, languageKey }: GrammarPracticeM
     const [showResult, setShowResult] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const [score, setScore] = useState(0);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const selectedTopic = useMemo(() => topics.find(topic => topic.id === selectedTopicId), [topics, selectedTopicId]);
     const currentExercise = useMemo(() => selectedTopic?.exercises[currentExerciseIndex], [selectedTopic, currentExerciseIndex]);
@@ -367,6 +387,7 @@ export const GrammarPracticeMode = ({ t, topics, languageKey }: GrammarPracticeM
     const handleSelectTopic = (topicId: string) => {
         setSelectedTopicId(topicId);
         resetTopic();
+        setIsSidebarOpen(false); // Close sidebar on mobile after selection
     };
 
     const handleAnswerChange = (index: number | null, value: string | string[]) => {
@@ -382,39 +403,39 @@ export const GrammarPracticeMode = ({ t, topics, languageKey }: GrammarPracticeM
     };
 
     const checkAnswer = () => {
-    if (!currentExercise) return;
-    
-    // Helper function to normalize text for comparison
-    const normalizeText = (text: string): string => {
-        return text
-            .trim()
-            .toLowerCase()
-            .replace(/\s+/g, ' ')  // Replace multiple spaces with single space
-            .replace(/\s+([?.!,;:])/g, '$1')  // Remove spaces before punctuation
-            .replace(/([?.!,;:])\s*$/, ' $1');  // Ensure space before final punctuation
-    };
-    
-    let correct = false;
-    
-    if (currentExercise.type === 'matching' && Array.isArray(currentExercise.correctAnswer)) {
-        const answersToCheck = Array.isArray(userAnswers) ? userAnswers : [];
-        correct = currentExercise.correctAnswer.every((ans, i) => 
-            normalizeText(ans || '') === normalizeText(answersToCheck[i] || '')
-        );
-    } else if (Array.isArray(currentExercise.correctAnswer)) {
-        correct = currentExercise.correctAnswer.every((ans, i) => 
-            normalizeText(ans || '') === normalizeText(userAnswers[i] || '')
-        );
-    } else {
-        correct = normalizeText(currentExercise.correctAnswer || '') === normalizeText(userAnswers[0] || '');
-    }
+        if (!currentExercise) return;
+        
+        // Helper function to normalize text for comparison
+        const normalizeText = (text: string): string => {
+            return text
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, ' ')  // Replace multiple spaces with single space
+                .replace(/\s+([?.!,;:])/g, '$1')  // Remove spaces before punctuation
+                .replace(/([?.!,;:])\s*$/, ' $1');  // Ensure space before final punctuation
+        };
+        
+        let correct = false;
+        
+        if (currentExercise.type === 'matching' && Array.isArray(currentExercise.correctAnswer)) {
+            const answersToCheck = Array.isArray(userAnswers) ? userAnswers : [];
+            correct = currentExercise.correctAnswer.every((ans, i) => 
+                normalizeText(ans || '') === normalizeText(answersToCheck[i] || '')
+            );
+        } else if (Array.isArray(currentExercise.correctAnswer)) {
+            correct = currentExercise.correctAnswer.every((ans, i) => 
+                normalizeText(ans || '') === normalizeText(userAnswers[i] || '')
+            );
+        } else {
+            correct = normalizeText(currentExercise.correctAnswer || '') === normalizeText(userAnswers[0] || '');
+        }
 
-    setIsCorrect(correct);
-    if(correct) {
-        setScore(s => s + 1);
-    }
-    setShowResult(true);
-};
+        setIsCorrect(correct);
+        if(correct) {
+            setScore(s => s + 1);
+        }
+        setShowResult(true);
+    };
     
     const nextExercise = () => {
         setShowResult(false);
@@ -422,17 +443,49 @@ export const GrammarPracticeMode = ({ t, topics, languageKey }: GrammarPracticeM
         setCurrentExerciseIndex(i => i + 1);
     };
 
+    const sidebarContent = (
+        <GrammarTopicSelector 
+            topics={topics} 
+            selectedTopicId={selectedTopicId} 
+            onSelectTopic={handleSelectTopic} 
+            t={t} 
+        />
+    );
+
     return (
         <div className="flex flex-col lg:flex-row gap-8">
-            <GrammarTopicSelector topics={topics} selectedTopicId={selectedTopicId} onSelectTopic={handleSelectTopic} t={t} />
+            {/* Mobile menu button */}
+            <button
+                onClick={() => setIsSidebarOpen(true)}
+                className="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-purple-500 text-white rounded-full shadow-lg flex items-center justify-center z-30 hover:bg-purple-600 transition-colors"
+            >
+                <Menu size={24} />
+            </button>
 
+            {/* Mobile Sidebar */}
+            <GrammarMobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
+                {sidebarContent}
+            </GrammarMobileSidebar>
+
+            {/* Desktop Sidebar */}
+            <aside className="hidden lg:block w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto">
+                {sidebarContent}
+            </aside>
+
+            {/* Main Content */}
             <main className="w-full lg:w-2/3">
                 <div className="p-6 sm:p-8 bg-white rounded-xl shadow-lg min-h-[500px] flex flex-col">
                     {!selectedTopic ? (
-                         <div className="text-center m-auto flex flex-col items-center">
+                        <div className="text-center m-auto flex flex-col items-center">
                             <BrainCircuit className="w-16 h-16 text-purple-300 mb-4" />
                             <h2 className="text-2xl font-bold text-gray-800 mb-2">{t.grammarWelcomeTitle}</h2>
-                            <p className="text-gray-600">{t.grammarWelcomeText}</p>
+                            <p className="text-gray-600 mb-4">{t.grammarWelcomeText}</p>
+                            <button
+                                onClick={() => setIsSidebarOpen(true)}
+                                className="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors font-semibold lg:hidden"
+                            >
+                                Choose Topic
+                            </button>
                         </div>
                     ) : isTopicFinished ? (
                         <FinalScoreScreen score={score} total={selectedTopic.exercises.length} onRestart={resetTopic} t={t} />
