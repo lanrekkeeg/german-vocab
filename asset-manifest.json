@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/german-vocab/static/css/main.c9c26e35.css",
-    "main.js": "/german-vocab/static/js/main.dd54cd12.js",
+    "main.css": "/german-vocab/static/css/main.272f3bed.css",
+    "main.js": "/german-vocab/static/js/main.260615e3.js",
     "static/js/453.787f97ee.chunk.js": "/german-vocab/static/js/453.787f97ee.chunk.js",
     "static/media/14_post_office.wav": "/german-vocab/static/media/14_post_office.cd0c9e9606cc1240c8d3.wav",
-    "static/media/5_technical_support.wav": "/german-vocab/static/media/5_technical_support.de6d5a8f450ceebf9bd0.wav",
     "static/media/13_clothing_store.wav": "/german-vocab/static/media/13_clothing_store.afe9a831861f042ab6f2.wav",
     "static/media/1_restaurant_reservation.wav": "/german-vocab/static/media/1_restaurant_reservation.a962cd4506b02259b090.wav",
     "static/media/4_apartment_viewing.wav": "/german-vocab/static/media/4_apartment_viewing.aedcf5310e2e3a303d68.wav",
@@ -24,12 +23,12 @@
     "static/media/passage1.wav": "/german-vocab/static/media/passage1.c36474bb759cb4dd87fa.wav",
     "static/media/passage5.wav": "/german-vocab/static/media/passage5.ddfdb12c5f8f0b069ed6.wav",
     "index.html": "/german-vocab/index.html",
-    "main.c9c26e35.css.map": "/german-vocab/static/css/main.c9c26e35.css.map",
-    "main.dd54cd12.js.map": "/german-vocab/static/js/main.dd54cd12.js.map",
+    "main.272f3bed.css.map": "/german-vocab/static/css/main.272f3bed.css.map",
+    "main.260615e3.js.map": "/german-vocab/static/js/main.260615e3.js.map",
     "453.787f97ee.chunk.js.map": "/german-vocab/static/js/453.787f97ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9c26e35.css",
-    "static/js/main.dd54cd12.js"
+    "static/css/main.272f3bed.css",
+    "static/js/main.260615e3.js"
   ]
 }
