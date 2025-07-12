@@ -38,9 +38,12 @@ type Translations = {
   albanian: string;
 };
 
+
+// NEW: Updated Card type to include an optional audio source path.
 type Card = {
   german: string;
   translations: Translations;
+  audioSrc?: string;
 };
 
 type LanguageKey = keyof Translations;
@@ -215,7 +218,34 @@ sections: {
   }
 };
 
-const allVocabulary: Record<number, Card[]> = {
+// This is used to dynamically generate the path to the audio files.
+const sanitizeFilename = (text: string): string => {
+    let sanitized = text.toLowerCase();
+    // Replace German characters for broader compatibility
+    sanitized = sanitized
+        .replace(/ä/g, 'ae')
+        .replace(/ö/g, 'oe')
+        .replace(/ü/g, 'ue')
+        .replace(/ß/g, 'ss');
+    // Replace spaces with underscores
+    sanitized = sanitized.replace(/\s+/g, '_');
+    // Remove any character that is not a letter, number, underscore, or hyphen
+    sanitized = sanitized.replace(/[^a-z0-9_-]/g, '');
+    return sanitized;
+};
+
+
+const addAudioPaths = (vocabBySection: Record<number, Omit<Card, 'audioSrc'>[]>) => {
+  const result: Record<number, Card[]> = {};
+  for (const section in vocabBySection) {
+    result[section] = vocabBySection[section].map(card => ({
+      ...card,
+audioSrc: `${process.env.PUBLIC_URL}/syntactic_output/${sanitizeFilename(card.german)}.mp3`    }));
+  }
+  return result;
+};
+
+const allVocabulary: Record<number, Card[]> = addAudioPaths({
   "1": [
     { "german": "wie", "translations": { "english": "how", "ukrainian": "як", "polish": "jak", "albanian": "si" }},
     { "german": "heißen", "translations": { "english": "to be called", "ukrainian": "називатися", "polish": "nazywać się", "albanian": "të quhem" }},
@@ -625,7 +655,7 @@ const allVocabulary: Record<number, Card[]> = {
     { "german": "überweisen", "translations": { "english": "to transfer (money)", "ukrainian": "переказувати (гроші)", "polish": "przelewać (pieniądze)", "albanian": "të transferoj (para)" }},
     { "german": "die Gebühr", "translations": { "english": "fee", "ukrainian": "комісія, збір", "polish": "opłata", "albanian": "tarifë" }}
   ]
-};
+});
 const ALL_SECTIONS = Object.keys(allVocabulary).map(Number);
 
 const learningContent: LearningContent[] = [
@@ -1145,6 +1175,8 @@ const learningContent: LearningContent[] = [
     }
 ];
 
+
+
 // --- CHILD COMPONENTS ---
 
 const Header = React.memo(() => (
@@ -1214,12 +1246,15 @@ const SectionSelector = React.memo(({ t, selectedSections, onToggle, onSelectAll
 ));
 SectionSelector.displayName = "SectionSelector";
 
-const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t }: {
+// NEW: The Flashcard component is updated to display a play button.
+const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t, audioSrc, onPlayAudio }: {
   isFlipped: boolean,
   onFlip: () => void,
   frontText: string,
   backText: string,
-  t: LanguageStrings
+  t: LanguageStrings,
+  audioSrc?: string;
+  onPlayAudio: (e: React.MouseEvent) => void;
 }) => (
   <div className="w-full h-64 perspective-1000">
     <div
@@ -1228,6 +1263,16 @@ const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t }: {
       onClick={onFlip}
     >
       <div className="absolute w-full h-full bg-white rounded-xl shadow-lg flex items-center justify-center p-8 backface-hidden">
+        {/* NEW: Play Audio Button */}
+        {audioSrc && (
+          <button
+            onClick={onPlayAudio} // This handler function will stop propagation
+            className="absolute top-4 right-4 p-2 rounded-full text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-colors z-10"
+            aria-label="Play audio"
+          >
+            <Ear size={24} />
+          </button>
+        )}
         <div className="text-center">
           <p className="text-3xl font-bold text-gray-800">{frontText}</p>
           <span className="mt-4 text-sm text-gray-500 block">{t.clickToFlip}</span>
@@ -1629,12 +1674,28 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
 };
 ListeningPracticeMode.displayName = "ListeningPracticeMode";
 
+// NEW: FlashcardMode is updated to handle audio playback.
 const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLanguage: LanguageKey }) => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showGermanFirst, setShowGermanFirst] = useState(true);
   const [selectedSections, setSelectedSections] = useState(ALL_SECTIONS);
   const [shuffledCards, setShuffledCards] = useState<Card[]>([]);
+  
+  // NEW: Ref to hold the single audio player instance.
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // NEW: Initialize the audio player on component mount.
+  useEffect(() => {
+    audioRef.current = new Audio();
+    // Clean up on unmount
+    return () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current = null;
+        }
+    };
+  }, []);
 
   const filteredCards = useMemo(() => {
     return selectedSections.flatMap(section => allVocabulary[section] || []);
@@ -1683,6 +1744,62 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
 
   const currentFlashcard = shuffledCards[currentCardIndex];
 
+const handlePlayAudio = useCallback((event: React.MouseEvent) => {
+    // 1. Stop the event from flipping the card
+    event.stopPropagation(); 
+
+    const audio = audioRef.current;
+    const audioSrc = currentFlashcard?.audioSrc;
+
+    // 2. Make sure we have everything we need
+    if (!audio || !audioSrc) {
+        console.error("Audio player or audio source is missing.");
+        return;
+    }
+    
+    // 3. Simple function to play the audio and catch errors
+    const playAudio = () => {
+        // We set currentTime to 0 to allow replaying the same sound
+        audio.currentTime = 0;
+        audio.play().catch(e => {
+            console.error("Error playing audio:", e);
+            // This provides detailed debug info if it still fails
+            console.log("Audio Element State:", { 
+                src: audio.src, 
+                error: audio.error, 
+                readyState: audio.readyState 
+            });
+        });
+    };
+
+    // 4. Check if the correct audio is already loaded
+    if (audio.src.endsWith(audioSrc)) {
+        // If it's the right audio, just play it again.
+        playAudio();
+    } else {
+        // If it's a new audio file, we need to load it first.
+        audio.src = audioSrc;
+
+        // Create a one-time event listener to play the audio as soon as it's ready.
+        // 'canplaythrough' is the most reliable event for this.
+        const onCanPlay = () => {
+            playAudio();
+            // Clean up the listener so it doesn't fire again for this audio file.
+            audio.removeEventListener('canplaythrough', onCanPlay);
+        };
+        
+        audio.addEventListener('canplaythrough', onCanPlay);
+
+        // Also, add an error listener in case the file can't be found or is corrupt
+        const onError = () => {
+            console.error("Failed to load audio source:", audioSrc);
+            audio.removeEventListener('error', onError);
+        }
+        audio.addEventListener('error', onError);
+    }
+
+}, [currentFlashcard]); // Dependency is correct
+
   const frontText = showGermanFirst ? currentFlashcard?.german : currentFlashcard?.translations[currentLanguage];
   const backText = showGermanFirst ? currentFlashcard?.translations[currentLanguage] : currentFlashcard?.german;
 
@@ -1724,6 +1841,10 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
                         frontText={frontText || ''}
                         backText={backText || ''}
                         t={t}
+                        // NEW: Pass the audio source and play handler to the Flashcard component.
+                        // The audio source is only provided if the German side is showing.
+                        audioSrc={showGermanFirst ? currentFlashcard?.audioSrc : undefined}
+                        onPlayAudio={handlePlayAudio}
                     />
 
                     <CardControls
