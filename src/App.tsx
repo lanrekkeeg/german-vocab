@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef, Dispatch, SetStateAction } from 'react';
 import { 
-    ChevronLeft, ChevronRight, RotateCcw, Shuffle, BookOpen, Globe, 
+    ChevronLeft, ChevronRight, RotateCcw, Shuffle, BookOpen, Globe, CheckSquare,
     Play, CheckCircle2, Eye, XCircle, Ear, Pause, User, Users, BrainCircuit, Menu, X
 } from 'lucide-react';
 
+// --- AUDIO IMPORTS ---
 import passage1Audio from './audio/passage1.wav';
 import passage2Audio from './audio/passage2.wav';
 import passage3Audio from './audio/passage3.wav';
 import passage4Audio from './audio/passage4.wav';
 import passage5Audio from './audio/passage5.wav';
-
 import dialogue1Audio from './audio/1_restaurant_reservation.wav';
 import dialogue2Audio from './audio/2_doctors_appointment.wav';
 import dialogue3Audio from './audio/3_job_interview.wav';
@@ -26,20 +26,21 @@ import dialogue13Audio from './audio/13_clothing_store.wav';
 import dialogue14Audio from './audio/14_post_office.wav';
 import dialogue15Audio from './audio/15_bank_appointment.wav';
 
-// Import new grammar components and data
+// --- COMPONENT & DATA IMPORTS ---
 import { module7Grammar } from './data/grammarExercises';
 import { GrammarPracticeMode } from './components/GrammerPracticeMode';
+import { A11SelfTest } from './components/A1.1SelfTest';
+import { a11Tests } from './data/a1.1Tests';
 
-
+// --- TYPE DEFINITIONS ---
 type Translations = {
   english: string;
   ukrainian: string;
   polish: string;
   albanian: string;
+  german: string; 
 };
 
-
-// NEW: Updated Card type to include an optional audio source path.
 type Card = {
   german: string;
   translations: Translations;
@@ -47,7 +48,7 @@ type Card = {
 };
 
 type LanguageKey = keyof Translations;
-
+type TestLanguageKey = 'en' | 'de';
 type Blank = { answer: string; size: number };
 type SpeakerLabel = { speaker: string };
 type LearningContentPart = string | Blank | SpeakerLabel;
@@ -62,18 +63,6 @@ type LearningContent = {
     audioSrc: string;
     vocabulary: Card[];
 };
-
-type PassagePart = string | { answer: string; size: number };
-
-type Passage = {
-    id: number;
-    title: string;
-    level: string;
-    fullText: string;
-    parts: PassagePart[];
-    audioSrc: string;
-};
-
 type LanguageStrings = {
   name: string;
   selectSections: string;
@@ -113,12 +102,10 @@ type LanguageStrings = {
   finalScore: string;
   practiceAgain: string;
   question: string;
-   // New strings for grammar welcome screen
   grammarWelcomeTitle: string;
   grammarWelcomeText: string;
-
 };
-
+// --- LANGUAGE STRINGS DATA ---
 const languages: Record<LanguageKey, LanguageStrings> = {
   english: {
     name: 'English',
@@ -128,15 +115,11 @@ const languages: Record<LanguageKey, LanguageStrings> = {
     studyTips: 'Study Tips', tip1: 'Try to recall the translation before flipping the card.',
     tip2: 'Use the shuffle function to test your knowledge randomly.', tip3: 'Practice both German → Translation and Translation → German.',
     tip4: 'Focus extra time on cards you find difficult.',
-sections: {
-  1: 'Basic Greetings & Questions',
-  2: 'Objects & School Items',
-  3: 'Home & Furniture',
-  4: 'Family & Activities',
-  5: 'Time & Daily Activities',
-  6: 'Food & Shopping',
-  7: 'Work & Money'
-},    flashcards: 'Flashcards', listeningPractice: 'Listening Practice', selectPassage: 'Select a Passage',
+    sections: {
+      1: 'Basic Greetings & Questions', 2: 'Objects & School Items', 3: 'Home & Furniture', 4: 'Family & Activities',
+      5: 'Time & Daily Activities', 6: 'Food & Shopping', 7: 'Work & Money'
+    },
+    flashcards: 'Flashcards', listeningPractice: 'Listening Practice', selectPassage: 'Select a Passage',
     passageInstructions: 'Listen to the audio and fill in the blanks.', playAudio: 'Play Audio', pauseAudio: 'Pause Audio',
     checkAnswers: 'Check Answers', showAnswers: 'Show Answers', keyVocabulary: 'Key Vocabulary',
     grammarPractice: 'Grammar Practice', selectTopic: 'Select a Topic', checkAnswer: 'Check Answer',
@@ -152,15 +135,11 @@ sections: {
     studyTips: 'Поради для навчання', tip1: 'Спробуйте згадати переклад перед перевертанням картки.',
     tip2: 'Використовуйте функцію перемішування для випадкової перевірки.', tip3: 'Практикуйте німецьку → переклад і переклад → німецьку.',
     tip4: 'Приділяйте більше часу складним карткам.',
-sections: {
-  1: 'Базові привітання та питання',
-  2: 'Предмети та шкільні речі',
-  3: 'Дім і меблі',
-  4: 'Сім\'я та активності',
-  5: 'Час і щоденні справи',
-  6: 'Їжа та покупки',
-  7: 'Робота та гроші'
-},    flashcards: 'Флеш-картки', listeningPractice: 'Практика аудіювання', selectPassage: 'Виберіть уривок',
+    sections: {
+      1: 'Базові привітання та питання', 2: 'Предмети та шкільні речі', 3: 'Дім і меблі', 4: 'Сім\'я та активності',
+      5: 'Час і щоденні справи', 6: 'Їжа та покупки', 7: 'Робота та гроші'
+    },
+    flashcards: 'Флеш-картки', listeningPractice: 'Практика аудіювання', selectPassage: 'Виберіть уривок',
     passageInstructions: 'Прослухайте аудіо та заповніть пропуски.', playAudio: 'Відтворити аудіо', pauseAudio: 'Пауза',
     checkAnswers: 'Перевірити відповіді', showAnswers: 'Показати відповіді', keyVocabulary: 'Ключова лексика',
     grammarPractice: 'Практика граматики', selectTopic: 'Виберіть тему', checkAnswer: 'Перевірити',
@@ -176,15 +155,11 @@ sections: {
     studyTips: 'Wskazówki do nauki', tip1: 'Spróbuj przypomnieć sobie tłumaczenie przed odwróceniem karty.',
     tip2: 'Użyj funkcji tasowania do losowego testowania wiedzy.', tip3: 'Ćwicz niemiecki → tłumaczenie i tłumaczenie → niemiecki.',
     tip4: 'Poświęć więcej czasu na trudne karty.',
-sections: {
-  1: 'Podstawowe powitania i pytania',
-  2: 'Przedmioty i artykuły szkolne',
-  3: 'Dom i meble',
-  4: 'Rodzina i aktywności',
-  5: 'Czas i codzienne czynności',
-  6: 'Jedzenie i zakupy',
-  7: 'Praca i pieniądze'
-},    flashcards: 'Fiszki', listeningPractice: 'Ćwiczenia ze słuchu', selectPassage: 'Wybierz fragment',
+    sections: {
+      1: 'Podstawowe powitania i pytania', 2: 'Przedmioty i artykuły szkolne', 3: 'Dom i meble', 4: 'Rodzina i aktywności',
+      5: 'Czas i codzienne czynności', 6: 'Jedzenie i zakupy', 7: 'Praca i pieniądze'
+    },
+    flashcards: 'Fiszki', listeningPractice: 'Ćwiczenia ze słuchu', selectPassage: 'Wybierz fragment',
     passageInstructions: 'Posłuchaj nagrania i uzupełnij luki.', playAudio: 'Odtwórz audio', pauseAudio: 'Pauza',
     checkAnswers: 'Sprawdź odpowiedzi', showAnswers: 'Pokaż odpowiedzi', keyVocabulary: 'Kluczowe słownictwo',
     grammarPractice: 'Ćwiczenia gramatyczne', selectTopic: 'Wybierz temat', checkAnswer: 'Sprawdź',
@@ -200,41 +175,55 @@ sections: {
     studyTips: 'Këshilla për studim', tip1: 'Përpiquni të kujtoni përkthimin para se të ktheni kartën.',
     tip2: 'Përdorni funksionin e përzierjes për të testuar njohuritë në mënyrë të rastësishme.', tip3: 'Praktikoni gjermanisht → përkthim dhe përkthim → gjermanisht.',
     tip4: 'Fokusohuni më shumë te kartat që i gjeni të vështira.',
-sections: {
-  1: 'Përshëndetje dhe pyetje bazike',
-  2: 'Objekte dhe artikuj shkolle',
-  3: 'Shtëpia dhe mobiliet',
-  4: 'Familja dhe aktivitetet',
-  5: 'Koha dhe aktivitetet e përditshme',
-  6: 'Ushqimi dhe Blerjet',
-  7: 'Puna dhe Paratë'
-},    flashcards: 'Kartela', listeningPractice: 'Praktikë dëgjimi', selectPassage: 'Zgjidhni një pasazh',
+    sections: {
+      1: 'Përshëndetje dhe pyetje bazike', 2: 'Objekte dhe artikuj shkolle', 3: 'Shtëpia dhe mobiliet', 4: 'Familja dhe aktivitetet',
+      5: 'Koha dhe aktivitetet e përditshme', 6: 'Ushqimi dhe Blerjet', 7: 'Puna dhe Paratë'
+    },
+    flashcards: 'Kartela', listeningPractice: 'Praktikë dëgjimi', selectPassage: 'Zgjidhni një pasazh',
     passageInstructions: 'Dëgjoni audion dhe plotësoni boshllëqet.', playAudio: 'Luaj audion', pauseAudio: 'Pauzë',
     checkAnswers: 'Kontrollo përgjigjet', showAnswers: 'Shfaq përgjigjet', keyVocabulary: 'Fjalori kyç',
     grammarPractice: 'Praktikë gramatikore', selectTopic: 'Zgjidh një temë', checkAnswer: 'Kontrollo',
     nextExercise: 'Tjetra', correct: 'Saktë!', incorrect: 'Gabim.',
     showCorrectAnswer: 'Shfaq përgjigjen', finalScore: 'Rezultati final', practiceAgain: 'Praktiko përsëri', question: 'Pyetja',
     grammarWelcomeTitle: 'Mirë se vini në praktikën e gramatikës', grammarWelcomeText: 'Ju lutemi zgjidhni një temë nga e majta për të filluar.',
+  },
+  german: {
+    name: 'Deutsch',
+    selectSections: 'Abschnitte auswählen', allSections: 'Alle Abschnitte', currentCard: 'Karte', of: 'von',
+    clickToFlip: 'Klicken zum Übersetzen', clickToFlipBack: 'Klicken zum Zurückdrehen', previous: 'Zurück',
+    next: 'Weiter', startWith: 'Beginne mit', shuffle: 'Mischen', reset: 'Zurücksetzen', language: 'Sprache',
+    studyTips: 'Lerntipps', tip1: 'Versuche, die Übersetzung zu erinnern, bevor du die Karte umdrehst.',
+    tip2: 'Nutze die Mischfunktion, um dein Wissen zufällig zu testen.', tip3: 'Übe sowohl Deutsch → Übersetzung als auch Übersetzung → Deutsch.',
+    tip4: 'Konzentriere dich besonders auf Karten, die dir schwerfallen.',
+    sections: {
+        1: 'Grundlegende Begrüßungen & Fragen', 2: 'Gegenstände & Schulmaterial', 3: 'Zuhause & Möbel', 4: 'Familie & Aktivitäten',
+        5: 'Zeit & Tägliche Aktivitäten', 6: 'Essen & Einkaufen', 7: 'Arbeit & Geld'
+    },
+    flashcards: 'Lernkarten', listeningPractice: 'Hörübungen', selectPassage: 'Wähle einen Text',
+    passageInstructions: 'Höre dir die Audiodatei an und fülle die Lücken aus.', playAudio: 'Audio abspielen', pauseAudio: 'Pausieren',
+    checkAnswers: 'Antworten prüfen', showAnswers: 'Antworten anzeigen', keyVocabulary: 'Schlüsselvokabular',
+    grammarPractice: 'Grammatikübungen', selectTopic: 'Wähle ein Thema', checkAnswer: 'Antwort prüfen',
+    nextExercise: 'Weiter', correct: 'Richtig!', incorrect: 'Falsch.',
+    showCorrectAnswer: 'Antwort zeigen', finalScore: 'Endergebnis', practiceAgain: 'Nochmal üben', question: 'Frage',
+    grammarWelcomeTitle: 'Willkommen bei den Grammatikübungen', grammarWelcomeText: 'Bitte wähle links ein Thema, um zu beginnen.',
   }
 };
 
+// --- VOCABULARY & CONTENT DATA ---
 const sanitizeFilename = (text: string): string => {
-    // Replace spaces with underscores
     let sanitized = text.replace(/\s+/g, '_');
-    
-    // Remove characters that are not letters, numbers, underscores, or German umlauts/ß
     sanitized = sanitized.replace(/[^a-zA-Z0-9_äöüÄÖÜß]/g, '');
-    
     return sanitized;
 };
 
-
-const addAudioPaths = (vocabBySection: Record<number, Omit<Card, 'audioSrc'>[]>) => {
+const addAudioPaths = (vocabBySection: Record<number, (Omit<Card, 'audioSrc' | 'translations'> & { translations: Omit<Translations, 'german'> })[]>) => {
   const result: Record<number, Card[]> = {};
   for (const section in vocabBySection) {
     result[section] = vocabBySection[section].map(card => ({
       ...card,
-audioSrc: `${process.env.PUBLIC_URL}/syntactic_output/${sanitizeFilename(card.german)}.mp3`    }));
+      translations: { ...card.translations, german: card.german },
+      audioSrc: `${process.env.PUBLIC_URL}/syntactic_output/${sanitizeFilename(card.german)}.mp3`
+    }));
   }
   return result;
 };
@@ -650,9 +639,10 @@ const allVocabulary: Record<number, Card[]> = addAudioPaths({
     { "german": "die Gebühr", "translations": { "english": "fee", "ukrainian": "комісія, збір", "polish": "opłata", "albanian": "tarifë" }}
   ]
 });
-console.log(allVocabulary)
+
 const ALL_SECTIONS = Object.keys(allVocabulary).map(Number);
 
+// THIS IS THE COMPLETED AND CORRECTED learningContent VARIABLE
 const learningContent: LearningContent[] = [
     {
         id: 1, type: 'passage', title: 'Mein Tag', level: 'A1', audioSrc: passage1Audio,
@@ -663,14 +653,14 @@ const learningContent: LearningContent[] = [
             { answer: 'koche', size: 10 }, ' ich das Abendessen und sehe fern. Um 22 Uhr gehe ich schlafen.'
         ],
         vocabulary: [
-            { german: "aufstehen", translations: { english: "to get up", ukrainian: "вставати", polish: "wstawać", albanian: "të çohem" }},
-            { german: "jeden Tag", translations: { english: "every day", ukrainian: "кожного дня", polish: "codziennie", albanian: "çdo ditë" }},
-            { german: "zur Arbeit fahren", translations: { english: "to go to work", ukrainian: "їхати на роботу", polish: "jechać do pracy", albanian: "të shkoj në punë" }},
-            { german: "das Büro", translations: { english: "the office", ukrainian: "офіс", polish: "biuro", albanian: "zyra" }},
-            { german: "das Abendessen", translations: { english: "the dinner", ukrainian: "вечеря", polish: "kolacja", albanian: "darka" }},
-            { german: "kochen", translations: { english: "to cook", ukrainian: "готувати", polish: "gotować", albanian: "të gatuaj" }},
-            { german: "fernsehen", translations: { english: "to watch TV", ukrainian: "дивитися телевізор", polish: "oglądać telewizję", albanian: "të shoh TV" }},
-            { german: "schlafen gehen", translations: { english: "to go to sleep", ukrainian: "йти спати", polish: "iść spać", albanian: "të shkoj të fle" }},
+            { german: "aufstehen", translations: { english: "to get up", ukrainian: "вставати", polish: "wstawać", albanian: "të çohem", german: "aufstehen" }},
+            { german: "jeden Tag", translations: { english: "every day", ukrainian: "кожного дня", polish: "codziennie", albanian: "çdo ditë", german: "jeden Tag" }},
+            { german: "zur Arbeit fahren", translations: { english: "to go to work", ukrainian: "їхати на роботу", polish: "jechać do pracy", albanian: "të shkoj në punë", german: "zur Arbeit fahren" }},
+            { german: "das Büro", translations: { english: "the office", ukrainian: "офіс", polish: "biuro", albanian: "zyra", german: "das Büro" }},
+            { german: "das Abendessen", translations: { english: "the dinner", ukrainian: "вечеря", polish: "kolacja", albanian: "darka", german: "das Abendessen" }},
+            { german: "kochen", translations: { english: "to cook", ukrainian: "готувати", polish: "gotować", albanian: "të gatuaj", german: "kochen" }},
+            { german: "fernsehen", translations: { english: "to watch TV", ukrainian: "дивитися телевізор", polish: "oglądać telewizję", albanian: "të shoh TV", german: "fernsehen" }},
+            { german: "schlafen gehen", translations: { english: "to go to sleep", ukrainian: "йти спати", polish: "iść spać", albanian: "të shkoj të fle", german: "schlafen gehen" }},
         ]
     },
     {
@@ -682,14 +672,14 @@ const learningContent: LearningContent[] = [
             { answer: 'wohnen', size: 10 }, ' in einem Haus in Berlin. Wir haben auch einen Hund. Er heißt Max.'
         ],
         vocabulary: [
-            { german: "die Familie", translations: { english: "the family", ukrainian: "сім'я", polish: "rodzina", albanian: "familja" }},
-            { german: "der Lehrer", translations: { english: "the teacher (m)", ukrainian: "вчитель", polish: "nauczyciel", albanian: "mësuesi" }},
-            { german: "das Krankenhaus", translations: { english: "the hospital", ukrainian: "лікарня", polish: "szpital", albanian: "spitali" }},
-            { german: "der Bruder", translations: { english: "the brother", ukrainian: "брат", polish: "brat", albanian: "vëllai" }},
-            { german: "studieren", translations: { english: "to study (at university)", ukrainian: "навчатися (в університеті)", polish: "studiować", albanian: "të studiosh" }},
-            { german: "die Universität", translations: { english: "the university", ukrainian: "університет", polish: "uniwersytet", albanian: "universiteti" }},
-            { german: "wohnen", translations: { english: "to live/reside", ukrainian: "жити/проживати", polish: "mieszkać", albanian: "të banosh" }},
-            { german: "der Hund", translations: { english: "the dog", ukrainian: "собака", polish: "pies", albanian: "qeni" }},
+            { german: "die Familie", translations: { english: "the family", ukrainian: "сім'я", polish: "rodzina", albanian: "familja", german: "die Familie" }},
+            { german: "der Lehrer", translations: { english: "the teacher (m)", ukrainian: "вчитель", polish: "nauczyciel", albanian: "mësuesi", german: "der Lehrer" }},
+            { german: "das Krankenhaus", translations: { english: "the hospital", ukrainian: "лікарня", polish: "szpital", albanian: "spitali", german: "das Krankenhaus" }},
+            { german: "der Bruder", translations: { english: "the brother", ukrainian: "брат", polish: "brat", albanian: "vëllai", german: "der Bruder" }},
+            { german: "studieren", translations: { english: "to study (at university)", ukrainian: "навчатися (в університеті)", polish: "studiować", albanian: "të studiosh", german: "studieren" }},
+            { german: "die Universität", translations: { english: "the university", ukrainian: "університет", polish: "uniwersytet", albanian: "universiteti", german: "die Universität" }},
+            { german: "wohnen", translations: { english: "to live/reside", ukrainian: "жити/проживати", polish: "mieszkać", albanian: "të banosh", german: "wohnen" }},
+            { german: "der Hund", translations: { english: "the dog", ukrainian: "собака", polish: "pies", albanian: "qeni", german: "der Hund" }},
         ]
     },
     {
@@ -701,14 +691,14 @@ const learningContent: LearningContent[] = [
             { answer: 'Karte', size: 8 }, '. Die Verkäuferin ist sehr ', { answer: 'freundlich', size: 14 }, '. Sie sagt "Haben Sie einen schönen Tag!"'
         ],
         vocabulary: [
-            { german: "der Supermarkt", translations: { english: "the supermarket", ukrainian: "супермаркет", polish: "supermarket", albanian: "supermarketi" }},
-            { german: "kaufen", translations: { english: "to buy", ukrainian: "купувати", polish: "kupować", albanian: "të blej" }},
-            { german: "kosten", translations: { english: "to cost", ukrainian: "коштувати", polish: "kosztować", albanian: "të kushtoj" }},
-            { german: "pro Kilo", translations: { english: "per kilo", ukrainian: "за кілограм", polish: "za kilogram", albanian: "për kilogram" }},
-            { german: "die Kasse", translations: { english: "the checkout / cashier", ukrainian: "каса", polish: "kasa", albanian: "arka" }},
-            { german: "mit Karte zahlen", translations: { english: "to pay by card", ukrainian: "платити карткою", polish: "płacić kartą", albanian: "të paguaj me kartë" }},
-            { german: "die Verkäuferin", translations: { english: "the saleswoman", ukrainian: "продавщиця", polish: "sprzedawczyni", albanian: "shitësja" }},
-            { german: "freundlich", translations: { english: "friendly", ukrainian: "дружелюбний", polish: "przyjazny", albanian: "miqësor" }},
+            { german: "der Supermarkt", translations: { english: "the supermarket", ukrainian: "супермаркет", polish: "supermarket", albanian: "supermarketi", german: "der Supermarkt" }},
+            { german: "kaufen", translations: { english: "to buy", ukrainian: "купувати", polish: "kupować", albanian: "të blej", german: "kaufen" }},
+            { german: "kosten", translations: { english: "to cost", ukrainian: "коштувати", polish: "kosztować", albanian: "të kushtoj", german: "kosten" }},
+            { german: "pro Kilo", translations: { english: "per kilo", ukrainian: "за кілограм", polish: "za kilogram", albanian: "për kilogram", german: "pro Kilo" }},
+            { german: "die Kasse", translations: { english: "the checkout / cashier", ukrainian: "каса", polish: "kasa", albanian: "arka", german: "die Kasse" }},
+            { german: "mit Karte zahlen", translations: { english: "to pay by card", ukrainian: "платити карткою", polish: "płacić kartą", albanian: "të paguaj me kartë", german: "mit Karte zahlen" }},
+            { german: "die Verkäuferin", translations: { english: "the saleswoman", ukrainian: "продавщиця", polish: "sprzedawczyni", albanian: "shitësja", german: "die Verkäuferin" }},
+            { german: "freundlich", translations: { english: "friendly", ukrainian: "дружелюбний", polish: "przyjazny", albanian: "miqësor", german: "freundlich" }},
         ]
     },
     {
@@ -720,14 +710,14 @@ const learningContent: LearningContent[] = [
             '. Es wird kalt und windig. Ich muss dann eine Jacke anziehen. Am Wochenende soll es wieder sonnig werden. Dann gehe ich in den Park ', { answer: 'spazieren', size: 12 }, '.'
         ],
         vocabulary: [
-            { german: "das Wetter", translations: { english: "the weather", ukrainian: "погода", polish: "pogoda", albanian: "moti" }},
-            { german: "Die Sonne scheint", translations: { english: "The sun is shining", ukrainian: "Сонце світить", polish: "Słońce świeci", albanian: "Dielli shkëlqen" }},
-            { german: "warm / kalt", translations: { english: "warm / cold", ukrainian: "тепло / холодно", polish: "ciepło / zimno", albanian: "ngrohtë / ftohtë" }},
-            { german: "das Grad", translations: { english: "the degree", ukrainian: "градус", polish: "stopień", albanian: "grada" }},
-            { german: "tragen", translations: { english: "to wear", ukrainian: "носити (одяг)", polish: "nosić", albanian: "të vesh" }},
-            { german: "regnen", translations: { english: "to rain", ukrainian: "дощити", polish: "padać (deszcz)", albanian: "të bie shi" }},
-            { german: "windig", translations: { english: "windy", ukrainian: "вітряно", polish: "wietrznie", albanian: "me erë" }},
-            { german: "spazieren gehen", translations: { english: "to go for a walk", ukrainian: "йти на прогулянку", polish: "iść na spacer", albanian: "të shëtis" }},
+            { german: "das Wetter", translations: { english: "the weather", ukrainian: "погода", polish: "pogoda", albanian: "moti", german: "das Wetter" }},
+            { german: "Die Sonne scheint", translations: { english: "The sun is shining", ukrainian: "Сонце світить", polish: "Słońce świeci", albanian: "Dielli shkëlqen", german: "Die Sonne scheint" }},
+            { german: "warm / kalt", translations: { english: "warm / cold", ukrainian: "тепло / холодно", polish: "ciepło / zimno", albanian: "ngrohtë / ftohtë", german: "warm / kalt" }},
+            { german: "das Grad", translations: { english: "the degree", ukrainian: "градус", polish: "stopień", albanian: "grada", german: "das Grad" }},
+            { german: "tragen", translations: { english: "to wear", ukrainian: "носити (одяг)", polish: "nosić", albanian: "të vesh", german: "tragen" }},
+            { german: "regnen", translations: { english: "to rain", ukrainian: "дощити", polish: "padać (deszcz)", albanian: "të bie shi", german: "regnen" }},
+            { german: "windig", translations: { english: "windy", ukrainian: "вітряно", polish: "wietrznie", albanian: "me erë", german: "windig" }},
+            { german: "spazieren gehen", translations: { english: "to go for a walk", ukrainian: "йти на прогулянку", polish: "iść na spacer", albanian: "të shëtis", german: "spazieren gehen" }},
         ]
     },
     {
@@ -739,14 +729,14 @@ const learningContent: LearningContent[] = [
             '. Dort kann ich kostenlos Bücher leihen. Am Wochenende besuche ich auch Buchläden. Lesen macht mir viel ', { answer: 'Spaß', size: 8 }, '.'
         ],
         vocabulary: [
-            { german: "das Hobby", translations: { english: "the hobby", ukrainian: "хобі", polish: "hobby", albanian: "hobi" }},
-            { german: "lesen", translations: { english: "to read", ukrainian: "читати", polish: "czytać", albanian: "të lexoj" }},
-            { german: "die Stunde", translations: { english: "the hour", ukrainian: "година", polish: "godzina", albanian: "ora" }},
-            { german: "der Krimi / der Roman", translations: { english: "the crime novel / the novel", ukrainian: "детектив / роман", polish: "kryminał / powieść", albanian: "romani kriminal / romani" }},
-            { german: "die Bibliothek", translations: { english: "the library", ukrainian: "бібліотека", polish: "biblioteka", albanian: "biblioteka" }},
-            { german: "kostenlos", translations: { english: "free of charge", ukrainian: "безкоштовно", polish: "darmowy", albanian: "falas" }},
-            { german: "Bücher leihen", translations: { english: "to borrow books", ukrainian: "позичати книги", polish: "wypożyczać książki", albanian: "të marr hua libra" }},
-            { german: "Spaß machen", translations: { english: "to be fun", ukrainian: "приносити задоволення", polish: "sprawiać przyjemność", albanian: "të bëj qejf" }},
+            { german: "das Hobby", translations: { english: "the hobby", ukrainian: "хобі", polish: "hobby", albanian: "hobi", german: "das Hobby" }},
+            { german: "lesen", translations: { english: "to read", ukrainian: "читати", polish: "czytać", albanian: "të lexoj", german: "lesen" }},
+            { german: "die Stunde", translations: { english: "the hour", ukrainian: "година", polish: "godzina", albanian: "ora", german: "die Stunde" }},
+            { german: "der Krimi / der Roman", translations: { english: "the crime novel / the novel", ukrainian: "детектив / роман", polish: "kryminał / powieść", albanian: "romani kriminal / romani", german: "der Krimi / der Roman" }},
+            { german: "die Bibliothek", translations: { english: "the library", ukrainian: "бібліотека", polish: "biblioteka", albanian: "biblioteka", german: "die Bibliothek" }},
+            { german: "kostenlos", translations: { english: "free of charge", ukrainian: "безкоштовно", polish: "darmowy", albanian: "falas", german: "kostenlos" }},
+            { german: "Bücher leihen", translations: { english: "to borrow books", ukrainian: "позичати книги", polish: "wypożyczać książki", albanian: "të marr hua libra", german: "Bücher leihen" }},
+            { german: "Spaß machen", translations: { english: "to be fun", ukrainian: "приносити задоволення", polish: "sprawiać przyjemność", albanian: "të bëj qejf", german: "Spaß machen" }},
         ]
     },
     {
@@ -766,14 +756,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Kellner' }, 'Perfekt. Also morgen um 19:30 Uhr für vier Personen, Tisch 12. Vielen Dank für Ihre Reservierung, Frau Klein!',
         ],
         vocabulary: [
-            { german: "reservieren", translations: { english: "to reserve", ukrainian: "резервувати", polish: "rezerwować", albanian: "të rezervoj" }},
-            { german: "der Tisch", translations: { english: "the table", ukrainian: "стіл", polish: "stół", albanian: "tavolina" }},
-            { german: "die Personen", translations: { english: "the people / persons", ukrainian: "особи", polish: "osoby", albanian: "personat" }},
-            { german: "möglich", translations: { english: "possible", ukrainian: "можливо", polish: "możliwy", albanian: "e mundur" }},
-            { german: "besondere Wünsche", translations: { english: "special wishes", ukrainian: "особливі побажання", polish: "specjalne życzenia", albanian: "dëshira të veçanta" }},
-            { german: "ruhig", translations: { english: "quiet", ukrainian: "тихий", polish: "cichy", albanian: "i qetë" }},
-            { german: "vegetarische Gerichte", translations: { english: "vegetarian dishes", ukrainian: "вегетаріанські страви", polish: "dania wegetariańskie", albanian: "pjatat vegjetariane" }},
-            { german: "selbstverständlich", translations: { english: "of course / naturally", ukrainian: "звичайно", polish: "oczywiście", albanian: "sigurisht" }},
+            { german: "reservieren", translations: { english: "to reserve", ukrainian: "резервувати", polish: "rezerwować", albanian: "të rezervoj", german: "reservieren" }},
+            { german: "der Tisch", translations: { english: "the table", ukrainian: "стіл", polish: "stół", albanian: "tavolina", german: "der Tisch" }},
+            { german: "die Personen", translations: { english: "the people / persons", ukrainian: "особи", polish: "osoby", albanian: "personat", german: "die Personen" }},
+            { german: "möglich", translations: { english: "possible", ukrainian: "можливо", polish: "możliwy", albanian: "e mundur", german: "möglich" }},
+            { german: "besondere Wünsche", translations: { english: "special wishes", ukrainian: "особливі побажання", polish: "specjalne życzenia", albanian: "dëshira të veçanta", german: "besondere Wünsche" }},
+            { german: "ruhig", translations: { english: "quiet", ukrainian: "тихий", polish: "cichy", albanian: "i qetë", german: "ruhig" }},
+            { german: "vegetarische Gerichte", translations: { english: "vegetarian dishes", ukrainian: "вегетаріанські страви", polish: "dania wegetariańskie", albanian: "pjatat vegjetariane", german: "vegetarische Gerichte" }},
+            { german: "selbstverständlich", translations: { english: "of course / naturally", ukrainian: "звичайно", polish: "oczywiście", albanian: "sigurisht", german: "selbstverständlich" }},
         ]
     },
     {
@@ -793,14 +783,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Sprechstundenhilfe' }, 'Gerne, Herr Braun. Gute Besserung und bis später!',
         ],
         vocabulary: [
-            { german: "dringend", translations: { english: "urgent", ukrainian: "терміново", polish: "pilny", albanian: "urgjente" }},
-            { german: "der Termin", translations: { english: "the appointment", ukrainian: "запис / зустріч", polish: "termin", albanian: "takimi" }},
-            { german: "die Beschwerden", translations: { english: "the symptoms / complaints", ukrainian: "скарги", polish: "dolegliwości", albanian: "ankesat" }},
-            { german: "die Kopfschmerzen", translations: { english: "the headache", ukrainian: "головний біль", polish: "bóle głowy", albanian: "dhimbja e kokës" }},
-            { german: "das Fieber", translations: { english: "the fever", ukrainian: "температура / лихоманка", polish: "gorączka", albanian: "temperatura" }},
-            { german: "mitbringen", translations: { english: "to bring with", ukrainian: "принести з собою", polish: "przynieść ze sobą", albanian: "të sjell me vete" }},
-            { german: "die Versichertenkarte", translations: { english: "the health insurance card", ukrainian: "страхова картка", polish: "karta ubezpieczenia", albanian: "karta e sigurimit" }},
-            { german: "Gute Besserung", translations: { english: "Get well soon", ukrainian: "Швидкого одужання", polish: "Szybkiego powrotu do zdrowia", albanian: "Shërim të shpejtë" }},
+            { german: "dringend", translations: { english: "urgent", ukrainian: "терміново", polish: "pilny", albanian: "urgjente", german: "dringend" }},
+            { german: "der Termin", translations: { english: "the appointment", ukrainian: "запис / зустріч", polish: "termin", albanian: "takimi", german: "der Termin" }},
+            { german: "die Beschwerden", translations: { english: "the symptoms / complaints", ukrainian: "скарги", polish: "dolegliwości", albanian: "ankesat", german: "die Beschwerden" }},
+            { german: "die Kopfschmerzen", translations: { english: "the headache", ukrainian: "головний біль", polish: "bóle głowy", albanian: "dhimbja e kokës", german: "die Kopfschmerzen" }},
+            { german: "das Fieber", translations: { english: "the fever", ukrainian: "температура / лихоманка", polish: "gorączka", albanian: "temperatura", german: "das Fieber" }},
+            { german: "mitbringen", translations: { english: "to bring with", ukrainian: "принести з собою", polish: "przynieść ze sobą", albanian: "të sjell me vete", german: "mitbringen" }},
+            { german: "die Versichertenkarte", translations: { english: "the health insurance card", ukrainian: "страхова картка", polish: "karta ubezpieczenia", albanian: "karta e sigurimit", german: "die Versichertenkarte" }},
+            { german: "Gute Besserung", translations: { english: "Get well soon", ukrainian: "Швидкого одужання", polish: "Szybkiego powrotu do zdrowia", albanian: "Shërim të shpejtë", german: "Gute Besserung" }},
         ]
     },
     {
@@ -821,14 +811,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Bewerber' }, 'Perfekt. Dann bis Dienstag, 10:00 Uhr. Vielen Dank!',
         ],
         vocabulary: [
-            { german: "die Personalabteilung", translations: { english: "the HR department", ukrainian: "відділ кадрів", polish: "dział kadr", albanian: "departamenti i burimeve njerëzore" }},
-            { german: "der Bewerber", translations: { english: "the applicant (m)", ukrainian: "кандидат", polish: "kandydat", albanian: "aplikanti" }},
-            { german: "das Vorstellungsgespräch", translations: { english: "the job interview", ukrainian: "співбесіда", polish: "rozmowa kwalifikacyjna", albanian: "intervista e punës" }},
-            { german: "flexibel", translations: { english: "flexible", ukrainian: "гнучкий", polish: "elastyczny", albanian: "fleksibël" }},
-            { german: "einplanen", translations: { english: "to schedule / plan for", ukrainian: "запланувати", polish: "zaplanować", albanian: "të planifikoj" }},
-            { german: "der Abteilungsleiter", translations: { english: "the department head", ukrainian: "керівник відділу", polish: "kierownik działu", albanian: "shefi i departamentit" }},
-            { german: "die Unterlagen", translations: { english: "the documents", ukrainian: "документи", polish: "dokumenty", albanian: "dokumentet" }},
-            { german: "der Empfang", translations: { english: "the reception", ukrainian: "рецепція", polish: "recepcja", albanian: "recepsioni" }},
+            { german: "die Personalabteilung", translations: { english: "the HR department", ukrainian: "відділ кадрів", polish: "dział kadr", albanian: "departamenti i burimeve njerëzore", german: "die Personalabteilung" }},
+            { german: "der Bewerber", translations: { english: "the applicant (m)", ukrainian: "кандидат", polish: "kandydat", albanian: "aplikanti", german: "der Bewerber" }},
+            { german: "das Vorstellungsgespräch", translations: { english: "the job interview", ukrainian: "співбесіда", polish: "rozmowa kwalifikacyjna", albanian: "intervista e punës", german: "das Vorstellungsgespräch" }},
+            { german: "flexibel", translations: { english: "flexible", ukrainian: "гнучкий", polish: "elastyczny", albanian: "fleksibël", german: "flexibel" }},
+            { german: "einplanen", translations: { english: "to schedule / plan for", ukrainian: "запланувати", polish: "zaplanować", albanian: "të planifikoj", german: "einplanen" }},
+            { german: "der Abteilungsleiter", translations: { english: "the department head", ukrainian: "керівник відділу", polish: "kierownik działu", albanian: "shefi i departamentit", german: "der Abteilungsleiter" }},
+            { german: "die Unterlagen", translations: { english: "the documents", ukrainian: "документи", polish: "dokumenty", albanian: "dokumentet", german: "die Unterlagen" }},
+            { german: "der Empfang", translations: { english: "the reception", ukrainian: "рецепція", polish: "recepcja", albanian: "recepsioni", german: "der Empfang" }},
         ]
     },
     {
@@ -849,14 +839,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Interessentin' }, 'Gut, dann bis Samstag um 14:00 Uhr. Auf Wiederhören!',
         ],
         vocabulary: [
-            { german: "sich interessieren für", translations: { english: "to be interested in", ukrainian: "цікавитися чимось", polish: "interesować się czymś", albanian: "të interesohem për" }},
-            { german: "die Wohnung", translations: { english: "the apartment", ukrainian: "квартира", polish: "mieszkanie", albanian: "apartamenti" }},
-            { german: "die Besichtigung", translations: { english: "the viewing / visit", ukrainian: "огляд", polish: "oglądanie", albanian: "vizita" }},
-            { german: "unter der Woche", translations: { english: "during the week", ukrainian: "протягом тижня", polish: "w ciągu tygodnia", albanian: "gjatë javës" }},
-            { german: "renoviert", translations: { english: "renovated", ukrainian: "відремонтований", polish: "odnowiony", albanian: "i rinovuar" }},
-            { german: "die Miete", translations: { english: "the rent", ukrainian: "орендна плата", polish: "czynsz", albanian: "qiraja" }},
-            { german: "die Nebenkosten", translations: { english: "the utility costs", ukrainian: "комунальні послуги", polish: "koszty dodatkowe", albanian: "shpenzimet shtesë" }},
-            { german: "die Kaution", translations: { english: "the security deposit", ukrainian: "застава", polish: "kaucja", albanian: "depozita" }},
+            { german: "sich interessieren für", translations: { english: "to be interested in", ukrainian: "цікавитися чимось", polish: "interesować się czymś", albanian: "të interesohem për", german: "sich interessieren für" }},
+            { german: "die Wohnung", translations: { english: "the apartment", ukrainian: "квартира", polish: "mieszkanie", albanian: "apartamenti", german: "die Wohnung" }},
+            { german: "die Besichtigung", translations: { english: "the viewing / visit", ukrainian: "огляд", polish: "oglądanie", albanian: "vizita", german: "die Besichtigung" }},
+            { german: "unter der Woche", translations: { english: "during the week", ukrainian: "протягом тижня", polish: "w ciągu tygodnia", albanian: "gjatë javës", german: "unter der Woche" }},
+            { german: "renoviert", translations: { english: "renovated", ukrainian: "відремонтований", polish: "odnowiony", albanian: "i rinovuar", german: "renoviert" }},
+            { german: "die Miete", translations: { english: "the rent", ukrainian: "орендна плата", polish: "czynsz", albanian: "qiraja", german: "die Miete" }},
+            { german: "die Nebenkosten", translations: { english: "the utility costs", ukrainian: "комунальні послуги", polish: "koszty dodatkowe", albanian: "shpenzimet shtesë", german: "die Nebenkosten" }},
+            { german: "die Kaution", translations: { english: "the security deposit", ukrainian: "застава", polish: "kaucja", albanian: "depozita", german: "die Kaution" }},
         ]
     },
     // {
@@ -880,14 +870,14 @@ const learningContent: LearningContent[] = [
     //         { speaker: 'Support' }, 'Gerne, Frau Weber. Bringen Sie alle Kabel mit. Bis morgen!',
     //     ],
     //     vocabulary: [
-    //         { german: "funktionieren", translations: { english: "to work / function", ukrainian: "працювати / функціонувати", polish: "działać", albanian: "të funksionoj" }},
-    //         { german: "das Problem", translations: { english: "the problem", ukrainian: "проблема", polish: "problem", albanian: "problemi" }},
-    //         { german: "starten", translations: { english: "to start", ukrainian: "запускати", polish: "uruchamiać", albanian: "të nis" }},
-    //         { german: "das Kabel", translations: { english: "the cable", ukrainian: "кабель", polish: "kabel", albanian: "kablloja" }},
-    //         { german: "eingesteckt", translations: { english: "plugged in", ukrainian: "включений в розетку", polish: "podłączony", albanian: "i futur në prizë" }},
-    //         { german: "das Netzteil", translations: { english: "the power supply", ukrainian: "блок живлення", polish: "zasilacz", albanian: "furnizuesi i energjisë" }},
-    //         { german: "das Gerät", translations: { english: "the device", ukrainian: "пристрій", polish: "urządzenie", albanian: "pajisja" }},
-    //         { german: "die Diagnose", translations: { english: "the diagnosis", ukrainian: "діагностика", polish: "diagnoza", albanian: "diagnoza" }},
+    //         { german: "funktionieren", translations: { english: "to work / function", ukrainian: "працювати / функціонувати", polish: "działać", albanian: "të funksionoj", german: "funktionieren" }},
+    //         { german: "das Problem", translations: { english: "the problem", ukrainian: "проблема", polish: "problem", albanian: "problemi", german: "das Problem" }},
+    //         { german: "starten", translations: { english: "to start", ukrainian: "запускати", polish: "uruchamiać", albanian: "të nis", german: "starten" }},
+    //         { german: "das Kabel", translations: { english: "the cable", ukrainian: "кабель", polish: "kabel", albanian: "kablloja", german: "das Kabel" }},
+    //         { german: "eingesteckt", translations: { english: "plugged in", ukrainian: "включений в розетку", polish: "podłączony", albanian: "i futur në prizë", german: "eingesteckt" }},
+    //         { german: "das Netzteil", translations: { english: "the power supply", ukrainian: "блок живлення", polish: "zasilacz", albanian: "furnizuesi i energjisë", german: "das Netzteil" }},
+    //         { german: "das Gerät", translations: { english: "the device", ukrainian: "пристрій", polish: "urządzenie", albanian: "pajisja", german: "das Gerät" }},
+    //         { german: "die Diagnose", translations: { english: "the diagnosis", ukrainian: "діагностика", polish: "diagnoza", albanian: "diagnoza", german: "die Diagnose" }},
     //     ]
     // },
     {
@@ -907,14 +897,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Verkäuferin' }, 'Gern geschehen. Einen schönen Tag noch!',
         ],
         vocabulary: [
-            { german: "helfen", translations: { english: "to help", ukrainian: "допомагати", polish: "pomagać", albanian: "të ndihmoj" }},
-            { german: "finden", translations: { english: "to find", ukrainian: "знаходити", polish: "znaleźć", albanian: "të gjej" }},
-            { german: "die Milchprodukte", translations: { english: "the dairy products", ukrainian: "молочні продукти", polish: "produkty mleczne", albanian: "produktet e qumështit" }},
-            { german: "das Obst und Gemüse", translations: { english: "the fruit and vegetables", ukrainian: "фрукти та овочі", polish: "owoce i warzywa", albanian: "frutat dhe perimet" }},
-            { german: "der Eingang", translations: { english: "the entrance", ukrainian: "вхід", polish: "wejście", albanian: "hyrja" }},
-            { german: "kosten", translations: { english: "to cost", ukrainian: "коштувати", polish: "kosztować", albanian: "të kushtoj" }},
-            { german: "die Bäckerei", translations: { english: "the bakery", ukrainian: "пекарня", polish: "piekarnia", albanian: "furra e bukës" }},
-            { german: "gern geschehen", translations: { english: "you're welcome", ukrainian: "нема за що", polish: "nie ma za co", albanian: "me kënaqësi" }},
+            { german: "helfen", translations: { english: "to help", ukrainian: "допомагати", polish: "pomagać", albanian: "të ndihmoj", german: "helfen" }},
+            { german: "finden", translations: { english: "to find", ukrainian: "знаходити", polish: "znaleźć", albanian: "të gjej", german: "finden" }},
+            { german: "die Milchprodukte", translations: { english: "the dairy products", ukrainian: "молочні продукти", polish: "produkty mleczne", albanian: "produktet e qumështit", german: "die Milchprodukte" }},
+            { german: "das Obst und Gemüse", translations: { english: "the fruit and vegetables", ukrainian: "фрукти та овочі", polish: "owoce i warzywa", albanian: "frutat dhe perimet", german: "das Obst und Gemüse" }},
+            { german: "der Eingang", translations: { english: "the entrance", ukrainian: "вхід", polish: "wejście", albanian: "hyrja", german: "der Eingang" }},
+            { german: "kosten", translations: { english: "to cost", ukrainian: "коштувати", polish: "kosztować", albanian: "të kushtoj", german: "kosten" }},
+            { german: "die Bäckerei", translations: { english: "the bakery", ukrainian: "пекарня", polish: "piekarnia", albanian: "furra e bukës", german: "die Bäckerei" }},
+            { german: "gern geschehen", translations: { english: "you're welcome", ukrainian: "нема за що", polish: "nie ma za co", albanian: "me kënaqësi", german: "gern geschehen" }},
         ]
     },
     {
@@ -933,14 +923,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Passantin' }, 'Bitte schön! Ich wünsche Ihnen einen schönen Aufenthalt in unserer Stadt.',
         ],
         vocabulary: [
-            { german: "Entschuldigung", translations: { english: "Excuse me", ukrainian: "Вибачте", polish: "Przepraszam", albanian: "Më falni" }},
-            { german: "suchen", translations: { english: "to look for", ukrainian: "шукати", polish: "szukać", albanian: "të kërkoj" }},
-            { german: "das Rathaus", translations: { english: "the city hall", ukrainian: "ратуша", polish: "ratusz", albanian: "bashkia" }},
-            { german: "geradeaus", translations: { english: "straight ahead", ukrainian: "прямо", polish: "prosto", albanian: "drejt" }},
-            { german: "die Ampel", translations: { english: "the traffic light", ukrainian: "світлофор", polish: "sygnalizacja świetlna", albanian: "semafori" }},
-            { german: "links / rechts abbiegen", translations: { english: "to turn left / right", ukrainian: "повернути ліворуч / праворуч", polish: "skręcić w lewo / w prawo", albanian: "të kthehem majtas / djathtas" }},
-            { german: "zu Fuß", translations: { english: "on foot", ukrainian: "пішки", polish: "pieszo", albanian: "në këmbë" }},
-            { german: "das Gebäude", translations: { english: "the building", ukrainian: "будівля", polish: "budynek", albanian: "ndërtesa" }},
+            { german: "Entschuldigung", translations: { english: "Excuse me", ukrainian: "Вибачте", polish: "Przepraszam", albanian: "Më falni", german: "Entschuldigung" }},
+            { german: "suchen", translations: { english: "to look for", ukrainian: "шукати", polish: "szukać", albanian: "të kërkoj", german: "suchen" }},
+            { german: "das Rathaus", translations: { english: "the city hall", ukrainian: "ратуша", polish: "ratusz", albanian: "bashkia", german: "das Rathaus" }},
+            { german: "geradeaus", translations: { english: "straight ahead", ukrainian: "прямо", polish: "prosto", albanian: "drejt", german: "geradeaus" }},
+            { german: "die Ampel", translations: { english: "the traffic light", ukrainian: "світлофор", polish: "sygnalizacja świetlna", albanian: "semafori", german: "die Ampel" }},
+            { german: "links / rechts abbiegen", translations: { english: "to turn left / right", ukrainian: "повернути ліворуч / праворуч", polish: "skręcić w lewo / w prawo", albanian: "të kthehem majtas / djathtas", german: "links / rechts abbiegen" }},
+            { german: "zu Fuß", translations: { english: "on foot", ukrainian: "пішки", polish: "pieszo", albanian: "në këmbë", german: "zu Fuß" }},
+            { german: "das Gebäude", translations: { english: "the building", ukrainian: "будівля", polish: "budynek", albanian: "ndërtesa", german: "das Gebäude" }},
         ]
     },
     {
@@ -960,14 +950,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Kellner' }, 'Danke schön, 50 Cent zurück. Ihre ', { answer: 'Bestellung', size: 11 }, ' kommt gleich.',
         ],
         vocabulary: [
-            { german: "bestellen", translations: { english: "to order", ukrainian: "замовляти", polish: "zamawiać", albanian: "të porosis" }},
-            { german: "bringen", translations: { english: "to bring", ukrainian: "приносити", polish: "przynieść", albanian: "të sjell" }},
-            { german: "der Kuchen", translations: { english: "the cake", ukrainian: "торт / пиріг", polish: "ciasto", albanian: "ëmbëlsira" }},
-            { german: "das Stück", translations: { english: "the piece", ukrainian: "шматок", polish: "kawałek", albanian: "copa" }},
-            { german: "der Zucker", translations: { english: "the sugar", ukrainian: "цукор", polish: "cukier", albanian: "sheqeri" }},
-            { german: "zusammen", translations: { english: "together / in total", ukrainian: "разом", polish: "razem", albanian: "bashkë / në total" }},
-            { german: "das macht...", translations: { english: "that makes... / that will be...", ukrainian: "це коштує...", polish: "to kosztuje...", albanian: "kjo bën..." }},
-            { german: "die Bestellung", translations: { english: "the order", ukrainian: "замовлення", polish: "zamówienie", albanian: "porosia" }},
+            { german: "bestellen", translations: { english: "to order", ukrainian: "замовляти", polish: "zamawiać", albanian: "të porosis", german: "bestellen" }},
+            { german: "bringen", translations: { english: "to bring", ukrainian: "приносити", polish: "przynieść", albanian: "të sjell", german: "bringen" }},
+            { german: "der Kuchen", translations: { english: "the cake", ukrainian: "торт / пиріг", polish: "ciasto", albanian: "ëmbëlsira", german: "der Kuchen" }},
+            { german: "das Stück", translations: { english: "the piece", ukrainian: "шматок", polish: "kawałek", albanian: "copa", german: "das Stück" }},
+            { german: "der Zucker", translations: { english: "the sugar", ukrainian: "цукор", polish: "cukier", albanian: "sheqeri", german: "der Zucker" }},
+            { german: "zusammen", translations: { english: "together / in total", ukrainian: "разом", polish: "razem", albanian: "bashkë / në total", german: "zusammen" }},
+            { german: "das macht...", translations: { english: "that makes... / that will be...", ukrainian: "це коштує...", polish: "to kosztuje...", albanian: "kjo bën...", german: "das macht..." }},
+            { german: "die Bestellung", translations: { english: "the order", ukrainian: "замовлення", polish: "zamówienie", albanian: "porosia", german: "die Bestellung" }},
         ]
     },
     {
@@ -987,14 +977,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Friseurin' }, 'Das schaffen wir problemlos. Setzen Sie sich bitte hier hin.',
         ],
         vocabulary: [
-            { german: "der Friseur / die Friseurin", translations: { english: "the hairdresser (m/f)", ukrainian: "перукар / перукарка", polish: "fryzjer / fryzjerka", albanian: "parukieri / parukierja" }},
-            { german: "der Termin", translations: { english: "the appointment", ukrainian: "запис / зустріч", polish: "termin", albanian: "takimi" }},
-            { german: "Haare schneiden", translations: { english: "to cut hair", ukrainian: "стригти волосся", polish: "strzyc włosy", albanian: "të pres flokët" }},
-            { german: "kürzer", translations: { english: "shorter", ukrainian: "коротше", polish: "krótszy", albanian: "më të shkurtra" }},
-            { german: "die Farbe", translations: { english: "the color", ukrainian: "колір", polish: "kolor", albanian: "ngjyra" }},
-            { german: "waschen", translations: { english: "to wash", ukrainian: "мити", polish: "myć", albanian: "të laj" }},
-            { german: "dauern", translations: { english: "to last / take time", ukrainian: "тривати", polish: "trwać", albanian: "të zgjasë" }},
-            { german: "ungefähr", translations: { english: "approximately", ukrainian: "приблизно", polish: "około", albanian: "afërsisht" }},
+            { german: "der Friseur / die Friseurin", translations: { english: "the hairdresser (m/f)", ukrainian: "перукар / перукарка", polish: "fryzjer / fryzjerka", albanian: "parukieri / parukierja", german: "der Friseur / die Friseurin" }},
+            { german: "der Termin", translations: { english: "the appointment", ukrainian: "запис / зустріч", polish: "termin", albanian: "takimi", german: "der Termin" }},
+            { german: "Haare schneiden", translations: { english: "to cut hair", ukrainian: "стригти волосся", polish: "strzyc włosy", albanian: "të pres flokët", german: "Haare schneiden" }},
+            { german: "kürzer", translations: { english: "shorter", ukrainian: "коротше", polish: "krótszy", albanian: "më të shkurtra", german: "kürzer" }},
+            { german: "die Farbe", translations: { english: "the color", ukrainian: "колір", polish: "kolor", albanian: "ngjyra", german: "die Farbe" }},
+            { german: "waschen", translations: { english: "to wash", ukrainian: "мити", polish: "myć", albanian: "të laj", german: "waschen" }},
+            { german: "dauern", translations: { english: "to last / take time", ukrainian: "тривати", polish: "trwać", albanian: "të zgjasë", german: "dauern" }},
+            { german: "ungefähr", translations: { english: "approximately", ukrainian: "приблизно", polish: "około", albanian: "afërsisht", german: "ungefähr" }},
         ]
     },
     {
@@ -1015,14 +1005,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Verkäuferin' }, 'Ja, um 18:15 Uhr. Die Rückfahrkarte macht dann insgesamt ', { answer: '85', size: 4 }, ' Euro.',
         ],
         vocabulary: [
-            { german: "die Fahrkarte", translations: { english: "the ticket", ukrainian: "квиток", polish: "bilet", albanian: "bileta" }},
-            { german: "fahren", translations: { english: "to go / travel", ukrainian: "їхати", polish: "jechać", albanian: "të udhëtoj" }},
-            { german: "der Zug", translations: { english: "the train", ukrainian: "поїзд", polish: "pociąg", albanian: "treni" }},
-            { german: "dauern", translations: { english: "to last / take time", ukrainian: "тривати", polish: "trwać", albanian: "të zgjasë" }},
-            { german: "ankommen", translations: { english: "to arrive", ukrainian: "прибувати", polish: "przyjeżdżać", albanian: "të arrij" }},
-            { german: "einfache Fahrt", translations: { english: "one-way trip", ukrainian: "поїздка в один кінець", polish: "przejazd w jedną stronę", albanian: "udhëtim vajtje" }},
-            { german: "die Rückfahrkarte", translations: { english: "the return ticket", ukrainian: "зворотний квиток", polish: "bilet powrotny", albanian: "bileta e kthimit" }},
-            { german: "insgesamt", translations: { english: "in total", ukrainian: "загалом", polish: "w sumie", albanian: "në total" }},
+            { german: "die Fahrkarte", translations: { english: "the ticket", ukrainian: "квиток", polish: "bilet", albanian: "bileta", german: "die Fahrkarte" }},
+            { german: "fahren", translations: { english: "to go / travel", ukrainian: "їхати", polish: "jechać", albanian: "të udhëtoj", german: "fahren" }},
+            { german: "der Zug", translations: { english: "the train", ukrainian: "поїзд", polish: "pociąg", albanian: "treni", german: "der Zug" }},
+            { german: "dauern", translations: { english: "to last / take time", ukrainian: "тривати", polish: "trwać", albanian: "të zgjasë", german: "dauern" }},
+            { german: "ankommen", translations: { english: "to arrive", ukrainian: "прибувати", polish: "przyjeżdżać", albanian: "të arrij", german: "ankommen" }},
+            { german: "einfache Fahrt", translations: { english: "one-way trip", ukrainian: "поїздка в один кінець", polish: "przejazd w jedną stronę", albanian: "udhëtim vajtje", german: "einfache Fahrt" }},
+            { german: "die Rückfahrkarte", translations: { english: "the return ticket", ukrainian: "зворотний квиток", polish: "bilet powrotny", albanian: "bileta e kthimit", german: "die Rückfahrkarte" }},
+            { german: "insgesamt", translations: { english: "in total", ukrainian: "загалом", polish: "w sumie", albanian: "në total", german: "insgesamt" }},
         ]
     },
     {
@@ -1042,14 +1032,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Rezeptionist' }, 'Danke schön. Hier ist Ihr Zimmerschlüssel. Ich wünsche Ihnen einen angenehmen Aufenthalt!',
         ],
         vocabulary: [
-            { german: "einchecken", translations: { english: "to check in", ukrainian: "зареєструватися", polish: "zameldować się", albanian: "të bëj check-in" }},
-            { german: "reserviert", translations: { english: "reserved", ukrainian: "заброньовано", polish: "zarezerwowany", albanian: "i rezervuar" }},
-            { german: "die Reservierung", translations: { english: "the reservation", ukrainian: "бронювання", polish: "rezerwacja", albanian: "rezervimi" }},
-            { german: "das Einzelzimmer", translations: { english: "the single room", ukrainian: "одномісний номер", polish: "pokój jednoosobowy", albanian: "dhoma teke" }},
-            { german: "ruhig", translations: { english: "quiet", ukrainian: "тихий", polish: "cichy", albanian: "i qetë" }},
-            { german: "der Innenhof", translations: { english: "the courtyard", ukrainian: "внутрішній двір", polish: "dziedziniec", albanian: "oborri i brendshëm" }},
-            { german: "kostenlos", translations: { english: "free of charge", ukrainian: "безкоштовно", polish: "darmowy", albanian: "falas" }},
-            { german: "der Zimmerschlüssel", translations: { english: "the room key", ukrainian: "ключ від номера", polish: "klucz do pokoju", albanian: "çelësi i dhomës" }},
+            { german: "einchecken", translations: { english: "to check in", ukrainian: "зареєструватися", polish: "zameldować się", albanian: "të bëj check-in", german: "einchecken" }},
+            { german: "reserviert", translations: { english: "reserved", ukrainian: "заброньовано", polish: "zarezerwowany", albanian: "i rezervuar", german: "reserviert" }},
+            { german: "die Reservierung", translations: { english: "the reservation", ukrainian: "бронювання", polish: "rezerwacja", albanian: "rezervimi", german: "die Reservierung" }},
+            { german: "das Einzelzimmer", translations: { english: "the single room", ukrainian: "одномісний номер", polish: "pokój jednoosobowy", albanian: "dhoma teke", german: "das Einzelzimmer" }},
+            { german: "ruhig", translations: { english: "quiet", ukrainian: "тихий", polish: "cichy", albanian: "i qetë", german: "ruhig" }},
+            { german: "der Innenhof", translations: { english: "the courtyard", ukrainian: "внутрішній двір", polish: "dziedziniec", albanian: "oborri i brendshëm", german: "der Innenhof" }},
+            { german: "kostenlos", translations: { english: "free of charge", ukrainian: "безкоштовно", polish: "darmowy", albanian: "falas", german: "kostenlos" }},
+            { german: "der Zimmerschlüssel", translations: { english: "the room key", ukrainian: "ключ від номера", polish: "klucz do pokoju", albanian: "çelësi i dhomës", german: "der Zimmerschlüssel" }},
         ]
     },
     {
@@ -1071,14 +1061,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Ärztin' }, 'Zwei bis drei Tage sollten Sie zu Hause bleiben. Ich schreibe Sie krank.',
         ],
         vocabulary: [
-            { german: "sich fühlen", translations: { english: "to feel", ukrainian: "почуватися", polish: "czuć się", albanian: "të ndihem" }},
-            { german: "die Beschwerden", translations: { english: "the symptoms", ukrainian: "скарги / симптоми", polish: "dolegliwości", albanian: "ankesat / simptomat" }},
-            { german: "müde", translations: { english: "tired", ukrainian: "втомлений", polish: "zmęczony", albanian: "i lodhur" }},
-            { german: "das Fieber", translations: { english: "the fever", ukrainian: "температура", polish: "gorączka", albanian: "temperatura" }},
-            { german: "die Erkältung", translations: { english: "the cold (illness)", ukrainian: "застуда", polish: "przeziębienie", albanian: "ftohja" }},
-            { german: "die Medikamente", translations: { english: "the medicine", ukrainian: "ліки", polish: "lekarstwa", albanian: "ilaçet" }},
-            { german: "sich ausruhen", translations: { english: "to rest", ukrainian: "відпочивати", polish: "odpoczywać", albanian: "të pushoj" }},
-            { german: "krank sein / jemanden krankschreiben", translations: { english: "to be sick / to write a sick note", ukrainian: "бути хворим / виписати лікарняний", polish: "być chorym / wystawić zwolnienie lekarskie", albanian: "të jesh i sëmurë / të japësh raport mjekësor" }},
+            { german: "sich fühlen", translations: { english: "to feel", ukrainian: "почуватися", polish: "czuć się", albanian: "të ndihem", german: "sich fühlen" }},
+            { german: "die Beschwerden", translations: { english: "the symptoms", ukrainian: "скарги / симптоми", polish: "dolegliwości", albanian: "ankesat / simptomat", german: "die Beschwerden" }},
+            { german: "müde", translations: { english: "tired", ukrainian: "втомлений", polish: "zmęczony", albanian: "i lodhur", german: "müde" }},
+            { german: "das Fieber", translations: { english: "the fever", ukrainian: "температура", polish: "gorączka", albanian: "temperatura", german: "das Fieber" }},
+            { german: "die Erkältung", translations: { english: "the cold (illness)", ukrainian: "застуда", polish: "przeziębienie", albanian: "ftohja", german: "die Erkältung" }},
+            { german: "die Medikamente", translations: { english: "the medicine", ukrainian: "ліки", polish: "lekarstwa", albanian: "ilaçet", german: "die Medikamente" }},
+            { german: "sich ausruhen", translations: { english: "to rest", ukrainian: "відпочивати", polish: "odpoczywać", albanian: "të pushoj", german: "sich ausruhen" }},
+            { german: "krank sein / jemanden krankschreiben", translations: { english: "to be sick / to write a sick note", ukrainian: "бути хворим / виписати лікарняний", polish: "być chorym / wystawić zwolnienie lekarskie", albanian: "të jesh i sëmurë / të japësh raport mjekësor", german: "krank sein / jemanden krankschreiben" }},
         ]
     },
     {
@@ -1100,14 +1090,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Verkäuferin' }, 'Gerne! Ich hoffe, Sie haben lange Freude an der Jeans.',
         ],
         vocabulary: [
-            { german: "behilflich sein", translations: { english: "to be helpful", ukrainian: "бути корисним", polish: "być pomocnym", albanian: "të jem i dobishëm" }},
-            { german: "suchen", translations: { english: "to look for", ukrainian: "шукати", polish: "szukać", albanian: "të kërkoj" }},
-            { german: "die Größe", translations: { english: "the size", ukrainian: "розмір", polish: "rozmiar", albanian: "masa" }},
-            { german: "anprobieren", translations: { english: "to try on", ukrainian: "приміряти", polish: "przymierzać", albanian: "të provoj" }},
-            { german: "die Umkleidekabine", translations: { english: "the changing room", ukrainian: "примірочна", polish: "przymierzalnia", albanian: "dhoma e zhveshjes" }},
-            { german: "passen", translations: { english: "to fit", ukrainian: "підходити (за розміром)", polish: "pasować", albanian: "të përshtatet" }},
-            { german: "der Rabatt", translations: { english: "the discount", ukrainian: "знижка", polish: "rabat", albanian: "zbritja" }},
-            { german: "die Beratung", translations: { english: "the consultation / advice", ukrainian: "консультація", polish: "doradztwo", albanian: "këshilla" }},
+            { german: "behilflich sein", translations: { english: "to be helpful", ukrainian: "бути корисним", polish: "być pomocnym", albanian: "të jem i dobishëm", german: "behilflich sein" }},
+            { german: "suchen", translations: { english: "to look for", ukrainian: "шукати", polish: "szukać", albanian: "të kërkoj", german: "suchen" }},
+            { german: "die Größe", translations: { english: "the size", ukrainian: "розмір", polish: "rozmiar", albanian: "masa", german: "die Größe" }},
+            { german: "anprobieren", translations: { english: "to try on", ukrainian: "приміряти", polish: "przymierzać", albanian: "të provoj", german: "anprobieren" }},
+            { german: "die Umkleidekabine", translations: { english: "the changing room", ukrainian: "примірочна", polish: "przymierzalnia", albanian: "dhoma e zhveshjes", german: "die Umkleidekabine" }},
+            { german: "passen", translations: { english: "to fit", ukrainian: "підходити (за розміром)", polish: "pasować", albanian: "të përshtatet", german: "passen" }},
+            { german: "der Rabatt", translations: { english: "the discount", ukrainian: "знижка", polish: "rabat", albanian: "zbritja", german: "der Rabatt" }},
+            { german: "die Beratung", translations: { english: "the consultation / advice", ukrainian: "консультація", polish: "doradztwo", albanian: "këshilla", german: "die Beratung" }},
         ]
     },
     {
@@ -1129,14 +1119,14 @@ const learningContent: LearningContent[] = [
             { speaker: 'Postangestellte' }, 'Ja, mit dieser Nummer auf unserer Website. Vielen Dank!',
         ],
         vocabulary: [
-            { german: "das Paket", translations: { english: "the package", ukrainian: "посилка", polish: "paczka", albanian: "pakoja" }},
-            { german: "schicken", translations: { english: "to send", ukrainian: "відправляти", polish: "wysyłać", albanian: "të dërgoj" }},
-            { german: "wiegen", translations: { english: "to weigh", ukrainian: "важити", polish: "ważyć", albanian: "të peshoj" }},
-            { german: "der Versand", translations: { english: "the shipping", ukrainian: "доставка", polish: "wysyłka", albanian: "dërgesa" }},
-            { german: "der Werktag", translations: { english: "the working day", ukrainian: "робочий день", polish: "dzień roboczy", albanian: "dita e punës" }},
-            { german: "versichern", translations: { english: "to insure", ukrainian: "страхувати", polish: "ubezpieczać", albanian: "të siguroj" }},
-            { german: "zusätzlich", translations: { english: "additional", ukrainian: "додатково", polish: "dodatkowo", albanian: "shtesë" }},
-            { german: "verfolgen", translations: { english: "to track", ukrainian: "відстежувати", polish: "śledzić", albanian: "të ndjek" }},
+            { german: "das Paket", translations: { english: "the package", ukrainian: "посилка", polish: "paczka", albanian: "pakoja", german: "das Paket" }},
+            { german: "schicken", translations: { english: "to send", ukrainian: "відправляти", polish: "wysyłać", albanian: "të dërgoj", german: "schicken" }},
+            { german: "wiegen", translations: { english: "to weigh", ukrainian: "важити", polish: "ważyć", albanian: "të peshoj", german: "wiegen" }},
+            { german: "der Versand", translations: { english: "the shipping", ukrainian: "доставка", polish: "wysyłka", albanian: "dërgesa", german: "der Versand" }},
+            { german: "der Werktag", translations: { english: "the working day", ukrainian: "робочий день", polish: "dzień roboczy", albanian: "dita e punës", german: "der Werktag" }},
+            { german: "versichern", translations: { english: "to insure", ukrainian: "страхувати", polish: "ubezpieczać", albanian: "të siguroj", german: "versichern" }},
+            { german: "zusätzlich", translations: { english: "additional", ukrainian: "додатково", polish: "dodatkowo", albanian: "shtesë", german: "zusätzlich" }},
+            { german: "verfolgen", translations: { english: "to track", ukrainian: "відстежувати", polish: "śledzić", albanian: "të ndjek", german: "verfolgen" }},
         ]
     },
     {
@@ -1158,22 +1148,20 @@ const learningContent: LearningContent[] = [
             { speaker: 'Bankangestellter' }, 'Mittwoch um 15 Uhr? Dann bereite ich alle Unterlagen vor.',
         ],
         vocabulary: [
-            { german: "die Bank", translations: { english: "the bank", ukrainian: "банк", polish: "bank", albanian: "banka" }},
-            { german: "das Sparkonto", translations: { english: "the savings account", ukrainian: "ощадний рахунок", polish: "konto oszczędnościowe", albanian: "llogaria e kursimeve" }},
-            { german: "anlegen", translations: { english: "to invest", ukrainian: "вкладати", polish: "inwestować", albanian: "të investoj" }},
-            { german: "die Zinsen", translations: { english: "the interest", ukrainian: "відсотки", polish: "odsetki", albanian: "interesi" }},
-            { german: "das Festgeldkonto", translations: { english: "fixed deposit account", ukrainian: "строковий депозит", polish: "konto lokacyjne", albanian: "llogaria me afat" }},
-            { german: "zugreifen auf", translations: { english: "to access", ukrainian: "мати доступ до", polish: "mieć dostęp do", albanian: "të kem akses në" }},
-            { german: "flexibel", translations: { english: "flexible", ukrainian: "гнучкий", polish: "elastyczny", albanian: "fleksibël" }},
-            { german: "der Personalausweis", translations: { english: "the ID card", ukrainian: "посвідчення особи", polish: "dowód osobisty", albanian: "letërnjoftimi" }},
+            { german: "die Bank", translations: { english: "the bank", ukrainian: "банк", polish: "bank", albanian: "banka", german: "die Bank" }},
+            { german: "das Sparkonto", translations: { english: "the savings account", ukrainian: "ощадний рахунок", polish: "konto oszczędnościowe", albanian: "llogaria e kursimeve", german: "das Sparkonto" }},
+            { german: "anlegen", translations: { english: "to invest", ukrainian: "вкладати", polish: "inwestować", albanian: "të investoj", german: "anlegen" }},
+            { german: "die Zinsen", translations: { english: "the interest", ukrainian: "відсотки", polish: "odsetki", albanian: "interesi", german: "die Zinsen" }},
+            { german: "das Festgeldkonto", translations: { english: "fixed deposit account", ukrainian: "строковий депозит", polish: "konto lokacyjne", albanian: "llogaria me afat", german: "das Festgeldkonto" }},
+            { german: "zugreifen auf", translations: { english: "to access", ukrainian: "мати доступ до", polish: "mieć dostęp do", albanian: "të kem akses në", german: "zugreifen auf" }},
+            { german: "flexibel", translations: { english: "flexible", ukrainian: "гнучкий", polish: "elastyczny", albanian: "fleksibël", german: "flexibel" }},
+            { german: "der Personalausweis", translations: { english: "the ID card", ukrainian: "посвідчення особи", polish: "dowód osobisty", albanian: "letërnjoftimi", german: "der Personalausweis" }},
         ]
     }
 ];
 
-
-
 // --- CHILD COMPONENTS ---
-// Component implementations
+
 const Header = React.memo(() => (
   <div className="text-center mb-4 sm:mb-8">
     <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">German Learning Hub</h1>
@@ -1202,37 +1190,25 @@ const ModeSwitcher = React.memo(({ mode, setMode, t }: { mode: string, setMode: 
       >
         <BrainCircuit size={20} /> {t.grammarPractice}
       </button>
+      <button 
+        onClick={() => setMode('selfTest')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'selfTest' ? 'bg-white text-red-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <CheckSquare size={20} /> Self-Test
+      </button>
     </div>
   </div>
 ));
 
-// Mobile Sidebar Component
 const MobileSidebar = ({ isOpen, onClose, children }: { isOpen: boolean, onClose: () => void, children: React.ReactNode }) => (
   <>
-    {/* Backdrop */}
-    {isOpen && (
-      <div 
-        className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-        onClick={onClose}
-      />
-    )}
-    
-    {/* Sidebar */}
-    <div className={`fixed top-0 left-0 h-full w-80 bg-white shadow-xl z-50 transform transition-transform duration-300 lg:hidden ${
-      isOpen ? 'translate-x-0' : '-translate-x-full'
-    }`}>
+    {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={onClose} />}
+    <div className={`fixed top-0 left-0 h-full w-80 bg-white shadow-xl z-50 transform transition-transform duration-300 lg:hidden ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       <div className="p-4 border-b flex justify-between items-center">
         <h3 className="text-lg font-semibold">Menu</h3>
-        <button
-          onClick={onClose}
-          className="p-2 hover:bg-gray-100 rounded-lg"
-        >
-          <X size={20} />
-        </button>
+        <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-lg"><X size={20} /></button>
       </div>
-      <div className="p-4 overflow-y-auto h-full">
-        {children}
-      </div>
+      <div className="p-4 overflow-y-auto h-full">{children}</div>
     </div>
   </>
 );
@@ -1251,32 +1227,21 @@ const SectionSelector = React.memo(({ t, selectedSections, onToggle, onSelectAll
           key={section}
           onClick={() => onToggle(section)}
           className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-200 text-sm ${
-            selectedSections.includes(section)
-              ? 'bg-green-500 text-white shadow-sm'
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            selectedSections.includes(section) ? 'bg-green-500 text-white shadow-sm' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
         >
           {section}: {t.sections[section]}
         </button>
       ))}
     </div>
-    <button
-      onClick={onSelectAll}
-      className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-semibold"
-    >
+    <button onClick={onSelectAll} className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-semibold">
       {t.allSections}
     </button>
   </div>
 ));
 
 const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t, audioSrc, onPlayAudio }: {
-  isFlipped: boolean,
-  onFlip: () => void,
-  frontText: string,
-  backText: string,
-  t: LanguageStrings,
-  audioSrc?: string;
-  onPlayAudio: (e: React.MouseEvent) => void;
+  isFlipped: boolean, onFlip: () => void, frontText: string, backText: string, t: LanguageStrings, audioSrc?: string, onPlayAudio: (e: React.MouseEvent) => void;
 }) => (
   <div className="w-full h-64 perspective-1000">
     <div
@@ -1286,11 +1251,7 @@ const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t, audio
     >
       <div className="absolute w-full h-full bg-white rounded-xl shadow-lg flex items-center justify-center p-8 backface-hidden">
         {audioSrc && (
-          <button
-            onClick={onPlayAudio}
-            className="absolute top-4 right-4 p-2 rounded-full text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-colors z-10"
-            aria-label="Play audio"
-          >
+          <button onClick={onPlayAudio} className="absolute top-4 right-4 p-2 rounded-full text-gray-500 hover:bg-blue-100 hover:text-blue-600 transition-colors z-10" aria-label="Play audio">
             <Ear size={24} />
           </button>
         )}
@@ -1310,11 +1271,7 @@ const Flashcard = React.memo(({ isFlipped, onFlip, frontText, backText, t, audio
 ));
 
 const CardControls = React.memo(({ t, onPrev, onNext, onShuffle, onReset }: {
-  t: LanguageStrings,
-  onPrev: () => void,
-  onNext: () => void,
-  onShuffle: () => void,
-  onReset: () => void
+  t: LanguageStrings, onPrev: () => void, onNext: () => void, onShuffle: () => void, onReset: () => void
 }) => (
   <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mt-6">
     <div className="flex gap-4">
@@ -1339,10 +1296,7 @@ const CardControls = React.memo(({ t, onPrev, onNext, onShuffle, onReset }: {
 const ProgressBar = React.memo(({ current, total }: { current: number, total: number }) => (
   <div className="mt-6">
     <div className="w-full bg-gray-200 rounded-full h-2.5">
-      <div
-        className="bg-green-500 h-2.5 rounded-full transition-all duration-300"
-        style={{ width: total > 0 ? `${(current / total) * 100}%` : '0%' }}
-      />
+      <div className="bg-green-500 h-2.5 rounded-full transition-all duration-300" style={{ width: total > 0 ? `${(current / total) * 100}%` : '0%' }}/>
     </div>
   </div>
 ));
@@ -1351,10 +1305,7 @@ const StudyTips = React.memo(({ t }: { t: LanguageStrings }) => (
   <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
     <h3 className="font-semibold text-yellow-800 mb-2">{t.studyTips}:</h3>
     <ul className="text-sm text-yellow-700 space-y-1 list-disc list-inside">
-      <li>{t.tip1}</li>
-      <li>{t.tip2}</li>
-      <li>{t.tip3}</li>
-      <li>{t.tip4}</li>
+      <li>{t.tip1}</li> <li>{t.tip2}</li> <li>{t.tip3}</li> <li>{t.tip4}</li>
     </ul>
   </div>
 ));
@@ -1373,11 +1324,7 @@ const VocabularyList = React.memo(({ vocab, currentLanguage, t }: { vocab: Card[
   </div>
 ));
 
-const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: {
-  duration: number;
-  currentTime: number;
-  onSeek: (time: number) => void;
-}) => {
+const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: { duration: number; currentTime: number; onSeek: (time: number) => void; }) => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
     const progressBar = e.currentTarget;
@@ -1395,14 +1342,8 @@ const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: {
   return (
     <div className="flex items-center gap-3 w-full">
       <span className="text-xs font-mono text-gray-500 w-10 text-right">{formatTime(currentTime)}</span>
-      <div 
-        className="w-full bg-gray-200 rounded-full h-2 cursor-pointer group"
-        onClick={handleSeek}
-      >
-        <div 
-          className="bg-blue-500 h-2 rounded-full relative" 
-          style={{ width: `${progress}%` }}
-        >
+      <div className="w-full bg-gray-200 rounded-full h-2 cursor-pointer group" onClick={handleSeek}>
+        <div className="bg-blue-500 h-2 rounded-full relative" style={{ width: `${progress}%` }}>
           <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
       </div>
@@ -1411,63 +1352,22 @@ const AudioProgressBar = React.memo(({ duration, currentTime, onSeek }: {
   );
 });
 
-const AudioControlBar = React.memo(({ 
-  t, 
-  title, 
-  isPlaying, 
-  togglePlayPause,
-  duration,
-  currentTime,
-  onSeek,
-  checkAnswers,
-  setShowAnswers,
-  setIsVocabVisible,
-}: {
-  t: LanguageStrings;
-  title: string;
-  isPlaying: boolean;
-  togglePlayPause: () => void;
-  duration: number;
-  currentTime: number;
-  onSeek: (time: number) => void;
-  checkAnswers: () => void;
-  setShowAnswers: Dispatch<SetStateAction<boolean>>;
-  setIsVocabVisible: Dispatch<SetStateAction<boolean>>;
+const AudioControlBar = React.memo(({ t, title, isPlaying, togglePlayPause, duration, currentTime, onSeek, checkAnswers, setShowAnswers, setIsVocabVisible }: {
+  t: LanguageStrings; title: string; isPlaying: boolean; togglePlayPause: () => void; duration: number; currentTime: number; onSeek: (time: number) => void;
+  checkAnswers: () => void; setShowAnswers: Dispatch<SetStateAction<boolean>>; setIsVocabVisible: Dispatch<SetStateAction<boolean>>;
 }) => (
   <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-sm shadow-md p-4 rounded-xl mb-6">
     <div className="flex flex-col sm:flex-row items-center gap-4">
-      <button
-        onClick={togglePlayPause}
-        className="flex-shrink-0 w-14 h-14 rounded-full text-white font-semibold flex items-center justify-center transition-colors bg-blue-500 hover:bg-blue-600 shadow-lg"
-        aria-label={isPlaying ? t.pauseAudio : t.playAudio}
-      >
+      <button onClick={togglePlayPause} className="flex-shrink-0 w-14 h-14 rounded-full text-white font-semibold flex items-center justify-center transition-colors bg-blue-500 hover:bg-blue-600 shadow-lg" aria-label={isPlaying ? t.pauseAudio : t.playAudio}>
         {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
       </button>
       <div className="w-full flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-bold text-gray-800 truncate" title={title}>{title}</h3>
           <div className="flex items-center gap-1 sm:gap-2">
-            <button
-              onClick={checkAnswers}
-              className="p-2 rounded-full text-gray-600 hover:bg-green-100 hover:text-green-600 transition-colors"
-              title={t.checkAnswers}
-            >
-              <CheckCircle2 size={20} />
-            </button>
-            <button
-              onClick={() => setShowAnswers(prev => !prev)}
-              className="p-2 rounded-full text-gray-600 hover:bg-yellow-100 hover:text-yellow-600 transition-colors"
-              title={t.showAnswers}
-            >
-              <Eye size={20} />
-            </button>
-            <button
-              onClick={() => setIsVocabVisible(prev => !prev)}
-              className="p-2 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-colors"
-              title={t.keyVocabulary}
-            >
-              <BookOpen size={20} />
-            </button>
+            <button onClick={checkAnswers} className="p-2 rounded-full text-gray-600 hover:bg-green-100 hover:text-green-600 transition-colors" title={t.checkAnswers}><CheckCircle2 size={20} /></button>
+            <button onClick={() => setShowAnswers(prev => !prev)} className="p-2 rounded-full text-gray-600 hover:bg-yellow-100 hover:text-yellow-600 transition-colors" title={t.showAnswers}><Eye size={20} /></button>
+            <button onClick={() => setIsVocabVisible(prev => !prev)} className="p-2 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-colors" title={t.keyVocabulary}><BookOpen size={20} /></button>
           </div>
         </div>
         <AudioProgressBar duration={duration} currentTime={currentTime} onSeek={onSeek} />
@@ -1484,13 +1384,10 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVocabVisible, setIsVocabVisible] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-
   const audioRef = useRef(new Audio());
   const mainContentRef = useRef<HTMLElement>(null);
-
   const selectedContent = useMemo(() => learningContent.find(p => p.id === selectedContentId)!, [selectedContentId]);
   const blanks = useMemo(() => selectedContent.parts.filter(p => typeof p === 'object' && 'answer' in p) as Blank[], [selectedContent]);
 
@@ -1498,25 +1395,16 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
     const audio = audioRef.current;
     audio.pause();
     audio.src = selectedContent.audioSrc;
-    
-    const setAudioData = () => {
-      setDuration(audio.duration);
-      setCurrentTime(audio.currentTime);
-    }
+    const setAudioData = () => { setDuration(audio.duration); setCurrentTime(audio.currentTime); };
     const setAudioTime = () => setCurrentTime(audio.currentTime);
     const handlePlay = () => setIsPlaying(true);
     const handlePause = () => setIsPlaying(false);
-    const handleEnded = () => {
-      setIsPlaying(false);
-      setCurrentTime(0);
-    };
-    
+    const handleEnded = () => { setIsPlaying(false); setCurrentTime(0); };
     audio.addEventListener('loadedmetadata', setAudioData);
     audio.addEventListener('timeupdate', setAudioTime);
     audio.addEventListener('play', handlePlay);
     audio.addEventListener('pause', handlePause);
     audio.addEventListener('ended', handleEnded);
-
     return () => {
       audio.pause();
       audio.removeEventListener('loadedmetadata', setAudioData);
@@ -1537,28 +1425,19 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
     setCurrentTime(0);
     audioRef.current.currentTime = 0;
     audioRef.current.pause();
-    if(mainContentRef.current) {
-      mainContentRef.current.parentElement?.scrollTo(0, 0);
-    }
+    if(mainContentRef.current) mainContentRef.current.parentElement?.scrollTo(0, 0);
   }, [blanks]);
   
-  useEffect(() => {
-    resetState();
-  }, [selectedContentId, resetState]);
+  useEffect(() => { resetState(); }, [selectedContentId, resetState]);
 
   const handleAnswerChange = (index: number, value: string) => {
     setUserAnswers(prev => ({ ...prev, [index]: value }));
-    if (results[index]) {
-      setResults(prev => ({ ...prev, [index]: null }));
-    }
+    if (results[index]) setResults(prev => ({ ...prev, [index]: null }));
   };
   
   const togglePlayPause = useCallback(() => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch(error => console.error("Error playing audio:", error));
-    }
+    if (isPlaying) audioRef.current.pause();
+    else audioRef.current.play().catch(error => console.error("Error playing audio:", error));
   }, [isPlaying]);
 
   const handleSeek = useCallback((time: number) => {
@@ -1579,7 +1458,7 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
 
   const handleContentSelect = (contentId: number) => {
     setSelectedContentId(contentId);
-    setIsSidebarOpen(false); // Close sidebar on mobile after selection
+    setIsSidebarOpen(false);
   };
 
   let blankCounter = -1;
@@ -1593,15 +1472,11 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
             key={content.id}
             onClick={() => handleContentSelect(content.id)}
             className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 text-sm flex items-center gap-3 ${
-              selectedContentId === content.id
-              ? 'bg-green-500 text-white shadow-md'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              selectedContentId === content.id ? 'bg-green-500 text-white shadow-md' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
             }`}
           >
             {content.type === 'dialogue' ? <Users size={16} className="opacity-70 flex-shrink-0"/> : <User size={16} className="opacity-70 flex-shrink-0"/>}
-            <span className="flex-grow font-semibold">
-              {content.title} <span className="font-normal opacity-80">({content.level})</span>
-            </span>
+            <span className="flex-grow font-semibold">{content.title} <span className="font-normal opacity-80">({content.level})</span></span>
           </button>
         ))}
       </div>
@@ -1610,95 +1485,40 @@ const ListeningPracticeMode = ({ t, currentLanguage }: { t: LanguageStrings, cur
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
-      {/* Mobile menu button */}
-      <button
-        onClick={() => setIsSidebarOpen(true)}
-        className="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center z-30 hover:bg-blue-600 transition-colors"
-      >
+      <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center z-30 hover:bg-blue-600 transition-colors">
         <Menu size={24} />
       </button>
-
-      {/* Mobile Sidebar */}
-      <MobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
-        {sidebarContent}
-      </MobileSidebar>
-
-      {/* Desktop Sidebar */}
-      <aside className="hidden lg:block w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto">
-        {sidebarContent}
-      </aside>
-      
-      {/* Main Content */}
+      <MobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>{sidebarContent}</MobileSidebar>
+      <aside className="hidden lg:block w-full lg:w-1/3 lg:max-h-[80vh] lg:overflow-y-auto">{sidebarContent}</aside>
       <div className="w-full lg:w-2/3 lg:max-h-[80vh] overflow-y-auto rounded-xl shadow-lg bg-white">
         <main ref={mainContentRef} className="p-6 sm:p-8 relative">
-          <AudioControlBar
-            t={t}
-            title={selectedContent.title}
-            isPlaying={isPlaying}
-            togglePlayPause={togglePlayPause}
-            duration={duration}
-            currentTime={currentTime}
-            onSeek={handleSeek}
-            checkAnswers={checkAnswers}
-            setShowAnswers={setShowAnswers}
-            setIsVocabVisible={setIsVocabVisible}
-          />
-
+          <AudioControlBar t={t} title={selectedContent.title} isPlaying={isPlaying} togglePlayPause={togglePlayPause} duration={duration} currentTime={currentTime} onSeek={handleSeek} checkAnswers={checkAnswers} setShowAnswers={setShowAnswers} setIsVocabVisible={setIsVocabVisible} />
           <p className="text-gray-600 mb-8 text-center">{t.passageInstructions}</p>
-          
           <div className="prose max-w-none text-xl leading-loose">
             {selectedContent.parts.map((part, partIndex) => {
               if (typeof part === 'object' && 'speaker' in part) {
-                return (
-                  <div key={partIndex} className="mt-5 first:mt-0">
-                    <strong className="font-semibold text-gray-900 block mb-1">{part.speaker}:</strong>
-                  </div>
-                );
+                return <div key={partIndex} className="mt-5 first:mt-0"><strong className="font-semibold text-gray-900 block mb-1">{part.speaker}:</strong></div>;
               }
-
               if (typeof part === 'object' && 'answer' in part) {
                 blankCounter++;
                 const blankIndex = blankCounter;
                 const result = results[blankIndex];
                 const isCorrect = result === 'correct';
                 const isIncorrect = result === 'incorrect';
-
                 const inputClassName = `mx-1.5 inline-block bg-gray-100 rounded-md border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200 text-xl px-2 py-0.5
-                    ${isCorrect ? 'ring-2 ring-green-500 border-transparent' : ''}
-                    ${isIncorrect ? 'ring-2 ring-red-500 border-transparent' : ''}
-                    ${!result ? 'focus:ring-blue-500' : ''}
-                `;
-                
+                    ${isCorrect ? 'ring-2 ring-green-500 border-transparent' : ''} ${isIncorrect ? 'ring-2 ring-red-500 border-transparent' : ''} ${!result ? 'focus:ring-blue-500' : ''}`;
                 return (
                   <span key={partIndex} className="inline-block relative align-baseline">
-                    <input 
-                      type="text"
-                      value={showAnswers ? part.answer : (userAnswers[blankIndex] || '')}
-                      onChange={e => handleAnswerChange(blankIndex, e.target.value)}
-                      disabled={showAnswers}
-                      style={{ width: `${part.size * 1.1}ch`, minWidth: '5ch' }}
-                      className={inputClassName}
-                      aria-label={`Blank ${blankIndex + 1}`}
-                    />
+                    <input type="text" value={showAnswers ? part.answer : (userAnswers[blankIndex] || '')} onChange={e => handleAnswerChange(blankIndex, e.target.value)} disabled={showAnswers} style={{ width: `${part.size * 1.1}ch`, minWidth: '5ch' }} className={inputClassName} aria-label={`Blank ${blankIndex + 1}`} />
                     {isCorrect && <CheckCircle2 size={18} className="absolute -right-2 top-0 text-green-500 bg-white rounded-full"/>}
                     {isIncorrect && <XCircle size={18} className="absolute -right-2 top-0 text-red-500 bg-white rounded-full"/>}
                   </span>
                 );
               }
-              
               return <span key={partIndex}>{part}</span>;
             })}
           </div>
-
-          {isVocabVisible && selectedContent.vocabulary && (
-            <div className="mt-10 pt-6 border-t">
-              <VocabularyList 
-                vocab={selectedContent.vocabulary} 
-                currentLanguage={currentLanguage}
-                t={t}
-              />
-            </div>
-          )}
+          {isVocabVisible && selectedContent.vocabulary && <div className="mt-10 pt-6 border-t"><VocabularyList vocab={selectedContent.vocabulary} currentLanguage={currentLanguage} t={t} /></div>}
         </main>
       </div>
     </div>
@@ -1709,67 +1529,48 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showGermanFirst, setShowGermanFirst] = useState(true);
-  const [selectedSections, setSelectedSections] = useState(ALL_SECTIONS);
+  const [selectedSections, setSelectedSections] = useState([1]);
   const [shuffledCards, setShuffledCards] = useState<Card[]>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     audioRef.current = new Audio();
-    return () => {
-        if (audioRef.current) {
-            audioRef.current.pause();
-            audioRef.current = null;
-        }
-    };
+    return () => { if (audioRef.current) { audioRef.current.pause(); audioRef.current = null; } };
   }, []);
 
   const filteredCards = useMemo(() => {
     return selectedSections.flatMap(section => allVocabulary[section] || []);
   }, [selectedSections]);
 
-  useEffect(() => {
-    setShuffledCards([...filteredCards]);
-  }, [filteredCards]);
-
-  useEffect(() => {
-    setCurrentCardIndex(0);
-    setIsFlipped(false);
-  }, [shuffledCards]);
+  useEffect(() => { setShuffledCards([...filteredCards]); }, [filteredCards]);
+  useEffect(() => { setCurrentCardIndex(0); setIsFlipped(false); }, [shuffledCards]);
 
   const nextCard = useCallback(() => {
     if (shuffledCards.length === 0) return;
-    setCurrentCardIndex((prev) => (prev + 1) % shuffledCards.length);
+    setCurrentCardIndex(prev => (prev + 1) % shuffledCards.length);
     setIsFlipped(false);
   }, [shuffledCards.length]);
 
   const prevCard = useCallback(() => {
     if (shuffledCards.length === 0) return;
-    setCurrentCardIndex((prev) => (prev - 1 + shuffledCards.length) % shuffledCards.length);
+    setCurrentCardIndex(prev => (prev - 1 + shuffledCards.length) % shuffledCards.length);
     setIsFlipped(false);
   }, [shuffledCards.length]);
 
-  const shuffleCards = useCallback(() => {
-    setShuffledCards(prev => [...prev].sort(() => Math.random() - 0.5));
-  }, []);
-
-  const resetCards = useCallback(() => {
-    setShuffledCards([...filteredCards]);
-  }, [filteredCards]);
+  const shuffleCards = useCallback(() => { setShuffledCards(prev => [...prev].sort(() => Math.random() - 0.5)); }, []);
+  const resetCards = useCallback(() => { setShuffledCards([...filteredCards]); }, [filteredCards]);
 
   const toggleSection = useCallback((section: number) => {
     setSelectedSections(prev =>
-      prev.includes(section)
-        ? prev.length > 1 ? prev.filter(s => s !== section) : prev
-        : [...prev, section].sort((a, b) => a - b)
+      prev.includes(section) ? prev.length > 1 ? prev.filter(s => s !== section) : prev : [...prev, section].sort((a, b) => a - b)
     );
-    setIsSidebarOpen(false); // Close sidebar after selection on mobile
+    setIsSidebarOpen(false);
   }, []);
 
   const selectAllSections = useCallback(() => {
     setSelectedSections(ALL_SECTIONS);
-    setIsSidebarOpen(false); // Close sidebar after selection on mobile
+    setIsSidebarOpen(false);
   }, []);
 
   const currentFlashcard = shuffledCards[currentCardIndex];
@@ -1778,28 +1579,13 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
     event.stopPropagation(); 
     const audio = audioRef.current;
     const audioSrc = currentFlashcard?.audioSrc;
-
-    if (!audio || !audioSrc) {
-        console.error("Audio player or audio source is missing.");
-        return;
-    }
-    
-    const playAudio = () => {
-        audio.currentTime = 0;
-        audio.play().catch(e => {
-            console.error("Error playing audio:", e);
-        });
-    };
-
-    if (audio.src.endsWith(audioSrc)) {
-        playAudio();
-    } else {
-        audio.src = audioSrc;
-        const onCanPlay = () => {
-            playAudio();
-            audio.removeEventListener('canplaythrough', onCanPlay);
-        };
-        audio.addEventListener('canplaythrough', onCanPlay);
+    if (!audio || !audioSrc) return;
+    const playAudio = () => { audio.currentTime = 0; audio.play().catch(e => console.error("Error playing audio:", e)); };
+    if (audio.src.endsWith(audioSrc)) playAudio();
+    else {
+      audio.src = audioSrc;
+      const onCanPlay = () => { playAudio(); audio.removeEventListener('canplaythrough', onCanPlay); };
+      audio.addEventListener('canplaythrough', onCanPlay);
     }
   }, [currentFlashcard]);
 
@@ -1807,45 +1593,23 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
   const backText = showGermanFirst ? currentFlashcard?.translations[currentLanguage] : currentFlashcard?.german;
 
   const sidebarContent = (
-    <SectionSelector
-      t={t}
-      selectedSections={selectedSections}
-      onToggle={toggleSection}
-      onSelectAll={selectAllSections}
-    />
+    <SectionSelector t={t} selectedSections={selectedSections} onToggle={toggleSection} onSelectAll={selectAllSections} />
   );
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
-      {/* Mobile menu button */}
-      <button
-        onClick={() => setIsSidebarOpen(true)}
-        className="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center z-30 hover:bg-blue-600 transition-colors"
-      >
+      <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center z-30 hover:bg-blue-600 transition-colors">
         <Menu size={24} />
       </button>
-
-      {/* Mobile Sidebar */}
-      <MobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
-        {sidebarContent}
-      </MobileSidebar>
-
-      {/* Desktop Sidebar */}
-      <div className="hidden lg:block w-full lg:w-1/3">
-        {sidebarContent}
-      </div>
-
-      {/* Main Content */}
+      <MobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>{sidebarContent}</MobileSidebar>
+      <div className="hidden lg:block w-full lg:w-1/3">{sidebarContent}</div>
       <main className="w-full lg:w-2/3">
         {!currentFlashcard ? (
           <div className="text-center p-10 bg-white rounded-xl shadow-lg h-full flex flex-col justify-center items-center">
             <BookOpen className="w-16 h-16 text-gray-400 mx-auto mb-4" />
             <h2 className="text-2xl font-bold text-gray-800 mb-2">Select a Section</h2>
             <p className="text-gray-600">Please choose a vocabulary section to start learning.</p>
-            <button
-              onClick={() => setIsSidebarOpen(true)}
-              className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold lg:hidden"
-            >
+            <button onClick={() => setIsSidebarOpen(true)} className="mt-4 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold lg:hidden">
               Choose Sections
             </button>
           </div>
@@ -1853,35 +1617,13 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
           <>
             <div className="p-6 bg-white rounded-xl shadow-lg">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-600">
-                  {t.currentCard} {currentCardIndex + 1} {t.of} {shuffledCards.length}
-                </span>
-                <button
-                  onClick={() => { setShowGermanFirst(p => !p); setIsFlipped(false); }}
-                  className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm font-semibold"
-                >
+                <span className="text-gray-600">{t.currentCard} {currentCardIndex + 1} {t.of} {shuffledCards.length}</span>
+                <button onClick={() => { setShowGermanFirst(p => !p); setIsFlipped(false); }} className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm font-semibold">
                   {t.startWith}: {showGermanFirst ? 'Deutsch' : t.name}
                 </button>
               </div>
-
-              <Flashcard
-                isFlipped={isFlipped}
-                onFlip={() => setIsFlipped(p => !p)}
-                frontText={frontText || ''}
-                backText={backText || ''}
-                t={t}
-                audioSrc={showGermanFirst ? currentFlashcard?.audioSrc : undefined}
-                onPlayAudio={handlePlayAudio}
-              />
-
-              <CardControls
-                t={t}
-                onPrev={prevCard}
-                onNext={nextCard}
-                onShuffle={shuffleCards}
-                onReset={resetCards}
-              />
-
+              <Flashcard isFlipped={isFlipped} onFlip={() => setIsFlipped(p => !p)} frontText={frontText || ''} backText={backText || ''} t={t} audioSrc={showGermanFirst ? currentFlashcard?.audioSrc : undefined} onPlayAudio={handlePlayAudio} />
+              <CardControls t={t} onPrev={prevCard} onNext={nextCard} onShuffle={shuffleCards} onReset={resetCards} />
               <ProgressBar current={currentCardIndex + 1} total={shuffledCards.length} />
             </div>
             <StudyTips t={t} />
@@ -1892,36 +1634,40 @@ const FlashcardMode = ({ t, currentLanguage }: { t: LanguageStrings, currentLang
   );
 };
 
+
+// --- MAIN APP COMPONENT ---
+
 const GermanVocabularyApp = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageKey>('english');
   const [mode, setMode] = useState('flashcards');
   const t = languages[currentLanguage];
+  const testLanguage: TestLanguageKey = currentLanguage === 'english' ? 'en' : 'de';
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-4 sm:p-8 font-sans">
+   return (
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-8 font-sans">
       <div className="max-w-7xl mx-auto">
         <Header />
-        
-        <div className="p-6 bg-white rounded-xl shadow-lg mb-8 max-w-md mx-auto">
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Globe size={20}/> {t.language}</h3>
+        <div className="p-4 bg-white rounded-xl shadow-lg mb-8 max-w-lg mx-auto">
+          <h3 className="text-lg font-bold mb-3 text-center flex items-center justify-center gap-2">
+            <Globe size={20}/> {t.language}
+          </h3>
           <div className="flex flex-wrap gap-2 justify-center">
             {(Object.keys(languages) as LanguageKey[]).map(lang => (
               <button key={lang} onClick={() => setCurrentLanguage(lang)}
-                className={`px-3 py-1 rounded-md text-sm transition-colors ${currentLanguage === lang ? 'bg-blue-500 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}>
-                {lang.toUpperCase()}
+                className={`px-3 py-1 rounded-md text-sm font-semibold transition-colors ${
+                    currentLanguage === lang ? 'bg-blue-600 text-white shadow-sm' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                }`}>
+                {languages[lang].name}
               </button>
             ))}
           </div>
         </div>
-
         <ModeSwitcher mode={mode} setMode={setMode} t={t} />
-
         <div className="mt-8">
           {mode === 'flashcards' && <FlashcardMode t={t} currentLanguage={currentLanguage} />}
           {mode === 'listeningPractice' && <ListeningPracticeMode t={t} currentLanguage={currentLanguage} />}
-        {mode === 'grammarPractice' && <GrammarPracticeMode t={t} topics={module7Grammar} languageKey={currentLanguage} />}      
-        </div>
-      </div>
+{mode === 'grammarPractice' && <GrammarPracticeMode t={t} topics={module7Grammar} languageKey={currentLanguage} />}        </div>
+{mode === 'selfTest' && <A11SelfTest tests={a11Tests} language={testLanguage} />}      </div>
     </div>
   );
 };
