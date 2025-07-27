@@ -15,7 +15,7 @@ interface AppContextType {
 export const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-    const [level, setLevel] = useState<string>('A1.1');
+    const [level, setLevel] = useState<string>('A1.2');
     const [language, setLanguage] = useState<LanguageKey>('english');
 
     const levelData = useMemo(() => getLevelData(level), [level]);
