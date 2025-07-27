@@ -1,35 +1,6 @@
-// src/data/grammarExercises.ts (or wherever your types are defined)
+import { GrammarTopic } from '../../../types';
 
-export type ExerciseType = 'fill-in-the-blank' | 'multiple-choice' | 'sentence-scramble' | 'matching';
-
-// A reusable type for multilingual text fields
-export interface MultilingualText {
-  en: string;
-  pl: string;
-  uk: string;
-  sq: string;
-  de: string;
-}
-
-export interface Exercise {
-  id: string;
-  type: ExerciseType;
-  question: MultilingualText; // Uses the MultilingualText type
-  context?: string | string[];
-  options?: string[];
-  correctAnswer: string | string[];
-  hint?: string;
-}
-
-export interface GrammarTopic {
-  id: string;
-  moduleId: number;
-  title: MultilingualText;       // MUST be MultilingualText
-  description: MultilingualText; // MUST be MultilingualText
-  exercises: Exercise[];
-}
-
-export const module7Grammar: GrammarTopic[] = [
+export const a1_1_Grammar: GrammarTopic[] = [
   // ===== VERBEN (VERBS) =====
   {
     id: 'present-tense-regular',

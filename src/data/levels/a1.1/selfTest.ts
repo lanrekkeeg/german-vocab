@@ -1,7 +1,5 @@
-// src/data/improvedA11Tests.ts
-import { Test } from '../components/A1.1SelfTest';
-
-export const a11Tests: Test[] = [
+import { Test } from '../../../types'; // Assuming you create a Test type
+export const a1_1_Tests: Test[] = [
   // ===== TEST 1: Basic German & Introductions =====
   {
     id: 'a11-test-1',
