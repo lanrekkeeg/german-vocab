@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/german-vocab/static/css/main.1e3ef030.css",
-    "main.js": "/german-vocab/static/js/main.0790bf6c.js",
+    "main.css": "/german-vocab/static/css/main.47d5e31d.css",
+    "main.js": "/german-vocab/static/js/main.e701f88b.js",
     "static/js/453.787f97ee.chunk.js": "/german-vocab/static/js/453.787f97ee.chunk.js",
     "static/media/14_post_office.wav": "/german-vocab/static/media/14_post_office.cd0c9e9606cc1240c8d3.wav",
     "static/media/13_clothing_store.wav": "/german-vocab/static/media/13_clothing_store.afe9a831861f042ab6f2.wav",
@@ -17,18 +17,22 @@
     "static/media/7_asking_directions.wav": "/german-vocab/static/media/7_asking_directions.55fcbf6b5cd5e810333e.wav",
     "static/media/8_cafe_ordering.wav": "/german-vocab/static/media/8_cafe_ordering.21ead8737769266a1a45.wav",
     "static/media/6_supermarket_shopping.wav": "/german-vocab/static/media/6_supermarket_shopping.9fbeb4bb952ed66cb3f8.wav",
+    "static/media/3_dentist_anxiety.wav": "/german-vocab/static/media/3_dentist_anxiety.a8f62c502971398b7d00.wav",
+    "static/media/4_online_health_consultation.wav": "/german-vocab/static/media/4_online_health_consultation.79be7b963b1e35d275e7.wav",
+    "static/media/1_late_night_pharmacy.wav": "/german-vocab/static/media/1_late_night_pharmacy.41547a2e05e297538c85.wav",
     "static/media/passage2.wav": "/german-vocab/static/media/passage2.0a9385e9d5d7248e768c.wav",
     "static/media/passage3.wav": "/german-vocab/static/media/passage3.defa7ee0ec3bc73867ba.wav",
+    "static/media/2_workplace_accident.wav": "/german-vocab/static/media/2_workplace_accident.30e7c12f40c8c8d916f0.wav",
     "static/media/passage4.wav": "/german-vocab/static/media/passage4.64b47c608ee26f02468c.wav",
     "static/media/passage1.wav": "/german-vocab/static/media/passage1.c36474bb759cb4dd87fa.wav",
     "static/media/passage5.wav": "/german-vocab/static/media/passage5.ddfdb12c5f8f0b069ed6.wav",
     "index.html": "/german-vocab/index.html",
-    "main.1e3ef030.css.map": "/german-vocab/static/css/main.1e3ef030.css.map",
-    "main.0790bf6c.js.map": "/german-vocab/static/js/main.0790bf6c.js.map",
+    "main.47d5e31d.css.map": "/german-vocab/static/css/main.47d5e31d.css.map",
+    "main.e701f88b.js.map": "/german-vocab/static/js/main.e701f88b.js.map",
     "453.787f97ee.chunk.js.map": "/german-vocab/static/js/453.787f97ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e3ef030.css",
-    "static/js/main.0790bf6c.js"
+    "static/css/main.47d5e31d.css",
+    "static/js/main.e701f88b.js"
   ]
 }
