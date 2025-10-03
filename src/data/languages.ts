@@ -9,10 +9,22 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     studyTips: 'Study Tips', tip1: 'Try to recall the translation before flipping the card.',
     tip2: 'Use the shuffle function to test your knowledge randomly.', tip3: 'Practice both German → Translation and Translation → German.',
     tip4: 'Focus extra time on cards you find difficult.',
-    sections: {
-      1: 'Basic Greetings & Questions', 2: 'Objects & School Items', 3: 'Home & Furniture', 4: 'Family & Activities',
-      5: 'Time & Daily Activities', 6: 'Food & Shopping', 7: 'Work & Money', 8: 'Get Well Soon!',
-      9: 'Ways Through the City'
+      "sections": {
+      "1": "Basic Greetings & Questions",
+      "2": "Objects & School Items",
+      "3": "Home & Furniture",
+      "4": "Family & Activities",
+      "5": "Time & Daily Activities",
+      "6": "Food & Shopping",
+      "7": "Work & Money",
+      "8": "Get Well Soon!",
+      "9": "Ways Through the City",
+      "10": "My Life",
+      "11": "Travel",
+      "12": "Buying Clothes / Shopping in a Department Store",
+      "13": "On Travel/Traveling",
+      "14": "Living Together"
+
     },
     flashcards: 'Flashcards', listeningPractice: 'Listening Practice', selectPassage: 'Select a Passage',
     passageInstructions: 'Listen to the audio and fill in the blanks.', playAudio: 'Play Audio', pauseAudio: 'Pause Audio',
@@ -33,7 +45,7 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     sections: {
       1: 'Базові привітання та питання', 2: 'Предмети та шкільні речі', 3: 'Дім і меблі', 4: 'Сім\'я та активності',
       5: 'Час і щоденні справи', 6: 'Їжа та покупки', 7: 'Робота та гроші', 8: 'Видужуй!',
-      9: 'Шляхи через місто'
+      9: 'Шляхи через місто', 10: 'Моє життя', 11: 'Подорожі', 12: 'Покупка одягу / Покупки в універмазі', 13: 'У подорожі', 14: 'Спільне проживання'
     },
     flashcards: 'Флеш-картки', listeningPractice: 'Практика аудіювання', selectPassage: 'Виберіть уривок',
     passageInstructions: 'Прослухайте аудіо та заповніть пропуски.', playAudio: 'Відтворити аудіо', pauseAudio: 'Пауза',
@@ -54,7 +66,7 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     sections: {
       1: 'Podstawowe powitania i pytania', 2: 'Przedmioty i artykuły szkolne', 3: 'Dom i meble', 4: 'Rodzina i aktywności',
       5: 'Czas i codzienne czynności', 6: 'Jedzenie i zakupy', 7: 'Praca i pieniądze', 8: 'Wracaj do zdrowia!',
-      9: 'Drogi przez miasto'
+      9: 'Drogi przez miasto', 10: 'Moje życie', 11: 'Podróże', 12: 'Zakup odzieży / Zakupy w domu towarowym', 13: 'W podróży', 14: 'Wspólne mieszkanie'
     },
     flashcards: 'Fiszki', listeningPractice: 'Ćwiczenia ze słuchu', selectPassage: 'Wybierz fragment',
     passageInstructions: 'Posłuchaj nagrania i uzupełnij luki.', playAudio: 'Odtwórz audio', pauseAudio: 'Pauza',
@@ -75,7 +87,7 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     sections: {
       1: 'Përshëndetje dhe pyetje bazike', 2: 'Objekte dhe artikuj shkolle', 3: 'Shtëpia dhe mobiliet', 4: 'Familja dhe aktivitetet',
       5: 'Koha dhe aktivitetet e përditshme', 6: 'Ushqimi dhe Blerjet', 7: 'Puna dhe Paratë', 8: 'Shërohu shpejt!',
-      9: 'Rrugët nëpër qytet'
+      9: 'Rrugët nëpër qytet', 10: 'Jeta ime', 11: 'Udhëtimi', 12: 'Blerja e rrobave / Blerjet në dyqan', 13: 'Në udhëtim', 14: 'Të jetosh së bashku'
     },
     flashcards: 'Kartela', listeningPractice: 'Praktikë dëgjimi', selectPassage: 'Zgjidhni një pasazh',
     passageInstructions: 'Dëgjoni audion dhe plotësoni boshllëqet.', playAudio: 'Luaj audion', pauseAudio: 'Pauzë',
@@ -96,7 +108,7 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     sections: {
         1: 'Grundlegende Begrüßungen & Fragen', 2: 'Gegenstände & Schulmaterial', 3: 'Zuhause & Möbel', 4: 'Familie & Aktivitäten',
         5: 'Zeit & Tägliche Aktivitäten', 6: 'Essen & Einkaufen', 7: 'Arbeit & Geld', 8: 'Gute Besserung!',
-        9: 'Wege durch die Stadt'
+        9: 'Wege durch die Stadt', 10: 'Mein Leben', 11: 'Reisen', 12: 'Kleidung kaufen / Im Kaufhaus einkaufen', 13: 'Auf Reisen', 14: 'Zusammen leben'
     },
     flashcards: 'Lernkarten', listeningPractice: 'Hörübungen', selectPassage: 'Wähle einen Text',
     passageInstructions: 'Höre dir die Audiodatei an und fülle die Lücken aus.', playAudio: 'Audio abspielen', pauseAudio: 'Pausieren',
@@ -117,7 +129,7 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     sections: {
       1: 'التحيات والأسئلة الأساسية', 2: 'الأشياء والمواد المدرسية', 3: 'المنزل والأثاث', 4: 'العائلة والأنشطة',
       5: 'الوقت والأنشطة اليومية', 6: 'الطعام والتسوق', 7: 'العمل والمال', 8: 'الشفاء العاجل!',
-      9: 'طرق عبر المدينة'
+      9: 'طرق عبر المدينة', 10: 'حياتي', 11: 'السفر', 12: 'شراء الملابس / التسوق في المتجر', 13: 'في السفر', 14: 'العيش معاً'
     },
     flashcards: 'البطاقات التعليمية', listeningPractice: 'ممارسة الاستماع', selectPassage: 'اختر مقطعاً',
     passageInstructions: 'استمع للصوت واملأ الفراغات.', playAudio: 'تشغيل الصوت', pauseAudio: 'إيقاف مؤقت',
