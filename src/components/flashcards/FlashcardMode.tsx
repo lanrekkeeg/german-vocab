@@ -104,12 +104,13 @@ export const FlashcardMode = () => {
   const backText = showGermanFirst ? currentFlashcard?.translations[language] : currentFlashcard?.german;
 
   const sidebarContent = levelData ? (
-    <SectionSelector 
-        t={t} 
-        selectedSections={selectedSections} 
+    <SectionSelector
+        t={t}
+        selectedSections={selectedSections}
         allSectionNumbers={levelData.allSections}
-        onToggle={toggleSection} 
-        onSelectAll={selectAllSections} 
+        onToggle={toggleSection}
+        onSelectAll={selectAllSections}
+        sectionNames={levelData.sectionNames?.[language]}
     />
   ) : null;
   

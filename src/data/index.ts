@@ -3,10 +3,9 @@ import { Card, GrammarTopic, LearningContent, Test } from '../types'; // Import 
 
 import { a1_1_Data } from './levels/a1.1';
 import { a1_2_Data } from './levels/a1.2';
-// When you add A1.2, you'll import it here:
-// import { a1_2_Data } from './levels/a1.2';
+import { a2_1_Data } from './levels/a2.1';
 
-export const availableLevels = ['A1.1', 'A1.2']; // Add new levels here
+export const availableLevels = ['A1.1', 'A1.2', 'A2.1']; // Add new levels here
 
 // This structure defines the shape of the data for any level
 // export type LevelData = typeof a1_2_Data; 
@@ -17,14 +16,19 @@ export interface LevelData {
     listeningContent: LearningContent[];
     grammar: GrammarTopic[];
     selfTest: Test[];
-    sentences?: Record<number, Card[]>; // <-- Note: Changed this from Card[] to Record<number, Card[]>
-    // sentenceSections?: number[];      // <-- Add this new optional property
+    sentences?: Record<number, Card[]>;
+    sentenceSections?: number[];
+    sectionNames?: {
+        [languageKey: string]: {
+            [sectionNumber: number]: string;
+        };
+    };
 }
 
 const levelDataMap: { [key: string]: LevelData } = {
     'A1.1': a1_1_Data,
     'A1.2': a1_2_Data,
-    // 'A1.2': a1_2_Data, // Add A1.2 data here when ready
+    'A2.1': a2_1_Data,
 };
 
 export const getLevelData = (level: string): LevelData | null => {

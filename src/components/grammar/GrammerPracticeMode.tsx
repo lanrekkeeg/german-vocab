@@ -52,7 +52,8 @@ const languageMap: Record<LanguageKey, QuestionKey> = {
     ukrainian: 'uk',
     albanian: 'sq',
     german: 'de',
-    arabic: 'ar'
+    arabic: 'ar',
+    italian: 'en'
 };
 
 // --- SUB-COMPONENTS for specific exercise types ---

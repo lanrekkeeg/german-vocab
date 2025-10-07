@@ -14,12 +14,14 @@ const SectionSelector = ({
     selectedSections,
     onToggleSection,
     onSelectAll,
+    sectionNames,
 }: {
     t: LanguageStrings;
     allSections: number[];
     selectedSections: number[];
     onToggleSection: (section: number) => void;
     onSelectAll: () => void;
+    sectionNames?: { [key: number]: string };
 }) => (
     <div className="p-4 bg-gray-50 rounded-lg mb-4">
         <div className="flex justify-between items-center mb-3">
@@ -42,7 +44,7 @@ const SectionSelector = ({
                             : 'bg-white text-gray-700 hover:bg-gray-200 border border-gray-300'
                     }`}
                 >
-                    {`${t.sections[section] || `Section ${section}`}`}
+                    {sectionNames?.[section] || t.sections[section] || `Section ${section}`}
                 </button>
             ))}
         </div>
@@ -177,6 +179,7 @@ export const SentencePracticeMode = () => {
                 selectedSections={selectedSections}
                 onToggleSection={toggleSection}
                 onSelectAll={handleSelectAll}
+                sectionNames={levelData?.sectionNames?.[language]}
             />
 
             <div className="mt-4 p-6 bg-white rounded-xl shadow-lg">

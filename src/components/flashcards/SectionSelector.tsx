@@ -8,9 +8,10 @@ interface SectionSelectorProps {
   allSectionNumbers: number[];
   onToggle: (section: number) => void;
   onSelectAll: () => void;
+  sectionNames?: { [key: number]: string };
 }
 
-export const SectionSelector = React.memo(({ t, selectedSections, allSectionNumbers, onToggle, onSelectAll }: SectionSelectorProps) => (
+export const SectionSelector = React.memo(({ t, selectedSections, allSectionNumbers, onToggle, onSelectAll, sectionNames }: SectionSelectorProps) => (
   <div className="bg-white rounded-xl shadow-lg p-6">
     <h3 className="text-xl font-bold mb-4">{t.selectSections}</h3>
     <div className="flex flex-col gap-2 mb-4">
@@ -22,7 +23,7 @@ export const SectionSelector = React.memo(({ t, selectedSections, allSectionNumb
             selectedSections.includes(section) ? 'bg-green-500 text-white shadow-sm' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
         >
-          {section}: {t.sections[section]}
+          {section}: {sectionNames?.[section] || t.sections[section] || `Section ${section}`}
         </button>
       ))}
     </div>

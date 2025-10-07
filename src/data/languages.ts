@@ -26,13 +26,14 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
       "14": "Living Together"
 
     },
-    flashcards: 'Flashcards', listeningPractice: 'Listening Practice', selectPassage: 'Select a Passage',
+    flashcards: 'Flashcards', sentencePractice: 'Sentence Practice', listeningPractice: 'Listening Practice', selectPassage: 'Select a Passage',
     passageInstructions: 'Listen to the audio and fill in the blanks.', playAudio: 'Play Audio', pauseAudio: 'Pause Audio',
     checkAnswers: 'Check Answers', showAnswers: 'Show Answers', keyVocabulary: 'Key Vocabulary',
     grammarPractice: 'Grammar Practice', selectTopic: 'Select a Topic', checkAnswer: 'Check Answer',
     nextExercise: 'Next', correct: 'Correct!', incorrect: 'Incorrect.',
     showCorrectAnswer: 'Show Answer', finalScore: 'Final Score', practiceAgain: 'Practice Again', question: 'Question',
     grammarWelcomeTitle: 'Welcome to Grammar Practice', grammarWelcomeText: 'Please choose a topic from the left to begin.',
+    selfTest: 'Self-Test',
   },
   ukrainian: {
     name: 'Українська',
@@ -47,13 +48,14 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
       5: 'Час і щоденні справи', 6: 'Їжа та покупки', 7: 'Робота та гроші', 8: 'Видужуй!',
       9: 'Шляхи через місто', 10: 'Моє життя', 11: 'Подорожі', 12: 'Покупка одягу / Покупки в універмазі', 13: 'У подорожі', 14: 'Спільне проживання'
     },
-    flashcards: 'Флеш-картки', listeningPractice: 'Практика аудіювання', selectPassage: 'Виберіть уривок',
+    flashcards: 'Флеш-картки', sentencePractice: 'Практика речень', listeningPractice: 'Практика аудіювання', selectPassage: 'Виберіть уривок',
     passageInstructions: 'Прослухайте аудіо та заповніть пропуски.', playAudio: 'Відтворити аудіо', pauseAudio: 'Пауза',
     checkAnswers: 'Перевірити відповіді', showAnswers: 'Показати відповіді', keyVocabulary: 'Ключова лексика',
     grammarPractice: 'Практика граматики', selectTopic: 'Виберіть тему', checkAnswer: 'Перевірити',
     nextExercise: 'Далі', correct: 'Правильно!', incorrect: 'Неправильно.',
     showCorrectAnswer: 'Показати відповідь', finalScore: 'Підсумковий рахунок', practiceAgain: 'Спробувати знову', question: 'Питання',
     grammarWelcomeTitle: 'Ласкаво просимо до практики граматики', grammarWelcomeText: 'Будь ласка, оберіть тему зліва, щоб почати.',
+    selfTest: 'Само-тест',
   },
   polish: {
     name: 'Polski',
@@ -68,13 +70,14 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
       5: 'Czas i codzienne czynności', 6: 'Jedzenie i zakupy', 7: 'Praca i pieniądze', 8: 'Wracaj do zdrowia!',
       9: 'Drogi przez miasto', 10: 'Moje życie', 11: 'Podróże', 12: 'Zakup odzieży / Zakupy w domu towarowym', 13: 'W podróży', 14: 'Wspólne mieszkanie'
     },
-    flashcards: 'Fiszki', listeningPractice: 'Ćwiczenia ze słuchu', selectPassage: 'Wybierz fragment',
+    flashcards: 'Fiszki', sentencePractice: 'Praktyka zdań', listeningPractice: 'Ćwiczenia ze słuchu', selectPassage: 'Wybierz fragment',
     passageInstructions: 'Posłuchaj nagrania i uzupełnij luki.', playAudio: 'Odtwórz audio', pauseAudio: 'Pauza',
     checkAnswers: 'Sprawdź odpowiedzi', showAnswers: 'Pokaż odpowiedzi', keyVocabulary: 'Kluczowe słownictwo',
     grammarPractice: 'Ćwiczenia gramatyczne', selectTopic: 'Wybierz temat', checkAnswer: 'Sprawdź',
     nextExercise: 'Dalej', correct: 'Poprawnie!', incorrect: 'Niepoprawnie.',
     showCorrectAnswer: 'Pokaż odpowiedź', finalScore: 'Wynik końcowy', practiceAgain: 'Ćwicz ponownie', question: 'Pytanie',
     grammarWelcomeTitle: 'Witaj w ćwiczeniach gramatycznych', grammarWelcomeText: 'Proszę wybrać temat z lewej strony, aby rozpocząć.',
+    selfTest: 'Samo-test',
   },
   albanian: {
     name: 'Shqip',
@@ -89,13 +92,14 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
       5: 'Koha dhe aktivitetet e përditshme', 6: 'Ushqimi dhe Blerjet', 7: 'Puna dhe Paratë', 8: 'Shërohu shpejt!',
       9: 'Rrugët nëpër qytet', 10: 'Jeta ime', 11: 'Udhëtimi', 12: 'Blerja e rrobave / Blerjet në dyqan', 13: 'Në udhëtim', 14: 'Të jetosh së bashku'
     },
-    flashcards: 'Kartela', listeningPractice: 'Praktikë dëgjimi', selectPassage: 'Zgjidhni një pasazh',
+    flashcards: 'Kartela', sentencePractice: 'Praktikë fjalish', listeningPractice: 'Praktikë dëgjimi', selectPassage: 'Zgjidhni një pasazh',
     passageInstructions: 'Dëgjoni audion dhe plotësoni boshllëqet.', playAudio: 'Luaj audion', pauseAudio: 'Pauzë',
     checkAnswers: 'Kontrollo përgjigjet', showAnswers: 'Shfaq përgjigjet', keyVocabulary: 'Fjalori kyç',
     grammarPractice: 'Praktikë gramatikore', selectTopic: 'Zgjidh një temë', checkAnswer: 'Kontrollo',
     nextExercise: 'Tjetra', correct: 'Saktë!', incorrect: 'Gabim.',
     showCorrectAnswer: 'Shfaq përgjigjen', finalScore: 'Rezultati final', practiceAgain: 'Praktiko përsëri', question: 'Pyetja',
     grammarWelcomeTitle: 'Mirë se vini në praktikën e gramatikës', grammarWelcomeText: 'Ju lutemi zgjidhni një temë nga e majta për të filluar.',
+    selfTest: 'Vetë-Test',
   },
   german: {
     name: 'Deutsch',
@@ -110,13 +114,14 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
         5: 'Zeit & Tägliche Aktivitäten', 6: 'Essen & Einkaufen', 7: 'Arbeit & Geld', 8: 'Gute Besserung!',
         9: 'Wege durch die Stadt', 10: 'Mein Leben', 11: 'Reisen', 12: 'Kleidung kaufen / Im Kaufhaus einkaufen', 13: 'Auf Reisen', 14: 'Zusammen leben'
     },
-    flashcards: 'Lernkarten', listeningPractice: 'Hörübungen', selectPassage: 'Wähle einen Text',
+    flashcards: 'Lernkarten', sentencePractice: 'Satzübungen', listeningPractice: 'Hörübungen', selectPassage: 'Wähle einen Text',
     passageInstructions: 'Höre dir die Audiodatei an und fülle die Lücken aus.', playAudio: 'Audio abspielen', pauseAudio: 'Pausieren',
     checkAnswers: 'Antworten prüfen', showAnswers: 'Antworten anzeigen', keyVocabulary: 'Schlüsselvokabular',
     grammarPractice: 'Grammatikübungen', selectTopic: 'Wähle ein Thema', checkAnswer: 'Antwort prüfen',
     nextExercise: 'Weiter', correct: 'Richtig!', incorrect: 'Falsch.',
     showCorrectAnswer: 'Antwort zeigen', finalScore: 'Endergebnis', practiceAgain: 'Nochmal üben', question: 'Frage',
     grammarWelcomeTitle: 'Willkommen bei den Grammatikübungen', grammarWelcomeText: 'Bitte wähle links ein Thema, um zu beginnen.',
+    selfTest: 'Selbsttest',
   },
   arabic: {
     name: 'العربية',
@@ -131,12 +136,35 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
       5: 'الوقت والأنشطة اليومية', 6: 'الطعام والتسوق', 7: 'العمل والمال', 8: 'الشفاء العاجل!',
       9: 'طرق عبر المدينة', 10: 'حياتي', 11: 'السفر', 12: 'شراء الملابس / التسوق في المتجر', 13: 'في السفر', 14: 'العيش معاً'
     },
-    flashcards: 'البطاقات التعليمية', listeningPractice: 'ممارسة الاستماع', selectPassage: 'اختر مقطعاً',
+    flashcards: 'البطاقات التعليمية', sentencePractice: 'ممارسة الجمل', listeningPractice: 'ممارسة الاستماع', selectPassage: 'اختر مقطعاً',
     passageInstructions: 'استمع للصوت واملأ الفراغات.', playAudio: 'تشغيل الصوت', pauseAudio: 'إيقاف مؤقت',
     checkAnswers: 'تحقق من الإجابات', showAnswers: 'أظهر الإجابات', keyVocabulary: 'المفردات الأساسية',
     grammarPractice: 'ممارسة القواعد', selectTopic: 'اختر موضوعاً', checkAnswer: 'تحقق من الإجابة',
     nextExercise: 'التالي', correct: 'صحيح!', incorrect: 'خطأ.',
     showCorrectAnswer: 'أظهر الإجابة', finalScore: 'النتيجة النهائية', practiceAgain: 'تدرب مرة أخرى', question: 'السؤال',
     grammarWelcomeTitle: 'مرحباً بك في ممارسة القواعد', grammarWelcomeText: 'يرجى اختيار موضوع من اليسار للبدء.',
+    selfTest: 'اختبار ذاتي',
+  },
+  italian: {
+    name: 'Italiano',
+    selectSections: 'Seleziona sezioni', allSections: 'Tutte le sezioni', currentCard: 'Scheda', of: 'di',
+    clickToFlip: 'Clicca per vedere la traduzione', clickToFlipBack: 'Clicca per tornare indietro', previous: 'Precedente',
+    next: 'Successivo', startWith: 'Inizia con', shuffle: 'Mescola', reset: 'Ripristina', language: 'Lingua',
+    studyTips: 'Consigli di studio', tip1: 'Prova a ricordare la traduzione prima di girare la scheda.',
+    tip2: 'Usa la funzione di mescolamento per testare le tue conoscenze casualmente.', tip3: 'Pratica tedesco → traduzione e traduzione → tedesco.',
+    tip4: 'Concentrati di più sulle schede che trovi difficili.',
+    sections: {
+      1: 'Saluti e domande di base', 2: 'Oggetti e articoli scolastici', 3: 'Casa e mobili', 4: 'Famiglia e attività',
+      5: 'Tempo e attività quotidiane', 6: 'Cibo e shopping', 7: 'Lavoro e denaro', 8: 'Guarisci presto!',
+      9: 'Strade attraverso la città', 10: 'La mia vita', 11: 'Viaggi', 12: 'Acquisto di abbigliamento / Shopping in un grande magazzino', 13: 'In viaggio', 14: 'Vivere insieme'
+    },
+    flashcards: 'Schede didattiche', sentencePractice: 'Pratica di frasi', listeningPractice: 'Pratica di ascolto', selectPassage: 'Seleziona un brano',
+    passageInstructions: 'Ascolta l\'audio e riempi gli spazi vuoti.', playAudio: 'Riproduci audio', pauseAudio: 'Pausa',
+    checkAnswers: 'Verifica risposte', showAnswers: 'Mostra risposte', keyVocabulary: 'Vocabolario chiave',
+    grammarPractice: 'Pratica grammaticale', selectTopic: 'Seleziona un argomento', checkAnswer: 'Verifica',
+    nextExercise: 'Avanti', correct: 'Corretto!', incorrect: 'Errato.',
+    showCorrectAnswer: 'Mostra risposta', finalScore: 'Punteggio finale', practiceAgain: 'Pratica di nuovo', question: 'Domanda',
+    grammarWelcomeTitle: 'Benvenuto alla pratica grammaticale', grammarWelcomeText: 'Seleziona un argomento a sinistra per iniziare.',
+    selfTest: 'Auto-test',
   }
 };

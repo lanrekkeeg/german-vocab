@@ -19,6 +19,7 @@ export type Translations = {
     albanian: string;
     german?: string;
     arabic?: string; // Optional for Arabic translations
+    italian?: string; // Optional for Italian translations
 };
 export type SentenceCard = {
     german?: string;
@@ -50,6 +51,7 @@ export type LanguageStrings = {
     tip4: string;
     sections: { [key: number]: string };
     flashcards: string;
+    sentencePractice: string;
     listeningPractice: string;
     selectPassage: string;
     passageInstructions: string;
@@ -70,6 +72,7 @@ export type LanguageStrings = {
     question: string;
     grammarWelcomeTitle: string;
     grammarWelcomeText: string;
+    selfTest: string;
 };
 
 // =====================================================================

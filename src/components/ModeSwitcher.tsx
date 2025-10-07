@@ -26,11 +26,11 @@ export const ModeSwitcher = React.memo(({ mode, setMode, t }: ModeSwitcherProps)
         <BrainCircuit size={20} /> {t.grammarPractice}
       </button>
       
-        <button 
+        <button
         onClick={() => setMode('sentencePractice')}
         className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'sentencePractice' ? 'bg-white text-orange-600 shadow-md' : 'text-gray-600'}`}
       >
-        <BookText size={20} /> Sentence Practice
+        <BookText size={20} /> {t.sentencePractice}
       </button>
       
       <button
@@ -48,7 +48,7 @@ export const ModeSwitcher = React.memo(({ mode, setMode, t }: ModeSwitcherProps)
         onClick={() => setMode('selfTest')}
         className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'selfTest' ? 'bg-white text-red-600 shadow-md' : 'text-gray-600'}`}
       >
-        <CheckSquare size={20} /> Self-Test
+        <CheckSquare size={20} /> {t.selfTest}
       </button>
     </div>
   </div>
