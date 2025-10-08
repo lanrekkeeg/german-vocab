@@ -34,6 +34,10 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     showCorrectAnswer: 'Show Answer', finalScore: 'Final Score', practiceAgain: 'Practice Again', question: 'Question',
     grammarWelcomeTitle: 'Welcome to Grammar Practice', grammarWelcomeText: 'Please choose a topic from the left to begin.',
     selfTest: 'Self-Test',
+    pdfResources: 'PDF Resources',
+    arbeitsbuch: 'Workbook (Arbeitsbuch)',
+    kursbuch: 'Textbook (Kursbuch)',
+    downloadPdf: 'Download PDF',
   },
   ukrainian: {
     name: 'Українська',
@@ -56,6 +60,10 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     showCorrectAnswer: 'Показати відповідь', finalScore: 'Підсумковий рахунок', practiceAgain: 'Спробувати знову', question: 'Питання',
     grammarWelcomeTitle: 'Ласкаво просимо до практики граматики', grammarWelcomeText: 'Будь ласка, оберіть тему зліва, щоб почати.',
     selfTest: 'Само-тест',
+    pdfResources: 'PDF ресурси',
+    arbeitsbuch: 'Робочий зошит (Arbeitsbuch)',
+    kursbuch: 'Підручник (Kursbuch)',
+    downloadPdf: 'Завантажити PDF',
   },
   polish: {
     name: 'Polski',
@@ -78,6 +86,10 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     showCorrectAnswer: 'Pokaż odpowiedź', finalScore: 'Wynik końcowy', practiceAgain: 'Ćwicz ponownie', question: 'Pytanie',
     grammarWelcomeTitle: 'Witaj w ćwiczeniach gramatycznych', grammarWelcomeText: 'Proszę wybrać temat z lewej strony, aby rozpocząć.',
     selfTest: 'Samo-test',
+    pdfResources: 'Zasoby PDF',
+    arbeitsbuch: 'Zeszyt ćwiczeń (Arbeitsbuch)',
+    kursbuch: 'Podręcznik (Kursbuch)',
+    downloadPdf: 'Pobierz PDF',
   },
   albanian: {
     name: 'Shqip',
@@ -100,6 +112,10 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     showCorrectAnswer: 'Shfaq përgjigjen', finalScore: 'Rezultati final', practiceAgain: 'Praktiko përsëri', question: 'Pyetja',
     grammarWelcomeTitle: 'Mirë se vini në praktikën e gramatikës', grammarWelcomeText: 'Ju lutemi zgjidhni një temë nga e majta për të filluar.',
     selfTest: 'Vetë-Test',
+    pdfResources: 'Burime PDF',
+    arbeitsbuch: 'Libri i punës (Arbeitsbuch)',
+    kursbuch: 'Libri mësimor (Kursbuch)',
+    downloadPdf: 'Shkarko PDF',
   },
   german: {
     name: 'Deutsch',
@@ -122,6 +138,10 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     showCorrectAnswer: 'Antwort zeigen', finalScore: 'Endergebnis', practiceAgain: 'Nochmal üben', question: 'Frage',
     grammarWelcomeTitle: 'Willkommen bei den Grammatikübungen', grammarWelcomeText: 'Bitte wähle links ein Thema, um zu beginnen.',
     selfTest: 'Selbsttest',
+    pdfResources: 'PDF-Ressourcen',
+    arbeitsbuch: 'Arbeitsbuch',
+    kursbuch: 'Kursbuch',
+    downloadPdf: 'PDF herunterladen',
   },
   arabic: {
     name: 'العربية',
@@ -144,6 +164,10 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     showCorrectAnswer: 'أظهر الإجابة', finalScore: 'النتيجة النهائية', practiceAgain: 'تدرب مرة أخرى', question: 'السؤال',
     grammarWelcomeTitle: 'مرحباً بك في ممارسة القواعد', grammarWelcomeText: 'يرجى اختيار موضوع من اليسار للبدء.',
     selfTest: 'اختبار ذاتي',
+    pdfResources: 'موارد PDF',
+    arbeitsbuch: 'كتاب التمارين (Arbeitsbuch)',
+    kursbuch: 'الكتاب المدرسي (Kursbuch)',
+    downloadPdf: 'تحميل PDF',
   },
   italian: {
     name: 'Italiano',
@@ -166,5 +190,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     showCorrectAnswer: 'Mostra risposta', finalScore: 'Punteggio finale', practiceAgain: 'Pratica di nuovo', question: 'Domanda',
     grammarWelcomeTitle: 'Benvenuto alla pratica grammaticale', grammarWelcomeText: 'Seleziona un argomento a sinistra per iniziare.',
     selfTest: 'Auto-test',
+    pdfResources: 'Risorse PDF',
+    arbeitsbuch: 'Quaderno degli esercizi (Arbeitsbuch)',
+    kursbuch: 'Libro di testo (Kursbuch)',
+    downloadPdf: 'Scarica PDF',
   }
 };

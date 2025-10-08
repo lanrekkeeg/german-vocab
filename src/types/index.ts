@@ -73,6 +73,10 @@ export type LanguageStrings = {
     grammarWelcomeTitle: string;
     grammarWelcomeText: string;
     selfTest: string;
+    pdfResources: string;
+    arbeitsbuch: string;
+    kursbuch: string;
+    downloadPdf: string;
 };
 
 // =====================================================================

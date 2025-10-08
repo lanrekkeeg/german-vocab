@@ -13,7 +13,8 @@ import { FlashcardMode } from './components/flashcards/FlashcardMode';
 import { ListeningPracticeMode } from './components/listening/ListeningPracticeMode';
 import { GrammarPracticeMode } from './components/grammar/GrammerPracticeMode';
 import { SelfTestMode } from './components/selftest/SelfTestMode';
-import { SentencePracticeMode } from './components/sentences/SentencePracticeMode'; // <-- Import the new component
+import { SentencePracticeMode } from './components/sentences/SentencePracticeMode';
+import { PdfResourcesMode } from './components/pdf/PdfResourcesMode';
 
 // 3. DATA & TYPES
 import { languages } from './data/languages';
@@ -86,11 +87,12 @@ const AppView = () => {
                     />
                 )}
                 {mode === 'selfTest' && (
-                    <SelfTestMode 
-                        tests={levelData.selfTest} 
-                        language={testLanguage} 
+                    <SelfTestMode
+                        tests={levelData.selfTest}
+                        language={testLanguage}
                     />
                 )}
+                {mode === 'pdfResources' && <PdfResourcesMode />}
             </div>
         </div>
     );
