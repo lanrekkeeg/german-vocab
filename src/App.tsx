@@ -15,6 +15,7 @@ import { GrammarPracticeMode } from './components/grammar/GrammerPracticeMode';
 import { SelfTestMode } from './components/selftest/SelfTestMode';
 import { SentencePracticeMode } from './components/sentences/SentencePracticeMode';
 import { PdfResourcesMode } from './components/pdf/PdfResourcesMode';
+import { ArticleRulesMode } from './components/articles/ArticleRulesMode';
 
 // 3. DATA & TYPES
 import { languages } from './data/languages';
@@ -92,6 +93,7 @@ const AppView = () => {
                         language={testLanguage}
                     />
                 )}
+                {mode === 'articleRules' && <ArticleRulesMode />}
                 {mode === 'pdfResources' && <PdfResourcesMode />}
             </div>
         </div>

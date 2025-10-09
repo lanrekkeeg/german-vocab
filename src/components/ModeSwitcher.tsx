@@ -1,6 +1,6 @@
 // src/components/ModeSwitcher.tsx
 import React from 'react';
-import { BookOpen, BookText, Ear, BrainCircuit, CheckSquare, FileText } from 'lucide-react';
+import { BookOpen, BookText, Ear, BrainCircuit, CheckSquare, FileText, BookA } from 'lucide-react';
 import { LanguageStrings } from '../types';
 
 interface ModeSwitcherProps {
@@ -44,6 +44,13 @@ export const ModeSwitcher = React.memo(({ mode, setMode, t }: ModeSwitcherProps)
     
       
       
+      <button
+        onClick={() => setMode('articleRules')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'articleRules' ? 'bg-white text-teal-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <BookA size={20} /> {t.articleRules}
+      </button>
+
       <button
         onClick={() => setMode('selfTest')}
         className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'selfTest' ? 'bg-white text-red-600 shadow-md' : 'text-gray-600'}`}

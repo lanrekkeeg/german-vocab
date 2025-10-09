@@ -77,6 +77,13 @@ export type LanguageStrings = {
     arbeitsbuch: string;
     kursbuch: string;
     downloadPdf: string;
+    articleRules: string;
+    articleRulesDescription: string;
+    practiceFlashcards: string;
+    practiceMode: string;
+    close: string;
+    showFirst: string;
+    translation: string;
 };
 
 // =====================================================================
