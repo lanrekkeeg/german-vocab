@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/german-vocab/static/css/main.cf878fb6.css",
-    "main.js": "/german-vocab/static/js/main.4bf69d01.js",
+    "main.js": "/german-vocab/static/js/main.1ff5bfa2.js",
     "static/js/453.787f97ee.chunk.js": "/german-vocab/static/js/453.787f97ee.chunk.js",
     "static/media/14_post_office.wav": "/german-vocab/static/media/14_post_office.cd0c9e9606cc1240c8d3.wav",
     "static/media/13_clothing_store.wav": "/german-vocab/static/media/13_clothing_store.afe9a831861f042ab6f2.wav",
@@ -28,11 +28,11 @@
     "static/media/passage5.wav": "/german-vocab/static/media/passage5.ddfdb12c5f8f0b069ed6.wav",
     "index.html": "/german-vocab/index.html",
     "main.cf878fb6.css.map": "/german-vocab/static/css/main.cf878fb6.css.map",
-    "main.4bf69d01.js.map": "/german-vocab/static/js/main.4bf69d01.js.map",
+    "main.1ff5bfa2.js.map": "/german-vocab/static/js/main.1ff5bfa2.js.map",
     "453.787f97ee.chunk.js.map": "/german-vocab/static/js/453.787f97ee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cf878fb6.css",
-    "static/js/main.4bf69d01.js"
+    "static/js/main.1ff5bfa2.js"
   ]
 }
