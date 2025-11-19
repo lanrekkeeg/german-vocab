@@ -1,7 +1,15 @@
 {
   "files": {
-    "main.css": "/german-vocab/static/css/main.c11ab9ff.css",
-    "main.js": "/german-vocab/static/js/main.c1c72bbb.js",
+    "main.css": "/german-vocab/static/css/main.6002d3d7.css",
+    "main.js": "/german-vocab/static/js/main.c91ae760.js",
+    "static/js/385.eca78ce6.chunk.js": "/german-vocab/static/js/385.eca78ce6.chunk.js",
+    "static/js/764.93dffca3.chunk.js": "/german-vocab/static/js/764.93dffca3.chunk.js",
+    "static/js/991.c271cc01.chunk.js": "/german-vocab/static/js/991.c271cc01.chunk.js",
+    "static/js/973.2cb0d8be.chunk.js": "/german-vocab/static/js/973.2cb0d8be.chunk.js",
+    "static/js/962.e136f8e7.chunk.js": "/german-vocab/static/js/962.e136f8e7.chunk.js",
+    "static/js/671.6ef9e916.chunk.js": "/german-vocab/static/js/671.6ef9e916.chunk.js",
+    "static/js/444.ba86326f.chunk.js": "/german-vocab/static/js/444.ba86326f.chunk.js",
+    "static/js/857.fcde28e4.chunk.js": "/german-vocab/static/js/857.fcde28e4.chunk.js",
     "static/js/453.787f97ee.chunk.js": "/german-vocab/static/js/453.787f97ee.chunk.js",
     "static/media/14_post_office.wav": "/german-vocab/static/media/14_post_office.cd0c9e9606cc1240c8d3.wav",
     "static/media/13_clothing_store.wav": "/german-vocab/static/media/13_clothing_store.afe9a831861f042ab6f2.wav",
@@ -27,12 +35,20 @@
     "static/media/passage1.wav": "/german-vocab/static/media/passage1.c36474bb759cb4dd87fa.wav",
     "static/media/passage5.wav": "/german-vocab/static/media/passage5.ddfdb12c5f8f0b069ed6.wav",
     "index.html": "/german-vocab/index.html",
-    "main.c11ab9ff.css.map": "/german-vocab/static/css/main.c11ab9ff.css.map",
-    "main.c1c72bbb.js.map": "/german-vocab/static/js/main.c1c72bbb.js.map",
+    "main.6002d3d7.css.map": "/german-vocab/static/css/main.6002d3d7.css.map",
+    "main.c91ae760.js.map": "/german-vocab/static/js/main.c91ae760.js.map",
+    "385.eca78ce6.chunk.js.map": "/german-vocab/static/js/385.eca78ce6.chunk.js.map",
+    "764.93dffca3.chunk.js.map": "/german-vocab/static/js/764.93dffca3.chunk.js.map",
+    "991.c271cc01.chunk.js.map": "/german-vocab/static/js/991.c271cc01.chunk.js.map",
+    "973.2cb0d8be.chunk.js.map": "/german-vocab/static/js/973.2cb0d8be.chunk.js.map",
+    "962.e136f8e7.chunk.js.map": "/german-vocab/static/js/962.e136f8e7.chunk.js.map",
+    "671.6ef9e916.chunk.js.map": "/german-vocab/static/js/671.6ef9e916.chunk.js.map",
+    "444.ba86326f.chunk.js.map": "/german-vocab/static/js/444.ba86326f.chunk.js.map",
+    "857.fcde28e4.chunk.js.map": "/german-vocab/static/js/857.fcde28e4.chunk.js.map",
     "453.787f97ee.chunk.js.map": "/german-vocab/static/js/453.787f97ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c11ab9ff.css",
-    "static/js/main.c1c72bbb.js"
+    "static/css/main.6002d3d7.css",
+    "static/js/main.c91ae760.js"
   ]
 }
