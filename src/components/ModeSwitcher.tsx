@@ -1,6 +1,6 @@
 // src/components/ModeSwitcher.tsx
 import React from 'react';
-import { BookOpen, BookText, Ear, BrainCircuit, CheckSquare, FileText, BookA, BookOpenCheck, Clock } from 'lucide-react';
+import { BookOpen, BookText, Ear, BrainCircuit, CheckSquare, FileText, BookA, BookOpenCheck, Clock, Search } from 'lucide-react';
 import { LanguageStrings } from '../types';
 
 interface ModeSwitcherProps {
@@ -51,6 +51,13 @@ export const ModeSwitcher = React.memo(({ mode, setMode, t }: ModeSwitcherProps)
     
       
       
+      <button
+        onClick={() => setMode('wordSearch')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'wordSearch' ? 'bg-white text-emerald-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <Search size={20} /> {t.wordSearch}
+      </button>
+
       <button
         onClick={() => setMode('articleRules')}
         className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'articleRules' ? 'bg-white text-teal-600 shadow-md' : 'text-gray-600'}`}

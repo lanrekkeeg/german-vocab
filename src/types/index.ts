@@ -120,6 +120,24 @@ export type LanguageStrings = {
     tapToMark: string;
     autoAdvanceHint: string;
     tapCardHint: string;
+    // Word Search Game
+    wordSearch: string;
+    wordSearchDesc: string;
+    wordsToFind: string;
+    foundWord: string;
+    allWordsFound: string;
+    timeElapsed: string;
+    easy: string;
+    medium: string;
+    hard: string;
+    wordCount: string;
+    directions: string;
+    horizontalVertical: string;
+    withDiagonals: string;
+    allDirections: string;
+    congratulations: string;
+    yourTime: string;
+    wordsFoundCount: string;
 };
 
 // =====================================================================
@@ -214,3 +232,33 @@ export interface Test {
     timeLimit: number;
     exercises: TestExercise[];
 }
+
+// =====================================================================
+// WORD SEARCH GAME TYPES
+// =====================================================================
+export type WordSearchDirection = 'horizontal' | 'vertical' | 'diagonal-down' | 'diagonal-up';
+
+export interface PlacedWord {
+    word: string;
+    translation: string;
+    startRow: number;
+    startCol: number;
+    direction: WordSearchDirection;
+    found: boolean;
+    audioSrc?: string;
+}
+
+export interface WordSearchGame {
+    grid: string[][];
+    words: PlacedWord[];
+    size: number;
+}
+
+export interface WordSearchStats {
+    wordsFound: number;
+    totalWords: number;
+    timeElapsed: number;
+    hintsUsed: number;
+}
+
+export type WordSearchDifficulty = 'easy' | 'medium' | 'hard';

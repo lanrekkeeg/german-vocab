@@ -18,6 +18,7 @@ import { PdfResourcesMode } from './components/pdf/PdfResourcesMode';
 import { ArticleRulesMode } from './components/articles/ArticleRulesMode';
 import { StudyGuideMode } from './components/studyguide/StudyGuideMode';
 import { TimedTestMode } from './components/timedtest/TimedTestMode';
+import { WordSearchMode } from './components/wordsearch/WordSearchMode';
 
 // 3. DATA & TYPES
 import { languages } from './data/languages';
@@ -99,6 +100,7 @@ const AppView = () => {
                 {mode === 'articleRules' && <ArticleRulesMode />}
                 {mode === 'pdfResources' && <PdfResourcesMode />}
                 {mode === 'studyGuide' && <StudyGuideMode t={t} />}
+                {mode === 'wordSearch' && <WordSearchMode />}
             </div>
         </div>
     );
