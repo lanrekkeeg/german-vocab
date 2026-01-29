@@ -16,6 +16,8 @@ import { SelfTestMode } from './components/selftest/SelfTestMode';
 import { SentencePracticeMode } from './components/sentences/SentencePracticeMode';
 import { PdfResourcesMode } from './components/pdf/PdfResourcesMode';
 import { ArticleRulesMode } from './components/articles/ArticleRulesMode';
+import { StudyGuideMode } from './components/studyguide/StudyGuideMode';
+import { TimedTestMode } from './components/timedtest/TimedTestMode';
 
 // 3. DATA & TYPES
 import { languages } from './data/languages';
@@ -77,6 +79,7 @@ const AppView = () => {
 
             <div className="mt-8">
                 {mode === 'flashcards' && <FlashcardMode />}
+                {mode === 'timedTest' && <TimedTestMode />}
                 {mode === 'sentencePractice' && <SentencePracticeMode />}
 
                 {mode === 'listeningPractice' && <ListeningPracticeMode />}
@@ -95,6 +98,7 @@ const AppView = () => {
                 )}
                 {mode === 'articleRules' && <ArticleRulesMode />}
                 {mode === 'pdfResources' && <PdfResourcesMode />}
+                {mode === 'studyGuide' && <StudyGuideMode t={t} />}
             </div>
         </div>
     );

@@ -104,6 +104,19 @@ export type LanguageStrings = {
     seeResults: string;
     studyGuide: string;
     studyGuideDescription: string;
+    // Timed Test Mode
+    timedTest: string;
+    timedTestDescription: string;
+    revealDelay: string;
+    seconds: string;
+    gotIt: string;
+    needsPractice: string;
+    revealing: string;
+    testComplete: string;
+    cardsReviewed: string;
+    retry: string;
+    retryMissed: string;
+    showAnswer: string;
 };
 
 // =====================================================================

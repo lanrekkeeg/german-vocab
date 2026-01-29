@@ -1,6 +1,6 @@
 // src/components/ModeSwitcher.tsx
 import React from 'react';
-import { BookOpen, BookText, Ear, BrainCircuit, CheckSquare, FileText, BookA } from 'lucide-react';
+import { BookOpen, BookText, Ear, BrainCircuit, CheckSquare, FileText, BookA, BookOpenCheck, Clock } from 'lucide-react';
 import { LanguageStrings } from '../types';
 
 interface ModeSwitcherProps {
@@ -18,7 +18,14 @@ export const ModeSwitcher = React.memo(({ mode, setMode, t }: ModeSwitcherProps)
       >
         <BookOpen size={20} /> {t.flashcards}
       </button>
-      
+
+      <button
+        onClick={() => setMode('timedTest')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'timedTest' ? 'bg-white text-cyan-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <Clock size={20} /> {t.timedTest}
+      </button>
+
        <button
         onClick={() => setMode('grammarPractice')}
         className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'grammarPractice' ? 'bg-white text-purple-600 shadow-md' : 'text-gray-600'}`}
@@ -63,6 +70,13 @@ export const ModeSwitcher = React.memo(({ mode, setMode, t }: ModeSwitcherProps)
         className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'pdfResources' ? 'bg-white text-indigo-600 shadow-md' : 'text-gray-600'}`}
       >
         <FileText size={20} /> {t.pdfResources}
+      </button>
+
+      <button
+        onClick={() => setMode('studyGuide')}
+        className={`flex items-center gap-2 px-3 py-2 text-sm sm:text-base font-semibold rounded-lg transition-colors ${mode === 'studyGuide' ? 'bg-white text-purple-600 shadow-md' : 'text-gray-600'}`}
+      >
+        <BookOpenCheck size={20} /> {t.studyGuide}
       </button>
     </div>
   </div>
