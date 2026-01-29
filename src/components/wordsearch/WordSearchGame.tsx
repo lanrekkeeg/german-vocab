@@ -51,7 +51,7 @@ function generateWordSearchGrid(
   gridSize: number,
   allowedDirections: readonly WordSearchDirection[],
   language: LanguageKey
-): { grid: string[][]; placedWords: PlacedWord[] } {
+): { grid: string[][]; placedWords: PlacedWord[]; originalWords: Map<string, string> } {
   // Initialize empty grid
   const grid: string[][] = Array(gridSize)
     .fill(null)
@@ -64,6 +64,7 @@ function generateWordSearchGrid(
   );
 
   const placedWords: PlacedWord[] = [];
+  const originalWords = new Map<string, string>(); // Map normalized -> original German
 
   // Try to place each word
   for (const card of sortedCards) {
@@ -132,6 +133,9 @@ function generateWordSearchGrid(
         // Get translation for the current language
         const translation = card.translations[language] || card.translations.english || '';
 
+        // Store mapping from normalized to original German word
+        originalWords.set(normalizedWord, card.german);
+
         placedWords.push({
           word: normalizedWord,
           translation,
@@ -155,7 +159,7 @@ function generateWordSearchGrid(
     }
   }
 
-  return { grid, placedWords };
+  return { grid, placedWords, originalWords };
 }
 
 export const WordSearchGame: React.FC<WordSearchGameProps> = ({
@@ -169,9 +173,9 @@ export const WordSearchGame: React.FC<WordSearchGameProps> = ({
   onBack,
 }) => {
   // Generate grid and words on mount
-  const { grid, initialWords } = useMemo(() => {
+  const { grid, initialWords, originalWords } = useMemo(() => {
     const result = generateWordSearchGrid(cards, wordCount, gridSize, directions, language);
-    return { grid: result.grid, initialWords: result.placedWords };
+    return { grid: result.grid, initialWords: result.placedWords, originalWords: result.originalWords };
   }, [cards, wordCount, gridSize, directions, language]);
 
   const [placedWords, setPlacedWords] = useState<PlacedWord[]>(initialWords);
@@ -329,7 +333,7 @@ export const WordSearchGame: React.FC<WordSearchGameProps> = ({
 
       {/* Word List Sidebar */}
       <div className="lg:w-72">
-        <WordList words={placedWords} t={t} />
+        <WordList words={placedWords} t={t} originalWords={originalWords} />
       </div>
     </div>
   );
