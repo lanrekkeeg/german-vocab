@@ -139,9 +139,14 @@ export const TimedTestMode = () => {
   const [results, setResults] = useState<{ correct: number; incorrect: number }>({ correct: 0, incorrect: 0 });
   const [missedCards, setMissedCards] = useState<Card[]>([]);
 
+  // Auto-advance state
+  const [autoAdvanceCountdown, setAutoAdvanceCountdown] = useState(0);
+  const autoAdvanceDelay = 2; // seconds to wait after reveal before auto-advancing
+
   // Audio ref
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const countdownRef = useRef<NodeJS.Timeout | null>(null);
+  const autoAdvanceRef = useRef<NodeJS.Timeout | null>(null);
 
   // Initialize audio
   useEffect(() => {
@@ -202,6 +207,48 @@ export const TimedTestMode = () => {
       }
     };
   }, [isTestStarted, currentCardIndex, delay, isRevealed, isTestComplete]);
+
+  // Auto-advance timer effect (starts after reveal)
+  useEffect(() => {
+    if (!isRevealed || isTestComplete) {
+      if (autoAdvanceRef.current) {
+        clearInterval(autoAdvanceRef.current);
+      }
+      return;
+    }
+
+    setAutoAdvanceCountdown(autoAdvanceDelay);
+
+    autoAdvanceRef.current = setInterval(() => {
+      setAutoAdvanceCountdown(prev => {
+        if (prev <= 1) {
+          // Auto-advance as "got it" - inline the logic to avoid dependency issues
+          setResults(r => ({ correct: r.correct + 1, incorrect: r.incorrect }));
+
+          setCurrentCardIndex(idx => {
+            if (idx + 1 >= shuffledCards.length) {
+              setIsTestComplete(true);
+              return idx;
+            }
+            setIsRevealed(false);
+            return idx + 1;
+          });
+
+          if (autoAdvanceRef.current) {
+            clearInterval(autoAdvanceRef.current);
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => {
+      if (autoAdvanceRef.current) {
+        clearInterval(autoAdvanceRef.current);
+      }
+    };
+  }, [isRevealed, currentCardIndex, isTestComplete, shuffledCards.length]);
 
   // Section toggle handlers
   const toggleSection = useCallback((section: number) => {
@@ -293,6 +340,19 @@ export const TimedTestMode = () => {
       clearInterval(countdownRef.current);
     }
   }, []);
+
+  // Handle card tap (marks as "need practice")
+  const handleCardTap = useCallback(() => {
+    if (!isRevealed) return;
+
+    // Clear auto-advance timer
+    if (autoAdvanceRef.current) {
+      clearInterval(autoAdvanceRef.current);
+    }
+
+    // Mark as need practice and advance
+    handleAnswer(false);
+  }, [isRevealed, handleAnswer]);
 
   const currentCard = shuffledCards[currentCardIndex];
 
@@ -402,8 +462,13 @@ export const TimedTestMode = () => {
               )}
             </div>
 
-            {/* Card Display */}
-            <div className="min-h-[250px] flex flex-col items-center justify-center p-8 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl mb-6">
+            {/* Card Display - Clickable when revealed */}
+            <div
+              onClick={handleCardTap}
+              className={`min-h-[250px] flex flex-col items-center justify-center p-8 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl mb-6 transition-all ${
+                isRevealed ? 'cursor-pointer hover:from-red-50 hover:to-orange-50 active:scale-[0.98]' : ''
+              }`}
+            >
               {/* Question - User's language */}
               <div className="text-center mb-6">
                 <div className="text-sm text-gray-500 mb-2">{t.translation}</div>
@@ -419,7 +484,7 @@ export const TimedTestMode = () => {
                   {currentCard?.german || '—'}
                   {isRevealed && currentCard?.audioSrc && (
                     <button
-                      onClick={handlePlayAudio}
+                      onClick={(e) => { e.stopPropagation(); handlePlayAudio(); }}
                       className="p-2 bg-cyan-100 rounded-full hover:bg-cyan-200 transition-colors"
                     >
                       <Volume2 size={24} className="text-cyan-600" />
@@ -428,7 +493,7 @@ export const TimedTestMode = () => {
                 </div>
               </div>
 
-              {/* Countdown indicator */}
+              {/* Countdown indicator - before reveal */}
               {!isRevealed && (
                 <div className="mt-6">
                   <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -439,23 +504,31 @@ export const TimedTestMode = () => {
                   </div>
                 </div>
               )}
+
+              {/* Auto-advance indicator - after reveal */}
+              {isRevealed && (
+                <div className="mt-6 text-center">
+                  <div className="text-sm text-gray-500 mb-2">
+                    {t.tapToMark || 'Tap card if you need practice'} • {autoAdvanceCountdown}s
+                  </div>
+                  <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden mx-auto">
+                    <div
+                      className="h-full bg-green-500 transition-all duration-1000 ease-linear"
+                      style={{ width: `${(autoAdvanceCountdown / autoAdvanceDelay) * 100}%` }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Answer Buttons (only visible after reveal) */}
+            {/* Quick action hint */}
             {isRevealed && (
-              <div className="flex gap-4">
-                <button
-                  onClick={() => handleAnswer(true)}
-                  className="flex-1 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-bold text-lg flex items-center justify-center gap-2"
-                >
-                  <Check size={24} /> {t.gotIt}
-                </button>
-                <button
-                  onClick={() => handleAnswer(false)}
-                  className="flex-1 py-4 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-bold text-lg flex items-center justify-center gap-2"
-                >
-                  <X size={24} /> {t.needsPractice}
-                </button>
+              <div className="text-center text-sm text-gray-500 mb-4">
+                <span className="inline-flex items-center gap-2">
+                  <Check size={16} className="text-green-500" /> {t.autoAdvanceHint || 'Auto-advancing as correct'}
+                  <span className="mx-2">|</span>
+                  <X size={16} className="text-red-500" /> {t.tapCardHint || 'Tap card = need practice'}
+                </span>
               </div>
             )}
 

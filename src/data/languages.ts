@@ -76,6 +76,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'Retry All',
     retryMissed: 'Retry Missed',
     showAnswer: 'Show Answer',
+    tapToMark: 'Tap card if you need practice',
+    autoAdvanceHint: 'Auto-advancing as correct',
+    tapCardHint: 'Tap card = need practice',
   },
   ukrainian: {
     name: 'Українська',
@@ -140,6 +143,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'Повторити все',
     retryMissed: 'Повторити пропущені',
     showAnswer: 'Показати відповідь',
+    tapToMark: 'Торкніться картки, якщо потрібна практика',
+    autoAdvanceHint: 'Автоматичний перехід як правильно',
+    tapCardHint: 'Торкніться картки = потрібна практика',
   },
   polish: {
     name: 'Polski',
@@ -204,6 +210,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'Powtórz wszystkie',
     retryMissed: 'Powtórz pominięte',
     showAnswer: 'Pokaż odpowiedź',
+    tapToMark: 'Dotknij kartę, jeśli potrzebujesz ćwiczenia',
+    autoAdvanceHint: 'Automatyczne przejście jako poprawne',
+    tapCardHint: 'Dotknij kartę = potrzebuję ćwiczenia',
   },
   albanian: {
     name: 'Shqip',
@@ -268,6 +277,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'Provo të gjitha përsëri',
     retryMissed: 'Provo të humburat përsëri',
     showAnswer: 'Shfaq përgjigjen',
+    tapToMark: 'Prek kartën nëse keni nevojë për praktikë',
+    autoAdvanceHint: 'Avancim automatik si i saktë',
+    tapCardHint: 'Prek kartën = kam nevojë për praktikë',
   },
   german: {
     name: 'Deutsch',
@@ -332,6 +344,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'Alle wiederholen',
     retryMissed: 'Verpasste wiederholen',
     showAnswer: 'Antwort zeigen',
+    tapToMark: 'Tippe auf die Karte, wenn du üben musst',
+    autoAdvanceHint: 'Automatisches Weiter als richtig',
+    tapCardHint: 'Karte tippen = brauche Übung',
   },
   arabic: {
     name: 'العربية',
@@ -396,6 +411,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'إعادة الكل',
     retryMissed: 'إعادة الفائتة',
     showAnswer: 'أظهر الإجابة',
+    tapToMark: 'اضغط على البطاقة إذا كنت بحاجة للتدريب',
+    autoAdvanceHint: 'انتقال تلقائي كإجابة صحيحة',
+    tapCardHint: 'اضغط على البطاقة = أحتاج تدريب',
   },
   italian: {
     name: 'Italiano',
@@ -460,6 +478,9 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'Riprova tutte',
     retryMissed: 'Riprova mancate',
     showAnswer: 'Mostra risposta',
+    tapToMark: 'Tocca la scheda se hai bisogno di pratica',
+    autoAdvanceHint: 'Avanzamento automatico come corretto',
+    tapCardHint: 'Tocca scheda = ho bisogno di pratica',
   },
   serbian: {
     name: 'Српски',
@@ -524,5 +545,8 @@ export const languages: Record<LanguageKey, LanguageStrings> = {
     retry: 'Понови све',
     retryMissed: 'Понови промашене',
     showAnswer: 'Прикажи одговор',
+    tapToMark: 'Додирните картицу ако вам треба вежба',
+    autoAdvanceHint: 'Аутоматски прелазак као тачно',
+    tapCardHint: 'Додирни картицу = треба ми вежба',
   }
 };

@@ -117,6 +117,9 @@ export type LanguageStrings = {
     retry: string;
     retryMissed: string;
     showAnswer: string;
+    tapToMark: string;
+    autoAdvanceHint: string;
+    tapCardHint: string;
 };
 
 // =====================================================================
