@@ -28,7 +28,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лікар",
         "polish": "lekarz",
         "albanian": "mjeku",
-        "arabic": "طبيب"
+        "arabic": "طبيب",
+        "serbian": "лекар"
       }
     },
     {
@@ -38,7 +39,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "прийом",
         "polish": "termin",
         "albanian": "takimi",
-        "arabic": "موعد"
+        "arabic": "موعد",
+        "serbian": "термин"
       }
     },
     {
@@ -48,7 +50,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "практика",
         "polish": "gabinet",
         "albanian": "praktika",
-        "arabic": "عيادة"
+        "arabic": "عيادة",
+        "serbian": "ординација"
       }
     },
     {
@@ -58,7 +61,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "стоматолог",
         "polish": "dentysta",
         "albanian": "dentisti",
-        "arabic": "طبيب أسنان"
+        "arabic": "طبيب أسنان",
+        "serbian": "зубар"
       }
     },
     {
@@ -68,7 +72,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "окуліст",
         "polish": "okulista",
         "albanian": "oftalmologi",
-        "arabic": "طبيب عيون"
+        "arabic": "طبيب عيون",
+        "serbian": "очни лекар"
       }
     },
     {
@@ -78,7 +83,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "педіатр",
         "polish": "pediatra",
         "albanian": "pediatri",
-        "arabic": "طبيب أطفال"
+        "arabic": "طبيب أطفال",
+        "serbian": "педијатар"
       }
     },
     {
@@ -88,7 +94,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сімейний лікар",
         "polish": "lekarz rodzinny",
         "albanian": "mjeku i familjes",
-        "arabic": "طبيب عائلة"
+        "arabic": "طبيب عائلة",
+        "serbian": "породични лекар"
       }
     },
     {
@@ -98,7 +105,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лікарня",
         "polish": "szpital",
         "albanian": "spitali",
-        "arabic": "مستشفى"
+        "arabic": "مستشفى",
+        "serbian": "болница"
       }
     },
     {
@@ -108,7 +116,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "медичне страхування",
         "polish": "kasa chorych",
         "albanian": "siguracioni shëndetësor",
-        "arabic": "تأمين صحي"
+        "arabic": "تأمين صحي",
+        "serbian": "здравствено осигурање"
       }
     },
     {
@@ -118,7 +127,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "медична картка",
         "polish": "karta ubezpieczenia zdrowotnego",
         "albanian": "karta e sigurimeve shëndetësore",
-        "arabic": "بطاقة التأمين الصحي"
+        "arabic": "بطاقة التأمين الصحي",
+        "serbian": "здравствена картица"
       }
     },
     {
@@ -128,7 +138,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "бонусна книжечка",
         "polish": "książeczka bonusowa",
         "albanian": "librezë bonusi",
-        "arabic": "كتيب المكافآت"
+        "arabic": "كتيب المكافآت",
+        "serbian": "бонус књижица"
       }
     },
     {
@@ -138,7 +149,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "аптека",
         "polish": "apteka",
         "albanian": "farmacia",
-        "arabic": "صيدلية"
+        "arabic": "صيدلية",
+        "serbian": "апотека"
       }
     },
     {
@@ -148,7 +160,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ліки",
         "polish": "lek",
         "albanian": "ilaçi",
-        "arabic": "دواء"
+        "arabic": "دواء",
+        "serbian": "лек"
       }
     },
     {
@@ -158,7 +171,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "рецепт",
         "polish": "recepta",
         "albanian": "recepta",
-        "arabic": "وصفة طبية"
+        "arabic": "وصفة طبية",
+        "serbian": "рецепт"
       }
     },
     {
@@ -168,7 +182,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "таблетка",
         "polish": "tabletka",
         "albanian": "tableta",
-        "arabic": "قرص"
+        "arabic": "قرص",
+        "serbian": "таблета"
       }
     },
     {
@@ -178,7 +193,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "години прийому",
         "polish": "godziny przyjęć",
         "albanian": "orët e konsultës",
-        "arabic": "ساعات الاستشارة"
+        "arabic": "ساعات الاستشارة",
+        "serbian": "ордонација"
       }
     },
     {
@@ -188,7 +204,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "око",
         "polish": "oko",
         "albanian": "syri",
-        "arabic": "عين"
+        "arabic": "عين",
+        "serbian": "око"
       }
     },
     {
@@ -198,7 +215,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "голова",
         "polish": "głowa",
         "albanian": "koka",
-        "arabic": "رأس"
+        "arabic": "رأس",
+        "serbian": "глава"
       }
     },
     {
@@ -208,7 +226,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вухо",
         "polish": "ucho",
         "albanian": "veshi",
-        "arabic": "أذن"
+        "arabic": "أذن",
+        "serbian": "уво"
       }
     },
     {
@@ -218,7 +237,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "рот",
         "polish": "usta",
         "albanian": "goja",
-        "arabic": "فم"
+        "arabic": "فم",
+        "serbian": "уста"
       }
     },
     {
@@ -228,7 +248,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ніс",
         "polish": "nos",
         "albanian": "hunda",
-        "arabic": "أنف"
+        "arabic": "أنف",
+        "serbian": "нос"
       }
     },
     {
@@ -238,7 +259,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "шия",
         "polish": "szyja",
         "albanian": "qafa",
-        "arabic": "رقبة"
+        "arabic": "رقبة",
+        "serbian": "врат"
       }
     },
     {
@@ -248,7 +270,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "рука",
         "polish": "ramię",
         "albanian": "krahu",
-        "arabic": "ذراع"
+        "arabic": "ذراع",
+        "serbian": "рука"
       }
     },
     {
@@ -258,7 +281,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кисть",
         "polish": "ręka",
         "albanian": "dora",
-        "arabic": "يد"
+        "arabic": "يد",
+        "serbian": "шака"
       }
     },
     {
@@ -268,7 +292,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "спина",
         "polish": "plecy",
         "albanian": "shpina",
-        "arabic": "ظهر"
+        "arabic": "ظهر",
+        "serbian": "леђа"
       }
     },
     {
@@ -278,7 +303,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "нога",
         "polish": "noga",
         "albanian": "këmba",
-        "arabic": "ساق"
+        "arabic": "ساق",
+        "serbian": "нога"
       }
     },
     {
@@ -288,7 +314,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ступня",
         "polish": "stopa",
         "albanian": "këmba",
-        "arabic": "قدم"
+        "arabic": "قدم",
+        "serbian": "стопало"
       }
     },
     {
@@ -298,7 +325,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "живіт",
         "polish": "brzuch",
         "albanian": "barku",
-        "arabic": "بطن"
+        "arabic": "بطن",
+        "serbian": "стомак"
       }
     },
     {
@@ -308,7 +336,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "палець",
         "polish": "palec",
         "albanian": "gishti",
-        "arabic": "إصبع"
+        "arabic": "إصبع",
+        "serbian": "прст"
       }
     },
     {
@@ -318,7 +347,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дитина",
         "polish": "dziecko",
         "albanian": "fëmija",
-        "arabic": "طفل"
+        "arabic": "طفل",
+        "serbian": "дете"
       }
     },
     {
@@ -328,7 +358,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дочка",
         "polish": "córka",
         "albanian": "vajza",
-        "arabic": "ابنة"
+        "arabic": "ابنة",
+        "serbian": "ћерка"
       }
     },
     {
@@ -338,7 +369,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "школа",
         "polish": "szkoła",
         "albanian": "shkolla",
-        "arabic": "مدرسة"
+        "arabic": "مدرسة",
+        "serbian": "школа"
       }
     },
     {
@@ -348,7 +380,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "виправдувальна записка",
         "polish": "usprawiedliwienie",
         "albanian": "justifikimi",
-        "arabic": "مذكرة اعتذار"
+        "arabic": "مذكرة اعتذار",
+        "serbian": "оправдање"
       }
     },
     {
@@ -358,7 +391,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "температура",
         "polish": "gorączka",
         "albanian": "ethe",
-        "arabic": "حمى"
+        "arabic": "حمى",
+        "serbian": "грозница"
       }
     },
     {
@@ -368,7 +402,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "застуда",
         "polish": "przeziębienie",
         "albanian": "ftohja",
-        "arabic": "نزلة برد"
+        "arabic": "نزلة برد",
+        "serbian": "хладноћа"
       }
     },
     {
@@ -378,7 +413,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "грип",
         "polish": "grypa",
         "albanian": "gripi",
-        "arabic": "إنفلونزا"
+        "arabic": "إنفلونزا",
+        "serbian": "грип"
       }
     },
     {
@@ -388,7 +424,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "головний біль",
         "polish": "ból głowy",
         "albanian": "dhimbje koke",
-        "arabic": "صداع"
+        "arabic": "صداع",
+        "serbian": "главобоља"
       }
     },
     {
@@ -398,7 +435,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зубний біль",
         "polish": "ból zęba",
         "albanian": "dhimbje dhëmbi",
-        "arabic": "ألم الأسنان"
+        "arabic": "ألم الأسنان",
+        "serbian": "зубобоља"
       }
     },
     {
@@ -408,7 +446,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "біль у горлі",
         "polish": "ból gardła",
         "albanian": "dhimbje fyti",
-        "arabic": "التهاب الحلق"
+        "arabic": "التهاب الحلق",
+        "serbian": "грлобоља"
       }
     },
     {
@@ -418,7 +457,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "біль у животі",
         "polish": "ból brzucha",
         "albanian": "dhimbje barku",
-        "arabic": "ألم المعدة"
+        "arabic": "ألم المعدة",
+        "serbian": "бол у стомаку"
       }
     },
     {
@@ -428,7 +468,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "біль у спині",
         "polish": "ból pleców",
         "albanian": "dhimbje shpine",
-        "arabic": "ألم الظهر"
+        "arabic": "ألم الظهر",
+        "serbian": "бол у леђима"
       }
     },
     {
@@ -438,7 +479,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лікарняний",
         "polish": "zwolnienie lekarskie",
         "albanian": "dëshmi mjekësore",
-        "arabic": "إجازة مرضية"
+        "arabic": "إجازة مرضية",
+        "serbian": "лекарско уверење"
       }
     },
     {
@@ -448,7 +490,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "направлення",
         "polish": "skierowanie",
         "albanian": "dërgimi",
-        "arabic": "إحالة"
+        "arabic": "إحالة",
+        "serbian": "упутница"
       }
     },
     {
@@ -458,7 +501,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "спеціаліст",
         "polish": "specjalista",
         "albanian": "specialisti",
-        "arabic": "طبيب مختص"
+        "arabic": "طبيب مختص",
+        "serbian": "специјалиста"
       }
     },
     {
@@ -468,7 +512,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "виклик швидкої",
         "polish": "wezwanie pomocy",
         "albanian": "thirrja e urgjencës",
-        "arabic": "مكالمة طوارئ"
+        "arabic": "مكالمة طوارئ",
+        "serbian": "хитни позив"
       }
     },
     {
@@ -478,7 +523,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лікар швидкої",
         "polish": "lekarz pogotowia",
         "albanian": "mjeku i urgjencës",
-        "arabic": "طبيب طوارئ"
+        "arabic": "طبيب طوارئ",
+        "serbian": "хитна лекарска помоћ"
       }
     },
     {
@@ -488,7 +534,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "швидка допомога",
         "polish": "karetka pogotowia",
         "albanian": "ambulanca",
-        "arabic": "سيارة إسعاف"
+        "arabic": "سيارة إسعاف",
+        "serbian": "хитна помоћ"
       }
     },
     {
@@ -498,7 +545,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пожежна служба",
         "polish": "straż pożarna",
         "albanian": "zjarrfikësit",
-        "arabic": "مطافئ الحريق"
+        "arabic": "مطافئ الحريق",
+        "serbian": "ватрогасци"
       }
     },
     {
@@ -508,7 +556,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пожежа",
         "polish": "pożar",
         "albanian": "zjarri",
-        "arabic": "حريق"
+        "arabic": "حريق",
+        "serbian": "ватра"
       }
     },
     {
@@ -518,7 +567,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "нещасний випадок",
         "polish": "wypadek",
         "albanian": "aksidenti",
-        "arabic": "حادث"
+        "arabic": "حادث",
+        "serbian": "несрећа"
       }
     },
     {
@@ -528,7 +578,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "поранений",
         "polish": "ranny",
         "albanian": "i lënduar",
-        "arabic": "مصاب"
+        "arabic": "مصاب",
+        "serbian": "повређен"
       }
     },
     {
@@ -538,7 +589,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "хворий",
         "polish": "chory",
         "albanian": "i sëmurë",
-        "arabic": "مريض"
+        "arabic": "مريض",
+        "serbian": "болестан"
       }
     },
     {
@@ -548,7 +600,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "здоровий",
         "polish": "zdrowy",
         "albanian": "i shëndetshëm",
-        "arabic": "صحي"
+        "arabic": "صحي",
+        "serbian": "здрав"
       }
     },
     {
@@ -558,7 +611,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "здоров'я",
         "polish": "zdrowie",
         "albanian": "shëndeti",
-        "arabic": "صحة"
+        "arabic": "صحة",
+        "serbian": "здравље"
       }
     },
     {
@@ -568,7 +622,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "книга",
         "polish": "książka",
         "albanian": "libri",
-        "arabic": "كتاب"
+        "arabic": "كتاب",
+        "serbian": "књига"
       }
     },
     {
@@ -578,7 +633,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "годинник",
         "polish": "zegarek",
         "albanian": "ora",
-        "arabic": "ساعة"
+        "arabic": "ساعة",
+        "serbian": "сат"
       }
     },
     {
@@ -588,7 +644,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ноутбук",
         "polish": "laptop",
         "albanian": "laptopi",
-        "arabic": "حاسوب محمول"
+        "arabic": "حاسوب محمول",
+        "serbian": "лаптоп"
       }
     },
     {
@@ -598,7 +655,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "планшет",
         "polish": "tablet",
         "albanian": "tableti",
-        "arabic": "جهاز لوحي"
+        "arabic": "جهاز لوحي",
+        "serbian": "таблета"
       }
     },
     {
@@ -608,7 +666,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "календар",
         "polish": "kalendarz",
         "albanian": "kalendari",
-        "arabic": "تقويم"
+        "arabic": "تقويم",
+        "serbian": "календар"
       }
     },
     {
@@ -618,7 +677,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "халат",
         "polish": "szlafrok",
         "albanian": "rrobën e banjës",
-        "arabic": "روب الحمام"
+        "arabic": "روب الحمام",
+        "serbian": "бадемантил"
       }
     },
     {
@@ -628,7 +688,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зубна щітка",
         "polish": "szczoteczka do zębów",
         "albanian": "furça e dhëmbëve",
-        "arabic": "فرشاة أسنان"
+        "arabic": "فرشاة أسنان",
+        "serbian": "четкица за зубе"
       }
     },
     {
@@ -638,7 +699,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "плече",
         "polish": "ramię",
         "albanian": "supja",
-        "arabic": "كتف"
+        "arabic": "كتف",
+        "serbian": "раме"
       }
     },
     {
@@ -648,7 +710,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лікоть",
         "polish": "łokieć",
         "albanian": "bërryli",
-        "arabic": "مرفق"
+        "arabic": "مرفق",
+        "serbian": "лакат"
       }
     },
     {
@@ -658,7 +721,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "коліно",
         "polish": "kolano",
         "albanian": "gjuri",
-        "arabic": "ركبة"
+        "arabic": "ركبة",
+        "serbian": "колено"
       }
     },
     {
@@ -668,7 +732,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "палець ноги",
         "polish": "palec u nogi",
         "albanian": "gishti i këmbës",
-        "arabic": "إصبع القدم"
+        "arabic": "إصبع القدم",
+        "serbian": "прст на нози"
       }
     },
     {
@@ -678,7 +743,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "губа",
         "polish": "warga",
         "albanian": "buza",
-        "arabic": "شفة"
+        "arabic": "شفة",
+        "serbian": "усна"
       }
     },
     {
@@ -688,7 +754,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вія",
         "polish": "rzęsa",
         "albanian": "qerpiku",
-        "arabic": "رمش"
+        "arabic": "رمش",
+        "serbian": "трепавица"
       }
     },
     {
@@ -698,7 +765,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "брова",
         "polish": "brew",
         "albanian": "vetulla",
-        "arabic": "حاجب"
+        "arabic": "حاجب",
+        "serbian": "обрва"
       }
     },
     {
@@ -708,7 +776,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "стегно",
         "polish": "udo",
         "albanian": "kofsha",
-        "arabic": "فخذ"
+        "arabic": "فخذ",
+        "serbian": "бутина"
       }
     },
     {
@@ -718,7 +787,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "гомілка",
         "polish": "łydka",
         "albanian": "këmba e poshtme",
-        "arabic": "ساق سفلى"
+        "arabic": "ساق سفلى",
+        "serbian": "подколеница"
       }
     },
     {
@@ -728,7 +798,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "м'яз",
         "polish": "mięsień",
         "albanian": "muskuli",
-        "arabic": "عضلة"
+        "arabic": "عضلة",
+        "serbian": "мишић"
       }
     },
     {
@@ -738,7 +809,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "хребет",
         "polish": "kręgosłup",
         "albanian": "shtylla kurrizore",
-        "arabic": "عمود فقري"
+        "arabic": "عمود فقري",
+        "serbian": "кичма"
       }
     },
     {
@@ -748,7 +820,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "серце",
         "polish": "serce",
         "albanian": "zemra",
-        "arabic": "قلب"
+        "arabic": "قلب",
+        "serbian": "срце"
       }
     },
     {
@@ -758,7 +831,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "печінка",
         "polish": "wątroba",
         "albanian": "mëlçia",
-        "arabic": "كبد"
+        "arabic": "كبد",
+        "serbian": "јетра"
       }
     },
     {
@@ -768,7 +842,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "шлунок",
         "polish": "żołądek",
         "albanian": "stomaku",
-        "arabic": "معدة"
+        "arabic": "معدة",
+        "serbian": "стомак"
       }
     },
     {
@@ -778,7 +853,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лоб",
         "polish": "czoło",
         "albanian": "balli",
-        "arabic": "جبهة"
+        "arabic": "جبهة",
+        "serbian": "чело"
       }
     }
   ],
@@ -790,7 +866,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "шлях, дорога",
         "polish": "droga, ścieżka",
         "albanian": "rrugë, shteg",
-        "arabic": "طريق، مسار"
+        "arabic": "طريق، مسار",
+        "serbian": "пут, стаза"
       }
     },
     {
@@ -800,7 +877,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "місто",
         "polish": "miasto",
         "albanian": "qytet",
-        "arabic": "مدينة"
+        "arabic": "مدينة",
+        "serbian": "град"
       }
     },
     {
@@ -810,7 +888,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "автобус",
         "polish": "autobus",
         "albanian": "autobus",
-        "arabic": "حافلة"
+        "arabic": "حافلة",
+        "serbian": "аутобус"
       }
     },
     {
@@ -820,7 +899,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "трамвай",
         "polish": "tramwaj",
         "albanian": "tramvaj",
-        "arabic": "ترام"
+        "arabic": "ترام",
+        "serbian": "трамвај"
       }
     },
     {
@@ -830,7 +910,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "метро",
         "polish": "metro",
         "albanian": "metro",
-        "arabic": "مترو الأنفاق"
+        "arabic": "مترو الأنفاق",
+        "serbian": "метро"
       }
     },
     {
@@ -840,7 +921,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "приміська електричка",
         "polish": "kolej podmiejska",
         "albanian": "tren suburban",
-        "arabic": "القطار الضاحي"
+        "arabic": "القطار الضاحي",
+        "serbian": "приградски воз"
       }
     },
     {
@@ -850,7 +932,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "поїзд",
         "polish": "pociąg",
         "albanian": "tren",
-        "arabic": "قطار"
+        "arabic": "قطار",
+        "serbian": "воз"
       }
     },
     {
@@ -860,7 +943,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "корабель",
         "polish": "statek",
         "albanian": "anije",
-        "arabic": "سفينة"
+        "arabic": "سفينة",
+        "serbian": "брод, чамац"
       }
     },
     {
@@ -870,7 +954,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "мотоцикл",
         "polish": "motocykl",
         "albanian": "motoçikletë",
-        "arabic": "دراجة نارية"
+        "arabic": "دراجة نارية",
+        "serbian": "мотоцикл"
       }
     },
     {
@@ -880,7 +965,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "літак",
         "polish": "samolot",
         "albanian": "aeroplan",
-        "arabic": "طائرة"
+        "arabic": "طائرة",
+        "serbian": "авион"
       }
     },
     {
@@ -890,7 +976,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "велосипед",
         "polish": "rower",
         "albanian": "biçikletë",
-        "arabic": "دراجة هوائية"
+        "arabic": "دراجة هوائية",
+        "serbian": "бицикл"
       }
     },
     {
@@ -900,7 +987,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "автомобіль",
         "polish": "samochód",
         "albanian": "makinë",
-        "arabic": "سيارة"
+        "arabic": "سيارة",
+        "serbian": "аутомобил"
       }
     },
     {
@@ -910,7 +998,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пішохід",
         "polish": "pieszy",
         "albanian": "këmbësor",
-        "arabic": "مشاة"
+        "arabic": "مشاة",
+        "serbian": "пешак"
       }
     },
     {
@@ -920,7 +1009,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "станція",
         "polish": "stacja",
         "albanian": "stacion",
-        "arabic": "محطة"
+        "arabic": "محطة",
+        "serbian": "станица"
       }
     },
     {
@@ -930,7 +1020,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "аеропорт",
         "polish": "lotnisko",
         "albanian": "aeroport",
-        "arabic": "مطار"
+        "arabic": "مطار",
+        "serbian": "аеродром"
       }
     },
     {
@@ -940,7 +1031,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "центр міста",
         "polish": "centrum miasta",
         "albanian": "qendër qyteti",
-        "arabic": "وسط المدينة"
+        "arabic": "وسط المدينة",
+        "serbian": "центар града"
       }
     },
     {
@@ -950,7 +1042,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зупинка",
         "polish": "przystanek",
         "albanian": "stacion autobusi",
-        "arabic": "محطة الحافلات"
+        "arabic": "محطة الحافلات",
+        "serbian": "аутобуска станица"
       }
     },
     {
@@ -960,7 +1053,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "місячний квиток",
         "polish": "karta miesięczna",
         "albanian": "biletë mujore",
-        "arabic": "بطاقة شهرية"
+        "arabic": "بطاقة شهرية",
+        "serbian": "месечна карта"
       }
     },
     {
@@ -970,7 +1064,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кафе",
         "polish": "kawiarnia",
         "albanian": "kafe",
-        "arabic": "مقهى"
+        "arabic": "مقهى",
+        "serbian": "кафић"
       }
     },
     {
@@ -980,7 +1075,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "площа",
         "polish": "plac",
         "albanian": "shesh",
-        "arabic": "ساحة"
+        "arabic": "ساحة",
+        "serbian": "трг"
       }
     },
     {
@@ -990,7 +1086,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дерево",
         "polish": "drzewo",
         "albanian": "pemë",
-        "arabic": "شجرة"
+        "arabic": "شجرة",
+        "serbian": "дрво"
       }
     },
     {
@@ -1000,7 +1097,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дитячий майданчик",
         "polish": "plac zabaw",
         "albanian": "shesh lojërash",
-        "arabic": "ملعب أطفال"
+        "arabic": "ملعب أطفال",
+        "serbian": "игралиште"
       }
     },
     {
@@ -1010,7 +1108,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лавка",
         "polish": "ławka",
         "albanian": "stol",
-        "arabic": "مقعد"
+        "arabic": "مقعد",
+        "serbian": "клупа"
       }
     },
     {
@@ -1020,7 +1119,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "собака",
         "polish": "pies",
         "albanian": "qen",
-        "arabic": "كلب"
+        "arabic": "كلب",
+        "serbian": "пас"
       }
     },
     {
@@ -1030,7 +1130,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "басейн",
         "polish": "basen",
         "albanian": "pishinë",
-        "arabic": "حمام سباحة"
+        "arabic": "حمام سباحة",
+        "serbian": "базен"
       }
     },
     {
@@ -1040,7 +1141,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ратуша",
         "polish": "ratusz",
         "albanian": "bashki",
-        "arabic": "دار البلدية"
+        "arabic": "دار البلدية",
+        "serbian": "градска кућа"
       }
     },
     {
@@ -1050,7 +1152,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "бібліотека",
         "polish": "biblioteka",
         "albanian": "bibliotekë",
-        "arabic": "مكتبة"
+        "arabic": "مكتبة",
+        "serbian": "библиотека"
       }
     },
     {
@@ -1060,7 +1163,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "головний вокзал",
         "polish": "dworzec główny",
         "albanian": "stacion kryesor",
-        "arabic": "المحطة الرئيسية"
+        "arabic": "المحطة الرئيسية",
+        "serbian": "главна железничка станица"
       }
     },
     {
@@ -1070,7 +1174,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "станція метро",
         "polish": "stacja metra",
         "albanian": "stacion metro",
-        "arabic": "محطة مترو"
+        "arabic": "محطة مترو",
+        "serbian": "станица метроа"
       }
     },
     {
@@ -1080,7 +1185,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лінія",
         "polish": "linia",
         "albanian": "linjë",
-        "arabic": "خط"
+        "arabic": "خط",
+        "serbian": "линија"
       }
     },
     {
@@ -1090,7 +1196,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "напрямок",
         "polish": "kierunek",
         "albanian": "drejtim",
-        "arabic": "اتجاه"
+        "arabic": "اتجاه",
+        "serbian": "смер"
       }
     },
     {
@@ -1100,7 +1207,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зоопарк",
         "polish": "zoo",
         "albanian": "kopsht zoologjik",
-        "arabic": "حديقة حيوانات"
+        "arabic": "حديقة حيوانات",
+        "serbian": "зоолошки врт"
       }
     },
     {
@@ -1110,7 +1218,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "перехрестя",
         "polish": "skrzyżowanie",
         "albanian": "kryqëzim",
-        "arabic": "تقاطع"
+        "arabic": "تقاطع",
+        "serbian": "раскрсница"
       }
     },
     {
@@ -1120,7 +1229,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "світлофор",
         "polish": "światła",
         "albanian": "semafor",
-        "arabic": "إشارة مرور"
+        "arabic": "إشارة مرور",
+        "serbian": "семафор"
       }
     },
     {
@@ -1130,7 +1240,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "автостоянка",
         "polish": "parking",
         "albanian": "parking",
-        "arabic": "موقف سيارات"
+        "arabic": "موقف سيارات",
+        "serbian": "паркиралиште"
       }
     },
     {
@@ -1140,7 +1251,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "парк",
         "polish": "park",
         "albanian": "park",
-        "arabic": "حديقة"
+        "arabic": "حديقة",
+        "serbian": "парк"
       }
     },
     {
@@ -1150,7 +1262,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "річка",
         "polish": "rzeka",
         "albanian": "lumë",
-        "arabic": "نهر"
+        "arabic": "نهر",
+        "serbian": "река"
       }
     },
     {
@@ -1160,7 +1273,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "водійські права",
         "polish": "prawo jazdy",
         "albanian": "patentë shoferi",
-        "arabic": "رخصة قيادة"
+        "arabic": "رخصة قيادة",
+        "serbian": "driver's license"
       }
     },
     {
@@ -1170,7 +1284,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "іспит на водійські права",
         "polish": "egzamin na prawo jazdy",
         "albanian": "provimi i patentës",
-        "arabic": "امتحان رخصة القيادة"
+        "arabic": "امتحان رخصة القيادة",
+        "serbian": "возачки испит"
       }
     },
     {
@@ -1180,7 +1295,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "знак переважного права проїзду",
         "polish": "znak pierwszeństwa",
         "albanian": "shenjë përparësie",
-        "arabic": "علامة حق الأولوية"
+        "arabic": "علامة حق الأولوية",
+        "serbian": "знак приоритета"
       }
     },
     {
@@ -1190,7 +1306,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вантажівка",
         "polish": "ciężarówka",
         "albanian": "kamion",
-        "arabic": "شاحنة"
+        "arabic": "شاحنة",
+        "serbian": "камион"
       }
     },
     {
@@ -1200,7 +1317,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "знак",
         "polish": "znak",
         "albanian": "shenjë",
-        "arabic": "علامة"
+        "arabic": "علامة",
+        "serbian": "знак"
       }
     },
     {
@@ -1210,7 +1328,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "тротуар",
         "polish": "chodnik",
         "albanian": "trotuar",
-        "arabic": "رصيف"
+        "arabic": "رصيف",
+        "serbian": "тротоар"
       }
     },
     {
@@ -1220,7 +1339,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кінотеатр",
         "polish": "kino",
         "albanian": "kinema",
-        "arabic": "سينما"
+        "arabic": "سينما",
+        "serbian": "биоскоп"
       }
     },
     {
@@ -1230,7 +1350,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "аптека",
         "polish": "apteka",
         "albanian": "farmaci",
-        "arabic": "صيدلية"
+        "arabic": "صيدلية",
+        "serbian": "апотека"
       }
     },
     {
@@ -1240,7 +1361,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пекарня",
         "polish": "piekarnia",
         "albanian": "furre buke",
-        "arabic": "مخبز"
+        "arabic": "مخبز",
+        "serbian": "пекара"
       }
     },
     {
@@ -1250,7 +1372,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "супермаркет",
         "polish": "supermarket",
         "albanian": "supermarket",
-        "arabic": "سوبر ماركت"
+        "arabic": "سوبر ماركت",
+        "serbian": "супермаркет"
       }
     },
     {
@@ -1260,7 +1383,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "музей",
         "polish": "muzeum",
         "albanian": "muze",
-        "arabic": "متحف"
+        "arabic": "متحف",
+        "serbian": "музеј"
       }
     },
     {
@@ -1270,7 +1394,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "школа",
         "polish": "szkoła",
         "albanian": "shkollë",
-        "arabic": "مدرسة"
+        "arabic": "مدرسة",
+        "serbian": "школа"
       }
     },
     {
@@ -1280,7 +1405,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лікарня",
         "polish": "szpital",
         "albanian": "spital",
-        "arabic": "مستشفى"
+        "arabic": "مستشفى",
+        "serbian": "болница"
       }
     },
     {
@@ -1290,7 +1416,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пошта",
         "polish": "poczta",
         "albanian": "postë",
-        "arabic": "مكتب البريد"
+        "arabic": "مكتب البريد",
+        "serbian": "пошта"
       }
     },
     {
@@ -1300,7 +1427,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дитячий садок",
         "polish": "przedszkole",
         "albanian": "kopësht fëmijësh",
-        "arabic": "روضة أطفال"
+        "arabic": "روضة أطفال",
+        "serbian": "обданиште"
       }
     },
     {
@@ -1310,7 +1438,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "будинок на колесах",
         "polish": "kamper",
         "albanian": "shtëpi me rrota",
-        "arabic": "عربة سكن متنقلة"
+        "arabic": "عربة سكن متنقلة",
+        "serbian": "камп приколица"
       }
     },
     {
@@ -1320,7 +1449,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "скутер",
         "polish": "skuter",
         "albanian": "skuter",
-        "arabic": "دراجة بخارية"
+        "arabic": "دراجة بخارية",
+        "serbian": "скутер"
       }
     },
     {
@@ -1330,7 +1460,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "човен",
         "polish": "łódka",
         "albanian": "varkë",
-        "arabic": "قارب"
+        "arabic": "قارب",
+        "serbian": "чамац"
       }
     },
     {
@@ -1340,7 +1471,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пором",
         "polish": "prom",
         "albanian": "tragjekt",
-        "arabic": "عبارة"
+        "arabic": "عبارة",
+        "serbian": "трајект"
       }
     },
     {
@@ -1350,7 +1482,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "гелікоптер",
         "polish": "helikopter",
         "albanian": "helikopter",
-        "arabic": "مروحية"
+        "arabic": "مروحية",
+        "serbian": "хеликоптер"
       }
     },
     {
@@ -1360,7 +1493,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кемпінг",
         "polish": "kemping",
         "albanian": "kamp",
-        "arabic": "مخيم"
+        "arabic": "مخيم",
+        "serbian": "камп"
       }
     },
     {
@@ -1370,7 +1504,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "автовокзал",
         "polish": "dworzec autobusowy",
         "albanian": "stacion autobusësh",
-        "arabic": "محطة الحافلات"
+        "arabic": "محطة الحافلات",
+        "serbian": "аутобуска станица"
       }
     },
     {
@@ -1380,7 +1515,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зупинка трамваю",
         "polish": "przystanek tramwajowy",
         "albanian": "stacion tramvaji",
-        "arabic": "محطة الترام"
+        "arabic": "محطة الترام",
+        "serbian": "трамвајска станица"
       }
     },
     {
@@ -1390,7 +1526,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "порт",
         "polish": "port",
         "albanian": "port",
-        "arabic": "ميناء"
+        "arabic": "ميناء",
+        "serbian": "лука"
       }
     }
   ],
@@ -1402,7 +1539,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "готель",
         "polish": "hotel",
         "albanian": "hoteli",
-        "arabic": "فندق"
+        "arabic": "فندق",
+        "serbian": "хотел"
       }
     },
     {
@@ -1412,7 +1550,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ресторан",
         "polish": "restauracja",
         "albanian": "restoranti",
-        "arabic": "مطعم"
+        "arabic": "مطعم",
+        "serbian": "ресторан"
       }
     },
     {
@@ -1422,7 +1561,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "Александерплац",
         "polish": "Alexanderplatz",
         "albanian": "Alexanderplatz",
-        "arabic": "ألكسندر بلاتز"
+        "arabic": "ألكسندر بلاتز",
+        "serbian": "Александерплац (трг у Берлину)"
       }
     },
     {
@@ -1432,7 +1572,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "Бранденбурзькі ворота",
         "polish": "Brama Brandenburska",
         "albanian": "Porta e Brandenburgut",
-        "arabic": "بوابة براندنبورغ"
+        "arabic": "بوابة براندنبورغ",
+        "serbian": "Бранденбуршка капија"
       }
     },
     {
@@ -1442,7 +1583,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "Рейхстаг",
         "polish": "Reichstag",
         "albanian": "Reichstag",
-        "arabic": "الرايخستاغ"
+        "arabic": "الرايخستاغ",
+        "serbian": "Рајхстаг (зграда парламента)"
       }
     },
     {
@@ -1452,7 +1594,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "Музейний острів",
         "polish": "Wyspa Muzeów",
         "albanian": "Ishulli i Muzeve",
-        "arabic": "جزيرة المتاحف"
+        "arabic": "جزيرة المتاحف",
+        "serbian": "Музејско острво"
       }
     },
     {
@@ -1462,7 +1605,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "балкон",
         "polish": "balkon",
         "albanian": "ballkoni",
-        "arabic": "شرفة"
+        "arabic": "شرفة",
+        "serbian": "балкон"
       }
     },
     {
@@ -1472,7 +1616,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "квартира",
         "polish": "mieszkanie",
         "albanian": "banesa",
-        "arabic": "شقة"
+        "arabic": "شقة",
+        "serbian": "стан"
       }
     },
     {
@@ -1482,7 +1627,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кава",
         "polish": "kawa",
         "albanian": "kafeja",
-        "arabic": "قهوة"
+        "arabic": "قهوة",
+        "serbian": "кафа"
       }
     },
     {
@@ -1492,7 +1638,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "чай",
         "polish": "herbata",
         "albanian": "çaji",
-        "arabic": "شاي"
+        "arabic": "شاي",
+        "serbian": "чај"
       }
     },
     {
@@ -1502,7 +1649,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "концерт",
         "polish": "koncert",
         "albanian": "koncerti",
-        "arabic": "حفلة موسيقية"
+        "arabic": "حفلة موسيقية",
+        "serbian": "концерт"
       }
     },
     {
@@ -1512,7 +1660,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "екскурсія містом",
         "polish": "wycieczka po mieście",
         "albanian": "turi i qytetit",
-        "arabic": "جولة في المدينة"
+        "arabic": "جولة في المدينة",
+        "serbian": "разгледање града"
       }
     },
     {
@@ -1522,7 +1671,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "екскурсія",
         "polish": "wycieczka",
         "albanian": "ekskursioni",
-        "arabic": "رحلة"
+        "arabic": "رحلة",
+        "serbian": "излет"
       }
     },
     {
@@ -1532,7 +1682,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "піца",
         "polish": "pizza",
         "albanian": "pica",
-        "arabic": "بيتزا"
+        "arabic": "بيتزا",
+        "serbian": "пица"
       }
     },
     {
@@ -1542,7 +1693,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вечірка на день народження",
         "polish": "przyjęcie urodzinowe",
         "albanian": "festa e ditëlindjes",
-        "arabic": "حفلة عيد ميلاد"
+        "arabic": "حفلة عيد ميلاد",
+        "serbian": "рођенданска журка"
       }
     },
     {
@@ -1552,7 +1704,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "таксі",
         "polish": "taksówka",
         "albanian": "taksi",
-        "arabic": "تاكسي"
+        "arabic": "تاكسي",
+        "serbian": "такси"
       }
     },
     {
@@ -1562,7 +1715,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "гід, водій",
         "polish": "przewodnik, kierowca",
         "albanian": "udhërrëfyesi, shoferi",
-        "arabic": "دليل، سائق"
+        "arabic": "دليل، سائق",
+        "serbian": "водич, возач"
       }
     },
     {
@@ -1572,7 +1726,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пошта",
         "polish": "poczta",
         "albanian": "posta",
-        "arabic": "البريد"
+        "arabic": "البريد",
+        "serbian": "пошта"
       }
     },
     {
@@ -1582,7 +1737,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "автомобіль",
         "polish": "samochód",
         "albanian": "makina",
-        "arabic": "سيارة"
+        "arabic": "سيارة",
+        "serbian": "аутомобил"
       }
     },
     {
@@ -1592,7 +1748,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "картка, карта, квиток",
         "polish": "karta, mapa, bilet",
         "albanian": "karta, harta, bileta",
-        "arabic": "بطاقة، خريطة، تذكرة"
+        "arabic": "بطاقة، خريطة، تذكرة",
+        "serbian": "карта"
       }
     },
     {
@@ -1602,7 +1759,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ключ",
         "polish": "klucz",
         "albanian": "çelësi",
-        "arabic": "مفتاح"
+        "arabic": "مفتاح",
+        "serbian": "кључ"
       }
     },
     {
@@ -1612,7 +1770,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "раніше",
         "polish": "wcześniej",
         "albanian": "më parë",
-        "arabic": "سابقاً"
+        "arabic": "سابقاً",
+        "serbian": "раније"
       }
     },
     {
@@ -1622,7 +1781,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сьогодні",
         "polish": "dzisiaj",
         "albanian": "sot",
-        "arabic": "اليوم"
+        "arabic": "اليوم",
+        "serbian": "данас"
       }
     },
     {
@@ -1632,7 +1792,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "одружений",
         "polish": "żonaty/zamężna",
         "albanian": "i/e martuar",
-        "arabic": "متزوج"
+        "arabic": "متزوج",
+        "serbian": "ожењен/удата"
       }
     },
     {
@@ -1642,7 +1803,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "неодружений",
         "polish": "stanu wolnego",
         "albanian": "beqar/e",
-        "arabic": "أعزب"
+        "arabic": "أعزب",
+        "serbian": "неожењен/неудата"
       }
     },
     {
@@ -1652,7 +1814,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "розлучений",
         "polish": "rozwiedziony",
         "albanian": "i/e divorcuar",
-        "arabic": "مطلق"
+        "arabic": "مطلق",
+        "serbian": "разведен"
       }
     },
     {
@@ -1662,7 +1825,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "велике місто",
         "polish": "duże miasto",
         "albanian": "qyteti i madh",
-        "arabic": "مدينة كبيرة"
+        "arabic": "مدينة كبيرة",
+        "serbian": "велики град"
       }
     },
     {
@@ -1672,7 +1836,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "маленьке місто",
         "polish": "małe miasto",
         "albanian": "qyteti i vogël",
-        "arabic": "بلدة صغيرة"
+        "arabic": "بلدة صغيرة",
+        "serbian": "small town"
       }
     },
     {
@@ -1682,7 +1847,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сільська місцевість, країна",
         "polish": "wieś, kraj",
         "albanian": "fshati, vendi",
-        "arabic": "الريف، البلد"
+        "arabic": "الريف، البلد",
+        "serbian": "countryside, country"
       }
     },
     {
@@ -1692,7 +1858,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "втомлений",
         "polish": "zmęczony",
         "albanian": "i/e lodhur",
-        "arabic": "متعب"
+        "arabic": "متعب",
+        "serbian": "уморан"
       }
     },
     {
@@ -1702,7 +1869,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ключ від автомобіля",
         "polish": "kluczyk samochodowy",
         "albanian": "çelësi i makinës",
-        "arabic": "مفتاح السيارة"
+        "arabic": "مفتاح السيارة",
+        "serbian": "car key"
       }
     },
     {
@@ -1712,7 +1880,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "важливий",
         "polish": "ważny",
         "albanian": "i/e rëndësishëm",
-        "arabic": "مهم"
+        "arabic": "مهم",
+        "serbian": "important"
       }
     },
     {
@@ -1722,7 +1891,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "в дорозі",
         "polish": "w drodze",
         "albanian": "në rrugë",
-        "arabic": "في الطريق"
+        "arabic": "في الطريق",
+        "serbian": "on the way"
       }
     },
     {
@@ -1732,7 +1902,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "листівка",
         "polish": "pocztówka",
         "albanian": "kartolina",
-        "arabic": "بطاقة بريدية"
+        "arabic": "بطاقة بريدية",
+        "serbian": "разгледница"
       }
     },
     {
@@ -1742,7 +1913,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вітання",
         "polish": "pozdrowienia",
         "albanian": "përshëndetjet",
-        "arabic": "تحيات"
+        "arabic": "تحيات",
+        "serbian": "greetings"
       }
     },
     {
@@ -1752,7 +1924,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "водійські права",
         "polish": "prawo jazdy",
         "albanian": "patenta e shoferit",
-        "arabic": "رخصة القيادة"
+        "arabic": "رخصة القيادة",
+        "serbian": "driver's license"
       }
     },
     {
@@ -1762,7 +1935,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "комунікація",
         "polish": "komunikacja",
         "albanian": "komunikimi",
-        "arabic": "التواصل"
+        "arabic": "التواصل",
+        "serbian": "communication"
       }
     },
     {
@@ -1772,7 +1946,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "подорож",
         "polish": "podróż",
         "albanian": "udhëtimi",
-        "arabic": "رحلة"
+        "arabic": "رحلة",
+        "serbian": "journey, trip"
       }
     },
     {
@@ -1782,7 +1957,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лист",
         "polish": "list",
         "albanian": "letra",
-        "arabic": "رسالة"
+        "arabic": "رسالة",
+        "serbian": "letter"
       }
     },
     {
@@ -1792,7 +1968,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "електронний лист",
         "polish": "e-mail",
         "albanian": "emaili",
-        "arabic": "البريد الإلكتروني"
+        "arabic": "البريد الإلكتروني",
+        "serbian": "имејл"
       }
     },
     {
@@ -1802,7 +1979,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зустріч, термін",
         "polish": "termin",
         "albanian": "takimi",
-        "arabic": "موعد"
+        "arabic": "موعد",
+        "serbian": "термин"
       }
     },
     {
@@ -1812,7 +1990,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сім'я",
         "polish": "rodzina",
         "albanian": "familja",
-        "arabic": "العائلة"
+        "arabic": "العائلة",
+        "serbian": "family"
       }
     },
     {
@@ -1822,7 +2001,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дитина, діти",
         "polish": "dziecko, dzieci",
         "albanian": "fëmija, fëmijët",
-        "arabic": "طفل، أطفال"
+        "arabic": "طفل، أطفال",
+        "serbian": "child, children"
       }
     },
     {
@@ -1832,7 +2012,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "професія",
         "polish": "zawód",
         "albanian": "profesioni",
-        "arabic": "المهنة"
+        "arabic": "المهنة",
+        "serbian": "profession, job"
       }
     },
     {
@@ -1842,7 +2023,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "хобі",
         "polish": "hobby",
         "albanian": "hobi",
-        "arabic": "الهواية"
+        "arabic": "الهواية",
+        "serbian": "хоби"
       }
     }
   ],
@@ -1854,7 +2036,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "установа, відомство",
         "polish": "urząd",
         "albanian": "zyra, autoriteti",
-        "arabic": "المكتب، السلطة"
+        "arabic": "المكتب، السلطة",
+        "serbian": "office, authority"
       }
     },
     {
@@ -1864,7 +2047,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "орган влади, установа",
         "polish": "urząd, władza",
         "albanian": "autoriteti, zyra qeveritare",
-        "arabic": "السلطة، الدائرة الحكومية"
+        "arabic": "السلطة، الدائرة الحكومية",
+        "serbian": "authority, government office"
       }
     },
     {
@@ -1874,7 +2058,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "Федеральне агентство зайнятості",
         "polish": "Federalna Agencja Pracy",
         "albanian": "Agjencia Federale e Punës",
-        "arabic": "الوكالة الاتحادية للعمل"
+        "arabic": "الوكالة الاتحادية للعمل",
+        "serbian": "Federal Employment Agency"
       }
     },
     {
@@ -1884,7 +2069,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "каса сімейних виплат",
         "polish": "kasa rodzinna",
         "albanian": "zyra e përfitimeve familjare",
-        "arabic": "صندوق العائلة"
+        "arabic": "صندوق العائلة",
+        "serbian": "family benefits office"
       }
     },
     {
@@ -1894,7 +2080,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "РАЦС, відділ реєстрації актів цивільного стану",
         "polish": "urząd stanu cywilnego",
         "albanian": "zyra e gjendjes civile",
-        "arabic": "مكتب الأحوال المدنية"
+        "arabic": "مكتب الأحوال المدنية",
+        "serbian": "registry office"
       }
     },
     {
@@ -1904,7 +2091,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "відділ реєстрації транспортних засобів",
         "polish": "wydział komunikacji",
         "albanian": "zyra e regjistrimit të automjeteve",
-        "arabic": "مكتب تسجيل المركبات"
+        "arabic": "مكتب تسجيل المركبات",
+        "serbian": "vehicle registration office"
       }
     },
     {
@@ -1914,7 +2102,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зал очікування",
         "polish": "poczekalnia",
         "albanian": "dhoma e pritjes",
-        "arabic": "غرفة الانتظار"
+        "arabic": "غرفة الانتظار",
+        "serbian": "чекаоница"
       }
     },
     {
@@ -1924,7 +2113,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "допомога на дитину",
         "polish": "zasiłek na dziecko",
         "albanian": "ndihma për fëmijë",
-        "arabic": "إعانة الطفل"
+        "arabic": "إعانة الطفل",
+        "serbian": "child benefit"
       }
     },
     {
@@ -1934,7 +2124,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "професійна консультація",
         "polish": "doradztwo zawodowe",
         "albanian": "këshillimi i karrierës",
-        "arabic": "الاستشارة المهنية"
+        "arabic": "الاستشارة المهنية",
+        "serbian": "career counseling"
       }
     },
     {
@@ -1944,7 +2135,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "громадська приймальня",
         "polish": "urząd obywatelski",
         "albanian": "zyra e qytetarëve",
-        "arabic": "مكتب المواطنين"
+        "arabic": "مكتب المواطنين",
+        "serbian": "citizen's office"
       }
     },
     {
@@ -1954,7 +2146,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "відділ у справах іноземців",
         "polish": "urząd do spraw cudzoziemców",
         "albanian": "zyra e të huajve",
-        "arabic": "مكتب شؤون الأجانب"
+        "arabic": "مكتب شؤون الأجانب",
+        "serbian": "foreigners' office"
       }
     },
     {
@@ -1964,7 +2157,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "віза",
         "polish": "wiza",
         "albanian": "viza",
-        "arabic": "التأشيرة"
+        "arabic": "التأشيرة",
+        "serbian": "виза"
       }
     },
     {
@@ -1974,7 +2168,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "реєстраційний відділ",
         "polish": "biuro meldunkowe",
         "albanian": "zyra e regjistrimit",
-        "arabic": "مكتب التسجيل"
+        "arabic": "مكتب التسجيل",
+        "serbian": "матична служба"
       }
     },
     {
@@ -1984,7 +2179,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "громада, муніципалітет",
         "polish": "gmina",
         "albanian": "komuna, bashkia",
-        "arabic": "البلدية"
+        "arabic": "البلدية",
+        "serbian": "municipality, community"
       }
     },
     {
@@ -1994,7 +2190,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дата народження",
         "polish": "data urodzenia",
         "albanian": "data e lindjes",
-        "arabic": "تاريخ الميلاد"
+        "arabic": "تاريخ الميلاد",
+        "serbian": "датум рођења"
       }
     },
     {
@@ -2004,7 +2201,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "місце народження",
         "polish": "miejsce urodzenia",
         "albanian": "vendi i lindjes",
-        "arabic": "مكان الولادة"
+        "arabic": "مكان الولادة",
+        "serbian": "место рођења"
       }
     },
     {
@@ -2014,7 +2212,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сімейний стан",
         "polish": "stan cywilny",
         "albanian": "gjendja civile",
-        "arabic": "الحالة الاجتماعية"
+        "arabic": "الحالة الاجتماعية",
+        "serbian": "брачно стање"
       }
     },
     {
@@ -2024,7 +2223,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "громадянство",
         "polish": "obywatelstwo",
         "albanian": "shtetësia",
-        "arabic": "الجنسية"
+        "arabic": "الجنسية",
+        "serbian": "nationality, citizenship"
       }
     },
     {
@@ -2034,7 +2234,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дата",
         "polish": "data",
         "albanian": "data",
-        "arabic": "التاريخ"
+        "arabic": "التاريخ",
+        "serbian": "date"
       }
     },
     {
@@ -2044,7 +2245,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "свідоцтво про народження",
         "polish": "akt urodzenia",
         "albanian": "certifikata e lindjes",
-        "arabic": "شهادة الميلاد"
+        "arabic": "شهادة الميلاد",
+        "serbian": "извод из матичне књиге рођених"
       }
     },
     {
@@ -2054,7 +2256,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "паспорт",
         "polish": "paszport",
         "albanian": "pasaporta",
-        "arabic": "جواز السفر"
+        "arabic": "جواز السفر",
+        "serbian": "пасош"
       }
     },
     {
@@ -2064,7 +2267,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вхід",
         "polish": "wejście",
         "albanian": "hyrja",
-        "arabic": "المدخل"
+        "arabic": "المدخل",
+        "serbian": "улаз"
       }
     },
     {
@@ -2074,7 +2278,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "основне місце проживання",
         "polish": "główne miejsce zamieszkania",
         "albanian": "vendbanimi kryesor",
-        "arabic": "السكن الرئيسي"
+        "arabic": "السكن الرئيسي",
+        "serbian": "main residence"
       }
     },
     {
@@ -2084,7 +2289,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "орендодавець",
         "polish": "wynajmujący",
         "albanian": "qiradhënësi",
-        "arabic": "المؤجر"
+        "arabic": "المؤجر",
+        "serbian": "станодавац"
       }
     },
     {
@@ -2094,7 +2300,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "номер черги",
         "polish": "numer kolejki",
         "albanian": "numri i pritjes",
-        "arabic": "رقم الانتظار"
+        "arabic": "رقم الانتظار",
+        "serbian": "број за чекање"
       }
     },
     {
@@ -2104,7 +2311,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "плата за курс",
         "polish": "opłata za kurs",
         "albanian": "tarifa e kursit",
-        "arabic": "رسوم الدورة"
+        "arabic": "رسوم الدورة",
+        "serbian": "course fee"
       }
     },
     {
@@ -2114,7 +2322,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "договір оренди",
         "polish": "umowa najmu",
         "albanian": "kontrata e qirasë",
-        "arabic": "عقد الإيجار"
+        "arabic": "عقد الإيجار",
+        "serbian": "rental contract"
       }
     },
     {
@@ -2124,7 +2333,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "розрахунковий лист",
         "polish": "odcinek wypłaty",
         "albanian": "pasqyra e pagës",
-        "arabic": "كشف الراتب"
+        "arabic": "كشف الراتب",
+        "serbian": "salary statement"
       }
     },
     {
@@ -2134,7 +2344,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "порада",
         "polish": "wskazówka",
         "albanian": "këshilla",
-        "arabic": "نصيحة"
+        "arabic": "نصيحة",
+        "serbian": "tip, advice"
       }
     },
     {
@@ -2144,7 +2355,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "інформаційна брошура",
         "polish": "broszura informacyjna",
         "albanian": "broshura informative",
-        "arabic": "كتيب المعلومات"
+        "arabic": "كتيب المعلومات",
+        "serbian": "information brochure"
       }
     },
     {
@@ -2154,7 +2366,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "службовець",
         "polish": "urzędnik",
         "albanian": "nëpunësi",
-        "arabic": "الموظف المسؤول"
+        "arabic": "الموظف المسؤول",
+        "serbian": "clerk, case worker"
       }
     },
     {
@@ -2164,7 +2377,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "чоловічий",
         "polish": "męski",
         "albanian": "mashkull",
-        "arabic": "ذكر"
+        "arabic": "ذكر",
+        "serbian": "male"
       }
     },
     {
@@ -2174,7 +2388,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "жіночий",
         "polish": "żeński",
         "albanian": "femër",
-        "arabic": "أنثى"
+        "arabic": "أنثى",
+        "serbian": "female"
       }
     },
     {
@@ -2184,7 +2399,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "працевлаштований",
         "polish": "zatrudniony",
         "albanian": "i punësuar",
-        "arabic": "موظف"
+        "arabic": "موظف",
+        "serbian": "employed"
       }
     },
     {
@@ -2194,7 +2410,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "одружений",
         "polish": "żonaty/zamężna",
         "albanian": "i martuar",
-        "arabic": "متزوج"
+        "arabic": "متزوج",
+        "serbian": "ожењен/удата"
       }
     },
     {
@@ -2204,7 +2421,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "неодружений",
         "polish": "wolny/wolna",
         "albanian": "beqar",
-        "arabic": "أعزب"
+        "arabic": "أعزب",
+        "serbian": "неожењен/неудата"
       }
     },
     {
@@ -2214,7 +2432,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "квартира",
         "polish": "mieszkanie",
         "albanian": "banesa",
-        "arabic": "الشقة"
+        "arabic": "الشقة",
+        "serbian": "стан"
       }
     },
     {
@@ -2224,7 +2443,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "власна квартира",
         "polish": "mieszkanie własnościowe",
         "albanian": "banesa në pronësi",
-        "arabic": "شقة تمليك"
+        "arabic": "شقة تمليك",
+        "serbian": "condominium, owner-occupied apartment"
       }
     },
     {
@@ -2234,7 +2454,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "орендувати",
         "polish": "wynajmować",
         "albanian": "të marrësh me qira",
-        "arabic": "يستأجر"
+        "arabic": "يستأجر",
+        "serbian": "to rent"
       }
     },
     {
@@ -2244,7 +2465,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "переїжджати",
         "polish": "przeprowadzać się",
         "albanian": "të shpërngulesh",
-        "arabic": "ينتقل"
+        "arabic": "ينتقل",
+        "serbian": "to move (residence)"
       }
     }
   ],
@@ -2256,7 +2478,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пальто",
         "polish": "płaszcz",
         "albanian": "pallto",
-        "arabic": "معطف"
+        "arabic": "معطف",
+        "serbian": "капут"
       }
     },
     {
@@ -2266,7 +2489,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "штани",
         "polish": "spodnie",
         "albanian": "pantallona",
-        "arabic": "بنطلون"
+        "arabic": "بنطلون",
+        "serbian": "панталоне"
       }
     },
     {
@@ -2276,7 +2500,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "взуття",
         "polish": "buty",
         "albanian": "këpucë",
-        "arabic": "أحذية"
+        "arabic": "أحذية",
+        "serbian": "ципеле"
       }
     },
     {
@@ -2286,7 +2511,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сукня",
         "polish": "sukienka",
         "albanian": "fustan",
-        "arabic": "فستان"
+        "arabic": "فستان",
+        "serbian": "хаљина"
       }
     },
     {
@@ -2296,7 +2522,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сорочка",
         "polish": "koszula",
         "albanian": "këmishë",
-        "arabic": "قميص"
+        "arabic": "قميص",
+        "serbian": "кошуља"
       }
     },
     {
@@ -2306,7 +2533,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "блузка",
         "polish": "bluzka",
         "albanian": "bluzë",
-        "arabic": "بلوزة"
+        "arabic": "بلوزة",
+        "serbian": "блуза"
       }
     },
     {
@@ -2316,7 +2544,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "светр",
         "polish": "sweter",
         "albanian": "pulover",
-        "arabic": "كنزة"
+        "arabic": "كنزة",
+        "serbian": "pullover/sweater"
       }
     },
     {
@@ -2326,7 +2555,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "футболка",
         "polish": "koszulka",
         "albanian": "bluzë sportive",
-        "arabic": "تي شيرت"
+        "arabic": "تي شيرت",
+        "serbian": "мајица"
       }
     },
     {
@@ -2336,7 +2566,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "куртка",
         "polish": "kurtka",
         "albanian": "xhaketë",
-        "arabic": "جاكيت"
+        "arabic": "جاكيت",
+        "serbian": "јакна"
       }
     },
     {
@@ -2346,7 +2577,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "спідниця",
         "polish": "spódnica",
         "albanian": "fund",
-        "arabic": "تنورة"
+        "arabic": "تنورة",
+        "serbian": "сукња"
       }
     },
     {
@@ -2356,7 +2588,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "джинси",
         "polish": "dżinsy",
         "albanian": "xhinse",
-        "arabic": "جينز"
+        "arabic": "جينز",
+        "serbian": "фармерке"
       }
     },
     {
@@ -2366,7 +2599,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "світшот",
         "polish": "bluza",
         "albanian": "bluze sportive",
-        "arabic": "سويت شيرت"
+        "arabic": "سويت شيرت",
+        "serbian": "sweatshirt"
       }
     },
     {
@@ -2376,7 +2610,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "шкарпетка",
         "polish": "skarpeta",
         "albanian": "çorape",
-        "arabic": "جورب"
+        "arabic": "جورب",
+        "serbian": "sock"
       }
     },
     {
@@ -2386,7 +2621,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "нижня білизна",
         "polish": "bielizna",
         "albanian": "të brendshme",
-        "arabic": "ملابس داخلية"
+        "arabic": "ملابس داخلية",
+        "serbian": "доњи веш"
       }
     },
     {
@@ -2396,7 +2632,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "костюм",
         "polish": "garnitur",
         "albanian": "kostum",
-        "arabic": "بدلة"
+        "arabic": "بدلة",
+        "serbian": "одело"
       }
     },
     {
@@ -2406,7 +2643,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "краватка",
         "polish": "krawat",
         "albanian": "kravatë",
-        "arabic": "ربطة عنق"
+        "arabic": "ربطة عنق",
+        "serbian": "кравата"
       }
     },
     {
@@ -2416,7 +2654,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "чобіт",
         "polish": "but",
         "albanian": "çizme",
-        "arabic": "حذاء طويل"
+        "arabic": "حذاء طويل",
+        "serbian": "boot"
       }
     },
     {
@@ -2426,7 +2665,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сандалі",
         "polish": "sandał",
         "albanian": "sandale",
-        "arabic": "صندل"
+        "arabic": "صندل",
+        "serbian": "sandal"
       }
     },
     {
@@ -2436,7 +2676,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "панчоха",
         "polish": "pończocha",
         "albanian": "çorape të gjata",
-        "arabic": "جوارب طويلة"
+        "arabic": "جوارب طويلة",
+        "serbian": "stocking"
       }
     },
     {
@@ -2446,7 +2687,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "колготки",
         "polish": "rajstopy",
         "albanian": "kollotuke",
-        "arabic": "جوارب طويلة"
+        "arabic": "جوارب طويلة",
+        "serbian": "tights/pantyhose"
       }
     },
     {
@@ -2456,7 +2698,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "шарф",
         "polish": "szalik",
         "albanian": "shall",
-        "arabic": "وشاح"
+        "arabic": "وشاح",
+        "serbian": "шал"
       }
     },
     {
@@ -2466,7 +2709,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "рукавичка",
         "polish": "rękawica",
         "albanian": "dorashkë",
-        "arabic": "قفاز"
+        "arabic": "قفاز",
+        "serbian": "glove"
       }
     },
     {
@@ -2476,7 +2720,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "парасолька",
         "polish": "parasol",
         "albanian": "ombrellë",
-        "arabic": "مظلة"
+        "arabic": "مظلة",
+        "serbian": "кишобран"
       }
     },
     {
@@ -2486,7 +2731,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дощовик",
         "polish": "kurtka przeciwdeszczowa",
         "albanian": "xhaketë shiu",
-        "arabic": "معطف مطر"
+        "arabic": "معطف مطر",
+        "serbian": "кишни мантил"
       }
     },
     {
@@ -2496,7 +2742,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "спортивні штани",
         "polish": "spodnie dresowe",
         "albanian": "pantallona sportive",
-        "arabic": "بنطلون رياضي"
+        "arabic": "بنطلون رياضي",
+        "serbian": "sweatpants/jogging pants"
       }
     },
     {
@@ -2506,7 +2753,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кросівки",
         "polish": "buty sportowe",
         "albanian": "këpucë sportive",
-        "arabic": "حذاء رياضي"
+        "arabic": "حذاء رياضي",
+        "serbian": "патике"
       }
     },
     {
@@ -2516,7 +2764,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "анорак",
         "polish": "anorak",
         "albanian": "anorak",
-        "arabic": "معطف شتوي"
+        "arabic": "معطف شتوي",
+        "serbian": "анорак"
       }
     },
     {
@@ -2526,7 +2775,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "капелюх",
         "polish": "kapelusz",
         "albanian": "kapelë",
-        "arabic": "قبعة"
+        "arabic": "قبعة",
+        "serbian": "шешир"
       }
     },
     {
@@ -2536,7 +2786,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кепка",
         "polish": "czapka",
         "albanian": "kapuç",
-        "arabic": "قبعة"
+        "arabic": "قبعة",
+        "serbian": "капа"
       }
     },
     {
@@ -2546,7 +2797,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "шапка",
         "polish": "czapka",
         "albanian": "kapelë",
-        "arabic": "قبعة صوفية"
+        "arabic": "قبعة صوفية",
+        "serbian": "капа"
       }
     },
     {
@@ -2556,7 +2808,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "універмаг",
         "polish": "dom towarowy",
         "albanian": "qendër tregtare",
-        "arabic": "متجر كبير"
+        "arabic": "متجر كبير",
+        "serbian": "робна кућа"
       }
     },
     {
@@ -2566,7 +2819,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "бутік",
         "polish": "butik",
         "albanian": "butik",
-        "arabic": "متجر أزياء"
+        "arabic": "متجر أزياء",
+        "serbian": "бутик"
       }
     },
     {
@@ -2576,7 +2830,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "блошиний ринок",
         "polish": "pchli targ",
         "albanian": "treg i vjetër",
-        "arabic": "سوق البرغوث"
+        "arabic": "سوق البرغوث",
+        "serbian": "бувља пијаца"
       }
     },
     {
@@ -2586,7 +2841,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "примірочна",
         "polish": "przymierzalnia",
         "albanian": "dhomë provimi",
-        "arabic": "غرفة القياس"
+        "arabic": "غرفة القياس",
+        "serbian": "кабина за пресвлачење"
       }
     },
     {
@@ -2596,7 +2852,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "секонд-хенд",
         "polish": "sklep z używaną odzieżą",
         "albanian": "dyqan i dorës së dytë",
-        "arabic": "متجر ملابس مستعملة"
+        "arabic": "متجر ملابس مستعملة",
+        "serbian": "секонд хенд"
       }
     },
     {
@@ -2606,7 +2863,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "розмір",
         "polish": "rozmiar",
         "albanian": "madhësi",
-        "arabic": "مقاس"
+        "arabic": "مقاس",
+        "serbian": "величина"
       }
     },
     {
@@ -2616,7 +2874,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ціна",
         "polish": "cena",
         "albanian": "çmim",
-        "arabic": "سعر"
+        "arabic": "سعر",
+        "serbian": "цена"
       }
     },
     {
@@ -2626,7 +2885,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "каса",
         "polish": "kasa",
         "albanian": "arka",
-        "arabic": "صندوق الدفع"
+        "arabic": "صندوق الدفع",
+        "serbian": "каса"
       }
     },
     {
@@ -2636,7 +2896,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вихід",
         "polish": "wyjście",
         "albanian": "dalje",
-        "arabic": "مخرج"
+        "arabic": "مخرج",
+        "serbian": "излаз"
       }
     },
     {
@@ -2646,7 +2907,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ескалатор",
         "polish": "schody ruchome",
         "albanian": "shkallë lëvizëse",
-        "arabic": "سلم متحرك"
+        "arabic": "سلم متحرك",
+        "serbian": "покретне степенице"
       }
     },
     {
@@ -2656,7 +2918,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "відділ",
         "polish": "dział",
         "albanian": "departament",
-        "arabic": "قسم"
+        "arabic": "قسم",
+        "serbian": "одељење"
       }
     },
     {
@@ -2666,7 +2929,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "перший поверх",
         "polish": "parter",
         "albanian": "kati përdhes",
-        "arabic": "الطابق الأرضي"
+        "arabic": "الطابق الأرضي",
+        "serbian": "приземље"
       }
     },
     {
@@ -2676,7 +2940,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "поверх",
         "polish": "piętro",
         "albanian": "kat",
-        "arabic": "طابق"
+        "arabic": "طابق",
+        "serbian": "спрат"
       }
     },
     {
@@ -2686,7 +2951,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "комп'ютерна гра",
         "polish": "gra komputerowa",
         "albanian": "lojë kompjuteri",
-        "arabic": "لعبة كمبيوتر"
+        "arabic": "لعبة كمبيوتر",
+        "serbian": "компјутерска игра"
       }
     },
     {
@@ -2696,7 +2962,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "прикраси",
         "polish": "biżuteria",
         "albanian": "bizhuteri",
-        "arabic": "مجوهرات"
+        "arabic": "مجوهرات",
+        "serbian": "накит"
       }
     },
     {
@@ -2706,7 +2973,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "туалет",
         "polish": "toaleta",
         "albanian": "tualet",
-        "arabic": "مرحاض"
+        "arabic": "مرحاض",
+        "serbian": "тоалет"
       }
     }
   ],
@@ -2718,7 +2986,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пора року",
         "polish": "pora roku",
         "albanian": "stina",
-        "arabic": "فصل السنة"
+        "arabic": "فصل السنة",
+        "serbian": "годишње доба"
       }
     },
     {
@@ -2728,7 +2997,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "січень",
         "polish": "styczeń",
         "albanian": "janar",
-        "arabic": "يناير"
+        "arabic": "يناير",
+        "serbian": "јануар"
       }
     },
     {
@@ -2738,7 +3008,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "лютий",
         "polish": "luty",
         "albanian": "shkurt",
-        "arabic": "فبراير"
+        "arabic": "فبراير",
+        "serbian": "фебруар"
       }
     },
     {
@@ -2748,7 +3019,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "березень",
         "polish": "marzec",
         "albanian": "mars",
-        "arabic": "مارس"
+        "arabic": "مارس",
+        "serbian": "март"
       }
     },
     {
@@ -2758,7 +3030,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "квітень",
         "polish": "kwiecień",
         "albanian": "prill",
-        "arabic": "أبريل"
+        "arabic": "أبريل",
+        "serbian": "април"
       }
     },
     {
@@ -2768,7 +3041,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "травень",
         "polish": "maj",
         "albanian": "maj",
-        "arabic": "مايو"
+        "arabic": "مايو",
+        "serbian": "мај"
       }
     },
     {
@@ -2778,7 +3052,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "червень",
         "polish": "czerwiec",
         "albanian": "qershor",
-        "arabic": "يونيو"
+        "arabic": "يونيو",
+        "serbian": "јун"
       }
     },
     {
@@ -2788,7 +3063,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "липень",
         "polish": "lipiec",
         "albanian": "korrik",
-        "arabic": "يوليو"
+        "arabic": "يوليو",
+        "serbian": "јул"
       }
     },
     {
@@ -2798,7 +3074,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "серпень",
         "polish": "sierpień",
         "albanian": "gusht",
-        "arabic": "أغسطس"
+        "arabic": "أغسطس",
+        "serbian": "август"
       }
     },
     {
@@ -2808,7 +3085,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вересень",
         "polish": "wrzesień",
         "albanian": "shtator",
-        "arabic": "سبتمبر"
+        "arabic": "سبتمبر",
+        "serbian": "септембар"
       }
     },
     {
@@ -2818,7 +3096,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "жовтень",
         "polish": "październik",
         "albanian": "tetor",
-        "arabic": "أكتوبر"
+        "arabic": "أكتوبر",
+        "serbian": "октобар"
       }
     },
     {
@@ -2828,7 +3107,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "листопад",
         "polish": "listopad",
         "albanian": "nëntor",
-        "arabic": "نوفمبر"
+        "arabic": "نوفمبر",
+        "serbian": "новембар"
       }
     },
     {
@@ -2838,7 +3118,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "грудень",
         "polish": "grudzień",
         "albanian": "dhjetor",
-        "arabic": "ديسمبر"
+        "arabic": "ديسمبر",
+        "serbian": "децембар"
       }
     },
     {
@@ -2848,7 +3129,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "весна",
         "polish": "wiosna",
         "albanian": "pranvera",
-        "arabic": "الربيع"
+        "arabic": "الربيع",
+        "serbian": "пролеће"
       }
     },
     {
@@ -2858,7 +3140,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "літо",
         "polish": "lato",
         "albanian": "vera",
-        "arabic": "الصيف"
+        "arabic": "الصيف",
+        "serbian": "лето"
       }
     },
     {
@@ -2868,7 +3151,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "осінь",
         "polish": "jesień",
         "albanian": "vjeshta",
-        "arabic": "الخريف"
+        "arabic": "الخريف",
+        "serbian": "јесен"
       }
     },
     {
@@ -2878,7 +3162,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "зима",
         "polish": "zima",
         "albanian": "dimri",
-        "arabic": "الشتاء"
+        "arabic": "الشتاء",
+        "serbian": "зима"
       }
     },
     {
@@ -2888,7 +3173,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "погода",
         "polish": "pogoda",
         "albanian": "moti",
-        "arabic": "الطقس"
+        "arabic": "الطقس",
+        "serbian": "време"
       }
     },
     {
@@ -2898,7 +3184,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сонце",
         "polish": "słońce",
         "albanian": "dielli",
-        "arabic": "الشمس"
+        "arabic": "الشمس",
+        "serbian": "сунце"
       }
     },
     {
@@ -2908,7 +3195,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дощ",
         "polish": "deszcz",
         "albanian": "shiu",
-        "arabic": "المطر"
+        "arabic": "المطر",
+        "serbian": "киша"
       }
     },
     {
@@ -2918,7 +3206,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сніг",
         "polish": "śnieg",
         "albanian": "bora",
-        "arabic": "الثلج"
+        "arabic": "الثلج",
+        "serbian": "снег"
       }
     },
     {
@@ -2928,7 +3217,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вітер",
         "polish": "wiatr",
         "albanian": "era",
-        "arabic": "الرياح"
+        "arabic": "الرياح",
+        "serbian": "ветар"
       }
     },
     {
@@ -2938,7 +3228,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "хмара",
         "polish": "chmura",
         "albanian": "reja",
-        "arabic": "السحابة"
+        "arabic": "السحابة",
+        "serbian": "облак"
       }
     },
     {
@@ -2948,7 +3239,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "туман",
         "polish": "mgła",
         "albanian": "mjegulla",
-        "arabic": "الضباب"
+        "arabic": "الضباب",
+        "serbian": "магла"
       }
     },
     {
@@ -2958,7 +3250,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "спека",
         "polish": "upał",
         "albanian": "vapa",
-        "arabic": "الحرارة"
+        "arabic": "الحرارة",
+        "serbian": "врућина"
       }
     },
     {
@@ -2968,7 +3261,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "холод",
         "polish": "zimno",
         "albanian": "të ftohtit",
-        "arabic": "البرد"
+        "arabic": "البرد",
+        "serbian": "хладноћа"
       }
     },
     {
@@ -2978,7 +3272,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "відпустка",
         "polish": "urlop",
         "albanian": "pushimet",
-        "arabic": "العطلة"
+        "arabic": "العطلة",
+        "serbian": "одмор"
       }
     },
     {
@@ -2988,7 +3283,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "подорож",
         "polish": "podróż",
         "albanian": "udhëtimi",
-        "arabic": "الرحلة"
+        "arabic": "الرحلة",
+        "serbian": "путовање"
       }
     },
     {
@@ -2998,7 +3294,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "гора",
         "polish": "góra",
         "albanian": "mali",
-        "arabic": "الجبل"
+        "arabic": "الجبل",
+        "serbian": "планина"
       }
     },
     {
@@ -3008,7 +3305,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "море",
         "polish": "morze",
         "albanian": "deti",
-        "arabic": "البحر"
+        "arabic": "البحر",
+        "serbian": "море"
       }
     },
     {
@@ -3018,7 +3316,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "озеро",
         "polish": "jezioro",
         "albanian": "liqeni",
-        "arabic": "البحيرة"
+        "arabic": "البحيرة",
+        "serbian": "језеро"
       }
     },
     {
@@ -3028,7 +3327,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пляж",
         "polish": "plaża",
         "albanian": "plazhi",
-        "arabic": "الشاطئ"
+        "arabic": "الشاطئ",
+        "serbian": "плажа"
       }
     },
     {
@@ -3038,7 +3338,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ліс",
         "polish": "las",
         "albanian": "pylli",
-        "arabic": "الغابة"
+        "arabic": "الغابة",
+        "serbian": "шума"
       }
     },
     {
@@ -3048,7 +3349,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "луг",
         "polish": "łąka",
         "albanian": "livadhi",
-        "arabic": "المرج"
+        "arabic": "المرج",
+        "serbian": "ливада"
       }
     },
     {
@@ -3058,7 +3360,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ферма",
         "polish": "gospodarstwo",
         "albanian": "ferma",
-        "arabic": "المزرعة"
+        "arabic": "المزرعة",
+        "serbian": "фарма"
       }
     },
     {
@@ -3068,7 +3371,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "село",
         "polish": "wieś",
         "albanian": "fshati",
-        "arabic": "القرية"
+        "arabic": "القرية",
+        "serbian": "село"
       }
     },
     {
@@ -3078,7 +3382,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "місто",
         "polish": "miasto",
         "albanian": "qyteti",
-        "arabic": "المدينة"
+        "arabic": "المدينة",
+        "serbian": "град"
       }
     },
     {
@@ -3088,7 +3393,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "парк",
         "polish": "park",
         "albanian": "parku",
-        "arabic": "الحديقة"
+        "arabic": "الحديقة",
+        "serbian": "парк"
       }
     },
     {
@@ -3098,7 +3404,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "квиток",
         "polish": "bilet",
         "albanian": "bileta",
-        "arabic": "التذكرة"
+        "arabic": "التذكرة",
+        "serbian": "карта"
       }
     },
     {
@@ -3108,7 +3415,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "відправлення",
         "polish": "odjazd",
         "albanian": "nisja",
-        "arabic": "المغادرة"
+        "arabic": "المغادرة",
+        "serbian": "полазак"
       }
     },
     {
@@ -3118,7 +3426,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "прибуття",
         "polish": "przyjazd",
         "albanian": "mbërritja",
-        "arabic": "الوصول"
+        "arabic": "الوصول",
+        "serbian": "долазак"
       }
     },
     {
@@ -3128,7 +3437,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "поїзд",
         "polish": "pociąg",
         "albanian": "treni",
-        "arabic": "القطار"
+        "arabic": "القطار",
+        "serbian": "воз"
       }
     },
     {
@@ -3138,7 +3448,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "бронювання",
         "polish": "rezerwacja",
         "albanian": "rezervimi",
-        "arabic": "الحجز"
+        "arabic": "الحجز",
+        "serbian": "резервација"
       }
     },
     {
@@ -3148,7 +3459,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "перший/другий клас",
         "polish": "pierwsza/druga klasa",
         "albanian": "klasa e parë/e dytë",
-        "arabic": "الدرجة الأولى/الثانية"
+        "arabic": "الدرجة الأولى/الثانية",
+        "serbian": "прва/друга класа"
       }
     },
     {
@@ -3158,7 +3470,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "платформа",
         "polish": "peron",
         "albanian": "platforma",
-        "arabic": "الرصيف"
+        "arabic": "الرصيف",
+        "serbian": "перон"
       }
     },
     {
@@ -3168,7 +3481,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "затримка",
         "polish": "opóźnienie",
         "albanian": "vonesa",
-        "arabic": "التأخير"
+        "arabic": "التأخير",
+        "serbian": "кашњење"
       }
     },
     {
@@ -3178,7 +3492,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ландшафт",
         "polish": "krajobraz",
         "albanian": "peizazhi",
-        "arabic": "المناظر الطبيعية"
+        "arabic": "المناظر الطبيعية",
+        "serbian": "пејзаж"
       }
     },
     {
@@ -3188,7 +3503,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "міст",
         "polish": "most",
         "albanian": "ura",
-        "arabic": "الجسر"
+        "arabic": "الجسر",
+        "serbian": "мост"
       }
     },
     {
@@ -3198,7 +3514,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кілометр",
         "polish": "kilometr",
         "albanian": "kilometri",
-        "arabic": "الكيلومتر"
+        "arabic": "الكيلومتر",
+        "serbian": "километар"
       }
     },
     {
@@ -3208,7 +3525,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "північ",
         "polish": "północ",
         "albanian": "veriu",
-        "arabic": "الشمال"
+        "arabic": "الشمال",
+        "serbian": "север"
       }
     },
     {
@@ -3218,7 +3536,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "схід",
         "polish": "wschód",
         "albanian": "lindja",
-        "arabic": "الشرق"
+        "arabic": "الشرق",
+        "serbian": "исток"
       }
     },
     {
@@ -3228,7 +3547,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "південь",
         "polish": "południe",
         "albanian": "jugu",
-        "arabic": "الجنوب"
+        "arabic": "الجنوب",
+        "serbian": "југ"
       }
     },
     {
@@ -3238,7 +3558,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "захід",
         "polish": "zachód",
         "albanian": "perëndimi",
-        "arabic": "الغرب"
+        "arabic": "الغرب",
+        "serbian": "запад"
       }
     },
     {
@@ -3248,7 +3569,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "кемпінг",
         "polish": "kemping",
         "albanian": "kampi",
-        "arabic": "موقع التخييم"
+        "arabic": "موقع التخييم",
+        "serbian": "камп"
       }
     },
     {
@@ -3258,7 +3580,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "готель",
         "polish": "hotel",
         "albanian": "hoteli",
-        "arabic": "الفندق"
+        "arabic": "الفندق",
+        "serbian": "хотел"
       }
     },
     {
@@ -3268,7 +3591,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "місяць",
         "polish": "miesiąc",
         "albanian": "muaji",
-        "arabic": "الشهر"
+        "arabic": "الشهر",
+        "serbian": "месец"
       }
     },
     {
@@ -3278,7 +3602,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "крапля дощу",
         "polish": "kropla deszczu",
         "albanian": "pika e shiut",
-        "arabic": "قطرة المطر"
+        "arabic": "قطرة المطر",
+        "serbian": "кишна кап"
       }
     },
     {
@@ -3288,7 +3613,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "гроза",
         "polish": "burza",
         "albanian": "stuhia",
-        "arabic": "العاصفة الرعدية"
+        "arabic": "العاصفة الرعدية",
+        "serbian": "олуја са грмљавином"
       }
     },
     {
@@ -3298,7 +3624,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "блискавка",
         "polish": "błyskawica",
         "albanian": "vetëtima",
-        "arabic": "البرق"
+        "arabic": "البرق",
+        "serbian": "муња"
       }
     },
     {
@@ -3308,7 +3635,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "грім",
         "polish": "grzmot",
         "albanian": "bubullima",
-        "arabic": "الرعد"
+        "arabic": "الرعد",
+        "serbian": "гром"
       }
     },
     {
@@ -3318,7 +3646,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "тварина",
         "polish": "zwierzę",
         "albanian": "kafsha",
-        "arabic": "الحيوان"
+        "arabic": "الحيوان",
+        "serbian": "животиња"
       }
     },
     {
@@ -3328,7 +3657,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "екскурсія містом",
         "polish": "zwiedzanie miasta",
         "albanian": "turi i qytetit",
-        "arabic": "جولة في المدينة"
+        "arabic": "جولة في المدينة",
+        "serbian": "разгледање града"
       }
     }
   ],
@@ -3340,7 +3670,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "будинок",
         "polish": "dom",
         "albanian": "shtëpia",
-        "arabic": "البيت"
+        "arabic": "البيت",
+        "serbian": "кућа"
       }
     },
     {
@@ -3350,7 +3681,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "квартира",
         "polish": "mieszkanie",
         "albanian": "banesa",
-        "arabic": "الشقة"
+        "arabic": "الشقة",
+        "serbian": "стан"
       }
     },
     {
@@ -3360,7 +3692,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "двір",
         "polish": "podwórze",
         "albanian": "oborri",
-        "arabic": "الفناء"
+        "arabic": "الفناء",
+        "serbian": "двориште"
       }
     },
     {
@@ -3370,7 +3703,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сад",
         "polish": "ogród",
         "albanian": "kopshti",
-        "arabic": "الحديقة"
+        "arabic": "الحديقة",
+        "serbian": "башта"
       }
     },
     {
@@ -3380,7 +3714,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "балкон",
         "polish": "balkon",
         "albanian": "ballkoni",
-        "arabic": "الشرفة"
+        "arabic": "الشرفة",
+        "serbian": "балкон"
       }
     },
     {
@@ -3390,7 +3725,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "гараж",
         "polish": "garaż",
         "albanian": "garazhi",
-        "arabic": "الجراج"
+        "arabic": "الجراج",
+        "serbian": "гаража"
       }
     },
     {
@@ -3400,7 +3736,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пральня",
         "polish": "pralnia",
         "albanian": "dhoma e larjes",
-        "arabic": "غرفة الغسيل"
+        "arabic": "غرفة الغسيل",
+        "serbian": "перионица"
       }
     },
     {
@@ -3410,7 +3747,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сходова клітка",
         "polish": "klatka schodowa",
         "albanian": "shkallët",
-        "arabic": "السلم"
+        "arabic": "السلم",
+        "serbian": "степениште"
       }
     },
     {
@@ -3420,7 +3758,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "ліфт",
         "polish": "winda",
         "albanian": "ashensori",
-        "arabic": "المصعد"
+        "arabic": "المصعد",
+        "serbian": "лифт"
       }
     },
     {
@@ -3430,7 +3769,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "світло",
         "polish": "światło",
         "albanian": "drita",
-        "arabic": "الضوء"
+        "arabic": "الضوء",
+        "serbian": "светло"
       }
     },
     {
@@ -3440,7 +3780,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "опалення",
         "polish": "ogrzewanie",
         "albanian": "ngrohja",
-        "arabic": "التدفئة"
+        "arabic": "التدفئة",
+        "serbian": "грејање"
       }
     },
     {
@@ -3450,7 +3791,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дзвінок",
         "polish": "dzwonek",
         "albanian": "zilja",
-        "arabic": "جرس الباب"
+        "arabic": "جرس الباب",
+        "serbian": "звоно"
       }
     },
     {
@@ -3460,7 +3802,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сходи",
         "polish": "schody",
         "albanian": "shkallët",
-        "arabic": "السلالم"
+        "arabic": "السلالم",
+        "serbian": "степенице"
       }
     },
     {
@@ -3470,7 +3813,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сміття",
         "polish": "śmieci",
         "albanian": "mbeturinat",
-        "arabic": "القمامة"
+        "arabic": "القمامة",
+        "serbian": "смеће"
       }
     },
     {
@@ -3480,7 +3824,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "смітник",
         "polish": "kosz na śmieci",
         "albanian": "kazani i mbeturinave",
-        "arabic": "حاوية القمامة"
+        "arabic": "حاوية القمامة",
+        "serbian": "канта за смеће"
       }
     },
     {
@@ -3490,7 +3835,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "вивезення сміття",
         "polish": "wywóz śmieci",
         "albanian": "mbledhja e mbeturinave",
-        "arabic": "جمع القمامة"
+        "arabic": "جمع القمامة",
+        "serbian": "одвоз смећа"
       }
     },
     {
@@ -3500,7 +3846,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сусід",
         "polish": "sąsiad",
         "albanian": "fqinji",
-        "arabic": "الجار"
+        "arabic": "الجار",
+        "serbian": "комшија"
       }
     },
     {
@@ -3510,7 +3857,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сусідка",
         "polish": "sąsiadka",
         "albanian": "fqinjja",
-        "arabic": "الجارة"
+        "arabic": "الجارة",
+        "serbian": "комшиница"
       }
     },
     {
@@ -3520,7 +3868,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дитячий майданчик",
         "polish": "plac zabaw",
         "albanian": "lojërat për fëmijë",
-        "arabic": "ملعب الأطفال"
+        "arabic": "ملعب الأطفال",
+        "serbian": "игралиште"
       }
     },
     {
@@ -3530,7 +3879,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пісочниця",
         "polish": "piaskownica",
         "albanian": "kuti rëre",
-        "arabic": "صندوق الرمل"
+        "arabic": "صندوق الرمل",
+        "serbian": "песак"
       }
     },
     {
@@ -3540,7 +3890,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "хлопчик",
         "polish": "chłopiec",
         "albanian": "djali",
-        "arabic": "الولد"
+        "arabic": "الولد",
+        "serbian": "дечак"
       }
     },
     {
@@ -3550,7 +3901,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дівчинка",
         "polish": "dziewczynka",
         "albanian": "vajza",
-        "arabic": "البنت"
+        "arabic": "البنت",
+        "serbian": "девојчица"
       }
     },
     {
@@ -3560,7 +3912,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "орендний будинок",
         "polish": "dom na wynajem",
         "albanian": "shtëpia me qira",
-        "arabic": "بيت الإيجار"
+        "arabic": "بيت الإيجار",
+        "serbian": "изнајмљена кућа"
       }
     },
     {
@@ -3570,7 +3923,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "поштова скринька",
         "polish": "skrzynka pocztowa",
         "albanian": "kuti postare",
-        "arabic": "صندوق البريد"
+        "arabic": "صندوق البريد",
+        "serbian": "поштанско сандуче"
       }
     },
     {
@@ -3580,7 +3934,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "свято",
         "polish": "święto/impreza",
         "albanian": "festa",
-        "arabic": "الحفلة"
+        "arabic": "الحفلة",
+        "serbian": "прослава"
       }
     },
     {
@@ -3590,7 +3945,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "дитяча коляска",
         "polish": "wózek dziecięcy",
         "albanian": "karroca fëmije",
-        "arabic": "عربة الأطفال"
+        "arabic": "عربة الأطفال",
+        "serbian": "дечија колица"
       }
     },
     {
@@ -3600,7 +3956,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "велосипед",
         "polish": "rower",
         "albanian": "biçikleta",
-        "arabic": "الدراجة"
+        "arabic": "الدراجة",
+        "serbian": "бицикл"
       }
     },
     {
@@ -3610,7 +3967,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "двері",
         "polish": "drzwi",
         "albanian": "dera",
-        "arabic": "الباب"
+        "arabic": "الباب",
+        "serbian": "врата"
       }
     },
     {
@@ -3620,7 +3978,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "номер будинку",
         "polish": "numer domu",
         "albanian": "numri i shtëpisë",
-        "arabic": "رقم المنزل"
+        "arabic": "رقم المنزل",
+        "serbian": "кућни број"
       }
     },
     {
@@ -3630,7 +3989,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "собака",
         "polish": "pies",
         "albanian": "qeni",
-        "arabic": "الكلب"
+        "arabic": "الكلب",
+        "serbian": "пас"
       }
     },
     {
@@ -3640,7 +4000,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "прохання",
         "polish": "prośba",
         "albanian": "kërkesa",
-        "arabic": "الطلب"
+        "arabic": "الطلب",
+        "serbian": "молба"
       }
     },
     {
@@ -3650,7 +4011,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "пакунок",
         "polish": "paczka",
         "albanian": "pakoja",
-        "arabic": "الطرد"
+        "arabic": "الطرد",
+        "serbian": "пакет"
       }
     },
     {
@@ -3660,7 +4022,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "посилка",
         "polish": "paczuszka",
         "albanian": "pakoja e vogël",
-        "arabic": "الرزمة الصغيرة"
+        "arabic": "الرزمة الصغيرة",
+        "serbian": "пакетић"
       }
     },
     {
@@ -3670,7 +4033,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "сіль",
         "polish": "sól",
         "albanian": "kripa",
-        "arabic": "الملح"
+        "arabic": "الملح",
+        "serbian": "со"
       }
     },
     {
@@ -3680,7 +4044,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "чашка",
         "polish": "filiżanka",
         "albanian": "filxhani",
-        "arabic": "الكوب"
+        "arabic": "الكوب",
+        "serbian": "шоља"
       }
     },
     {
@@ -3690,7 +4055,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "свято у дворі",
         "polish": "święto na podwórzu",
         "albanian": "festa e oborrit",
-        "arabic": "حفلة الفناء"
+        "arabic": "حفلة الفناء",
+        "serbian": "прослава у дворишту"
       }
     },
     {
@@ -3700,7 +4066,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "гриль",
         "polish": "grill",
         "albanian": "grilli",
-        "arabic": "الشواية"
+        "arabic": "الشواية",
+        "serbian": "роштиљ"
       }
     },
     {
@@ -3710,7 +4077,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "їжа",
         "polish": "jedzenie",
         "albanian": "ushqimi",
-        "arabic": "الطعام"
+        "arabic": "الطعام",
+        "serbian": "храна"
       }
     },
     {
@@ -3720,7 +4088,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "музика",
         "polish": "muzyka",
         "albanian": "muzika",
-        "arabic": "الموسيقى"
+        "arabic": "الموسيقى",
+        "serbian": "музика"
       }
     },
     {
@@ -3730,7 +4099,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "електрик",
         "polish": "elektryk",
         "albanian": "elektriku",
-        "arabic": "الكهربائي"
+        "arabic": "الكهربائي",
+        "serbian": "електричар"
       }
     },
     {
@@ -3740,7 +4110,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "управління будинком",
         "polish": "zarząd domu",
         "albanian": "administrata e shtëpisë",
-        "arabic": "إدارة المبنى"
+        "arabic": "إدارة المبنى",
+        "serbian": "управа зграде"
       }
     },
     {
@@ -3750,7 +4121,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "відправник",
         "polish": "nadawca",
         "albanian": "dërguesi",
-        "arabic": "المرسل"
+        "arabic": "المرسل",
+        "serbian": "пошиљалац"
       }
     },
     {
@@ -3760,7 +4132,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "одержувач",
         "polish": "odbiorca",
         "albanian": "marrësi",
-        "arabic": "المستلم"
+        "arabic": "المستلم",
+        "serbian": "прималац"
       }
     },
     {
@@ -3770,7 +4143,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "привітання",
         "polish": "pozdrowienia",
         "albanian": "përshëndetja",
-        "arabic": "التحية"
+        "arabic": "التحية",
+        "serbian": "поздрав"
       }
     },
     {
@@ -3780,7 +4154,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "підпис",
         "polish": "podpis",
         "albanian": "nënshkrimi",
-        "arabic": "التوقيع"
+        "arabic": "التوقيع",
+        "serbian": "потпис"
       }
     },
     {
@@ -3790,7 +4165,8 @@ export const a1_2_Vocabulary: Record<number, Card[]> = addAudioPaths({
         "ukrainian": "звернення",
         "polish": "zwrot grzecznościowy",
         "albanian": "përshëndetja",
-        "arabic": "التحية"
+        "arabic": "التحية",
+        "serbian": "обраћање"
       }
     }
   ]

@@ -1,6 +1,6 @@
 import { Card, Translations } from '../../../types';
 
-export const A2_1_ALL_SECTIONS = [1, 2, 3, 4]; // Placeholder sections
+export const A2_1_ALL_SECTIONS = [1, 2, 3, 4, 5, 6, 7];
 
 
 const sanitizeFilename = (text: string): string => {
@@ -32,7 +32,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "imigrant",
         "albanian": "emigrant",
         "arabic": "مهاجر",
-        "italian": "immigrato"
+        "italian": "immigrato",
+        "serbian": "имигрант"
       }
     },
     {
@@ -43,7 +44,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "imigrantka",
         "albanian": "emigrante",
         "arabic": "مهاجرة",
-        "italian": "immigrata"
+        "italian": "immigrata",
+        "serbian": "имигранткиња"
       }
     },
     {
@@ -54,7 +56,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "świat",
         "albanian": "bota",
         "arabic": "العالم",
-        "italian": "mondo"
+        "italian": "mondo",
+        "serbian": "свет"
       }
     },
     {
@@ -65,7 +68,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "powód",
         "albanian": "arsyeja",
         "arabic": "السبب",
-        "italian": "motivo"
+        "italian": "motivo",
+        "serbian": "разлог"
       }
     },
     {
@@ -76,7 +80,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "różny",
         "albanian": "i ndryshëm",
         "arabic": "مختلف",
-        "italian": "diverso"
+        "italian": "diverso",
+        "serbian": "различит"
       }
     },
     {
@@ -87,7 +92,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "opowiadać",
         "albanian": "të tregosh",
         "arabic": "يروي",
-        "italian": "raccontare"
+        "italian": "raccontare",
+        "serbian": "причати"
       }
     },
     {
@@ -98,7 +104,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ojczyzna",
         "albanian": "atdheu",
         "arabic": "الوطن",
-        "italian": "patria"
+        "italian": "patria",
+        "serbian": "домовина"
       }
     },
     {
@@ -109,7 +116,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "opuszczać",
         "albanian": "të lësh",
         "arabic": "يغادر",
-        "italian": "lasciare"
+        "italian": "lasciare",
+        "serbian": "напустити"
       }
     },
     {
@@ -120,7 +128,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "tracić",
         "albanian": "të humbash",
         "arabic": "يخسر",
-        "italian": "perdere"
+        "italian": "perdere",
+        "serbian": "изгубити"
       }
     },
     {
@@ -131,7 +140,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przeżywać",
         "albanian": "të përjetosh",
         "arabic": "يعيش تجربة",
-        "italian": "vivere"
+        "italian": "vivere",
+        "serbian": "доживети"
       }
     },
     {
@@ -142,7 +152,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "poznawać",
         "albanian": "të njohësh",
         "arabic": "يتعرف على",
-        "italian": "conoscere"
+        "italian": "conoscere",
+        "serbian": "упознати"
       }
     },
     {
@@ -153,7 +164,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rezygnować",
         "albanian": "të heqësh dorë",
         "arabic": "يستسلم",
-        "italian": "arrendersi"
+        "italian": "arrendersi",
+        "serbian": "одустати"
       }
     },
     {
@@ -164,7 +176,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "motywować",
         "albanian": "të motivosh",
         "arabic": "يحفز",
-        "italian": "motivare"
+        "italian": "motivare",
+        "serbian": "мотивисати"
       }
     },
     {
@@ -175,7 +188,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zły",
         "albanian": "i keq",
         "arabic": "سيء",
-        "italian": "brutto"
+        "italian": "brutto",
+        "serbian": "лош, ужасан"
       }
     },
     {
@@ -186,7 +200,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rozczarowany",
         "albanian": "i zhgënjyer",
         "arabic": "محبط",
-        "italian": "deluso"
+        "italian": "deluso",
+        "serbian": "разочаран"
       }
     },
     {
@@ -197,7 +212,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zdenerwowany",
         "albanian": "i nervozuar",
         "arabic": "منزعج",
-        "italian": "infastidito"
+        "italian": "infastidito",
+        "serbian": "изнервиран"
       }
     },
     {
@@ -208,7 +224,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "matura",
         "albanian": "diploma e shkollës së mesme",
         "arabic": "شهادة الثانوية العامة",
-        "italian": "maturità"
+        "italian": "maturità",
+        "serbian": "матура"
       }
     },
     {
@@ -219,7 +236,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "architekt",
         "albanian": "arkitekt",
         "arabic": "مهندس معماري",
-        "italian": "architetto"
+        "italian": "architetto",
+        "serbian": "архитекта"
       }
     },
     {
@@ -230,7 +248,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "architektka",
         "albanian": "arkitekte",
         "arabic": "مهندسة معمارية",
-        "italian": "architetta"
+        "italian": "architetta",
+        "serbian": "архитекткиња"
       }
     },
     {
@@ -241,7 +260,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kierownik działu",
         "albanian": "drejtues i departamentit",
         "arabic": "رئيس القسم",
-        "italian": "capo reparto"
+        "italian": "capo reparto",
+        "serbian": "шеф одељења"
       }
     },
     {
@@ -252,7 +272,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kierowniczka działu",
         "albanian": "drejtuese e departamentit",
         "arabic": "رئيسة القسم",
-        "italian": "capo reparto (f)"
+        "italian": "capo reparto (f)",
+        "serbian": "шефица одељења"
       }
     },
     {
@@ -263,7 +284,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "praca w niepełnym wymiarze",
         "albanian": "punë me kohë të pjesshme",
         "arabic": "عمل بدوام جزئي",
-        "italian": "lavoro part-time"
+        "italian": "lavoro part-time",
+        "serbian": "рад са скраћеним радним временом"
       }
     },
     {
@@ -274,7 +296,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "schronisko dla uchodźców",
         "albanian": "strehë për refugjatë",
         "arabic": "مأوى للاجئين",
-        "italian": "centro per rifugiati"
+        "italian": "centro per rifugiati",
+        "serbian": "прихватилиште за избеглице"
       }
     },
     {
@@ -285,7 +308,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "klub, stowarzyszenie",
         "albanian": "klub, shoqatë",
         "arabic": "نادي، جمعية",
-        "italian": "associazione"
+        "italian": "associazione",
+        "serbian": "клуб, удружење"
       }
     },
     {
@@ -296,7 +320,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "aktywny",
         "albanian": "aktiv",
         "arabic": "نشط",
-        "italian": "attivo"
+        "italian": "attivo",
+        "serbian": "активан"
       }
     },
     {
@@ -307,7 +332,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "depresyjny",
         "albanian": "depresiv",
         "arabic": "مكتئب",
-        "italian": "depresso"
+        "italian": "depresso",
+        "serbian": "депресиван"
       }
     },
     {
@@ -318,7 +344,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "udać się",
         "albanian": "të arrish",
         "arabic": "ينجز",
-        "italian": "riuscire"
+        "italian": "riuscire",
+        "serbian": "успети"
       }
     },
     {
@@ -329,7 +356,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "uniwersytet",
         "albanian": "universiteti",
         "arabic": "الجامعة",
-        "italian": "università"
+        "italian": "università",
+        "serbian": "универзитет"
       }
     },
     {
@@ -340,7 +368,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "studia",
         "albanian": "studimet",
         "arabic": "الدراسة",
-        "italian": "studi"
+        "italian": "studi",
+        "serbian": "студије"
       }
     },
     {
@@ -351,7 +380,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "młody",
         "albanian": "i ri",
         "arabic": "شاب",
-        "italian": "giovane"
+        "italian": "giovane",
+        "serbian": "млад"
       }
     },
     {
@@ -362,7 +392,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "początek",
         "albanian": "fillimi",
         "arabic": "البداية",
-        "italian": "inizio"
+        "italian": "inizio",
+        "serbian": "почетак"
       }
     },
     {
@@ -373,7 +404,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "trudny",
         "albanian": "i vështirë",
         "arabic": "صعب",
-        "italian": "difficile"
+        "italian": "difficile",
+        "serbian": "тежак"
       }
     },
     {
@@ -384,7 +416,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "historia",
         "albanian": "historia",
         "arabic": "القصة، التاريخ",
-        "italian": "storia"
+        "italian": "storia",
+        "serbian": "прича, историја"
       }
     },
     {
@@ -395,7 +428,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "czysty",
         "albanian": "i pastër",
         "arabic": "نظيف",
-        "italian": "pulito"
+        "italian": "pulito",
+        "serbian": "чист"
       }
     },
     {
@@ -406,7 +440,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "brudny",
         "albanian": "i pisët",
         "arabic": "قذر",
-        "italian": "sporco"
+        "italian": "sporco",
+        "serbian": "прљав"
       }
     },
     {
@@ -417,7 +452,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "gorączkowy",
         "albanian": "i shpejtë",
         "arabic": "محموم",
-        "italian": "frenetico"
+        "italian": "frenetico",
+        "serbian": "ужурбан"
       }
     },
     {
@@ -428,7 +464,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "właściwie",
         "albanian": "në të vërtetë",
         "arabic": "في الواقع",
-        "italian": "in realtà"
+        "italian": "in realtà",
+        "serbian": "заправо"
       }
     },
     {
@@ -439,7 +476,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wymawiać",
         "albanian": "të shqiptosh",
         "arabic": "ينطق",
-        "italian": "pronunciare"
+        "italian": "pronunciare",
+        "serbian": "изговарати"
       }
     },
     {
@@ -450,7 +488,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "powtarzać",
         "albanian": "të përsërisësh",
         "arabic": "يكرر",
-        "italian": "ripetere"
+        "italian": "ripetere",
+        "serbian": "понављати"
       }
     },
     {
@@ -461,7 +500,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "słuchać",
         "albanian": "të dëgjosh",
         "arabic": "يستمع",
-        "italian": "ascoltare"
+        "italian": "ascoltare",
+        "serbian": "слушати"
       }
     },
     {
@@ -472,7 +512,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wypróbować",
         "albanian": "të provosh",
         "arabic": "يجرب",
-        "italian": "provare"
+        "italian": "provare",
+        "serbian": "испробати"
       }
     },
     {
@@ -483,7 +524,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "słowo",
         "albanian": "fjala",
         "arabic": "الكلمة",
-        "italian": "parola"
+        "italian": "parola",
+        "serbian": "реч"
       }
     },
     {
@@ -494,7 +536,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zdanie",
         "albanian": "fjalia",
         "arabic": "الجملة",
-        "italian": "frase"
+        "italian": "frase",
+        "serbian": "реченица"
       }
     },
     {
@@ -505,7 +548,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ćwiczenie",
         "albanian": "ushtrim",
         "arabic": "التمرين",
-        "italian": "esercizio"
+        "italian": "esercizio",
+        "serbian": "вежба"
       }
     },
     {
@@ -516,7 +560,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "błąd",
         "albanian": "gabimi",
         "arabic": "الخطأ",
-        "italian": "errore"
+        "italian": "errore",
+        "serbian": "грешка"
       }
     },
     {
@@ -527,7 +572,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wymowa",
         "albanian": "shqiptimi",
         "arabic": "النطق",
-        "italian": "pronuncia"
+        "italian": "pronuncia",
+        "serbian": "изговор"
       }
     },
     {
@@ -538,7 +584,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "koniecznie",
         "albanian": "patjetër",
         "arabic": "بالتأكيد",
-        "italian": "assolutamente"
+        "italian": "assolutamente",
+        "serbian": "обавезно"
       }
     },
     {
@@ -549,7 +596,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zabawny",
         "albanian": "qesharak",
         "arabic": "مضحك",
-        "italian": "divertente"
+        "italian": "divertente",
+        "serbian": "смешан"
       }
     },
     {
@@ -560,7 +608,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "mieć odwagę",
         "albanian": "të kesh guxim",
         "arabic": "أن يكون لديه شجاعة",
-        "italian": "avere coraggio"
+        "italian": "avere coraggio",
+        "serbian": "имати храбрости"
       }
     },
     {
@@ -571,7 +620,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "bać się",
         "albanian": "të kesh frikë",
         "arabic": "يخاف",
-        "italian": "avere paura"
+        "italian": "avere paura",
+        "serbian": "плашити се"
       }
     },
     {
@@ -582,7 +632,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pisemnie",
         "albanian": "me shkrim",
         "arabic": "كتابيًا",
-        "italian": "per iscritto"
+        "italian": "per iscritto",
+        "serbian": "писмено"
       }
     },
     {
@@ -593,7 +644,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "uczyć się na pamięć",
         "albanian": "të mësosh përmendësh",
         "arabic": "يحفظ عن ظهر قلب",
-        "italian": "imparare a memoria"
+        "italian": "imparare a memoria",
+        "serbian": "учити напамет"
       }
     },
     {
@@ -604,7 +656,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ćwiczyć",
         "albanian": "të stërvitesh",
         "arabic": "يتدرب",
-        "italian": "esercitarsi"
+        "italian": "esercitarsi",
+        "serbian": "вежбати"
       }
     }
   ],
@@ -617,7 +670,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "medium, media",
         "albanian": "media",
         "arabic": "وسائل الإعلام",
-        "italian": "media, mezzo di comunicazione"
+        "italian": "media, mezzo di comunicazione",
+        "serbian": "медиј, медији"
       }
     },
     {
@@ -628,7 +682,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "gazeta",
         "albanian": "gazeta",
         "arabic": "جريدة",
-        "italian": "giornale"
+        "italian": "giornale",
+        "serbian": "новине"
       }
     },
     {
@@ -639,7 +694,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "słuchawki",
         "albanian": "kufje",
         "arabic": "سماعات الرأس",
-        "italian": "cuffie"
+        "italian": "cuffie",
+        "serbian": "слушалице"
       }
     },
     {
@@ -650,7 +706,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "e-book",
         "albanian": "libër elektronik",
         "arabic": "كتاب إلكتروني",
-        "italian": "e-book"
+        "italian": "e-book",
+        "serbian": "е-књига"
       }
     },
     {
@@ -661,7 +718,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "laptop",
         "albanian": "laptop",
         "arabic": "حاسوب محمول",
-        "italian": "laptop"
+        "italian": "laptop",
+        "serbian": "лаптоп"
       }
     },
     {
@@ -672,7 +730,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "telefon komórkowy",
         "albanian": "telefon celular",
         "arabic": "هاتف محمول",
-        "italian": "cellulare"
+        "italian": "cellulare",
+        "serbian": "мобилни телефон"
       }
     },
     {
@@ -683,7 +742,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "smartphone",
         "albanian": "smartphone",
         "arabic": "هاتف ذكي",
-        "italian": "smartphone"
+        "italian": "smartphone",
+        "serbian": "паметни телефон"
       }
     },
     {
@@ -694,7 +754,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "tablet",
         "albanian": "tablet",
         "arabic": "جهاز لوحي",
-        "italian": "tablet"
+        "italian": "tablet",
+        "serbian": "таблет"
       }
     },
     {
@@ -705,7 +766,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "internet",
         "albanian": "internet",
         "arabic": "إنترنت",
-        "italian": "internet"
+        "italian": "internet",
+        "serbian": "интернет"
       }
     },
     {
@@ -716,7 +778,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "e-mail",
         "albanian": "email",
         "arabic": "بريد إلكتروني",
-        "italian": "email"
+        "italian": "email",
+        "serbian": "имејл"
       }
     },
     {
@@ -727,7 +790,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "telewizja",
         "albanian": "televizioni",
         "arabic": "تلفزيون",
-        "italian": "televisione"
+        "italian": "televisione",
+        "serbian": "телевизија"
       }
     },
     {
@@ -738,7 +802,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "telewizor",
         "albanian": "televizor",
         "arabic": "جهاز تلفزيون",
-        "italian": "televisore"
+        "italian": "televisore",
+        "serbian": "телевизор"
       }
     },
     {
@@ -749,7 +814,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "radio",
         "albanian": "radio",
         "arabic": "راديو",
-        "italian": "radio"
+        "italian": "radio",
+        "serbian": "радио"
       }
     },
     {
@@ -760,7 +826,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "czatować",
         "albanian": "të bisedosh",
         "arabic": "يتحادث",
-        "italian": "chattare"
+        "italian": "chattare",
+        "serbian": "ћаскати"
       }
     },
     {
@@ -771,7 +838,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "telefonować",
         "albanian": "të telefonosh",
         "arabic": "يتصل هاتفياً",
-        "italian": "telefonare"
+        "italian": "telefonare",
+        "serbian": "телефонирати"
       }
     },
     {
@@ -782,7 +850,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "surfować",
         "albanian": "të surfosh",
         "arabic": "يتصفح",
-        "italian": "navigare"
+        "italian": "navigare",
+        "serbian": "сурфовати"
       }
     },
     {
@@ -793,7 +862,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "cena",
         "albanian": "çmimi",
         "arabic": "سعر",
-        "italian": "prezzo"
+        "italian": "prezzo",
+        "serbian": "цена"
       }
     },
     {
@@ -804,7 +874,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wiadomość",
         "albanian": "lajm, mesazh",
         "arabic": "رسالة، أخبار",
-        "italian": "messaggio, notizie"
+        "italian": "messaggio, notizie",
+        "serbian": "порука, вести"
       }
     },
     {
@@ -815,7 +886,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "gra online",
         "albanian": "lojë online",
         "arabic": "لعبة عبر الإنترنت",
-        "italian": "gioco online"
+        "italian": "gioco online",
+        "serbian": "онлајн игра"
       }
     },
     {
@@ -826,7 +898,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kontakt",
         "albanian": "kontakt",
         "arabic": "اتصال",
-        "italian": "contatto"
+        "italian": "contatto",
+        "serbian": "контакт"
       }
     },
     {
@@ -837,7 +910,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "praktyczny",
         "albanian": "praktik",
         "arabic": "عملي",
-        "italian": "pratico"
+        "italian": "pratico",
+        "serbian": "практичан"
       }
     },
     {
@@ -848,7 +922,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ważny",
         "albanian": "i rëndësishëm",
         "arabic": "مهم",
-        "italian": "importante"
+        "italian": "importante",
+        "serbian": "важан"
       }
     },
     {
@@ -859,7 +934,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "interesujący",
         "albanian": "interesant",
         "arabic": "مثير للاهتمام",
-        "italian": "interessante"
+        "italian": "interessante",
+        "serbian": "занимљив"
       }
     },
     {
@@ -870,7 +946,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ekscytujący",
         "albanian": "emocionues",
         "arabic": "مثير",
-        "italian": "emozionante"
+        "italian": "emozionante",
+        "serbian": "узбудљив"
       }
     },
     {
@@ -881,7 +958,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "relaksujący",
         "albanian": "relaksues",
         "arabic": "مريح",
-        "italian": "rilassante"
+        "italian": "rilassante",
+        "serbian": "опуштајући"
       }
     },
     {
@@ -892,7 +970,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "osiągalny, dostępny",
         "albanian": "i arritshëm",
         "arabic": "يمكن الوصول إليه",
-        "italian": "raggiungibile"
+        "italian": "raggiungibile",
+        "serbian": "доступан"
       }
     },
     {
@@ -903,7 +982,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "codziennie",
         "albanian": "çdo ditë",
         "arabic": "يومياً",
-        "italian": "quotidiano"
+        "italian": "quotidiano",
+        "serbian": "дневно"
       }
     },
     {
@@ -914,7 +994,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rano",
         "albanian": "në mëngjes",
         "arabic": "في الصباح",
-        "italian": "la mattina"
+        "italian": "la mattina",
+        "serbian": "ујутру"
       }
     },
     {
@@ -925,7 +1006,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "w południe",
         "albanian": "në mesditë",
         "arabic": "في الظهيرة",
-        "italian": "a mezzogiorno"
+        "italian": "a mezzogiorno",
+        "serbian": "у подне"
       }
     },
     {
@@ -936,7 +1018,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "po południu",
         "albanian": "pasdite",
         "arabic": "بعد الظهر",
-        "italian": "nel pomeriggio"
+        "italian": "nel pomeriggio",
+        "serbian": "поподне"
       }
     },
     {
@@ -947,7 +1030,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wieczorem",
         "albanian": "në mbrëmje",
         "arabic": "في المساء",
-        "italian": "la sera"
+        "italian": "la sera",
+        "serbian": "увече"
       }
     },
     {
@@ -958,7 +1042,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "w nocy",
         "albanian": "natën",
         "arabic": "في الليل",
-        "italian": "di notte"
+        "italian": "di notte",
+        "serbian": "ноћу"
       }
     },
     {
@@ -969,7 +1054,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "komputer",
         "albanian": "kompjuter",
         "arabic": "حاسوب",
-        "italian": "computer"
+        "italian": "computer",
+        "serbian": "рачунар"
       }
     },
     {
@@ -980,7 +1066,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "badać",
         "albanian": "të kërkosh",
         "arabic": "يبحث",
-        "italian": "fare ricerche"
+        "italian": "fare ricerche",
+        "serbian": "истраживати"
       }
     },
     {
@@ -991,7 +1078,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wysyłać",
         "albanian": "të dërgosh",
         "arabic": "يرسل",
-        "italian": "mandare"
+        "italian": "mandare",
+        "serbian": "послати"
       }
     },
     {
@@ -1002,7 +1090,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "plik",
         "albanian": "skedar",
         "arabic": "ملف",
-        "italian": "file"
+        "italian": "file",
+        "serbian": "датотека"
       }
     },
     {
@@ -1013,7 +1102,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "otwierać",
         "albanian": "të hapësh",
         "arabic": "يفتح",
-        "italian": "aprire"
+        "italian": "aprire",
+        "serbian": "отворити"
       }
     },
     {
@@ -1024,7 +1114,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zamykać",
         "albanian": "të mbyllësh",
         "arabic": "يغلق",
-        "italian": "chiudere"
+        "italian": "chiudere",
+        "serbian": "затворити"
       }
     },
     {
@@ -1035,7 +1126,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "drukować",
         "albanian": "të printosh",
         "arabic": "يطبع",
-        "italian": "stampare"
+        "italian": "stampare",
+        "serbian": "штампати"
       }
     },
     {
@@ -1046,7 +1138,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zapisywać",
         "albanian": "të ruash",
         "arabic": "يحفظ",
-        "italian": "salvare"
+        "italian": "salvare",
+        "serbian": "сачувати"
       }
     },
     {
@@ -1057,7 +1150,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "tekst",
         "albanian": "tekst",
         "arabic": "نص",
-        "italian": "testo"
+        "italian": "testo",
+        "serbian": "текст"
       }
     },
     {
@@ -1068,7 +1162,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "program",
         "albanian": "program",
         "arabic": "برنامج",
-        "italian": "programma"
+        "italian": "programma",
+        "serbian": "програм"
       }
     },
     {
@@ -1079,7 +1174,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "temat",
         "albanian": "subjekt",
         "arabic": "موضوع",
-        "italian": "oggetto"
+        "italian": "oggetto",
+        "serbian": "предмет"
       }
     },
     {
@@ -1090,7 +1186,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "załączać",
         "albanian": "të bashkëngjitësh",
         "arabic": "يرفق",
-        "italian": "allegare"
+        "italian": "allegare",
+        "serbian": "приложити"
       }
     },
     {
@@ -1101,7 +1198,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "odbiorca",
         "albanian": "marrës",
         "arabic": "متلقي",
-        "italian": "destinatario"
+        "italian": "destinatario",
+        "serbian": "прималац"
       }
     },
     {
@@ -1112,7 +1210,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wybierać",
         "albanian": "të zgjedhësh",
         "arabic": "يختار",
-        "italian": "selezionare"
+        "italian": "selezionare",
+        "serbian": "изабрати"
       }
     },
     {
@@ -1123,7 +1222,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wysłać",
         "albanian": "të dërgosh",
         "arabic": "يرسل",
-        "italian": "inviare"
+        "italian": "inviare",
+        "serbian": "послати"
       }
     },
     {
@@ -1134,7 +1234,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "aplikacja",
         "albanian": "aplikacion",
         "arabic": "تطبيق",
-        "italian": "app"
+        "italian": "app",
+        "serbian": "апликација"
       }
     },
     {
@@ -1145,7 +1246,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "oprogramowanie",
         "albanian": "softuer",
         "arabic": "برمجيات",
-        "italian": "software"
+        "italian": "software",
+        "serbian": "софтвер"
       }
     },
     {
@@ -1156,7 +1258,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "użyteczny",
         "albanian": "i dobishëm",
         "arabic": "مفيد",
-        "italian": "utile"
+        "italian": "utile",
+        "serbian": "користан"
       }
     },
     {
@@ -1167,7 +1270,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "problem",
         "albanian": "problem",
         "arabic": "مشكلة",
-        "italian": "problema"
+        "italian": "problema",
+        "serbian": "проблем"
       }
     },
     {
@@ -1178,7 +1282,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "film fabularny",
         "albanian": "film artistik",
         "arabic": "فيلم روائي",
-        "italian": "film"
+        "italian": "film",
+        "serbian": "играни филм"
       }
     },
     {
@@ -1189,7 +1294,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "film animowany",
         "albanian": "film i animuar",
         "arabic": "فيلم رسوم متحركة",
-        "italian": "film d'animazione"
+        "italian": "film d'animazione",
+        "serbian": "анимирани филм"
       }
     },
     {
@@ -1200,7 +1306,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "quiz",
         "albanian": "kuiz",
         "arabic": "مسابقة",
-        "italian": "quiz"
+        "italian": "quiz",
+        "serbian": "квиз"
       }
     },
     {
@@ -1211,7 +1318,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kryminał",
         "albanian": "krim",
         "arabic": "فيلم بوليسي",
-        "italian": "giallo"
+        "italian": "giallo",
+        "serbian": "криминалистичка прича"
       }
     },
     {
@@ -1222,7 +1330,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "film dokumentalny",
         "albanian": "dokumentar",
         "arabic": "فيلم وثائقي",
-        "italian": "documentario"
+        "italian": "documentario",
+        "serbian": "документарац"
       }
     },
     {
@@ -1233,7 +1342,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "program sportowy",
         "albanian": "program sportiv",
         "arabic": "برنامج رياضي",
-        "italian": "programma sportivo"
+        "italian": "programma sportivo",
+        "serbian": "спортски програм"
       }
     },
     {
@@ -1244,7 +1354,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "serial",
         "albanian": "serial",
         "arabic": "مسلسل",
-        "italian": "serie"
+        "italian": "serie",
+        "serbian": "серија"
       }
     },
     {
@@ -1255,7 +1366,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "talk-show",
         "albanian": "tok-shou",
         "arabic": "برنامج حواري",
-        "italian": "talk show"
+        "italian": "talk show",
+        "serbian": "ток шоу"
       }
     },
     {
@@ -1266,7 +1378,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "audycja",
         "albanian": "emisjon",
         "arabic": "برنامج",
-        "italian": "trasmissione"
+        "italian": "trasmissione",
+        "serbian": "програм, емисија"
       }
     },
     {
@@ -1277,7 +1390,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "oferować",
         "albanian": "të ofrojësh",
         "arabic": "يقدم",
-        "italian": "offrire"
+        "italian": "offrire",
+        "serbian": "понудити"
       }
     },
     {
@@ -1288,7 +1402,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "program dla dzieci",
         "albanian": "program për fëmijë",
         "arabic": "برنامج أطفال",
-        "italian": "programma per bambini"
+        "italian": "programma per bambini",
+        "serbian": "дечији програм"
       }
     },
     {
@@ -1299,7 +1414,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rozumieć",
         "albanian": "të kuptosh",
         "arabic": "يفهم",
-        "italian": "capire"
+        "italian": "capire",
+        "serbian": "разумети"
       }
     },
     {
@@ -1310,7 +1426,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "słowo",
         "albanian": "fjalë",
         "arabic": "كلمة",
-        "italian": "parola"
+        "italian": "parola",
+        "serbian": "реч"
       }
     },
     {
@@ -1321,7 +1438,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "międzynarodowy",
         "albanian": "ndërkombëtar",
         "arabic": "دولي",
-        "italian": "internazionale"
+        "italian": "internazionale",
+        "serbian": "међународни"
       }
     },
     {
@@ -1332,7 +1450,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "opłata za media publiczne",
         "albanian": "tarifa e transmetimit",
         "arabic": "رسوم البث",
-        "italian": "canone radiotelevisivo"
+        "italian": "canone radiotelevisivo",
+        "serbian": "радио-дифузна претплата"
       }
     },
     {
@@ -1343,7 +1462,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "gospodarstwo domowe",
         "albanian": "familje",
         "arabic": "أسرة",
-        "italian": "nucleo familiare"
+        "italian": "nucleo familiare",
+        "serbian": "домаћинство"
       }
     },
     {
@@ -1354,7 +1474,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "płacić",
         "albanian": "të paguash",
         "arabic": "يدفع",
-        "italian": "pagare"
+        "italian": "pagare",
+        "serbian": "платити"
       }
     },
     {
@@ -1365,7 +1486,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "opłata",
         "albanian": "tarifë",
         "arabic": "رسوم",
-        "italian": "tassa"
+        "italian": "tassa",
+        "serbian": "накнада"
       }
     },
     {
@@ -1376,7 +1498,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "reklama",
         "albanian": "reklamë",
         "arabic": "إعلان",
-        "italian": "pubblicità"
+        "italian": "pubblicità",
+        "serbian": "реклама"
       }
     },
     {
@@ -1387,7 +1510,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wolno",
         "albanian": "ngadalë",
         "arabic": "ببطء",
-        "italian": "lento"
+        "italian": "lento",
+        "serbian": "споро"
       }
     },
     {
@@ -1398,7 +1522,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szybko",
         "albanian": "shpejt",
         "arabic": "بسرعة",
-        "italian": "veloce"
+        "italian": "veloce",
+        "serbian": "брзо"
       }
     },
     {
@@ -1409,7 +1534,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "głośno",
         "albanian": "me zë të lartë",
         "arabic": "بصوت عالٍ",
-        "italian": "forte"
+        "italian": "forte",
+        "serbian": "гласно"
       }
     },
     {
@@ -1420,7 +1546,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "cicho",
         "albanian": "me zë të ulët",
         "arabic": "بهدوء",
-        "italian": "piano"
+        "italian": "piano",
+        "serbian": "тихо"
       }
     },
     {
@@ -1431,7 +1558,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zmęczony",
         "albanian": "i lodhur",
         "arabic": "متعب",
-        "italian": "stanco"
+        "italian": "stanco",
+        "serbian": "уморан"
       }
     },
     {
@@ -1442,7 +1570,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "odwiedzać",
         "albanian": "të vizitosh",
         "arabic": "يزور",
-        "italian": "visitare"
+        "italian": "visitare",
+        "serbian": "посетити"
       }
     },
     {
@@ -1453,7 +1582,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "strona internetowa",
         "albanian": "faqe interneti",
         "arabic": "صفحة إنترنت",
-        "italian": "sito web"
+        "italian": "sito web",
+        "serbian": "веб страница"
       }
     },
     {
@@ -1464,7 +1594,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "używać",
         "albanian": "të përdorësh",
         "arabic": "يستخدم",
-        "italian": "utilizzare"
+        "italian": "utilizzare",
+        "serbian": "користити"
       }
     },
     {
@@ -1475,7 +1606,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "minuta",
         "albanian": "minutë",
         "arabic": "دقيقة",
-        "italian": "minuto"
+        "italian": "minuto",
+        "serbian": "минут"
       }
     },
     {
@@ -1486,7 +1618,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "dzień",
         "albanian": "ditë",
         "arabic": "يوم",
-        "italian": "giorno"
+        "italian": "giorno",
+        "serbian": "дан"
       }
     },
     {
@@ -1497,7 +1630,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kontrolować",
         "albanian": "të kontrollosh",
         "arabic": "يراقب",
-        "italian": "controllare"
+        "italian": "controllare",
+        "serbian": "проверити"
       }
     },
     {
@@ -1508,7 +1642,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "średnio",
         "albanian": "mesatarisht",
         "arabic": "في المتوسط",
-        "italian": "in media"
+        "italian": "in media",
+        "serbian": "просечно"
       }
     },
     {
@@ -1519,7 +1654,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "godzina",
         "albanian": "orë",
         "arabic": "ساعة",
-        "italian": "ora"
+        "italian": "ora",
+        "serbian": "сат"
       }
     },
     {
@@ -1530,7 +1666,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "samochód",
         "albanian": "makinë",
         "arabic": "سيارة",
-        "italian": "auto"
+        "italian": "auto",
+        "serbian": "ауто"
       }
     },
     {
@@ -1541,7 +1678,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przyjaciel",
         "albanian": "shok",
         "arabic": "صديق",
-        "italian": "amico"
+        "italian": "amico",
+        "serbian": "пријатељ"
       }
     },
     {
@@ -1552,7 +1690,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kupować",
         "albanian": "të blesh",
         "arabic": "يشتري",
-        "italian": "comprare"
+        "italian": "comprare",
+        "serbian": "купити"
       }
     },
     {
@@ -1563,7 +1702,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "dzwonić",
         "albanian": "të telefonosh",
         "arabic": "يتصل",
-        "italian": "chiamare"
+        "italian": "chiamare",
+        "serbian": "позвати"
       }
     },
     {
@@ -1574,7 +1714,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wysyłać",
         "albanian": "të dërgosh",
         "arabic": "يرسل",
-        "italian": "inviare"
+        "italian": "inviare",
+        "serbian": "послати"
       }
     },
     {
@@ -1585,7 +1726,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "załącznik",
         "albanian": "bashkëngjitje",
         "arabic": "مرفق",
-        "italian": "allegato"
+        "italian": "allegato",
+        "serbian": "прилог"
       }
     },
     {
@@ -1596,7 +1738,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wybierać",
         "albanian": "të zgjedhësh",
         "arabic": "يختار",
-        "italian": "scegliere"
+        "italian": "scegliere",
+        "serbian": "изабрати"
       }
     },
     {
@@ -1607,7 +1750,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "włączać",
         "albanian": "të ndezësh",
         "arabic": "يشغّل",
-        "italian": "accendere"
+        "italian": "accendere",
+        "serbian": "укључити"
       }
     },
     {
@@ -1618,7 +1762,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "podłączać",
         "albanian": "të lidhësh",
         "arabic": "يوصل",
-        "italian": "collegare"
+        "italian": "collegare",
+        "serbian": "повезати"
       }
     },
     {
@@ -1629,7 +1774,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kabel",
         "albanian": "kabllo",
         "arabic": "كابل",
-        "italian": "cavo"
+        "italian": "cavo",
+        "serbian": "кабл"
       }
     },
     {
@@ -1640,7 +1786,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kosztować",
         "albanian": "të kushtojë",
         "arabic": "يكلف",
-        "italian": "costare"
+        "italian": "costare",
+        "serbian": "коштати"
       }
     },
     {
@@ -1651,7 +1798,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "miesiąc",
         "albanian": "muaj",
         "arabic": "شهر",
-        "italian": "mese"
+        "italian": "mese",
+        "serbian": "месец"
       }
     },
     {
@@ -1662,7 +1810,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "używać",
         "albanian": "të përdorësh",
         "arabic": "يستخدم",
-        "italian": "usare"
+        "italian": "usare",
+        "serbian": "користити"
       }
     },
     {
@@ -1673,7 +1822,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przyjaciółka",
         "albanian": "shoqe",
         "arabic": "صديقة",
-        "italian": "amica"
+        "italian": "amica",
+        "serbian": "пријатељица"
       }
     },
     {
@@ -1684,7 +1834,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "osiągać",
         "albanian": "të arrish",
         "arabic": "يصل",
-        "italian": "raggiungere"
+        "italian": "raggiungere",
+        "serbian": "достићи"
       }
     },
     {
@@ -1695,7 +1846,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "nagłówek",
         "albanian": "titull",
         "arabic": "عنوان",
-        "italian": "titolo"
+        "italian": "titolo",
+        "serbian": "наслов"
       }
     },
     {
@@ -1706,7 +1858,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "polityka",
         "albanian": "politikë",
         "arabic": "سياسة",
-        "italian": "politica"
+        "italian": "politica",
+        "serbian": "политика"
       }
     },
     {
@@ -1717,7 +1870,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "gospodarka",
         "albanian": "ekonomi",
         "arabic": "اقتصاد",
-        "italian": "economia"
+        "italian": "economia",
+        "serbian": "економија"
       }
     },
     {
@@ -1728,7 +1882,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kultura",
         "albanian": "kulturë",
         "arabic": "ثقافة",
-        "italian": "cultura"
+        "italian": "cultura",
+        "serbian": "култура"
       }
     },
     {
@@ -1739,7 +1894,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "edukacja",
         "albanian": "arsim",
         "arabic": "تعليم",
-        "italian": "istruzione"
+        "italian": "istruzione",
+        "serbian": "образовање"
       }
     },
     {
@@ -1750,7 +1906,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "sport",
         "albanian": "sport",
         "arabic": "رياضة",
-        "italian": "sport"
+        "italian": "sport",
+        "serbian": "спорт"
       }
     },
     {
@@ -1761,7 +1918,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "artykuł",
         "albanian": "artikull",
         "arabic": "مقال",
-        "italian": "articolo"
+        "italian": "articolo",
+        "serbian": "чланак"
       }
     },
     {
@@ -1772,7 +1930,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zapraszać",
         "albanian": "të ftosh",
         "arabic": "يدعو",
-        "italian": "invitare"
+        "italian": "invitare",
+        "serbian": "позвати"
       }
     },
     {
@@ -1783,7 +1942,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pomagać",
         "albanian": "të ndihmosh",
         "arabic": "يساعد",
-        "italian": "aiutare"
+        "italian": "aiutare",
+        "serbian": "помоћи"
       }
     },
     {
@@ -1794,7 +1954,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "egzamin",
         "albanian": "provim",
         "arabic": "امتحان",
-        "italian": "esame"
+        "italian": "esame",
+        "serbian": "испит"
       }
     },
     {
@@ -1805,7 +1966,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ruch",
         "albanian": "trafik",
         "arabic": "حركة المرور",
-        "italian": "traffico"
+        "italian": "traffico",
+        "serbian": "саобраћај"
       }
     },
     {
@@ -1816,7 +1978,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ulica",
         "albanian": "rrugë",
         "arabic": "شارع",
-        "italian": "strada"
+        "italian": "strada",
+        "serbian": "улица"
       }
     },
     {
@@ -1827,7 +1990,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "odpowiadać",
         "albanian": "të përgjigjesh",
         "arabic": "يجيب",
-        "italian": "rispondere"
+        "italian": "rispondere",
+        "serbian": "одговорити"
       }
     },
     {
@@ -1838,7 +2002,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pytanie",
         "albanian": "pyetje",
         "arabic": "сؤال",
-        "italian": "domanda"
+        "italian": "domanda",
+        "serbian": "питање"
       }
     },
     {
@@ -1849,7 +2014,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "dlaczego",
         "albanian": "pse",
         "arabic": "لماذا",
-        "italian": "perché"
+        "italian": "perché",
+        "serbian": "зашто"
       }
     },
     {
@@ -1860,7 +2026,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ponieważ",
         "albanian": "sepse",
         "arabic": "لأن",
-        "italian": "perché"
+        "italian": "perché",
+        "serbian": "јер"
       }
     },
     {
@@ -1871,7 +2038,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "że",
         "albanian": "që",
         "arabic": "أن",
-        "italian": "che"
+        "italian": "che",
+        "serbian": "да"
       }
     },
     {
@@ -1882,7 +2050,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pokazywać",
         "albanian": "të tregosh",
         "arabic": "يظهر",
-        "italian": "mostrare"
+        "italian": "mostrare",
+        "serbian": "показати"
       }
     },
     {
@@ -1893,7 +2062,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "drukarka",
         "albanian": "printer",
         "arabic": "طابعة",
-        "italian": "stampante"
+        "italian": "stampante",
+        "serbian": "штампач"
       }
     },
     {
@@ -1904,7 +2074,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "skaner",
         "albanian": "skaner",
         "arabic": "ماسح ضوئي",
-        "italian": "scanner"
+        "italian": "scanner",
+        "serbian": "скенер"
       }
     },
     {
@@ -1915,7 +2086,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pobierać",
         "albanian": "të shkarkosh",
         "arabic": "ينزّل",
-        "italian": "scaricare"
+        "italian": "scaricare",
+        "serbian": "преузети"
       }
     },
     {
@@ -1926,7 +2098,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "skanować",
         "albanian": "të skanosh",
         "arabic": "يمسح ضوئياً",
-        "italian": "scansionare"
+        "italian": "scansionare",
+        "serbian": "скенирати"
       }
     },
     {
@@ -1937,7 +2110,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "usuwać",
         "albanian": "të fshish",
         "arabic": "يحذف",
-        "italian": "cancellare"
+        "italian": "cancellare",
+        "serbian": "обрисати"
       }
     },
     {
@@ -1948,7 +2122,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ładować",
         "albanian": "të ngarkosh",
         "arabic": "يشحن",
-        "italian": "caricare"
+        "italian": "caricare",
+        "serbian": "напунити"
       }
     },
     {
@@ -1959,7 +2134,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "urządzenie",
         "albanian": "pajisje",
         "arabic": "جهاز",
-        "italian": "dispositivo"
+        "italian": "dispositivo",
+        "serbian": "уређај"
       }
     },
     {
@@ -1970,7 +2146,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "naprawiać",
         "albanian": "të riparosh",
         "arabic": "يصلح",
-        "italian": "riparare"
+        "italian": "riparare",
+        "serbian": "поправити"
       }
     },
     {
@@ -1981,7 +2158,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "termin",
         "albanian": "takim",
         "arabic": "موعد",
-        "italian": "appuntamento"
+        "italian": "appuntamento",
+        "serbian": "термин"
       }
     },
     {
@@ -1992,7 +2170,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wpisywać",
         "albanian": "të regjistrosh",
         "arabic": "يسجل",
-        "italian": "inserire"
+        "italian": "inserire",
+        "serbian": "унети"
       }
     },
     {
@@ -2003,7 +2182,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "edytować",
         "albanian": "të përpunosh",
         "arabic": "يعدّل",
-        "italian": "elaborare"
+        "italian": "elaborare",
+        "serbian": "уредити"
       }
     },
     {
@@ -2014,7 +2194,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "obraz",
         "albanian": "imazh",
         "arabic": "صورة",
-        "italian": "immagine"
+        "italian": "immagine",
+        "serbian": "слика"
       }
     },
     {
@@ -2025,7 +2206,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "często",
         "albanian": "shpesh",
         "arabic": "غالباً",
-        "italian": "spesso"
+        "italian": "spesso",
+        "serbian": "често"
       }
     },
     {
@@ -2036,7 +2218,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rzadko",
         "albanian": "rrallë",
         "arabic": "نادراً",
-        "italian": "raramente"
+        "italian": "raramente",
+        "serbian": "ретко"
       }
     },
     {
@@ -2047,7 +2230,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "nigdy",
         "albanian": "kurrë",
         "arabic": "أبداً",
-        "italian": "mai"
+        "italian": "mai",
+        "serbian": "никад"
       }
     }
   ],
@@ -2060,7 +2244,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "weekend",
         "albanian": "fundjavë",
         "arabic": "عطلة نهاية الأسبوع",
-        "italian": "fine settimana"
+        "italian": "fine settimana",
+        "serbian": "викенд"
       }
     },
     {
@@ -2071,7 +2256,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ulica handlowa",
         "albanian": "rruga e blerjeve",
         "arabic": "شارع التسوق",
-        "italian": "via dello shopping"
+        "italian": "via dello shopping",
+        "serbian": "улица за куповину"
       }
     },
     {
@@ -2082,7 +2268,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "dzbanek do kawy",
         "albanian": "ibrik kafeje",
         "arabic": "إبريق القهوة",
-        "italian": "caffettiera"
+        "italian": "caffettiera",
+        "serbian": "посуда за кафу"
       }
     },
     {
@@ -2093,7 +2280,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "widelec",
         "albanian": "pirun",
         "arabic": "شوكة",
-        "italian": "forchetta"
+        "italian": "forchetta",
+        "serbian": "виљушка"
       }
     },
     {
@@ -2104,7 +2292,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "filiżanka",
         "albanian": "filxhan",
         "arabic": "فنجان",
-        "italian": "tazza"
+        "italian": "tazza",
+        "serbian": "шоља"
       }
     },
     {
@@ -2115,7 +2304,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "łyżka",
         "albanian": "lugë",
         "arabic": "ملعقة",
-        "italian": "cucchiaio"
+        "italian": "cucchiaio",
+        "serbian": "кашика"
       }
     },
     {
@@ -2126,7 +2316,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "talerz",
         "albanian": "pjatë",
         "arabic": "طبق",
-        "italian": "piatto"
+        "italian": "piatto",
+        "serbian": "тањир"
       }
     },
     {
@@ -2137,7 +2328,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "nóż",
         "albanian": "thikë",
         "arabic": "سكين",
-        "italian": "coltello"
+        "italian": "coltello",
+        "serbian": "нож"
       }
     },
     {
@@ -2148,7 +2340,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "serwetka",
         "albanian": "pecetë",
         "arabic": "منديل",
-        "italian": "tovagliolo"
+        "italian": "tovagliolo",
+        "serbian": "салвета"
       }
     },
     {
@@ -2159,7 +2352,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kot",
         "albanian": "mace",
         "arabic": "قطة",
-        "italian": "gatto"
+        "italian": "gatto",
+        "serbian": "мачка"
       }
     },
     {
@@ -2170,7 +2364,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "stół",
         "albanian": "tryezë",
         "arabic": "طاولة",
-        "italian": "tavolo"
+        "italian": "tavolo",
+        "serbian": "сто"
       }
     },
     {
@@ -2181,7 +2376,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "krzesło",
         "albanian": "karrige",
         "arabic": "كرسي",
-        "italian": "sedia"
+        "italian": "sedia",
+        "serbian": "столица"
       }
     },
     {
@@ -2192,7 +2388,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "apteka",
         "albanian": "farmaci",
         "arabic": "صيدلية",
-        "italian": "farmacia"
+        "italian": "farmacia",
+        "serbian": "апотека"
       }
     },
     {
@@ -2203,7 +2400,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kawiarnia",
         "albanian": "kafe",
         "arabic": "مقهى",
-        "italian": "caffè"
+        "italian": "caffè",
+        "serbian": "кафић"
       }
     },
     {
@@ -2214,7 +2412,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "sklepy",
         "albanian": "dyqane",
         "arabic": "متاجر",
-        "italian": "negozi"
+        "italian": "negozi",
+        "serbian": "продавнице"
       }
     },
     {
@@ -2225,7 +2424,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "parasol słoneczny",
         "albanian": "ombrellë dielli",
         "arabic": "مظلة شمسية",
-        "italian": "ombrellone"
+        "italian": "ombrellone",
+        "serbian": "сунцобран"
       }
     },
     {
@@ -2236,7 +2436,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "podłoga/ziemia",
         "albanian": "dysheme/tokë",
         "arabic": "أرضية",
-        "italian": "pavimento/suolo"
+        "italian": "pavimento/suolo",
+        "serbian": "под/земља"
       }
     },
     {
@@ -2247,7 +2448,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "burza",
         "albanian": "stuhi me bubullima",
         "arabic": "عاصفة رعدية",
-        "italian": "temporale"
+        "italian": "temporale",
+        "serbian": "олуја са грмљавином"
       }
     },
     {
@@ -2258,7 +2460,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "burza/sztorm",
         "albanian": "stuhi",
         "arabic": "عاصفة",
-        "italian": "tempesta"
+        "italian": "tempesta",
+        "serbian": "олуја"
       }
     },
     {
@@ -2269,7 +2472,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "chaos",
         "albanian": "kaos",
         "arabic": "فوضى",
-        "italian": "caos"
+        "italian": "caos",
+        "serbian": "хаос"
       }
     },
     {
@@ -2280,7 +2484,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przeziębienie",
         "albanian": "ftohje",
         "arabic": "نزلة برد",
-        "italian": "raffreddore"
+        "italian": "raffreddore",
+        "serbian": "прехлада"
       }
     },
     {
@@ -2291,7 +2496,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "restauracja",
         "albanian": "restorant",
         "arabic": "مطعم",
-        "italian": "ristorante"
+        "italian": "ristorante",
+        "serbian": "ресторан"
       }
     },
     {
@@ -2302,7 +2508,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "menu/karta dań",
         "albanian": "meny",
         "arabic": "قائمة الطعام",
-        "italian": "menù"
+        "italian": "menù",
+        "serbian": "јеловник"
       }
     },
     {
@@ -2313,7 +2520,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przystawka",
         "albanian": "antipastë",
         "arabic": "مقبلات",
-        "italian": "antipasto"
+        "italian": "antipasto",
+        "serbian": "предјело"
       }
     },
     {
@@ -2324,7 +2532,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "danie główne",
         "albanian": "pjata kryesore",
         "arabic": "الطبق الرئيسي",
-        "italian": "piatto principale"
+        "italian": "piatto principale",
+        "serbian": "главно јело"
       }
     },
     {
@@ -2335,7 +2544,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "deser",
         "albanian": "embëlsirë",
         "arabic": "حلوى",
-        "italian": "dolce"
+        "italian": "dolce",
+        "serbian": "десерт"
       }
     },
     {
@@ -2346,7 +2556,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zupa ziemniaczana",
         "albanian": "supë patate",
         "arabic": "شوربة البطاطس",
-        "italian": "zuppa di patate"
+        "italian": "zuppa di patate",
+        "serbian": "супа од кромпира"
       }
     },
     {
@@ -2357,7 +2568,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zupa pomidorowa z bazylią",
         "albanian": "supë domatesh me bozllok",
         "arabic": "شوربة الطماطم بالريحان",
-        "italian": "zuppa di pomodoro e basilico"
+        "italian": "zuppa di pomodoro e basilico",
+        "serbian": "супа од парадајза са босиљком"
       }
     },
     {
@@ -2368,7 +2580,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "sałatka włoska",
         "albanian": "sallatë italiane",
         "arabic": "سلطة إيطالية",
-        "italian": "insalata italiana"
+        "italian": "insalata italiana",
+        "serbian": "италијанска салата"
       }
     },
     {
@@ -2379,7 +2592,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "filet z śledzia matjesa",
         "albanian": "file harenge",
         "arabic": "شرائح الرنجة",
-        "italian": "filetto di aringa"
+        "italian": "filetto di aringa",
+        "serbian": "филе харинге"
       }
     },
     {
@@ -2390,7 +2604,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "tiramisu",
         "albanian": "tiramisu",
         "arabic": "تيراميسو",
-        "italian": "tiramisù"
+        "italian": "tiramisù",
+        "serbian": "тирамису"
       }
     },
     {
@@ -2401,7 +2616,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "woda mineralna",
         "albanian": "ujë mineral",
         "arabic": "ماء معدني",
-        "italian": "acqua minerale"
+        "italian": "acqua minerale",
+        "serbian": "минерална вода"
       }
     },
     {
@@ -2412,7 +2628,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "sok jabłkowy",
         "albanian": "lëng molle",
         "arabic": "عصير التفاح",
-        "italian": "succo di mela"
+        "italian": "succo di mela",
+        "serbian": "сок од јабуке"
       }
     },
     {
@@ -2423,7 +2640,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "sok pomarańczowy",
         "albanian": "lëng portokalli",
         "arabic": "عصير البرتقال",
-        "italian": "succo d'arancia"
+        "italian": "succo d'arancia",
+        "serbian": "сок од поморанџе"
       }
     },
     {
@@ -2434,7 +2652,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "Fanta/Cola/Sprite",
         "albanian": "Fanta/Cola/Sprite",
         "arabic": "فانتا/كولا/سبرايت",
-        "italian": "Fanta/Cola/Sprite"
+        "italian": "Fanta/Cola/Sprite",
+        "serbian": "Фанта/Кола/Спрајт"
       }
     },
     {
@@ -2445,7 +2664,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "piwo",
         "albanian": "birrë",
         "arabic": "بيرة",
-        "italian": "birra"
+        "italian": "birra",
+        "serbian": "пиво"
       }
     },
     {
@@ -2456,7 +2676,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "czerwone wino",
         "albanian": "verë e kuqe",
         "arabic": "نبيذ أحمر",
-        "italian": "vino rosso"
+        "italian": "vino rosso",
+        "serbian": "црвено вино"
       }
     },
     {
@@ -2467,7 +2688,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "białe wino",
         "albanian": "verë e bardhë",
         "arabic": "نبيذ أبيض",
-        "italian": "vino bianco"
+        "italian": "vino bianco",
+        "serbian": "бело вино"
       }
     },
     {
@@ -2478,7 +2700,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wino musujące",
         "albanian": "verë shkumuese",
         "arabic": "نبيذ فوار",
-        "italian": "spumante"
+        "italian": "spumante",
+        "serbian": "пенушаво вино"
       }
     },
     {
@@ -2489,7 +2712,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kawa",
         "albanian": "kafe",
         "arabic": "قهوة",
-        "italian": "caffè"
+        "italian": "caffè",
+        "serbian": "кафа"
       }
     },
     {
@@ -2500,7 +2724,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "cappuccino",
         "albanian": "kapuçino",
         "arabic": "كابتشينو",
-        "italian": "cappuccino"
+        "italian": "cappuccino",
+        "serbian": "капућино"
       }
     },
     {
@@ -2511,7 +2736,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "espresso",
         "albanian": "espreso",
         "arabic": "إسبريسو",
-        "italian": "espresso"
+        "italian": "espresso",
+        "serbian": "еспрессо"
       }
     },
     {
@@ -2522,7 +2748,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "herbata",
         "albanian": "çaj",
         "arabic": "شاي",
-        "italian": "tè"
+        "italian": "tè",
+        "serbian": "чај"
       }
     },
     {
@@ -2533,7 +2760,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rachunek",
         "albanian": "faturë",
         "arabic": "فاتورة",
-        "italian": "conto"
+        "italian": "conto",
+        "serbian": "билл/чецк"
       }
     },
     {
@@ -2544,7 +2772,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "napiwek",
         "albanian": "bakshish",
         "arabic": "بقشيش",
-        "italian": "mancia"
+        "italian": "mancia",
+        "serbian": "тип/гратуити"
       }
     },
     {
@@ -2555,7 +2784,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rezerwacja",
         "albanian": "rezervim",
         "arabic": "حجز",
-        "italian": "prenotazione"
+        "italian": "prenotazione",
+        "serbian": "ресерватион"
       }
     },
     {
@@ -2566,7 +2796,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zamówienie",
         "albanian": "porosi",
         "arabic": "طلب",
-        "italian": "ordinazione"
+        "italian": "ordinazione",
+        "serbian": "ордер"
       }
     },
     {
@@ -2577,7 +2808,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "danie/potrawa",
         "albanian": "pjatë",
         "arabic": "طبق",
-        "italian": "piatto"
+        "italian": "piatto",
+        "serbian": "диш/меал"
       }
     },
     {
@@ -2588,7 +2820,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kelner",
         "albanian": "kamarier",
         "arabic": "نادل",
-        "italian": "cameriere"
+        "italian": "cameriere",
+        "serbian": "конобар"
       }
     },
     {
@@ -2599,7 +2832,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "obsługa",
         "albanian": "shërbim",
         "arabic": "خدمة",
-        "italian": "servizio"
+        "italian": "servizio",
+        "serbian": "сервице/ваитер"
       }
     },
     {
@@ -2610,7 +2844,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "obrus",
         "albanian": "mbulojë tavoline",
         "arabic": "مفرش طاولة",
-        "italian": "tovaglia"
+        "italian": "tovaglia",
+        "serbian": "таблецлотх"
       }
     },
     {
@@ -2621,7 +2856,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "miska do sałatek",
         "albanian": "tas sallate",
         "arabic": "وعاء السلطة",
-        "italian": "insalatiera"
+        "italian": "insalatiera",
+        "serbian": "салад бовл"
       }
     },
     {
@@ -2632,7 +2868,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "sztućce do sałaty",
         "albanian": "takëm sallate",
         "arabic": "أدوات تقديم السلطة",
-        "italian": "posate per insalata"
+        "italian": "posate per insalata",
+        "serbian": "салад сервер"
       }
     },
     {
@@ -2643,7 +2880,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ocet",
         "albanian": "uthull",
         "arabic": "خل",
-        "italian": "aceto"
+        "italian": "aceto",
+        "serbian": "винегар"
       }
     },
     {
@@ -2654,7 +2892,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "cukierniczka",
         "albanian": "shpërndarës sheqeri",
         "arabic": "رشاشة السكر",
-        "italian": "zuccheriera"
+        "italian": "zuccheriera",
+        "serbian": "сугар шакер"
       }
     },
     {
@@ -2665,7 +2904,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pałeczki",
         "albanian": "shkopinj",
         "arabic": "عيدان الأكل",
-        "italian": "bacchette"
+        "italian": "bacchette",
+        "serbian": "чопстицк"
       }
     },
     {
@@ -2676,7 +2916,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kieliszek do jajek",
         "albanian": "filxhan veze",
         "arabic": "كأس البيض",
-        "italian": "portauovo"
+        "italian": "portauovo",
+        "serbian": "егг цуп"
       }
     },
     {
@@ -2687,7 +2928,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "otwieracz do butelek",
         "albanian": "hapës shishesh",
         "arabic": "فتاحة زجاجات",
-        "italian": "apribottiglie"
+        "italian": "apribottiglie",
+        "serbian": "боттле опенер"
       }
     },
     {
@@ -2698,7 +2940,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "dzbanek do herbaty",
         "albanian": "ibrik çaji",
         "arabic": "إبريق الشاي",
-        "italian": "teiera"
+        "italian": "teiera",
+        "serbian": "теапот"
       }
     },
     {
@@ -2709,7 +2952,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "schody",
         "albanian": "shkallë",
         "arabic": "السلالم",
-        "italian": "scala"
+        "italian": "scala",
+        "serbian": "стаирцасе"
       }
     }
   ],
@@ -2722,7 +2966,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkoła",
         "albanian": "shkolla",
         "arabic": "المدرسة",
-        "italian": "scuola"
+        "italian": "scuola",
+        "serbian": "школа"
       }
     },
     {
@@ -2733,7 +2978,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "lekcja",
         "albanian": "mësimi",
         "arabic": "الدرس",
-        "italian": "lezione"
+        "italian": "lezione",
+        "serbian": "лессон, цла"
       }
     },
     {
@@ -2744,7 +2990,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "boisko szkolne",
         "albanian": "oborri i shkollës",
         "arabic": "ساحة المدرسة",
-        "italian": "cortile della scuola"
+        "italian": "cortile della scuola",
+        "serbian": "счоолиард"
       }
     },
     {
@@ -2755,7 +3002,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przedmiot",
         "albanian": "lënda",
         "arabic": "المادة الدراسية",
-        "italian": "materia"
+        "italian": "materia",
+        "serbian": "предмет"
       }
     },
     {
@@ -2766,7 +3014,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "matematyka",
         "albanian": "matematika",
         "arabic": "الرياضيات",
-        "italian": "matematica"
+        "italian": "matematica",
+        "serbian": "матхематицс (матх)"
       }
     },
     {
@@ -2777,7 +3026,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "muzyka",
         "albanian": "muzika",
         "arabic": "الموسيقى",
-        "italian": "musica"
+        "italian": "musica",
+        "serbian": "музика"
       }
     },
     {
@@ -2788,7 +3038,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "fizyka",
         "albanian": "fizika",
         "arabic": "الفيزياء",
-        "italian": "fisica"
+        "italian": "fisica",
+        "serbian": "физика"
       }
     },
     {
@@ -2799,7 +3050,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "chemia",
         "albanian": "kimia",
         "arabic": "الكيمياء",
-        "italian": "chimica"
+        "italian": "chimica",
+        "serbian": "хемија"
       }
     },
     {
@@ -2810,7 +3062,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "biologia",
         "albanian": "biologjia",
         "arabic": "الأحياء",
-        "italian": "biologia"
+        "italian": "biologia",
+        "serbian": "биологија"
       }
     },
     {
@@ -2821,7 +3074,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "sztuka",
         "albanian": "arti",
         "arabic": "الفن",
-        "italian": "arte"
+        "italian": "arte",
+        "serbian": "уметност"
       }
     },
     {
@@ -2832,7 +3086,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "geografia",
         "albanian": "gjeografia",
         "arabic": "الجغرافيا",
-        "italian": "geografia"
+        "italian": "geografia",
+        "serbian": "географија"
       }
     },
     {
@@ -2843,7 +3098,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "historia",
         "albanian": "historia",
         "arabic": "التاريخ",
-        "italian": "storia"
+        "italian": "storia",
+        "serbian": "историја"
       }
     },
     {
@@ -2854,7 +3110,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "język niemiecki",
         "albanian": "gjermanishtja",
         "arabic": "الألمانية",
-        "italian": "tedesco"
+        "italian": "tedesco",
+        "serbian": "немачки"
       }
     },
     {
@@ -2865,7 +3122,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "język angielski",
         "albanian": "anglishtja",
         "arabic": "الإنجليزية",
-        "italian": "inglese"
+        "italian": "inglese",
+        "serbian": "енглески"
       }
     },
     {
@@ -2876,7 +3134,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "plan lekcji",
         "albanian": "orari",
         "arabic": "الجدول الزمني",
-        "italian": "orario"
+        "italian": "orario",
+        "serbian": "тиметабле, счедуле"
       }
     },
     {
@@ -2887,7 +3146,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przerwa",
         "albanian": "pushimi",
         "arabic": "الاستراحة",
-        "italian": "pausa"
+        "italian": "pausa",
+        "serbian": "бреак, реце"
       }
     },
     {
@@ -2898,7 +3158,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "praca grupowa",
         "albanian": "puna në grup",
         "arabic": "العمل الجماعي",
-        "italian": "lavoro di gruppo"
+        "italian": "lavoro di gruppo",
+        "serbian": "гроуп ворк"
       }
     },
     {
@@ -2909,7 +3170,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "nauczyciel/nauczycielka",
         "albanian": "mësuesi/mësuesja",
         "arabic": "المعلم/المعلمة",
-        "italian": "insegnante"
+        "italian": "insegnante",
+        "serbian": "наставник"
       }
     },
     {
@@ -2920,7 +3182,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "uczeń/uczennica",
         "albanian": "nxënësi/nxënësja",
         "arabic": "التلميذ/التلميذة",
-        "italian": "studente/studentessa"
+        "italian": "studente/studentessa",
+        "serbian": "студент, пупил"
       }
     },
     {
@@ -2931,7 +3194,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ulubiony przedmiot",
         "albanian": "lënda e preferuar",
         "arabic": "المادة المفضلة",
-        "italian": "materia preferita"
+        "italian": "materia preferita",
+        "serbian": "фаворите субјецт"
       }
     },
     {
@@ -2942,7 +3206,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkoła podstawowa",
         "albanian": "shkolla fillore",
         "arabic": "المدرسة الابتدائية",
-        "italian": "scuola elementare"
+        "italian": "scuola elementare",
+        "serbian": "примари счоол, елементари счоол"
       }
     },
     {
@@ -2953,7 +3218,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkoła główna",
         "albanian": "shkolla kryesore",
         "arabic": "المدرسة الرئيسية",
-        "italian": "scuola secondaria"
+        "italian": "scuola secondaria",
+        "serbian": "сецондари модерн счоол"
       }
     },
     {
@@ -2964,7 +3230,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkoła realna",
         "albanian": "shkolla e mesme",
         "arabic": "المدرسة الإعدادية",
-        "italian": "scuola media superiore"
+        "italian": "scuola media superiore",
+        "serbian": "интермедиате счоол"
       }
     },
     {
@@ -2975,7 +3242,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "gimnazjum",
         "albanian": "gjimnazi",
         "arabic": "الثانوية",
-        "italian": "liceo"
+        "italian": "liceo",
+        "serbian": "граммар счоол, хигх счоол"
       }
     },
     {
@@ -2986,7 +3254,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkoła kompleksowa",
         "albanian": "shkolla e përgjithshme",
         "arabic": "المدرسة الشاملة",
-        "italian": "scuola comprensiva"
+        "italian": "scuola comprensiva",
+        "serbian": "гимназија"
       }
     },
     {
@@ -2997,7 +3266,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkoła zawodowa",
         "albanian": "shkolla profesionale",
         "arabic": "المدرسة المهنية",
-        "italian": "scuola professionale"
+        "italian": "scuola professionale",
+        "serbian": "стручна школа"
       }
     },
     {
@@ -3008,7 +3278,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkoła specjalna",
         "albanian": "shkolla speciale",
         "arabic": "مدرسة التربية الخاصة",
-        "italian": "scuola speciale"
+        "italian": "scuola speciale",
+        "serbian": "специал неедс счоол"
       }
     },
     {
@@ -3019,7 +3290,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wyższa szkoła zawodowa",
         "albanian": "shkolla e lartë profesionale",
         "arabic": "الكلية التقنية",
-        "italian": "università di scienze applicate"
+        "italian": "università di scienze applicate",
+        "serbian": "университи оф апплиед сциенце"
       }
     },
     {
@@ -3030,7 +3302,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "uniwersytet",
         "albanian": "universiteti",
         "arabic": "الجامعة",
-        "italian": "università"
+        "italian": "università",
+        "serbian": "универзитет"
       }
     },
     {
@@ -3041,7 +3314,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przedszkole",
         "albanian": "kopshti",
         "arabic": "روضة الأطفال",
-        "italian": "asilo"
+        "italian": "asilo",
+        "serbian": "киндергартен, даицаре"
       }
     },
     {
@@ -3052,7 +3326,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "klasa",
         "albanian": "klasa",
         "arabic": "الصف",
-        "italian": "classe"
+        "italian": "classe",
+        "serbian": "цласс, граде"
       }
     },
     {
@@ -3063,7 +3338,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "matura",
         "albanian": "matura",
         "arabic": "شهادة الثانوية العامة",
-        "italian": "diploma di maturità"
+        "italian": "diploma di maturità",
+        "serbian": "хигх счоол диплома"
       }
     },
     {
@@ -3074,7 +3350,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "szkolenie zawodowe",
         "albanian": "arsimimi profesional",
         "arabic": "التدريب المهني",
-        "italian": "formazione professionale"
+        "italian": "formazione professionale",
+        "serbian": "воцатионал траининг, аппрентицешип"
       }
     },
     {
@@ -3085,7 +3362,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "świadectwo ukończenia szkoły",
         "albanian": "dëftesa e shkollës",
         "arabic": "شهادة التخرج المدرسي",
-        "italian": "diploma scolastico"
+        "italian": "diploma scolastico",
+        "serbian": "счоол леавинг цертифицате"
       }
     },
     {
@@ -3096,7 +3374,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "świadectwo szkoły głównej",
         "albanian": "dëftesa e shkollës kryesore",
         "arabic": "شهادة المدرسة الرئيسية",
-        "italian": "diploma di scuola secondaria"
+        "italian": "diploma di scuola secondaria",
+        "serbian": "сецондари счоол цертифицате"
       }
     },
     {
@@ -3107,7 +3386,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "obowiązek szkolny",
         "albanian": "arsimi i detyruar",
         "arabic": "التعليم الإلزامي",
-        "italian": "obbligo scolastico"
+        "italian": "obbligo scolastico",
+        "serbian": "обавезно школовање"
       }
     },
     {
@@ -3118,7 +3398,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "rok szkolny",
         "albanian": "viti shkollor",
         "arabic": "العام الدراسي",
-        "italian": "anno scolastico"
+        "italian": "anno scolastico",
+        "serbian": "школска година"
       }
     },
     {
@@ -3129,7 +3410,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "ocena",
         "albanian": "nota",
         "arabic": "الدرجة",
-        "italian": "voto"
+        "italian": "voto",
+        "serbian": "граде, марк"
       }
     },
     {
@@ -3140,7 +3422,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "świadectwo",
         "albanian": "dëftesa",
         "arabic": "شهادة",
-        "italian": "pagella"
+        "italian": "pagella",
+        "serbian": "репорт цард, цертифицате"
       }
     },
     {
@@ -3151,7 +3434,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "egzamin",
         "albanian": "provimi",
         "arabic": "الامتحان",
-        "italian": "esame"
+        "italian": "esame",
+        "serbian": "испит"
       }
     },
     {
@@ -3162,7 +3446,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "egzamin końcowy",
         "albanian": "provimi përfundimtar",
         "arabic": "امتحان التخرج",
-        "italian": "esame finale"
+        "italian": "esame finale",
+        "serbian": "финал ексам"
       }
     },
     {
@@ -3173,7 +3458,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "korepetycje",
         "albanian": "mësim shtesë",
         "arabic": "الدروس الخصوصية",
-        "italian": "ripetizioni"
+        "italian": "ripetizioni",
+        "serbian": "туторинг, екстра хелп"
       }
     },
     {
@@ -3184,7 +3470,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wywiadówka",
         "albanian": "mbledhja me prindër",
         "arabic": "اجتماع أولياء الأمور",
-        "italian": "riunione dei genitori"
+        "italian": "riunione dei genitori",
+        "serbian": "парент-теачер меетинг"
       }
     },
     {
@@ -3195,7 +3482,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kasa klasowa",
         "albanian": "kasa e klasës",
         "arabic": "صندوق الصف",
-        "italian": "cassa della classe"
+        "italian": "cassa della classe",
+        "serbian": "цласс фунд"
       }
     },
     {
@@ -3206,7 +3494,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wycieczka klasowa",
         "albanian": "udhëtimi i klasës",
         "arabic": "رحلة الصف",
-        "italian": "gita scolastica"
+        "italian": "gita scolastica",
+        "serbian": "цласс трип"
       }
     },
     {
@@ -3217,7 +3506,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "klasówka",
         "albanian": "testi i klasës",
         "arabic": "الاختبار الصفي",
-        "italian": "compito in classe"
+        "italian": "compito in classe",
+        "serbian": "контролни рад, писмени испит"
       }
     },
     {
@@ -3228,7 +3518,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "lekcje pływania",
         "albanian": "mësimi i notit",
         "arabic": "دروس السباحة",
-        "italian": "lezioni di nuoto"
+        "italian": "lezioni di nuoto",
+        "serbian": "часови пливања"
       }
     },
     {
@@ -3239,7 +3530,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wychowanie fizyczne",
         "albanian": "edukimi fizik",
         "arabic": "التربية البدنية",
-        "italian": "educazione fisica"
+        "italian": "educazione fisica",
+        "serbian": "физичко васпитање"
       }
     },
     {
@@ -3250,7 +3542,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "kieszonkowe",
         "albanian": "para xhepi",
         "arabic": "مصروف الجيب",
-        "italian": "paghetta"
+        "italian": "paghetta",
+        "serbian": "џепарац"
       }
     },
     {
@@ -3261,7 +3554,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "telefon komórkowy",
         "albanian": "celulari",
         "arabic": "الهاتف المحمول",
-        "italian": "cellulare"
+        "italian": "cellulare",
+        "serbian": "мобилни телефон"
       }
     },
     {
@@ -3272,7 +3566,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "podręczniki",
         "albanian": "librat shkollor",
         "arabic": "الكتب المدرسية",
-        "italian": "libri scolastici"
+        "italian": "libri scolastici",
+        "serbian": "уџбеници"
       }
     },
     {
@@ -3283,7 +3578,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "mechatronik samochodowy",
         "albanian": "mekatroni i automjeteve",
         "arabic": "ميكانيكي سيارات",
-        "italian": "meccatronico automobilistico"
+        "italian": "meccatronico automobilistico",
+        "serbian": "аутомеханичар"
       }
     },
     {
@@ -3294,7 +3590,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "miejsce na studiach",
         "albanian": "vendi universitar",
         "arabic": "مكان في الجامعة",
-        "italian": "posto universitario"
+        "italian": "posto universitario",
+        "serbian": "место на факултету"
       }
     },
     {
@@ -3305,7 +3602,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "warsztat samochodowy",
         "albanian": "punëtoria e makinave",
         "arabic": "ورشة السيارات",
-        "italian": "officina auto"
+        "italian": "officina auto",
+        "serbian": "цар репаир шоп, гараге"
       }
     },
     {
@@ -3316,7 +3614,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "surowy",
         "albanian": "i rreptë",
         "arabic": "صارم",
-        "italian": "severo"
+        "italian": "severo",
+        "serbian": "строг"
       }
     },
     {
@@ -3327,7 +3626,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "przyjazny",
         "albanian": "miqësor",
         "arabic": "ودود",
-        "italian": "gentile"
+        "italian": "gentile",
+        "serbian": "фриендли"
       }
     },
     {
@@ -3338,7 +3638,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pilny",
         "albanian": "i zellshëm",
         "arabic": "مجتهد",
-        "italian": "diligente"
+        "italian": "diligente",
+        "serbian": "дилигент, хардворкинг"
       }
     },
     {
@@ -3349,7 +3650,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "lubiany",
         "albanian": "i dashur",
         "arabic": "محبوب",
-        "italian": "popolare"
+        "italian": "popolare",
+        "serbian": "популаран"
       }
     },
     {
@@ -3360,7 +3662,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "dostateczny",
         "albanian": "i kënaqshëm",
         "arabic": "مرضٍ",
-        "italian": "sufficiente"
+        "italian": "sufficiente",
+        "serbian": "сатисфацтори"
       }
     },
     {
@@ -3371,7 +3674,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wystarczający",
         "albanian": "i mjaftueshëm",
         "arabic": "كافٍ",
-        "italian": "sufficiente"
+        "italian": "sufficiente",
+        "serbian": "адекуате, суффициент"
       }
     },
     {
@@ -3382,7 +3686,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "niedostateczny",
         "albanian": "i pamjaftueshëm",
         "arabic": "غير كافٍ",
-        "italian": "insufficiente"
+        "italian": "insufficiente",
+        "serbian": "инсуффициент, поор"
       }
     },
     {
@@ -3393,7 +3698,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "niedostateczny",
         "albanian": "i pamjaftueshëm",
         "arabic": "راسب",
-        "italian": "gravemente insufficiente"
+        "italian": "gravemente insufficiente",
+        "serbian": "унсатисфацтори, фаилинг"
       }
     },
     {
@@ -3404,7 +3710,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "łatwy",
         "albanian": "i lehtë",
         "arabic": "سهل",
-        "italian": "facile"
+        "italian": "facile",
+        "serbian": "лак"
       }
     },
     {
@@ -3415,7 +3722,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "punktualny",
         "albanian": "i saktë",
         "arabic": "دقيق",
-        "italian": "puntuale"
+        "italian": "puntuale",
+        "serbian": "пунцтуал"
       }
     },
     {
@@ -3426,7 +3734,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "młodzież",
         "albanian": "i riu",
         "arabic": "الشاب",
-        "italian": "giovane"
+        "italian": "giovane",
+        "serbian": "иоунг персон, теенагер"
       }
     },
     {
@@ -3437,7 +3746,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "okres szkolny",
         "albanian": "koha e shkollës",
         "arabic": "أيام المدرسة",
-        "italian": "periodo scolastico"
+        "italian": "periodo scolastico",
+        "serbian": "счоол даис, счоол тиме"
       }
     },
     {
@@ -3448,7 +3758,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "droga do szkoły",
         "albanian": "rruga e shkollës",
         "arabic": "طريق المدرسة",
-        "italian": "strada per la scuola"
+        "italian": "strada per la scuola",
+        "serbian": "ваи то счоол"
       }
     },
     {
@@ -3459,7 +3770,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "nuda",
         "albanian": "mërzia",
         "arabic": "الملل",
-        "italian": "noia"
+        "italian": "noia",
+        "serbian": "боредом"
       }
     },
     {
@@ -3470,7 +3782,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "trwać",
         "albanian": "të zgjasë",
         "arabic": "يستمر",
-        "italian": "durare"
+        "italian": "durare",
+        "serbian": "то ласт, то таке (тиме)"
       }
     },
     {
@@ -3481,7 +3794,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zdać",
         "albanian": "të kalojë",
         "arabic": "ينجح",
-        "italian": "superare"
+        "italian": "superare",
+        "serbian": "то пасс (ан ексам)"
       }
     },
     {
@@ -3492,7 +3806,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "mieć nadzieję",
         "albanian": "të shpresojë",
         "arabic": "يأمل",
-        "italian": "sperare"
+        "italian": "sperare",
+        "serbian": "надати се"
       }
     },
     {
@@ -3503,7 +3818,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "udać się",
         "albanian": "të dalë",
         "arabic": "ينجح",
-        "italian": "funzionare"
+        "italian": "funzionare",
+        "serbian": "то ворк оут, то суццеед"
       }
     },
     {
@@ -3514,7 +3830,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zostawać po lekcjach",
         "albanian": "të qëndrosh pas shkollës",
         "arabic": "البقاء بعد المدرسة",
-        "italian": "restare dopo scuola"
+        "italian": "restare dopo scuola",
+        "serbian": "то стаи афтер счоол (детентион)"
       }
     },
     {
@@ -3525,7 +3842,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "być skończonym",
         "albanian": "të mbarojë",
         "arabic": "ينتهي",
-        "italian": "essere finito"
+        "italian": "essere finito",
+        "serbian": "то бе финишед, то бе овер"
       }
     },
     {
@@ -3536,7 +3854,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "pokój",
         "albanian": "dhoma",
         "arabic": "الغرفة",
-        "italian": "stanza"
+        "italian": "stanza",
+        "serbian": "соба"
       }
     },
     {
@@ -3547,7 +3866,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wspólnie",
         "albanian": "së bashku",
         "arabic": "معاً",
-        "italian": "insieme"
+        "italian": "insieme",
+        "serbian": "тогетхер, јоинтли"
       }
     },
     {
@@ -3558,7 +3878,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "omawiać",
         "albanian": "të diskutojë",
         "arabic": "يناقش",
-        "italian": "discutere"
+        "italian": "discutere",
+        "serbian": "то дисцу"
       }
     },
     {
@@ -3569,7 +3890,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wycieczka",
         "albanian": "shëtitja",
         "arabic": "الرحلة",
-        "italian": "escursione"
+        "italian": "escursione",
+        "serbian": "ексцурсион, оутинг"
       }
     },
     {
@@ -3580,7 +3902,8 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "zadanie domowe",
         "albanian": "detyra e shtëpisë",
         "arabic": "الواجب المنزلي",
-        "italian": "compito a casa"
+        "italian": "compito a casa",
+        "serbian": "домаћи задатак"
       }
     },
     {
@@ -3591,7 +3914,3041 @@ export const a2_1_Vocabulary: Record<string, Card[]> = addAudioPaths({
         "polish": "wakacje",
         "albanian": "pushimet",
         "arabic": "العطلة",
-        "italian": "vacanze"
+        "italian": "vacanze",
+        "serbian": "холидаис, вацатион"
+      }
+    }
+  ],
+
+  "5": [
+    {
+      "german": "der Arbeitsplatz / die Arbeitsplätze",
+      "translations": {
+        "english": "workplace",
+        "ukrainian": "робоче місце",
+        "polish": "miejsce pracy",
+        "albanian": "vendi i punës",
+        "arabic": "مكان العمل",
+        "italian": "posto di lavoro",
+        "serbian": "радно место"
+      }
+    },
+    {
+      "german": "der Polizist / die Polizisten",
+      "translations": {
+        "english": "police officer (male)",
+        "ukrainian": "поліцейський",
+        "polish": "policjant",
+        "albanian": "polici",
+        "arabic": "شرطي",
+        "italian": "poliziotto",
+        "serbian": "полице оффицер (мале)"
+      }
+    },
+    {
+      "german": "die Polizistin / die Polizistinnen",
+      "translations": {
+        "english": "police officer (female)",
+        "ukrainian": "поліцейська",
+        "polish": "policjantka",
+        "albanian": "policja",
+        "arabic": "شرطية",
+        "italian": "poliziotta",
+        "serbian": "полице оффицер (фемале)"
+      }
+    },
+    {
+      "german": "der Pilot / die Piloten",
+      "translations": {
+        "english": "pilot (male)",
+        "ukrainian": "пілот",
+        "polish": "pilot",
+        "albanian": "piloti",
+        "arabic": "طيار",
+        "italian": "pilota",
+        "serbian": "пилот (мале)"
+      }
+    },
+    {
+      "german": "die Pilotin / die Pilotinnen",
+      "translations": {
+        "english": "pilot (female)",
+        "ukrainian": "пілотка",
+        "polish": "pilotka",
+        "albanian": "pilote",
+        "arabic": "طيارة",
+        "italian": "pilota",
+        "serbian": "пилот (фемале)"
+      }
+    },
+    {
+      "german": "der Erzieher / die Erzieher",
+      "translations": {
+        "english": "educator, childcare worker (male)",
+        "ukrainian": "вихователь",
+        "polish": "wychowawca",
+        "albanian": "edukatori",
+        "arabic": "مربي",
+        "italian": "educatore",
+        "serbian": "едуцатор, чилдцаре воркер (мале)"
+      }
+    },
+    {
+      "german": "die Erzieherin / die Erzieherinnen",
+      "translations": {
+        "english": "educator, childcare worker (female)",
+        "ukrainian": "вихователька",
+        "polish": "wychowawczyni",
+        "albanian": "edukatorja",
+        "arabic": "مربية",
+        "italian": "educatrice",
+        "serbian": "едуцатор, чилдцаре воркер (фемале)"
+      }
+    },
+    {
+      "german": "der Krankengymnast / die Krankengymnaste",
+      "translations": {
+        "english": "physiotherapist (male)",
+        "ukrainian": "фізіотерапевт",
+        "polish": "fizjoterapeuta",
+        "albanian": "fizioterapisti",
+        "arabic": "معالج فيزيائي",
+        "italian": "fisioterapista",
+        "serbian": "пхисиотхерапист (мале)"
+      }
+    },
+    {
+      "german": "die Krankengymnastin / die Krankengymnastinnen",
+      "translations": {
+        "english": "physiotherapist (female)",
+        "ukrainian": "фізіотерапевтка",
+        "polish": "fizjoterapeutka",
+        "albanian": "fizioterapistja",
+        "arabic": "معالجة فيزيائية",
+        "italian": "fisioterapista",
+        "serbian": "пхисиотхерапист (фемале)"
+      }
+    },
+    {
+      "german": "der Ingenieur / die Ingenieure",
+      "translations": {
+        "english": "engineer (male)",
+        "ukrainian": "інженер",
+        "polish": "inżynier",
+        "albanian": "inxhinieri",
+        "arabic": "مهندس",
+        "italian": "ingegnere",
+        "serbian": "енгинеер (мале)"
+      }
+    },
+    {
+      "german": "die Ingenieurin / die Ingenieurinnen",
+      "translations": {
+        "english": "engineer (female)",
+        "ukrainian": "інженерка",
+        "polish": "inżynierka",
+        "albanian": "inxhinierja",
+        "arabic": "مهندسة",
+        "italian": "ingegnere",
+        "serbian": "енгинеер (фемале)"
+      }
+    },
+    {
+      "german": "die Fahrerin / die Fahrerinnen",
+      "translations": {
+        "english": "driver (female)",
+        "ukrainian": "водійка",
+        "polish": "kierowczyni",
+        "albanian": "shoferja",
+        "arabic": "سائقة",
+        "italian": "autista",
+        "serbian": "дривер (фемале)"
+      }
+    },
+    {
+      "german": "planen",
+      "translations": {
+        "english": "to plan",
+        "ukrainian": "планувати",
+        "polish": "planować",
+        "albanian": "të planifikosh",
+        "arabic": "يخطط",
+        "italian": "pianificare",
+        "serbian": "планирати"
+      }
+    },
+    {
+      "german": "die meisten",
+      "translations": {
+        "english": "most (people/things)",
+        "ukrainian": "більшість",
+        "polish": "większość",
+        "albanian": "shumica",
+        "arabic": "معظم",
+        "italian": "la maggior parte",
+        "serbian": "мост (пеопле/тхингс)"
+      }
+    },
+    {
+      "german": "wissen",
+      "translations": {
+        "english": "to know",
+        "ukrainian": "знати",
+        "polish": "wiedzieć",
+        "albanian": "të dish",
+        "arabic": "يعرف",
+        "italian": "sapere",
+        "serbian": "знати"
+      }
+    },
+    {
+      "german": "der Ordner / die Ordner",
+      "translations": {
+        "english": "folder, binder",
+        "ukrainian": "папка",
+        "polish": "segregator",
+        "albanian": "dosja",
+        "arabic": "مجلد",
+        "italian": "cartella",
+        "serbian": "фолдер, биндер"
+      }
+    },
+    {
+      "german": "das Passwort / die Passwörter",
+      "translations": {
+        "english": "password",
+        "ukrainian": "пароль",
+        "polish": "hasło",
+        "albanian": "fjalëkalimi",
+        "arabic": "كلمة المرور",
+        "italian": "password",
+        "serbian": "пассворд"
+      }
+    },
+    {
+      "german": "der Drucker / die Drucker",
+      "translations": {
+        "english": "printer",
+        "ukrainian": "принтер",
+        "polish": "drukarka",
+        "albanian": "printeri",
+        "arabic": "طابعة",
+        "italian": "stampante",
+        "serbian": "штампач"
+      }
+    },
+    {
+      "german": "Keine Ahnung!",
+      "translations": {
+        "english": "No idea!",
+        "ukrainian": "Поняття не маю!",
+        "polish": "Nie mam pojęcia!",
+        "albanian": "Nuk kam ide!",
+        "arabic": "لا فكرة لدي!",
+        "italian": "Non ne ho idea!",
+        "serbian": "Но идеа!"
+      }
+    },
+    {
+      "german": "Hier drüben.",
+      "translations": {
+        "english": "Over here.",
+        "ukrainian": "Ось тут.",
+        "polish": "Tu.",
+        "albanian": "Këtu.",
+        "arabic": "هنا.",
+        "italian": "Qui.",
+        "serbian": "Овер хере."
+      }
+    },
+    {
+      "german": "höflich",
+      "translations": {
+        "english": "polite",
+        "ukrainian": "ввічливий",
+        "polish": "uprzejmy",
+        "albanian": "i sjellshëm",
+        "arabic": "مهذب",
+        "italian": "cortese",
+        "serbian": "полите"
+      }
+    },
+    {
+      "german": "die Mitteilung / die Mitteilungen",
+      "translations": {
+        "english": "message, notice",
+        "ukrainian": "повідомлення",
+        "polish": "zawiadomienie",
+        "albanian": "njoftimi",
+        "arabic": "الإخطار",
+        "italian": "comunicazione",
+        "serbian": "мессаге, нотице"
+      }
+    },
+    {
+      "german": "die Nachricht / die Nachrichten",
+      "translations": {
+        "english": "message, news",
+        "ukrainian": "повідомлення, новини",
+        "polish": "wiadomość",
+        "albanian": "lajmi",
+        "arabic": "الرسالة",
+        "italian": "messaggio",
+        "serbian": "порука, вести"
+      }
+    },
+    {
+      "german": "der Bericht / die Berichte",
+      "translations": {
+        "english": "report",
+        "ukrainian": "звіт",
+        "polish": "raport",
+        "albanian": "raporti",
+        "arabic": "التقرير",
+        "italian": "rapporto",
+        "serbian": "извештај"
+      }
+    },
+    {
+      "german": "der Arbeitskollege / die Arbeitskollegen",
+      "translations": {
+        "english": "work colleague (male)",
+        "ukrainian": "колега по роботі",
+        "polish": "kolega z pracy",
+        "albanian": "kolegu i punës",
+        "arabic": "زميل العمل",
+        "italian": "collega di lavoro",
+        "serbian": "ворк цоллеагуе (мале)"
+      }
+    },
+    {
+      "german": "der Mitarbeiter / die Mitarbeiter",
+      "translations": {
+        "english": "employee, coworker (male)",
+        "ukrainian": "співробітник",
+        "polish": "współpracownik",
+        "albanian": "bashkëpunëtori",
+        "arabic": "موظف",
+        "italian": "collaboratore",
+        "serbian": "емплоиее, цоворкер (мале)"
+      }
+    },
+    {
+      "german": "die Mitarbeiterin / die Mitarbeiterinnen",
+      "translations": {
+        "english": "employee, coworker (female)",
+        "ukrainian": "співробітниця",
+        "polish": "współpracowniczka",
+        "albanian": "bashkëpunëtorja",
+        "arabic": "موظفة",
+        "italian": "collaboratrice",
+        "serbian": "емплоиее, цоворкер (фемале)"
+      }
+    },
+    {
+      "german": "das Computerprogramm / die Computerprogramme",
+      "translations": {
+        "english": "computer program",
+        "ukrainian": "комп'ютерна програма",
+        "polish": "program komputerowy",
+        "albanian": "programi kompjuterik",
+        "arabic": "برنامج الكمبيوتر",
+        "italian": "programma per computer",
+        "serbian": "цомпутер програм"
+      }
+    },
+    {
+      "german": "installieren",
+      "translations": {
+        "english": "to install",
+        "ukrainian": "встановлювати",
+        "polish": "instalować",
+        "albanian": "të instalosh",
+        "arabic": "يثبّت",
+        "italian": "installare",
+        "serbian": "то инсталл"
+      }
+    },
+    {
+      "german": "einen Termin verschieben",
+      "translations": {
+        "english": "to postpone an appointment",
+        "ukrainian": "перенести зустріч",
+        "polish": "przesunąć termin",
+        "albanian": "të shtyjë një takim",
+        "arabic": "تأجيل موعد",
+        "italian": "rimandare un appuntamento",
+        "serbian": "то постпоне ан аппоинтмент"
+      }
+    },
+    {
+      "german": "der Anruf / die Anrufe",
+      "translations": {
+        "english": "phone call",
+        "ukrainian": "дзвінок",
+        "polish": "telefon",
+        "albanian": "telefonata",
+        "arabic": "المكالمة",
+        "italian": "chiamata",
+        "serbian": "телефонски позив"
+      }
+    },
+    {
+      "german": "zurückrufen",
+      "translations": {
+        "english": "to call back",
+        "ukrainian": "передзвонити",
+        "polish": "oddzwonić",
+        "albanian": "të kthejë telefonatën",
+        "arabic": "يعاود الاتصال",
+        "italian": "richiamare",
+        "serbian": "то цалл бацк"
+      }
+    },
+    {
+      "german": "Bescheid sagen",
+      "translations": {
+        "english": "to let know, to inform",
+        "ukrainian": "повідомити",
+        "polish": "dać znać",
+        "albanian": "të njoftoj",
+        "arabic": "يُعلِم",
+        "italian": "far sapere",
+        "serbian": "то лет кнов, то информ"
+      }
+    },
+    {
+      "german": "der Prospekt / die Prospekte",
+      "translations": {
+        "english": "brochure, prospectus",
+        "ukrainian": "проспект, брошура",
+        "polish": "prospekt",
+        "albanian": "broshura",
+        "arabic": "النشرة",
+        "italian": "prospetto",
+        "serbian": "брочуре, проспецту"
+      }
+    },
+    {
+      "german": "zeigen",
+      "translations": {
+        "english": "to show",
+        "ukrainian": "показувати",
+        "polish": "pokazywać",
+        "albanian": "të tregoj",
+        "arabic": "يُظهِر",
+        "italian": "mostrare",
+        "serbian": "показати"
+      }
+    },
+    {
+      "german": "vorstellen",
+      "translations": {
+        "english": "to introduce, to present",
+        "ukrainian": "представляти",
+        "polish": "przedstawiać",
+        "albanian": "të prezantoj",
+        "arabic": "يُقدِّم",
+        "italian": "presentare",
+        "serbian": "то интродуце, то пресент"
+      }
+    },
+    {
+      "german": "der Kaffeeautomat / die Kaffeeautomaten",
+      "translations": {
+        "english": "coffee machine",
+        "ukrainian": "кавовий автомат",
+        "polish": "automat do kawy",
+        "albanian": "automati i kafesë",
+        "arabic": "آلة القهوة",
+        "italian": "distributore di caffè",
+        "serbian": "апарат за кафу"
+      }
+    },
+    {
+      "german": "die Betriebsversammlung / die Betriebsversammlungen",
+      "translations": {
+        "english": "company meeting",
+        "ukrainian": "збори колективу",
+        "polish": "zebranie zakładowe",
+        "albanian": "mbledhja e kompanisë",
+        "arabic": "اجتماع الشركة",
+        "italian": "riunione aziendale",
+        "serbian": "цомпани меетинг"
+      }
+    },
+    {
+      "german": "der Betriebsrat / die Betriebsräte",
+      "translations": {
+        "english": "works council",
+        "ukrainian": "рада трудового колективу",
+        "polish": "rada zakładowa",
+        "albanian": "këshilli i punës",
+        "arabic": "مجلس العمال",
+        "italian": "consiglio aziendale",
+        "serbian": "воркс цоунцил"
+      }
+    },
+    {
+      "german": "die Pausenregel / die Pausenregeln",
+      "translations": {
+        "english": "break rule",
+        "ukrainian": "правило перерви",
+        "polish": "zasada przerw",
+        "albanian": "rregulli i pushimit",
+        "arabic": "قاعدة الاستراحة",
+        "italian": "regola della pausa",
+        "serbian": "бреак руле"
+      }
+    },
+    {
+      "german": "der Arzttermin / die Arzttermine",
+      "translations": {
+        "english": "doctor's appointment",
+        "ukrainian": "запис до лікаря",
+        "polish": "wizyta u lekarza",
+        "albanian": "takimi me mjekun",
+        "arabic": "موعد الطبيب",
+        "italian": "appuntamento dal dottore",
+        "serbian": "доцтор'с аппоинтмент"
+      }
+    },
+    {
+      "german": "das Gerät / die Geräte",
+      "translations": {
+        "english": "device, appliance",
+        "ukrainian": "пристрій",
+        "polish": "urządzenie",
+        "albanian": "pajisja",
+        "arabic": "الجهاز",
+        "italian": "dispositivo",
+        "serbian": "девице, апплианце"
+      }
+    },
+    {
+      "german": "der Getränkeautomat / die Getränkeautomaten",
+      "translations": {
+        "english": "drink vending machine",
+        "ukrainian": "автомат з напоями",
+        "polish": "automat z napojami",
+        "albanian": "automati i pijeve",
+        "arabic": "آلة المشروبات",
+        "italian": "distributore automatico di bevande",
+        "serbian": "дринк вендинг мачине"
+      }
+    },
+    {
+      "german": "der Kopierer / die Kopierer",
+      "translations": {
+        "english": "copier, copy machine",
+        "ukrainian": "копіювальний апарат",
+        "polish": "kopiarka",
+        "albanian": "fotokopjuesi",
+        "arabic": "آلة النسخ",
+        "italian": "fotocopiatrice",
+        "serbian": "цопиер, цопи мачине"
+      }
+    },
+    {
+      "german": "die Taste / die Tasten",
+      "translations": {
+        "english": "button, key",
+        "ukrainian": "кнопка, клавіша",
+        "polish": "klawisz",
+        "albanian": "butoni",
+        "arabic": "الزر",
+        "italian": "tasto",
+        "serbian": "буттон, кеи"
+      }
+    },
+    {
+      "german": "drücken",
+      "translations": {
+        "english": "to press, to push",
+        "ukrainian": "натискати",
+        "polish": "naciskać",
+        "albanian": "të shtypësh",
+        "arabic": "يضغط",
+        "italian": "premere",
+        "serbian": "то пресс, то пуш"
+      }
+    },
+    {
+      "german": "dieser / diese / dieses",
+      "translations": {
+        "english": "this",
+        "ukrainian": "цей/ця/це",
+        "polish": "ten/ta/to",
+        "albanian": "ky/kjo",
+        "arabic": "هذا/هذه",
+        "italian": "questo/questa",
+        "serbian": "тхи"
+      }
+    },
+    {
+      "german": "das Fach / die Fächer",
+      "translations": {
+        "english": "compartment, subject",
+        "ukrainian": "відділення, предмет",
+        "polish": "przegródka, przedmiot",
+        "albanian": "sirtari, lënda",
+        "arabic": "الحجرة، الموضوع",
+        "italian": "scomparto, materia",
+        "serbian": "цомпартмент, субјецт"
+      }
+    },
+    {
+      "german": "das A4-Papier (Singular)",
+      "translations": {
+        "english": "A4 paper",
+        "ukrainian": "папір формату A4",
+        "polish": "papier A4",
+        "albanian": "letra A4",
+        "arabic": "ورق A4",
+        "italian": "carta A4",
+        "serbian": "А4 папер"
+      }
+    },
+    {
+      "german": "ausschalten",
+      "translations": {
+        "english": "to switch off, to turn off",
+        "ukrainian": "вимикати",
+        "polish": "wyłączać",
+        "albanian": "të fikësh",
+        "arabic": "يُطفئ",
+        "italian": "spegnere",
+        "serbian": "то свитч офф, то турн офф"
+      }
+    },
+    {
+      "german": "einschalten",
+      "translations": {
+        "english": "to switch on, to turn on",
+        "ukrainian": "вмикати",
+        "polish": "włączać",
+        "albanian": "të ndezësh",
+        "arabic": "يُشغِّل",
+        "italian": "accendere",
+        "serbian": "то свитч он, то турн он"
+      }
+    },
+    {
+      "german": "einwerfen",
+      "translations": {
+        "english": "to insert, to throw in",
+        "ukrainian": "вставляти, кидати всередину",
+        "polish": "wrzucać",
+        "albanian": "të hedhësh",
+        "arabic": "يُدخِل",
+        "italian": "inserire",
+        "serbian": "то инсерт, то тхров ин"
+      }
+    },
+    {
+      "german": "der Marktleiter / die Marktleiter",
+      "translations": {
+        "english": "market manager, store manager (male)",
+        "ukrainian": "керівник магазину",
+        "polish": "kierownik sklepu",
+        "albanian": "menaxheri i dyqanit",
+        "arabic": "مدير السوق",
+        "italian": "direttore del negozio",
+        "serbian": "маркет манагер, сторе манагер (мале)"
+      }
+    },
+    {
+      "german": "die Marktleiterin / die Marktleiterinnen",
+      "translations": {
+        "english": "market manager, store manager (female)",
+        "ukrainian": "керівниця магазину",
+        "polish": "kierowniczka sklepu",
+        "albanian": "menaxherja e dyqanit",
+        "arabic": "مديرة السوق",
+        "italian": "direttrice del negozio",
+        "serbian": "маркет манагер, сторе манагер (фемале)"
+      }
+    },
+    {
+      "german": "die Buchhaltung / die Buchhaltungen",
+      "translations": {
+        "english": "accounting, accounts department",
+        "ukrainian": "бухгалтерія",
+        "polish": "księgowość",
+        "albanian": "kontabiliteti",
+        "arabic": "المحاسبة",
+        "italian": "contabilità",
+        "serbian": "аццоунтинг, аццоунтс департмент"
+      }
+    },
+    {
+      "german": "die Technik (Singular)",
+      "translations": {
+        "english": "technology, technical department",
+        "ukrainian": "техніка, технічний відділ",
+        "polish": "technika, dział techniczny",
+        "albanian": "teknika, departamenti teknik",
+        "arabic": "التقنية، القسم التقني",
+        "italian": "tecnica, reparto tecnico",
+        "serbian": "течнологи, течницал департмент"
+      }
+    },
+    {
+      "german": "der technische Service (Singular)",
+      "translations": {
+        "english": "technical service",
+        "ukrainian": "технічне обслуговування",
+        "polish": "serwis techniczny",
+        "albanian": "shërbimi teknik",
+        "arabic": "الخدمة الفنية",
+        "italian": "servizio tecnico",
+        "serbian": "течницал сервице"
+      }
+    },
+    {
+      "german": "Platz nehmen",
+      "translations": {
+        "english": "to take a seat",
+        "ukrainian": "сідати",
+        "polish": "usiąść",
+        "albanian": "të ulesh",
+        "arabic": "يجلس",
+        "italian": "accomodarsi",
+        "serbian": "то таке а сеат"
+      }
+    },
+    {
+      "german": "die Spedition / die Speditionen",
+      "translations": {
+        "english": "forwarding agency, shipping company",
+        "ukrainian": "експедиційна компанія",
+        "polish": "spedycja",
+        "albanian": "kompania e transportit",
+        "arabic": "شركة الشحن",
+        "italian": "azienda di spedizioni",
+        "serbian": "форвардинг агенци, шиппинг цомпани"
+      }
+    },
+    {
+      "german": "einräumen",
+      "translations": {
+        "english": "to put away, to stock",
+        "ukrainian": "розставляти, заповнювати",
+        "polish": "odkładać, układać",
+        "albanian": "të vendosësh",
+        "arabic": "يرتب",
+        "italian": "sistemare",
+        "serbian": "то пут аваи, то стоцк"
+      }
+    },
+    {
+      "german": "der Maurer / die Maurer",
+      "translations": {
+        "english": "mason, bricklayer",
+        "ukrainian": "муляр",
+        "polish": "murarz",
+        "albanian": "murator",
+        "arabic": "بنّاء",
+        "italian": "muratore",
+        "serbian": "масон, брицклаиер"
+      }
+    },
+    {
+      "german": "der Verputzer / die Verputzer",
+      "translations": {
+        "english": "plasterer",
+        "ukrainian": "штукатур",
+        "polish": "tynkarz",
+        "albanian": "suvatues",
+        "arabic": "مُلَيِّس",
+        "italian": "intonacatore",
+        "serbian": "пластерер"
+      }
+    },
+    {
+      "german": "der Fliesenleger / die Fliesenleger",
+      "translations": {
+        "english": "tile layer, tiler",
+        "ukrainian": "плиточник",
+        "polish": "glazurnik",
+        "albanian": "pllakaxhi",
+        "arabic": "عامل البلاط",
+        "italian": "piastrellista",
+        "serbian": "тиле лаиер, тилер"
+      }
+    },
+    {
+      "german": "der Gabelstapler / die Gabelstapler",
+      "translations": {
+        "english": "forklift",
+        "ukrainian": "навантажувач",
+        "polish": "wózek widłowy",
+        "albanian": "ngritësi me pirun",
+        "arabic": "رافعة شوكية",
+        "italian": "muletto",
+        "serbian": "форклифт"
+      }
+    },
+    {
+      "german": "der Installateur / die Installateure",
+      "translations": {
+        "english": "plumber, installer",
+        "ukrainian": "сантехнік, монтажник",
+        "polish": "instalator",
+        "albanian": "instaluesi",
+        "arabic": "سباك",
+        "italian": "installatore",
+        "serbian": "плумбер, инсталлер"
+      }
+    },
+    {
+      "german": "der Baggerfahrer / die Baggerfahrer",
+      "translations": {
+        "english": "excavator operator",
+        "ukrainian": "екскаваторник",
+        "polish": "operator koparki",
+        "albanian": "operatori i gërmuesit",
+        "arabic": "سائق حفارة",
+        "italian": "operatore di escavatore",
+        "serbian": "ексцаватор оператор"
+      }
+    },
+    {
+      "german": "der Dachdecker / die Dachdecker",
+      "translations": {
+        "english": "roofer",
+        "ukrainian": "покрівельник",
+        "polish": "dekarz",
+        "albanian": "çatist",
+        "arabic": "عامل الأسطح",
+        "italian": "copritetti",
+        "serbian": "роофер"
+      }
+    },
+    {
+      "german": "der Bauingenieur / die Bauingenieure",
+      "translations": {
+        "english": "civil engineer (male)",
+        "ukrainian": "інженер-будівельник",
+        "polish": "inżynier budownictwa",
+        "albanian": "inxhinieri i ndërtimit",
+        "arabic": "مهندس مدني",
+        "italian": "ingegnere civile",
+        "serbian": "цивил енгинеер (мале)"
+      }
+    },
+    {
+      "german": "die Bauingenieurin / die Bauingenieurinnen",
+      "translations": {
+        "english": "civil engineer (female)",
+        "ukrainian": "інженерка-будівельниця",
+        "polish": "inżynierka budownictwa",
+        "albanian": "inxhinierja e ndërtimit",
+        "arabic": "مهندسة مدنية",
+        "italian": "ingegnere civile",
+        "serbian": "цивил енгинеер (фемале)"
+      }
+    },
+    {
+      "german": "der Schreiner / die Schreiner",
+      "translations": {
+        "english": "carpenter, joiner",
+        "ukrainian": "столяр",
+        "polish": "stolarz",
+        "albanian": "marangozi",
+        "arabic": "نجار",
+        "italian": "falegname",
+        "serbian": "царпентер, јоинер"
+      }
+    },
+    {
+      "german": "der Elektriker / die Elektriker",
+      "translations": {
+        "english": "electrician",
+        "ukrainian": "електрик",
+        "polish": "elektryk",
+        "albanian": "elektriku",
+        "arabic": "كهربائي",
+        "italian": "elettricista",
+        "serbian": "елецтрициан"
+      }
+    },
+    {
+      "german": "der Lkw-Fahrer / die Lkw-Fahrer",
+      "translations": {
+        "english": "truck driver",
+        "ukrainian": "водій вантажівки",
+        "polish": "kierowca ciężarówki",
+        "albanian": "shoferi i kamionit",
+        "arabic": "سائق شاحنة",
+        "italian": "autista di camion",
+        "serbian": "труцк дривер"
+      }
+    },
+    {
+      "german": "der Maler / die Maler",
+      "translations": {
+        "english": "painter",
+        "ukrainian": "маляр",
+        "polish": "malarz",
+        "albanian": "piktori",
+        "arabic": "رسام",
+        "italian": "pittore",
+        "serbian": "паинтер"
+      }
+    },
+    {
+      "german": "der Fluglotse / die Fluglotsen",
+      "translations": {
+        "english": "air traffic controller",
+        "ukrainian": "авіадиспетчер",
+        "polish": "kontroler lotów",
+        "albanian": "kontrollori i fluturimit",
+        "arabic": "مراقب حركة الطائرات",
+        "italian": "controllore del traffico aereo",
+        "serbian": "аир траффиц цонтроллер"
+      }
+    },
+    {
+      "german": "der Flugbegleiter / die Flugbegleiter",
+      "translations": {
+        "english": "flight attendant (male)",
+        "ukrainian": "бортпровідник",
+        "polish": "steward",
+        "albanian": "stjuardi",
+        "arabic": "مضيف طيران",
+        "italian": "assistente di volo",
+        "serbian": "флигхт аттендант (мале)"
+      }
+    },
+    {
+      "german": "die Flugbegleiterin / die Flugbegleiterinnen",
+      "translations": {
+        "english": "flight attendant (female)",
+        "ukrainian": "бортпровідниця",
+        "polish": "stewardessa",
+        "albanian": "stjuardesa",
+        "arabic": "مضيفة طيران",
+        "italian": "assistente di volo",
+        "serbian": "флигхт аттендант (фемале)"
+      }
+    },
+    {
+      "german": "der Flughafen / die Flughäfen",
+      "translations": {
+        "english": "airport",
+        "ukrainian": "аеропорт",
+        "polish": "lotnisko",
+        "albanian": "aeroporti",
+        "arabic": "المطار",
+        "italian": "aeroporto",
+        "serbian": "аирпорт"
+      }
+    },
+    {
+      "german": "das Bodenpersonal (Singular)",
+      "translations": {
+        "english": "ground staff",
+        "ukrainian": "наземний персонал",
+        "polish": "personel naziemny",
+        "albanian": "personeli tokësor",
+        "arabic": "طاقم الأرض",
+        "italian": "personale di terra",
+        "serbian": "гроунд стафф"
+      }
+    },
+    {
+      "german": "der Gepäckfahrer / die Gepäckfahrer",
+      "translations": {
+        "english": "luggage handler",
+        "ukrainian": "вантажник багажу",
+        "polish": "bagażowy",
+        "albanian": "transportuesi i bagazheve",
+        "arabic": "عامل الأمتعة",
+        "italian": "addetto ai bagagli",
+        "serbian": "луггаге хандлер"
+      }
+    },
+    {
+      "german": "der Busfahrer / die Busfahrer",
+      "translations": {
+        "english": "bus driver",
+        "ukrainian": "водій автобуса",
+        "polish": "kierowca autobusu",
+        "albanian": "shoferi i autobusit",
+        "arabic": "سائق الحافلة",
+        "italian": "autista di autobus",
+        "serbian": "бус дривер"
+      }
+    },
+    {
+      "german": "der Kellner / die Kellner",
+      "translations": {
+        "english": "waiter",
+        "ukrainian": "офіціант",
+        "polish": "kelner",
+        "albanian": "kamarieri",
+        "arabic": "نادل",
+        "italian": "cameriere",
+        "serbian": "конобар"
+      }
+    },
+    {
+      "german": "die Kellnerin / die Kellnerinnen",
+      "translations": {
+        "english": "waitress",
+        "ukrainian": "офіціантка",
+        "polish": "kelnerka",
+        "albanian": "kamarierja",
+        "arabic": "نادلة",
+        "italian": "cameriera",
+        "serbian": "конобарица"
+      }
+    },
+    {
+      "german": "der Taxifahrer / die Taxifahrer",
+      "translations": {
+        "english": "taxi driver",
+        "ukrainian": "таксист",
+        "polish": "taksówkarz",
+        "albanian": "shoferi i taksisë",
+        "arabic": "سائق تاكسي",
+        "italian": "tassista",
+        "serbian": "такси дривер"
+      }
+    },
+    {
+      "german": "die Reinigungskraft / die Reinigungskräfte",
+      "translations": {
+        "english": "cleaning staff, cleaner",
+        "ukrainian": "прибиральник/прибиральниця",
+        "polish": "pracownik sprzątający",
+        "albanian": "pastruesi",
+        "arabic": "عامل نظافة",
+        "italian": "addetto alle pulizie",
+        "serbian": "цлеанинг стафф, цлеанер"
+      }
+    },
+    {
+      "german": "die Sicherheitskontrolle / die Sicherheitskontrollen",
+      "translations": {
+        "english": "security control, security check",
+        "ukrainian": "контроль безпеки",
+        "polish": "kontrola bezpieczeństwa",
+        "albanian": "kontrolli i sigurisë",
+        "arabic": "الرقابة الأمنية",
+        "italian": "controllo di sicurezza",
+        "serbian": "сецурити цонтрол, сецурити чецк"
+      }
+    }
+  ],
+
+  "6": [
+    {
+      "german": "die Innenstadt / die Innenstädte",
+      "translations": {
+        "english": "city center, downtown",
+        "ukrainian": "центр міста",
+        "polish": "centrum miasta",
+        "albanian": "qendra e qytetit",
+        "arabic": "وسط المدينة",
+        "italian": "centro città",
+        "serbian": "цити центер, довнтовн"
+      }
+    },
+    {
+      "german": "der Vorort / die Vororte",
+      "translations": {
+        "english": "suburb",
+        "ukrainian": "передмістя",
+        "polish": "przedmieście",
+        "albanian": "periferitë",
+        "arabic": "الضواحي",
+        "italian": "sobborgo",
+        "serbian": "предграђе"
+      }
+    },
+    {
+      "german": "zentral",
+      "translations": {
+        "english": "central",
+        "ukrainian": "центральний",
+        "polish": "centralny",
+        "albanian": "qendror",
+        "arabic": "مركزي",
+        "italian": "centrale",
+        "serbian": "централ"
+      }
+    },
+    {
+      "german": "außerhalb",
+      "translations": {
+        "english": "outside, out of town",
+        "ukrainian": "поза межами",
+        "polish": "poza",
+        "albanian": "jashtë",
+        "arabic": "خارج",
+        "italian": "fuori",
+        "serbian": "оутсиде, оут оф товн"
+      }
+    },
+    {
+      "german": "verkehrsgünstig",
+      "translations": {
+        "english": "convenient for transport",
+        "ukrainian": "зручний транспортний доступ",
+        "polish": "dogodna komunikacja",
+        "albanian": "me transport të përshtatshëm",
+        "arabic": "موقع مناسب للمواصلات",
+        "italian": "comodo per i trasporti",
+        "serbian": "цонвениент фор транспорт"
+      }
+    },
+    {
+      "german": "öffentliche Verkehrsmittel (Plural)",
+      "translations": {
+        "english": "public transport",
+        "ukrainian": "громадський транспорт",
+        "polish": "środki transportu publicznego",
+        "albanian": "mjetet e transportit publik",
+        "arabic": "وسائل النقل العام",
+        "italian": "mezzi pubblici",
+        "serbian": "публиц транспорт"
+      }
+    },
+    {
+      "german": "Ruhe haben",
+      "translations": {
+        "english": "to have peace and quiet",
+        "ukrainian": "мати спокій",
+        "polish": "mieć spokój",
+        "albanian": "të kesh qetësi",
+        "arabic": "أن يكون لديك هدوء",
+        "italian": "avere pace",
+        "serbian": "то хаве пеаце анд куиет"
+      }
+    },
+    {
+      "german": "stellen",
+      "translations": {
+        "english": "to place, to put (upright)",
+        "ukrainian": "ставити",
+        "polish": "stawiać",
+        "albanian": "të vendosësh",
+        "arabic": "يضع",
+        "italian": "mettere",
+        "serbian": "то плаце, то пут (упригхт)"
+      }
+    },
+    {
+      "german": "hängen",
+      "translations": {
+        "english": "to hang",
+        "ukrainian": "вішати",
+        "polish": "wieszać",
+        "albanian": "të varësh",
+        "arabic": "يعلق",
+        "italian": "appendere",
+        "serbian": "окачити"
+      }
+    },
+    {
+      "german": "stehen",
+      "translations": {
+        "english": "to stand",
+        "ukrainian": "стояти",
+        "polish": "stać",
+        "albanian": "të qëndrosh",
+        "arabic": "يقف",
+        "italian": "stare in piedi",
+        "serbian": "стајати"
+      }
+    },
+    {
+      "german": "legen",
+      "translations": {
+        "english": "to lay, to put (flat)",
+        "ukrainian": "класти",
+        "polish": "kłaść",
+        "albanian": "të vendosësh",
+        "arabic": "يضع (مستلقياً)",
+        "italian": "posare",
+        "serbian": "то лаи, то пут (флат)"
+      }
+    },
+    {
+      "german": "liegen",
+      "translations": {
+        "english": "to lie, to be lying",
+        "ukrainian": "лежати",
+        "polish": "leżeć",
+        "albanian": "të shtrihet",
+        "arabic": "يرقد",
+        "italian": "giacere",
+        "serbian": "то лие, то бе лиинг"
+      }
+    },
+    {
+      "german": "der Hammer / die Hämmer",
+      "translations": {
+        "english": "hammer",
+        "ukrainian": "молоток",
+        "polish": "młotek",
+        "albanian": "çekani",
+        "arabic": "المطرقة",
+        "italian": "martello",
+        "serbian": "чекић"
+      }
+    },
+    {
+      "german": "der Nagel / die Nägel",
+      "translations": {
+        "english": "nail",
+        "ukrainian": "цвях",
+        "polish": "gwóźdź",
+        "albanian": "gozhdë",
+        "arabic": "المسمار",
+        "italian": "chiodo",
+        "serbian": "ексер"
+      }
+    },
+    {
+      "german": "die Tapete / die Tapeten",
+      "translations": {
+        "english": "wallpaper",
+        "ukrainian": "шпалери",
+        "polish": "tapeta",
+        "albanian": "letra muri",
+        "arabic": "ورق الحائط",
+        "italian": "carta da parati",
+        "serbian": "валлпапер"
+      }
+    },
+    {
+      "german": "die Leiter / die Leitern",
+      "translations": {
+        "english": "ladder",
+        "ukrainian": "драбина",
+        "polish": "drabina",
+        "albanian": "shkallë",
+        "arabic": "السلم",
+        "italian": "scala",
+        "serbian": "ладдер"
+      }
+    },
+    {
+      "german": "streichen",
+      "translations": {
+        "english": "to paint",
+        "ukrainian": "фарбувати",
+        "polish": "malować",
+        "albanian": "të lyesh",
+        "arabic": "يطلي",
+        "italian": "dipingere",
+        "serbian": "фарбати"
+      }
+    },
+    {
+      "german": "tapezieren",
+      "translations": {
+        "english": "to wallpaper",
+        "ukrainian": "клеїти шпалери",
+        "polish": "tapetować",
+        "albanian": "të vendosësh letra muri",
+        "arabic": "يضع ورق الحائط",
+        "italian": "tappezzare",
+        "serbian": "тапецирати"
+      }
+    },
+    {
+      "german": "einverstanden",
+      "translations": {
+        "english": "agreed, in agreement",
+        "ukrainian": "згодний",
+        "polish": "zgoda",
+        "albanian": "dakord",
+        "arabic": "موافق",
+        "italian": "d'accordo",
+        "serbian": "агреед, ин агреемент"
+      }
+    },
+    {
+      "german": "die Meinung / die Meinungen",
+      "translations": {
+        "english": "opinion",
+        "ukrainian": "думка",
+        "polish": "opinia",
+        "albanian": "mendimi",
+        "arabic": "الرأي",
+        "italian": "opinione",
+        "serbian": "опинион"
+      }
+    },
+    {
+      "german": "die Monatsmiete / die Monatsmieten",
+      "translations": {
+        "english": "monthly rent",
+        "ukrainian": "місячна орендна плата",
+        "polish": "czynsz miesięczny",
+        "albanian": "qiraja mujore",
+        "arabic": "الإيجار الشهري",
+        "italian": "affitto mensile",
+        "serbian": "монтхли рент"
+      }
+    },
+    {
+      "german": "die Nebenkosten (Plural)",
+      "translations": {
+        "english": "additional costs, utilities",
+        "ukrainian": "додаткові витрати",
+        "polish": "opłaty dodatkowe",
+        "albanian": "shpenzimet shtesë",
+        "arabic": "التكاليف الإضافية",
+        "italian": "spese accessorie",
+        "serbian": "аддитионал цостс, утилитие"
+      }
+    },
+    {
+      "german": "die Kaltmiete (Singular)",
+      "translations": {
+        "english": "cold rent (without utilities)",
+        "ukrainian": "холодна оренда",
+        "polish": "czynsz podstawowy",
+        "albanian": "qiraja bazë",
+        "arabic": "الإيجار الأساسي",
+        "italian": "affitto base",
+        "serbian": "цолд рент (витхоут утилитиес)"
+      }
+    },
+    {
+      "german": "der Nachmieter / die Nachmieter",
+      "translations": {
+        "english": "next tenant (male)",
+        "ukrainian": "наступний орендар",
+        "polish": "kolejny najemca",
+        "albanian": "qiramarrësi tjetër",
+        "arabic": "المستأجر التالي",
+        "italian": "prossimo inquilino",
+        "serbian": "некст тенант (мале)"
+      }
+    },
+    {
+      "german": "die Nachmieterin / die Nachmieterinnen",
+      "translations": {
+        "english": "next tenant (female)",
+        "ukrainian": "наступна орендарка",
+        "polish": "kolejna najemczyni",
+        "albanian": "qiramarrësja tjetër",
+        "arabic": "المستأجرة التالية",
+        "italian": "prossima inquilina",
+        "serbian": "некст тенант (фемале)"
+      }
+    },
+    {
+      "german": "das Haustier / die Haustiere",
+      "translations": {
+        "english": "pet",
+        "ukrainian": "домашня тварина",
+        "polish": "zwierzę domowe",
+        "albanian": "kafshe shtëpiake",
+        "arabic": "حيوان أليف",
+        "italian": "animale domestico",
+        "serbian": "пет"
+      }
+    },
+    {
+      "german": "die Kaution / die Kautionen",
+      "translations": {
+        "english": "deposit, security deposit",
+        "ukrainian": "застава",
+        "polish": "kaucja",
+        "albanian": "depozita",
+        "arabic": "التأمين",
+        "italian": "deposito cauzionale",
+        "serbian": "депосит, сецурити депосит"
+      }
+    },
+    {
+      "german": "die Lage / die Lagen",
+      "translations": {
+        "english": "location, situation",
+        "ukrainian": "розташування",
+        "polish": "położenie",
+        "albanian": "vendndodhja",
+        "arabic": "الموقع",
+        "italian": "posizione",
+        "serbian": "лоцатион, ситуатион"
+      }
+    },
+    {
+      "german": "vermieten",
+      "translations": {
+        "english": "to rent out",
+        "ukrainian": "здавати в оренду",
+        "polish": "wynajmować",
+        "albanian": "të jap me qira",
+        "arabic": "يؤجر",
+        "italian": "affittare",
+        "serbian": "то рент оут"
+      }
+    },
+    {
+      "german": "die Einbauküche / die Einbauküchen",
+      "translations": {
+        "english": "fitted kitchen",
+        "ukrainian": "вбудована кухня",
+        "polish": "kuchnia zabudowana",
+        "albanian": "kuzhina e integruar",
+        "arabic": "المطبخ المدمج",
+        "italian": "cucina componibile",
+        "serbian": "фиттед китчен"
+      }
+    },
+    {
+      "german": "das WC / die WCs",
+      "translations": {
+        "english": "toilet, WC",
+        "ukrainian": "туалет",
+        "polish": "toaleta",
+        "albanian": "tualet",
+        "arabic": "المرحاض",
+        "italian": "WC",
+        "serbian": "тоилет, ВЦ"
+      }
+    },
+    {
+      "german": "renovieren",
+      "translations": {
+        "english": "to renovate",
+        "ukrainian": "ремонтувати",
+        "polish": "remontować",
+        "albanian": "të rinovoj",
+        "arabic": "يجدد",
+        "italian": "rinnovare",
+        "serbian": "реновирати"
+      }
+    },
+    {
+      "german": "die Renovierung / die Renovierungen",
+      "translations": {
+        "english": "renovation",
+        "ukrainian": "ремонт",
+        "polish": "remont",
+        "albanian": "rinovimi",
+        "arabic": "التجديد",
+        "italian": "ristrutturazione",
+        "serbian": "реноватион"
+      }
+    },
+    {
+      "german": "lassen",
+      "translations": {
+        "english": "to let, to have something done",
+        "ukrainian": "дозволяти, давати зробити",
+        "polish": "pozwalać, kazać",
+        "albanian": "të lejoj, të bëj të bëhet",
+        "arabic": "يترك، يجعل",
+        "italian": "lasciare, far fare",
+        "serbian": "то лет, то хаве сометхинг доне"
+      }
+    },
+    {
+      "german": "der Auftrag / die Aufträge",
+      "translations": {
+        "english": "order, commission",
+        "ukrainian": "замовлення",
+        "polish": "zlecenie",
+        "albanian": "porosia",
+        "arabic": "الطلب",
+        "italian": "ordine",
+        "serbian": "ордер, цоммиссион"
+      }
+    },
+    {
+      "german": "transportieren",
+      "translations": {
+        "english": "to transport",
+        "ukrainian": "транспортувати",
+        "polish": "transportować",
+        "albanian": "të transportoj",
+        "arabic": "ينقل",
+        "italian": "trasportare",
+        "serbian": "то транспорт"
+      }
+    },
+    {
+      "german": "aufhängen",
+      "translations": {
+        "english": "to hang up",
+        "ukrainian": "вішати",
+        "polish": "zawieszać",
+        "albanian": "të varësh",
+        "arabic": "يعلق",
+        "italian": "appendere",
+        "serbian": "то ханг уп"
+      }
+    },
+    {
+      "german": "sympathisch",
+      "translations": {
+        "english": "likeable, friendly",
+        "ukrainian": "симпатичний",
+        "polish": "sympatyczny",
+        "albanian": "simpatik",
+        "arabic": "ودود",
+        "italian": "simpatico",
+        "serbian": "ликеабле, фриендли"
+      }
+    },
+    {
+      "german": "unsympathisch",
+      "translations": {
+        "english": "unlikeable, unfriendly",
+        "ukrainian": "несимпатичний",
+        "polish": "niesympatyczny",
+        "albanian": "josimpatik",
+        "arabic": "غير ودود",
+        "italian": "antipatico",
+        "serbian": "унликеабле, унфриендли"
+      }
+    },
+    {
+      "german": "unfreundlich",
+      "translations": {
+        "english": "unfriendly",
+        "ukrainian": "недружній",
+        "polish": "nieprzyjazny",
+        "albanian": "i pasjellshëm",
+        "arabic": "غير ودي",
+        "italian": "scortese",
+        "serbian": "унфриендли"
+      }
+    },
+    {
+      "german": "sich kennenlernen",
+      "translations": {
+        "english": "to get to know each other",
+        "ukrainian": "знайомитися",
+        "polish": "poznawać się",
+        "albanian": "të njohesh",
+        "arabic": "يتعارفون",
+        "italian": "conoscersi",
+        "serbian": "то гет то кнов еач отхер"
+      }
+    },
+    {
+      "german": "sich freuen",
+      "translations": {
+        "english": "to be happy, to look forward to",
+        "ukrainian": "радіти",
+        "polish": "cieszyć się",
+        "albanian": "të gëzohesh",
+        "arabic": "يفرح",
+        "italian": "rallegrarsi",
+        "serbian": "то бе хаппи, то лоок форвард то"
+      }
+    },
+    {
+      "german": "sich fühlen",
+      "translations": {
+        "english": "to feel",
+        "ukrainian": "почуватися",
+        "polish": "czuć się",
+        "albanian": "të ndihesh",
+        "arabic": "يشعر",
+        "italian": "sentirsi",
+        "serbian": "осећати"
+      }
+    },
+    {
+      "german": "sich wohlfühlen",
+      "translations": {
+        "english": "to feel comfortable, to feel well",
+        "ukrainian": "почуватися комфортно",
+        "polish": "czuć się dobrze",
+        "albanian": "të ndihesh mirë",
+        "arabic": "يشعر بالراحة",
+        "italian": "sentirsi bene",
+        "serbian": "то феел цомфортабле, то феел велл"
+      }
+    },
+    {
+      "german": "sich verlieben",
+      "translations": {
+        "english": "to fall in love",
+        "ukrainian": "закохатися",
+        "polish": "zakochać się",
+        "albanian": "të dashurohesh",
+        "arabic": "يقع في الحب",
+        "italian": "innamorarsi",
+        "serbian": "то фалл ин лове"
+      }
+    },
+    {
+      "german": "sich küssen",
+      "translations": {
+        "english": "to kiss each other",
+        "ukrainian": "цілуватися",
+        "polish": "całować się",
+        "albanian": "të puthen",
+        "arabic": "يتبادلون القبل",
+        "italian": "baciarsi",
+        "serbian": "то кисс еач отхер"
+      }
+    },
+    {
+      "german": "sich trennen",
+      "translations": {
+        "english": "to separate, to break up",
+        "ukrainian": "розлучатися",
+        "polish": "rozstawać się",
+        "albanian": "të ndahesh",
+        "arabic": "ينفصلون",
+        "italian": "separarsi",
+        "serbian": "то сепарате, то бреак уп"
+      }
+    },
+    {
+      "german": "sich streiten",
+      "translations": {
+        "english": "to argue, to quarrel",
+        "ukrainian": "сваритися",
+        "polish": "kłócić się",
+        "albanian": "të grindesh",
+        "arabic": "يتشاجرون",
+        "italian": "litigare",
+        "serbian": "то аргуе, то куаррел"
+      }
+    },
+    {
+      "german": "sich entschuldigen",
+      "translations": {
+        "english": "to apologize",
+        "ukrainian": "вибачатися",
+        "polish": "przepraszać",
+        "albanian": "të kërkosh ndjesë",
+        "arabic": "يعتذر",
+        "italian": "scusarsi",
+        "serbian": "то апологизе"
+      }
+    },
+    {
+      "german": "stark",
+      "translations": {
+        "english": "strong",
+        "ukrainian": "сильний",
+        "polish": "silny",
+        "albanian": "i fortë",
+        "arabic": "قوي",
+        "italian": "forte",
+        "serbian": "стронг"
+      }
+    },
+    {
+      "german": "schwach",
+      "translations": {
+        "english": "weak",
+        "ukrainian": "слабкий",
+        "polish": "słaby",
+        "albanian": "i dobët",
+        "arabic": "ضعيف",
+        "italian": "debole",
+        "serbian": "веак"
+      }
+    },
+    {
+      "german": "einsam",
+      "translations": {
+        "english": "lonely",
+        "ukrainian": "самотній",
+        "polish": "samotny",
+        "albanian": "i vetmuar",
+        "arabic": "وحيد",
+        "italian": "solo",
+        "serbian": "лонели"
+      }
+    },
+    {
+      "german": "fremd",
+      "translations": {
+        "english": "strange, foreign",
+        "ukrainian": "чужий",
+        "polish": "obcy",
+        "albanian": "i huaj",
+        "arabic": "غريب",
+        "italian": "estraneo",
+        "serbian": "странге, фореигн"
+      }
+    },
+    {
+      "german": "erschöpft",
+      "translations": {
+        "english": "exhausted",
+        "ukrainian": "виснажений",
+        "polish": "wyczerpany",
+        "albanian": "i lodhur",
+        "arabic": "مرهق",
+        "italian": "esausto",
+        "serbian": "ексхаустед"
+      }
+    },
+    {
+      "german": "hoffentlich",
+      "translations": {
+        "english": "hopefully",
+        "ukrainian": "сподіваюся",
+        "polish": "mam nadzieję",
+        "albanian": "shpresoj",
+        "arabic": "نأمل",
+        "italian": "speriamo",
+        "serbian": "хопефулли"
+      }
+    },
+    {
+      "german": "der Altbau / die Altbauten",
+      "translations": {
+        "english": "old building",
+        "ukrainian": "стара будівля",
+        "polish": "stary budynek",
+        "albanian": "ndërtesa e vjetër",
+        "arabic": "مبنى قديم",
+        "italian": "edificio vecchio",
+        "serbian": "стара зграда"
+      }
+    },
+    {
+      "german": "das Reihenhaus / die Reihenhäuser",
+      "translations": {
+        "english": "terraced house, townhouse",
+        "ukrainian": "будинок у ряді",
+        "polish": "dom szeregowy",
+        "albanian": "shtëpi e lidhur",
+        "arabic": "منزل متصل",
+        "italian": "casa a schiera",
+        "serbian": "террацед хоусе, товнхоусе"
+      }
+    },
+    {
+      "german": "der Bauernhof / die Bauernhöfe",
+      "translations": {
+        "english": "farm",
+        "ukrainian": "ферма",
+        "polish": "gospodarstwo rolne",
+        "albanian": "ferma",
+        "arabic": "المزرعة",
+        "italian": "fattoria",
+        "serbian": "фарма"
+      }
+    },
+    {
+      "german": "die Großstadt / die Großstädte",
+      "translations": {
+        "english": "big city",
+        "ukrainian": "велике місто",
+        "polish": "duże miasto",
+        "albanian": "qyteti i madh",
+        "arabic": "المدينة الكبيرة",
+        "italian": "grande città",
+        "serbian": "биг цити"
+      }
+    },
+    {
+      "german": "die Kleinstadt / die Kleinstädte",
+      "translations": {
+        "english": "small town",
+        "ukrainian": "маленьке місто",
+        "polish": "małe miasto",
+        "albanian": "qyteti i vogël",
+        "arabic": "المدينة الصغيرة",
+        "italian": "piccola città",
+        "serbian": "смалл товн"
+      }
+    },
+    {
+      "german": "das Dorf / die Dörfer",
+      "translations": {
+        "english": "village",
+        "ukrainian": "село",
+        "polish": "wieś",
+        "albanian": "fshati",
+        "arabic": "القرية",
+        "italian": "villaggio",
+        "serbian": "село"
+      }
+    },
+    {
+      "german": "das Hochhaus / die Hochhäuser",
+      "translations": {
+        "english": "high-rise building",
+        "ukrainian": "висотний будинок",
+        "polish": "wieżowiec",
+        "albanian": "ndërtesa e lartë",
+        "arabic": "ناطحة سحاب",
+        "italian": "grattacielo",
+        "serbian": "хигх-рисе буилдинг"
+      }
+    },
+    {
+      "german": "das Einfamilienhaus / die Einfamilienhäuser",
+      "translations": {
+        "english": "single-family house",
+        "ukrainian": "односімейний будинок",
+        "polish": "dom jednorodzinny",
+        "albanian": "shtëpi unifamiljare",
+        "arabic": "منزل لعائلة واحدة",
+        "italian": "casa unifamiliare",
+        "serbian": "породична кућа"
+      }
+    },
+    {
+      "german": "der Neubau / die Neubauten",
+      "translations": {
+        "english": "new building",
+        "ukrainian": "нова будівля",
+        "polish": "nowy budynek",
+        "albanian": "ndërtesa e re",
+        "arabic": "مبنى جديد",
+        "italian": "edificio nuovo",
+        "serbian": "нова зграда"
+      }
+    },
+    {
+      "german": "der Herd / die Herde",
+      "translations": {
+        "english": "stove, cooker",
+        "ukrainian": "плита",
+        "polish": "kuchenka",
+        "albanian": "sobë",
+        "arabic": "الموقد",
+        "italian": "fornello",
+        "serbian": "стове, цоокер"
+      }
+    },
+    {
+      "german": "der Kühlschrank / die Kühlschränke",
+      "translations": {
+        "english": "refrigerator",
+        "ukrainian": "холодильник",
+        "polish": "lodówka",
+        "albanian": "frigoriferi",
+        "arabic": "الثلاجة",
+        "italian": "frigorifero",
+        "serbian": "рефригератор"
+      }
+    },
+    {
+      "german": "die Spülmaschine / die Spülmaschinen",
+      "translations": {
+        "english": "dishwasher",
+        "ukrainian": "посудомийна машина",
+        "polish": "zmywarka",
+        "albanian": "larëse enësh",
+        "arabic": "غسالة الصحون",
+        "italian": "lavastoviglie",
+        "serbian": "дишвашер"
+      }
+    },
+    {
+      "german": "der Löffel / die Löffel",
+      "translations": {
+        "english": "spoon",
+        "ukrainian": "ложка",
+        "polish": "łyżka",
+        "albanian": "lugë",
+        "arabic": "ملعقة",
+        "italian": "cucchiaio",
+        "serbian": "кашика"
+      }
+    },
+    {
+      "german": "die Lampe / die Lampen",
+      "translations": {
+        "english": "lamp",
+        "ukrainian": "лампа",
+        "polish": "lampa",
+        "albanian": "llamba",
+        "arabic": "المصباح",
+        "italian": "lampada",
+        "serbian": "лампа"
+      }
+    },
+    {
+      "german": "die Blume / die Blumen",
+      "translations": {
+        "english": "flower",
+        "ukrainian": "квітка",
+        "polish": "kwiat",
+        "albanian": "lulja",
+        "arabic": "الزهرة",
+        "italian": "fiore",
+        "serbian": "фловер"
+      }
+    },
+    {
+      "german": "der Schrank / die Schränke",
+      "translations": {
+        "english": "cupboard, wardrobe",
+        "ukrainian": "шафа",
+        "polish": "szafa",
+        "albanian": "dollapi",
+        "arabic": "الخزانة",
+        "italian": "armadio",
+        "serbian": "цупбоард, вардробе"
+      }
+    },
+    {
+      "german": "das Regal / die Regale",
+      "translations": {
+        "english": "shelf, shelving unit",
+        "ukrainian": "полиця",
+        "polish": "regał",
+        "albanian": "raft",
+        "arabic": "الرف",
+        "italian": "scaffale",
+        "serbian": "шелф, шелвинг унит"
+      }
+    },
+    {
+      "german": "der Teppich / die Teppiche",
+      "translations": {
+        "english": "carpet, rug",
+        "ukrainian": "килим",
+        "polish": "dywan",
+        "albanian": "qilim",
+        "arabic": "السجادة",
+        "italian": "tappeto",
+        "serbian": "царпет, руг"
+      }
+    },
+    {
+      "german": "der Boden / die Böden",
+      "translations": {
+        "english": "floor",
+        "ukrainian": "підлога",
+        "polish": "podłoga",
+        "albanian": "dyshemeja",
+        "arabic": "الأرضية",
+        "italian": "pavimento",
+        "serbian": "флоор"
+      }
+    },
+    {
+      "german": "die Decke / die Decken",
+      "translations": {
+        "english": "ceiling, blanket",
+        "ukrainian": "стеля, ковдра",
+        "polish": "sufit, koc",
+        "albanian": "tavani, batanije",
+        "arabic": "السقف، البطانية",
+        "italian": "soffitto, coperta",
+        "serbian": "цеилинг, бланкет"
+      }
+    },
+    {
+      "german": "die Wand / die Wände",
+      "translations": {
+        "english": "wall",
+        "ukrainian": "стіна",
+        "polish": "ściana",
+        "albanian": "muri",
+        "arabic": "الجدار",
+        "italian": "parete",
+        "serbian": "зид"
+      }
+    },
+    {
+      "german": "das Sofa / die Sofas",
+      "translations": {
+        "english": "sofa",
+        "ukrainian": "диван",
+        "polish": "sofa",
+        "albanian": "divan",
+        "arabic": "الأريكة",
+        "italian": "divano",
+        "serbian": "софа"
+      }
+    },
+    {
+      "german": "die Brille / die Brillen",
+      "translations": {
+        "english": "glasses",
+        "ukrainian": "окуляри",
+        "polish": "okulary",
+        "albanian": "syze",
+        "arabic": "النظارات",
+        "italian": "occhiali",
+        "serbian": "глассе"
+      }
+    },
+    {
+      "german": "die Tasche / die Taschen",
+      "translations": {
+        "english": "bag",
+        "ukrainian": "сумка",
+        "polish": "torba",
+        "albanian": "çantë",
+        "arabic": "الحقيبة",
+        "italian": "borsa",
+        "serbian": "баг"
+      }
+    },
+    {
+      "german": "die Ecke / die Ecken",
+      "translations": {
+        "english": "corner",
+        "ukrainian": "кут",
+        "polish": "róg",
+        "albanian": "qoshja",
+        "arabic": "الزاوية",
+        "italian": "angolo",
+        "serbian": "цорнер"
+      }
+    },
+    {
+      "german": "der Umzug / die Umzüge",
+      "translations": {
+        "english": "move, relocation",
+        "ukrainian": "переїзд",
+        "polish": "przeprowadzka",
+        "albanian": "shpërngulja",
+        "arabic": "الانتقال",
+        "italian": "trasloco",
+        "serbian": "мове, релоцатион"
+      }
+    },
+    {
+      "german": "der Umzugskarton / die Umzugskartons",
+      "translations": {
+        "english": "moving box",
+        "ukrainian": "коробка для переїзду",
+        "polish": "karton do przeprowadzki",
+        "albanian": "kuti shpërnguljeje",
+        "arabic": "صندوق النقل",
+        "italian": "scatola da trasloco",
+        "serbian": "кутија за сеобу"
+      }
+    },
+    {
+      "german": "einpacken",
+      "translations": {
+        "english": "to pack",
+        "ukrainian": "пакувати",
+        "polish": "pakować",
+        "albanian": "të paketoj",
+        "arabic": "يعبئ",
+        "italian": "imballare",
+        "serbian": "паковати"
+      }
+    },
+    {
+      "german": "Löcher bohren",
+      "translations": {
+        "english": "to drill holes",
+        "ukrainian": "свердлити отвори",
+        "polish": "wiercić dziury",
+        "albanian": "të shposh vrima",
+        "arabic": "يثقب الحفر",
+        "italian": "forare",
+        "serbian": "бушити рупе"
+      }
+    },
+    {
+      "german": "die Waschmaschine / die Waschmaschinen",
+      "translations": {
+        "english": "washing machine",
+        "ukrainian": "пральна машина",
+        "polish": "pralka",
+        "albanian": "makina larëse",
+        "arabic": "الغسالة",
+        "italian": "lavatrice",
+        "serbian": "вашинг мачине"
+      }
+    },
+    {
+      "german": "anschließen",
+      "translations": {
+        "english": "to connect",
+        "ukrainian": "підключати",
+        "polish": "podłączać",
+        "albanian": "të lidh",
+        "arabic": "يوصل",
+        "italian": "collegare",
+        "serbian": "повезати"
+      }
+    },
+    {
+      "german": "übergeben",
+      "translations": {
+        "english": "to hand over",
+        "ukrainian": "передавати",
+        "polish": "przekazywać",
+        "albanian": "të dorëzoj",
+        "arabic": "يسلّم",
+        "italian": "consegnare",
+        "serbian": "то ханд овер"
+      }
+    },
+    {
+      "german": "anmelden",
+      "translations": {
+        "english": "to register",
+        "ukrainian": "реєструвати",
+        "polish": "zgłaszać",
+        "albanian": "të regjistroj",
+        "arabic": "يسجل",
+        "italian": "iscriversi",
+        "serbian": "то регистер"
+      }
+    },
+    {
+      "german": "die Wandfarbe / die Wandfarben",
+      "translations": {
+        "english": "wall paint",
+        "ukrainian": "фарба для стін",
+        "polish": "farba do ścian",
+        "albanian": "bojë muri",
+        "arabic": "طلاء الجدران",
+        "italian": "vernice per pareti",
+        "serbian": "валл паинт"
+      }
+    },
+    {
+      "german": "die Farbroller / die Farbroller",
+      "translations": {
+        "english": "paint roller",
+        "ukrainian": "валик для фарби",
+        "polish": "wałek malarski",
+        "albanian": "rulo bojësh",
+        "arabic": "أسطوانة الدهان",
+        "italian": "rullo per pittura",
+        "serbian": "паинт роллер"
+      }
+    },
+    {
+      "german": "der Pinsel / die Pinsel",
+      "translations": {
+        "english": "brush",
+        "ukrainian": "пензель",
+        "polish": "pędzel",
+        "albanian": "furçë",
+        "arabic": "الفرشاة",
+        "italian": "pennello",
+        "serbian": "бруш"
+      }
+    },
+    {
+      "german": "abbauen",
+      "translations": {
+        "english": "to dismantle, to take apart",
+        "ukrainian": "розбирати",
+        "polish": "rozmontowywać",
+        "albanian": "të çmontoj",
+        "arabic": "يفكك",
+        "italian": "smontare",
+        "serbian": "то дисмантле, то таке апарт"
+      }
+    },
+    {
+      "german": "einbauen",
+      "translations": {
+        "english": "to install, to build in",
+        "ukrainian": "вбудовувати",
+        "polish": "montować",
+        "albanian": "të instaloj",
+        "arabic": "يركب",
+        "italian": "installare",
+        "serbian": "то инсталл, то буилд ин"
+      }
+    },
+    {
+      "german": "einräumen",
+      "translations": {
+        "english": "to put away, to arrange",
+        "ukrainian": "розставляти",
+        "polish": "układać",
+        "albanian": "të sistemoj",
+        "arabic": "يرتب",
+        "italian": "sistemare",
+        "serbian": "то пут аваи, то арранге"
+      }
+    }
+  ],
+
+  "7": [
+    {
+      "german": "der Feiertag / die Feiertage",
+      "translations": {
+        "english": "public holiday",
+        "ukrainian": "свято",
+        "polish": "święto",
+        "albanian": "festa",
+        "arabic": "العطلة",
+        "italian": "festività",
+        "serbian": "публиц холидаи"
+      }
+    },
+    {
+      "german": "Weihnachten",
+      "translations": {
+        "english": "Christmas",
+        "ukrainian": "Різдво",
+        "polish": "Boże Narodzenie",
+        "albanian": "Krishtlindjet",
+        "arabic": "عيد الميلاد",
+        "italian": "Natale",
+        "serbian": "Божић"
+      }
+    },
+    {
+      "german": "das Feuerwerk / die Feuerwerke",
+      "translations": {
+        "english": "fireworks",
+        "ukrainian": "феєрверк",
+        "polish": "fajerwerki",
+        "albanian": "fishekzjarrë",
+        "arabic": "الألعاب النارية",
+        "italian": "fuochi d'artificio",
+        "serbian": "ватромет"
+      }
+    },
+    {
+      "german": "schenken",
+      "translations": {
+        "english": "to give (as a gift)",
+        "ukrainian": "дарувати",
+        "polish": "podarować",
+        "albanian": "të dhuroj",
+        "arabic": "يهدي",
+        "italian": "regalare",
+        "serbian": "то гиве (ас а гифт)"
+      }
+    },
+    {
+      "german": "sich verkleiden",
+      "translations": {
+        "english": "to dress up, to disguise oneself",
+        "ukrainian": "переодягатися",
+        "polish": "przebierać się",
+        "albanian": "të maskohesh",
+        "arabic": "يتنكر",
+        "italian": "travestirsi",
+        "serbian": "то дресс уп, то дисгуисе онеселф"
+      }
+    },
+    {
+      "german": "der Geburtstag / die Geburtstage",
+      "translations": {
+        "english": "birthday",
+        "ukrainian": "день народження",
+        "polish": "urodziny",
+        "albanian": "ditëlindja",
+        "arabic": "عيد الميلاد",
+        "italian": "compleanno",
+        "serbian": "рођендан"
+      }
+    },
+    {
+      "german": "der Hochzeitstag / die Hochzeitstage",
+      "translations": {
+        "english": "wedding day, wedding anniversary",
+        "ukrainian": "день весілля",
+        "polish": "rocznica ślubu",
+        "albanian": "dita e dasmës",
+        "arabic": "ذكرى الزواج",
+        "italian": "anniversario di matrimonio",
+        "serbian": "веддинг даи, веддинг анниверсари"
+      }
+    },
+    {
+      "german": "die Hochzeitsfeier / die Hochzeitsfeiern",
+      "translations": {
+        "english": "wedding celebration",
+        "ukrainian": "весільне свято",
+        "polish": "uroczystość weselna",
+        "albanian": "festa e dasmës",
+        "arabic": "حفل الزفاف",
+        "italian": "festa di matrimonio",
+        "serbian": "веддинг целебратион"
+      }
+    },
+    {
+      "german": "das Jubiläum / die Jubiläen",
+      "translations": {
+        "english": "anniversary, jubilee",
+        "ukrainian": "ювілей",
+        "polish": "jubileusz",
+        "albanian": "jubileu",
+        "arabic": "اليوبيل",
+        "italian": "giubileo",
+        "serbian": "анниверсари, јубилее"
+      }
+    },
+    {
+      "german": "das Geschenk / die Geschenke",
+      "translations": {
+        "english": "gift, present",
+        "ukrainian": "подарунок",
+        "polish": "prezent",
+        "albanian": "dhuratë",
+        "arabic": "هدية",
+        "italian": "regalo",
+        "serbian": "поклон"
+      }
+    },
+    {
+      "german": "der Gutschein / die Gutscheine",
+      "translations": {
+        "english": "voucher, gift certificate",
+        "ukrainian": "ваучер",
+        "polish": "bon",
+        "albanian": "kupon",
+        "arabic": "قسيمة",
+        "italian": "buono regalo",
+        "serbian": "воучер, гифт цертифицате"
+      }
+    },
+    {
+      "german": "die Kerze / die Kerzen",
+      "translations": {
+        "english": "candle",
+        "ukrainian": "свічка",
+        "polish": "świeca",
+        "albanian": "qiri",
+        "arabic": "شمعة",
+        "italian": "candela",
+        "serbian": "свећа"
+      }
+    },
+    {
+      "german": "die Kette / die Ketten",
+      "translations": {
+        "english": "chain, necklace",
+        "ukrainian": "ланцюжок",
+        "polish": "łańcuszek",
+        "albanian": "zinxhir",
+        "arabic": "سلسلة",
+        "italian": "collana",
+        "serbian": "чаин, нецклаце"
+      }
+    },
+    {
+      "german": "das Geschirr",
+      "translations": {
+        "english": "dishes, tableware",
+        "ukrainian": "посуд",
+        "polish": "naczynia",
+        "albanian": "enët",
+        "arabic": "الأواني",
+        "italian": "stoviglie",
+        "serbian": "дишес, таблеваре"
+      }
+    },
+    {
+      "german": "die Schachtel Pralinen / die Schachteln Pralinen",
+      "translations": {
+        "english": "box of chocolates",
+        "ukrainian": "коробка цукерок",
+        "polish": "pudełko czekoladek",
+        "albanian": "kuti çokollatash",
+        "arabic": "علبة شوكولاتة",
+        "italian": "scatola di cioccolatini",
+        "serbian": "бокс оф чоцолате"
+      }
+    },
+    {
+      "german": "das Parfüm / die Parfüms",
+      "translations": {
+        "english": "perfume",
+        "ukrainian": "парфуми",
+        "polish": "perfumy",
+        "albanian": "parfum",
+        "arabic": "العطر",
+        "italian": "profumo",
+        "serbian": "перфуме"
+      }
+    },
+    {
+      "german": "der Schmuck",
+      "translations": {
+        "english": "jewelry",
+        "ukrainian": "прикраси",
+        "polish": "biżuteria",
+        "albanian": "stoli",
+        "arabic": "المجوهرات",
+        "italian": "gioielli",
+        "serbian": "јевелри"
+      }
+    },
+    {
+      "german": "der Blumenstrauß / die Blumensträuße",
+      "translations": {
+        "english": "bouquet of flowers",
+        "ukrainian": "букет квітів",
+        "polish": "bukiet kwiatów",
+        "albanian": "buqetë lulesh",
+        "arabic": "باقة زهور",
+        "italian": "mazzo di fiori",
+        "serbian": "боукует оф фловер"
+      }
+    },
+    {
+      "german": "die Rose / die Rosen",
+      "translations": {
+        "english": "rose",
+        "ukrainian": "троянда",
+        "polish": "róża",
+        "albanian": "trëndafil",
+        "arabic": "وردة",
+        "italian": "rosa",
+        "serbian": "росе"
+      }
+    },
+    {
+      "german": "das Handtuch / die Handtücher",
+      "translations": {
+        "english": "towel",
+        "ukrainian": "рушник",
+        "polish": "ręcznik",
+        "albanian": "peshqir",
+        "arabic": "منشفة",
+        "italian": "asciugamano",
+        "serbian": "товел"
+      }
+    },
+    {
+      "german": "der Koffer / die Koffer",
+      "translations": {
+        "english": "suitcase",
+        "ukrainian": "валіза",
+        "polish": "walizka",
+        "albanian": "valixhe",
+        "arabic": "حقيبة سفر",
+        "italian": "valigia",
+        "serbian": "суитцасе"
+      }
+    },
+    {
+      "german": "die Decke / die Decken",
+      "translations": {
+        "english": "blanket, cover",
+        "ukrainian": "ковдра",
+        "polish": "koc",
+        "albanian": "mbulojë",
+        "arabic": "بطانية",
+        "italian": "coperta",
+        "serbian": "бланкет, цовер"
+      }
+    },
+    {
+      "german": "der Ehemann / die Ehemänner",
+      "translations": {
+        "english": "husband",
+        "ukrainian": "чоловік",
+        "polish": "mąż",
+        "albanian": "bashkëshorti",
+        "arabic": "الزوج",
+        "italian": "marito",
+        "serbian": "муж"
+      }
+    },
+    {
+      "german": "die Ehefrau / die Ehefrauen",
+      "translations": {
+        "english": "wife",
+        "ukrainian": "дружина",
+        "polish": "żona",
+        "albanian": "bashkëshortja",
+        "arabic": "الزوجة",
+        "italian": "moglie",
+        "serbian": "жена, супруга"
+      }
+    },
+    {
+      "german": "normalerweise",
+      "translations": {
+        "english": "normally, usually",
+        "ukrainian": "зазвичай",
+        "polish": "normalnie",
+        "albanian": "normalisht",
+        "arabic": "عادة",
+        "italian": "normalmente",
+        "serbian": "нормалли, усуалли"
+      }
+    },
+    {
+      "german": "die Braut / die Bräute",
+      "translations": {
+        "english": "bride",
+        "ukrainian": "наречена",
+        "polish": "panna młoda",
+        "albanian": "nusja",
+        "arabic": "العروس",
+        "italian": "sposa",
+        "serbian": "млада"
+      }
+    },
+    {
+      "german": "der Bräutigam / die Bräutigame",
+      "translations": {
+        "english": "groom",
+        "ukrainian": "наречений",
+        "polish": "pan młody",
+        "albanian": "dhëndri",
+        "arabic": "العريس",
+        "italian": "sposo",
+        "serbian": "младожења"
+      }
+    },
+    {
+      "german": "das Brautpaar / die Brautpaare",
+      "translations": {
+        "english": "bride and groom",
+        "ukrainian": "наречені",
+        "polish": "para młoda",
+        "albanian": "çifti i ri i martuar",
+        "arabic": "العروسان",
+        "italian": "sposi",
+        "serbian": "бриде анд гроом"
+      }
+    },
+    {
+      "german": "das Brautkleid / die Brautkleider",
+      "translations": {
+        "english": "wedding dress",
+        "ukrainian": "весільна сукня",
+        "polish": "suknia ślubna",
+        "albanian": "fustan nuse",
+        "arabic": "فستان الزفاف",
+        "italian": "abito da sposa",
+        "serbian": "венчаница"
+      }
+    },
+    {
+      "german": "tragen",
+      "translations": {
+        "english": "to wear, to carry",
+        "ukrainian": "носити",
+        "polish": "nosić",
+        "albanian": "të mbash",
+        "arabic": "يحمل، يرتدي",
+        "italian": "portare",
+        "serbian": "то веар, то царри"
+      }
+    },
+    {
+      "german": "der Schleier / die Schleier",
+      "translations": {
+        "english": "veil",
+        "ukrainian": "вуаль",
+        "polish": "welon",
+        "albanian": "vel",
+        "arabic": "الحجاب",
+        "italian": "velo",
+        "serbian": "веил"
+      }
+    },
+    {
+      "german": "der Ohrring / die Ohrringe",
+      "translations": {
+        "english": "earring",
+        "ukrainian": "сережка",
+        "polish": "kolczyk",
+        "albanian": "vath",
+        "arabic": "قرط",
+        "italian": "orecchino",
+        "serbian": "еарринг"
+      }
+    },
+    {
+      "german": "eng",
+      "translations": {
+        "english": "tight, narrow",
+        "ukrainian": "вузький",
+        "polish": "ciasny",
+        "albanian": "i ngushtë",
+        "arabic": "ضيق",
+        "italian": "stretto",
+        "serbian": "тигхт, нарров"
+      }
+    },
+    {
+      "german": "wunderschön",
+      "translations": {
+        "english": "beautiful, gorgeous",
+        "ukrainian": "чудовий",
+        "polish": "wspaniały",
+        "albanian": "i mrekullueshëm",
+        "arabic": "جميل جداً",
+        "italian": "bellissimo",
+        "serbian": "беаутифул, горгеоу"
+      }
+    },
+    {
+      "german": "romantisch",
+      "translations": {
+        "english": "romantic",
+        "ukrainian": "романтичний",
+        "polish": "romantyczny",
+        "albanian": "romantik",
+        "arabic": "رومانسي",
+        "italian": "romantico",
+        "serbian": "романтиц"
+      }
+    },
+    {
+      "german": "die Hochzeitstorte / die Hochzeitstorten",
+      "translations": {
+        "english": "wedding cake",
+        "ukrainian": "весільний торт",
+        "polish": "tort weselny",
+        "albanian": "torta e dasmës",
+        "arabic": "كعكة الزفاف",
+        "italian": "torta nuziale",
+        "serbian": "веддинг цаке"
+      }
+    },
+    {
+      "german": "Reis werfen",
+      "translations": {
+        "english": "to throw rice",
+        "ukrainian": "кидати рис",
+        "polish": "rzucać ryż",
+        "albanian": "të hedhësh oriz",
+        "arabic": "يرمي الأرز",
+        "italian": "lanciare riso",
+        "serbian": "то тхров рице"
+      }
+    },
+    {
+      "german": "Ringe tauschen",
+      "translations": {
+        "english": "to exchange rings",
+        "ukrainian": "обмінюватися кільцями",
+        "polish": "wymieniać się obrączkami",
+        "albanian": "të shkëmbesh unaza",
+        "arabic": "يتبادل الخواتم",
+        "italian": "scambiarsi gli anelli",
+        "serbian": "то ексчанге ринг"
+      }
+    },
+    {
+      "german": "pünktlich",
+      "translations": {
+        "english": "punctual, on time",
+        "ukrainian": "пунктуальний",
+        "polish": "punktualny",
+        "albanian": "i saktë",
+        "arabic": "دقيق",
+        "italian": "puntuale",
+        "serbian": "пунцтуал, он тиме"
+      }
+    },
+    {
+      "german": "der Gastgeber / die Gastgeber",
+      "translations": {
+        "english": "host (male)",
+        "ukrainian": "господар",
+        "polish": "gospodarz",
+        "albanian": "pritësi",
+        "arabic": "المضيف",
+        "italian": "ospite",
+        "serbian": "хост (мале)"
+      }
+    },
+    {
+      "german": "die Gastgeberin / die Gastgeberinnen",
+      "translations": {
+        "english": "host (female)",
+        "ukrainian": "господиня",
+        "polish": "gospodyni",
+        "albanian": "pritësja",
+        "arabic": "المضيفة",
+        "italian": "ospite",
+        "serbian": "хост (фемале)"
+      }
+    },
+    {
+      "german": "sich unterhalten",
+      "translations": {
+        "english": "to converse, to chat",
+        "ukrainian": "розмовляти",
+        "polish": "rozmawiać",
+        "albanian": "të bisedosh",
+        "arabic": "يتحدث",
+        "italian": "conversare",
+        "serbian": "то цонверсе, то чат"
+      }
+    },
+    {
+      "german": "auffallen",
+      "translations": {
+        "english": "to stand out, to attract attention",
+        "ukrainian": "привертати увагу",
+        "polish": "rzucać się w oczy",
+        "albanian": "të dalësh në sy",
+        "arabic": "يلفت الانتباه",
+        "italian": "saltare all'occhio",
+        "serbian": "то станд оут, то аттрацт аттентион"
+      }
+    },
+    {
+      "german": "dabei sein",
+      "translations": {
+        "english": "to be present, to attend",
+        "ukrainian": "бути присутнім",
+        "polish": "być obecnym",
+        "albanian": "të jesh prezent",
+        "arabic": "يكون حاضراً",
+        "italian": "essere presente",
+        "serbian": "то бе пресент, то аттенд"
+      }
+    },
+    {
+      "german": "höflich",
+      "translations": {
+        "english": "polite",
+        "ukrainian": "ввічливий",
+        "polish": "grzeczny",
+        "albanian": "i sjellshëm",
+        "arabic": "مؤدب",
+        "italian": "educato",
+        "serbian": "полите"
+      }
+    },
+    {
+      "german": "vorgestern",
+      "translations": {
+        "english": "the day before yesterday",
+        "ukrainian": "позавчора",
+        "polish": "przedwczoraj",
+        "albanian": "pardje",
+        "arabic": "أول أمس",
+        "italian": "l'altro ieri",
+        "serbian": "даи бефоре иестердаи"
+      }
+    },
+    {
+      "german": "die Stimmung",
+      "translations": {
+        "english": "mood, atmosphere",
+        "ukrainian": "настрій",
+        "polish": "nastrój",
+        "albanian": "atmosfera",
+        "arabic": "المزاج",
+        "italian": "umore",
+        "serbian": "моод, атмоспхере"
+      }
+    },
+    {
+      "german": "normal",
+      "translations": {
+        "english": "normal",
+        "ukrainian": "нормальний",
+        "polish": "normalny",
+        "albanian": "normal",
+        "arabic": "عادي",
+        "italian": "normale",
+        "serbian": "нормалан"
+      }
+    },
+    {
+      "german": "anziehen",
+      "translations": {
+        "english": "to put on, to dress",
+        "ukrainian": "одягати",
+        "polish": "zakładać",
+        "albanian": "të veshësh",
+        "arabic": "يرتدي",
+        "italian": "indossare",
+        "serbian": "то пут он, то дре"
+      }
+    },
+    {
+      "german": "Herzlichen Glückwunsch!",
+      "translations": {
+        "english": "Congratulations!",
+        "ukrainian": "Вітаю!",
+        "polish": "Gratulacje!",
+        "albanian": "Urime!",
+        "arabic": "تهانينا!",
+        "italian": "Congratulazioni!",
+        "serbian": "Цонгратулатионс!"
+      }
+    },
+    {
+      "german": "Alles Gute!",
+      "translations": {
+        "english": "All the best!",
+        "ukrainian": "Всього найкращого!",
+        "polish": "Wszystkiego najlepszego!",
+        "albanian": "Të gjitha më të mirat!",
+        "arabic": "كل التوفيق!",
+        "italian": "Auguri!",
+        "serbian": "Алл тхе бест!"
+      }
+    },
+    {
+      "german": "Frohe Ostern!",
+      "translations": {
+        "english": "Happy Easter!",
+        "ukrainian": "Христос Воскрес!",
+        "polish": "Wesołych Świąt Wielkanocnych!",
+        "albanian": "Gëzuar Pashkët!",
+        "arabic": "عيد فصح سعيد!",
+        "italian": "Buona Pasqua!",
+        "serbian": "Хаппи Еастер!"
+      }
+    },
+    {
+      "german": "Prosit Neujahr!",
+      "translations": {
+        "english": "Happy New Year!",
+        "ukrainian": "З Новим Роком!",
+        "polish": "Szczęśliwego Nowego Roku!",
+        "albanian": "Gëzuar Vitin e Ri!",
+        "arabic": "سنة جديدة سعيدة!",
+        "italian": "Felice Anno Nuovo!",
+        "serbian": "Хаппи Нев Иеар!"
+      }
+    },
+    {
+      "german": "das Kostüm / die Kostüme",
+      "translations": {
+        "english": "costume",
+        "ukrainian": "костюм",
+        "polish": "kostium",
+        "albanian": "kostum",
+        "arabic": "زي",
+        "italian": "costume",
+        "serbian": "костим"
+      }
+    },
+    {
+      "german": "das Konfetti",
+      "translations": {
+        "english": "confetti",
+        "ukrainian": "конфетті",
+        "polish": "konfetti",
+        "albanian": "konfeti",
+        "arabic": "قصاصات ورق ملونة",
+        "italian": "coriandoli",
+        "serbian": "конфете"
+      }
+    },
+    {
+      "german": "die Luftschlangen",
+      "translations": {
+        "english": "streamers",
+        "ukrainian": "серпантин",
+        "polish": "serpentyny",
+        "albanian": "banderola",
+        "arabic": "الأشرطة الملونة",
+        "italian": "stelle filanti",
+        "serbian": "стреамер"
+      }
+    },
+    {
+      "german": "der Umzug / die Umzüge",
+      "translations": {
+        "english": "parade, procession",
+        "ukrainian": "парад",
+        "polish": "pochód",
+        "albanian": "paradë",
+        "arabic": "موكب",
+        "italian": "sfilata",
+        "serbian": "параде, процессион"
+      }
+    },
+    {
+      "german": "das Osterei / die Ostereier",
+      "translations": {
+        "english": "Easter egg",
+        "ukrainian": "великоднє яйце",
+        "polish": "jajko wielkanocne",
+        "albanian": "vezë paské",
+        "arabic": "بيضة عيد الفصح",
+        "italian": "uovo di Pasqua",
+        "serbian": "ускршње јаје"
+      }
+    },
+    {
+      "german": "der Osterhase / die Osterhasen",
+      "translations": {
+        "english": "Easter bunny",
+        "ukrainian": "великодній заєць",
+        "polish": "zajączek wielkanocny",
+        "albanian": "lepuri i Pashkëve",
+        "arabic": "أرنب عيد الفصح",
+        "italian": "coniglio di Pasqua",
+        "serbian": "ускршњи зека"
+      }
+    },
+    {
+      "german": "der Osterzopf / die Osterzöpfe",
+      "translations": {
+        "english": "Easter bread (braided)",
+        "ukrainian": "великодній плетений хліб",
+        "polish": "wielkanocny warkocz",
+        "albanian": "bukë e thurur e Pashkëve",
+        "arabic": "خبز عيد الفصح المضفر",
+        "italian": "treccia pasquale",
+        "serbian": "Еастер бреад (браидед)"
+      }
+    },
+    {
+      "german": "der Osterstrauß / die Ostersträuße",
+      "translations": {
+        "english": "Easter bouquet",
+        "ukrainian": "великодній букет",
+        "polish": "wielkanocny bukiet",
+        "albanian": "buqetë e Pashkëve",
+        "arabic": "باقة عيد الفصح",
+        "italian": "bouquet pasquale",
+        "serbian": "Еастер боукует"
+      }
+    },
+    {
+      "german": "der Sankt Martin",
+      "translations": {
+        "english": "Saint Martin",
+        "ukrainian": "Святий Мартин",
+        "polish": "Święty Marcin",
+        "albanian": "Shën Martini",
+        "arabic": "القديس مارتن",
+        "italian": "San Martino",
+        "serbian": "Саинт Мартин"
+      }
+    },
+    {
+      "german": "die Laterne / die Laternen",
+      "translations": {
+        "english": "lantern",
+        "ukrainian": "ліхтар",
+        "polish": "latarnia",
+        "albanian": "fener",
+        "arabic": "فانوس",
+        "italian": "lanterna",
+        "serbian": "лантерн"
+      }
+    },
+    {
+      "german": "der Laternenumzug / die Laternenumzüge",
+      "translations": {
+        "english": "lantern procession",
+        "ukrainian": "процесія з ліхтарями",
+        "polish": "pochód z latarniami",
+        "albanian": "procesion me fenerë",
+        "arabic": "موكب الفوانيس",
+        "italian": "processione delle lanterne",
+        "serbian": "лантерн процессион"
+      }
+    },
+    {
+      "german": "der Nikolaus / die Nikoläuse",
+      "translations": {
+        "english": "Saint Nicholas",
+        "ukrainian": "Святий Миколай",
+        "polish": "Święty Mikołaj",
+        "albanian": "Shën Kolla",
+        "arabic": "القديس نيكولاس",
+        "italian": "San Nicola",
+        "serbian": "Свети Никола"
+      }
+    },
+    {
+      "german": "der Stiefel / die Stiefel",
+      "translations": {
+        "english": "boot",
+        "ukrainian": "чобіт",
+        "polish": "but",
+        "albanian": "çizme",
+        "arabic": "حذاء طويل",
+        "italian": "stivale",
+        "serbian": "боот"
+      }
+    },
+    {
+      "german": "die Süßigkeiten",
+      "translations": {
+        "english": "sweets, candy",
+        "ukrainian": "солодощі",
+        "polish": "słodycze",
+        "albanian": "ëmbëlsira",
+        "arabic": "الحلويات",
+        "italian": "dolciumi",
+        "serbian": "свеетс, цанди"
+      }
+    },
+    {
+      "german": "der Weihnachtsbaum / die Weihnachtsbäume",
+      "translations": {
+        "english": "Christmas tree",
+        "ukrainian": "різдвяна ялинка",
+        "polish": "choinka",
+        "albanian": "pema e Krishtlindjeve",
+        "arabic": "شجرة الميلاد",
+        "italian": "albero di Natale",
+        "serbian": "божићна јелка"
+      }
+    },
+    {
+      "german": "die Weihnachtsgans / die Weihnachtsgänse",
+      "translations": {
+        "english": "Christmas goose",
+        "ukrainian": "різдвяна гуска",
+        "polish": "gęś na Boże Narodzenie",
+        "albanian": "pata e Krishtlindjeve",
+        "arabic": "إوزة عيد الميلاد",
+        "italian": "oca di Natale",
+        "serbian": "Чристмас гоосе"
+      }
+    },
+    {
+      "german": "der Adventskalender / die Adventskalender",
+      "translations": {
+        "english": "advent calendar",
+        "ukrainian": "адвент-календар",
+        "polish": "kalendarz adwentowy",
+        "albanian": "kalendar i Adventit",
+        "arabic": "تقويم المجيء",
+        "italian": "calendario dell'Avvento",
+        "serbian": "адвентни календар"
+      }
+    },
+    {
+      "german": "die Rakete / die Raketen",
+      "translations": {
+        "english": "rocket, firework rocket",
+        "ukrainian": "ракета",
+        "polish": "rakieta",
+        "albanian": "raketë",
+        "arabic": "صاروخ",
+        "italian": "razzo",
+        "serbian": "роцкет, фиреворк роцкет"
+      }
+    },
+    {
+      "german": "das Bleigießen",
+      "translations": {
+        "english": "lead pouring (New Year's fortune-telling)",
+        "ukrainian": "виливання свинцю",
+        "polish": "wróżenie z ołowiu",
+        "albanian": "hedhja e plumbit",
+        "arabic": "صب الرصاص",
+        "italian": "fusione del piombo",
+        "serbian": "леад поуринг (Нев Иеар'с фортуне-теллинг)"
+      }
+    },
+    {
+      "german": "der Böller / die Böller",
+      "translations": {
+        "english": "firecracker",
+        "ukrainian": "петарда",
+        "polish": "petarda",
+        "albanian": "fishek",
+        "arabic": "مفرقعة نارية",
+        "italian": "petardo",
+        "serbian": "петарда"
       }
     }
   ]

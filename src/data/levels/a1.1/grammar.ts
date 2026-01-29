@@ -17,7 +17,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Czasowniki regularne odmieniają się według wzoru: temat + końcówki (-e, -st, -t, -en, -t, -en). Przykłady: lernen, wohnen, kommen, machen, heißen.",
       uk: "Правильні дієслова відмінюються за зразком: основа + закінчення (-e, -st, -t, -en, -t, -en). Приклади: lernen, wohnen, kommen, machen, heißen.",
       sq: "Foljet e rregullta ndjekin modelin: rrënja + mbaresat (-e, -st, -t, -en, -t, -en). Shembuj: lernen, wohnen, kommen, machen, heißen.",
-      de: "Regelmäßige Verben folgen dem Muster: Stamm + Endungen (-e, -st, -t, -en, -t, -en). Beispiele: lernen, wohnen, kommen, machen, heißen."
+      de: "Regelmäßige Verben folgen dem Muster: Stamm + Endungen (-e, -st, -t, -en, -t, -en). Beispiele: lernen, wohnen, kommen, machen, heißen.",
+      sr: ""
     },
     exercises: [
       {
@@ -28,7 +29,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij poprawną formą 'lernen' (ich).",
           uk: "Доповніть правильною формою 'lernen' (ich).",
           sq: "Plotësoni me formën e saktë të 'lernen' (ich).",
-          de: "Vervollständige mit der korrekten Form von 'lernen' (ich)."
+          de: "Vervollständige mit der korrekten Form von 'lernen' (ich).",
+      sr: ""
         },
         context: "Ich ______ Deutsch.",
         correctAnswer: "lerne",
@@ -41,7 +43,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij poprawną formą 'wohnen' (du).",
           uk: "Доповніть правильною формою 'wohnen' (du).",
           sq: "Plotësoni me formën e saktë të 'wohnen' (du).",
-          de: "Vervollständige mit der korrekten Form von 'wohnen' (du)."
+          de: "Vervollständige mit der korrekten Form von 'wohnen' (du).",
+      sr: ""
         },
         context: "Wo ______ du?",
         correctAnswer: "wohnst",
@@ -54,7 +57,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'kommen' (er).",
           uk: "Виберіть правильну форму 'kommen' (er).",
           sq: "Zgjidhni formën e saktë të 'kommen' (er).",
-          de: "Wähle die korrekte Form von 'kommen' (er)."
+          de: "Wähle die korrekte Form von 'kommen' (er).",
+      sr: ""
         },
         context: "Er ______ aus Deutschland.",
         options: ["komme", "kommst", "kommt", "kommen"],
@@ -68,7 +72,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj poprawne zdanie.",
           uk: "Побудуйте правильне речення.",
           sq: "Ndërtoni fjalinë e saktë.",
-          de: "Bilde den korrekten Satz."
+          de: "Bilde den korrekten Satz.",
+      sr: ""
         },
         context: ["Wir", "machen", "heute", "Hausaufgaben"],
         correctAnswer: "Wir machen heute Hausaufgaben",
@@ -81,7 +86,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zaimki do końcówek czasownika 'heißen'.",
           uk: "Зіставте займенники із закінченнями дієслова 'heißen'.",
           sq: "Përputhni përemrat me mbaresat e foljes 'heißen'.",
-          de: "Ordne die Pronomen den Verbendungen für 'heißen' zu."
+          de: "Ordne die Pronomen den Verbendungen für 'heißen' zu.",
+      sr: ""
         },
         context: ["ich", "du", "er/sie/es", "wir"],
         options: ["heißen", "heißt", "heiße", "heißt"],
@@ -95,7 +101,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'arbeiten' (ihr).",
           uk: "Доповніть формою 'arbeiten' (ihr).",
           sq: "Plotësoni me 'arbeiten' (ihr).",
-          de: "Vervollständige mit 'arbeiten' (ihr)."
+          de: "Vervollständige mit 'arbeiten' (ihr).",
+      sr: ""
         },
         context: "______ ihr heute?",
         correctAnswer: "Arbeitet",
@@ -108,7 +115,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'spielen' (sie - l.mn.).",
           uk: "Виберіть правильну форму 'spielen' (sie - множина).",
           sq: "Zgjidhni formën e saktë të 'spielen' (sie - shumës).",
-          de: "Wähle die korrekte Form von 'spielen' (sie - Plural)."
+          de: "Wähle die korrekte Form von 'spielen' (sie - Plural).",
+      sr: ""
         },
         context: "Sie ______ gern Fußball.",
         options: ["spiele", "spielst", "spielt", "spielen"],
@@ -122,7 +130,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z 'wohnen'.",
           uk: "Побудуйте речення з 'wohnen'.",
           sq: "Ndërtoni një fjali me 'wohnen'.",
-          de: "Bilde einen Satz mit 'wohnen'."
+          de: "Bilde einen Satz mit 'wohnen'.",
+      sr: ""
         },
         context: ["Sie", "wohnt", "in", "München"],
         correctAnswer: "Sie wohnt in München",
@@ -135,7 +144,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'kaufen' (wir).",
           uk: "Доповніть формою 'kaufen' (wir).",
           sq: "Plotësoni me 'kaufen' (wir).",
-          de: "Vervollständige mit 'kaufen' (wir)."
+          de: "Vervollständige mit 'kaufen' (wir).",
+      sr: ""
         },
         context: "Wir ______ Brot im Supermarkt.",
         correctAnswer: "kaufen",
@@ -148,7 +158,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj czasowniki do ich poprawnych form 'du'.",
           uk: "Зіставте дієслова з їхніми правильними формами 'du'.",
           sq: "Përputhni foljet me format e tyre të sakta 'du'.",
-          de: "Ordne die Verben ihren korrekten 'du'-Formen zu."
+          de: "Ordne die Verben ihren korrekten 'du'-Formen zu.",
+      sr: ""
         },
         context: ["tanzen", "fragen", "antworten", "hören"],
         options: ["antwortest", "tanzt", "fragst", "hörst"],
@@ -171,7 +182,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Niektóre czasowniki zmieniają samogłoskę w temacie w formach du i er/sie/es: sprechen (du sprichst), fahren (du fährst), lesen (du liest), sehen (du siehst), nehmen (du nimmst).",
       uk: "Деякі дієслова змінюють кореневу голосну у формах du та er/sie/es: sprechen (du sprichst), fahren (du fährst), lesen (du liest), sehen (du siehst), nehmen (du nimmst).",
       sq: "Disa folje ndryshojnë zanoren e rrënjës në format du dhe er/sie/es: sprechen (du sprichst), fahren (du fährst), lesen (du liest), sehen (du siehst), nehmen (du nimmst).",
-      de: "Einige Verben ändern ihren Stammvokal in der du- und er/sie/es-Form: sprechen (du sprichst), fahren (du fährst), lesen (du liest), sehen (du siehst), nehmen (du nimmst)."
+      de: "Einige Verben ändern ihren Stammvokal in der du- und er/sie/es-Form: sprechen (du sprichst), fahren (du fährst), lesen (du liest), sehen (du siehst), nehmen (du nimmst).",
+      sr: ""
     },
     exercises: [
       {
@@ -182,7 +194,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'sprechen' (du).",
           uk: "Доповніть формою 'sprechen' (du).",
           sq: "Plotësoni me 'sprechen' (du).",
-          de: "Vervollständige mit 'sprechen' (du)."
+          de: "Vervollständige mit 'sprechen' (du).",
+      sr: ""
         },
         context: "______ du Englisch?",
         correctAnswer: "Sprichst",
@@ -195,7 +208,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'fahren' (er).",
           uk: "Виберіть правильну форму 'fahren' (er).",
           sq: "Zgjidhni formën e saktë të 'fahren' (er).",
-          de: "Wähle die korrekte Form von 'fahren' (er)."
+          de: "Wähle die korrekte Form von 'fahren' (er).",
+      sr: ""
         },
         context: "Er ______ mit dem Auto.",
         options: ["fahre", "fahrst", "fährt", "fahren"],
@@ -209,7 +223,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'lesen' (sie).",
           uk: "Доповніть формою 'lesen' (sie).",
           sq: "Plotësoni me 'lesen' (sie).",
-          de: "Vervollständige mit 'lesen' (sie)."
+          de: "Vervollständige mit 'lesen' (sie).",
+      sr: ""
         },
         context: "Sie ______ gern Bücher.",
         correctAnswer: "liest",
@@ -222,7 +237,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj czasowniki do ich poprawnych form 'du'.",
           uk: "Зіставте дієслова з їхніми правильними формами 'du'.",
           sq: "Përputhni foljet me format e tyre të sakta 'du'.",
-          de: "Ordne die Verben ihren korrekten du-Formen zu."
+          de: "Ordne die Verben ihren korrekten du-Formen zu.",
+      sr: ""
         },
         context: ["sehen", "nehmen", "sprechen", "fahren"],
         options: ["fährst", "siehst", "sprichst", "nimmst"],
@@ -236,7 +252,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z czasownikiem nieregularnym.",
           uk: "Побудуйте речення з неправильним дієсловом.",
           sq: "Ndërtoni një fjali me folje të parregullt.",
-          de: "Bilde einen Satz mit einem unregelmäßigen Verb."
+          de: "Bilde einen Satz mit einem unregelmäßigen Verb.",
+      sr: ""
         },
         context: ["Du", "nimmst", "den Bus", "zur Arbeit"],
         correctAnswer: "Du nimmst den Bus zur Arbeit",
@@ -249,7 +266,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'essen' (ich).",
           uk: "Доповніть формою 'essen' (ich).",
           sq: "Plotësoni me 'essen' (ich).",
-          de: "Vervollständige mit 'essen' (ich)."
+          de: "Vervollständige mit 'essen' (ich).",
+      sr: ""
         },
         context: "Ich ______ gern Pizza.",
         correctAnswer: "esse",
@@ -262,7 +280,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'schlafen' (du).",
           uk: "Виберіть правильну форму 'schlafen' (du).",
           sq: "Zgjidhni formën e saktë të 'schlafen' (du).",
-          de: "Wähle die korrekte Form von 'schlafen' (du)."
+          de: "Wähle die korrekte Form von 'schlafen' (du).",
+      sr: ""
         },
         context: "Wie lange ______ du?",
         options: ["schlafe", "schläfst", "schläft", "schlafen"],
@@ -276,7 +295,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'geben' (er).",
           uk: "Доповніть формою 'geben' (er).",
           sq: "Plotësoni me 'geben' (er).",
-          de: "Vervollständige mit 'geben' (er)."
+          de: "Vervollständige mit 'geben' (er).",
+      sr: ""
         },
         context: "Er ______ mir das Buch.",
         correctAnswer: "gibt",
@@ -289,7 +309,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z 'laufen'.",
           uk: "Побудуйте речення з 'laufen'.",
           sq: "Ndërtoni një fjali me 'laufen'.",
-          de: "Bilde einen Satz mit 'laufen'."
+          de: "Bilde einen Satz mit 'laufen'.",
+      sr: ""
         },
         context: ["Sie", "läuft", "jeden Morgen"],
         correctAnswer: "Sie läuft jeden Morgen",
@@ -302,7 +323,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj bezokolicznik do form er/sie/es.",
           uk: "Зіставте інфінітив з формами er/sie/es.",
           sq: "Përputhni paskajoren me format er/sie/es.",
-          de: "Ordne den Infinitiv den er/sie/es-Formen zu."
+          de: "Ordne den Infinitiv den er/sie/es-Formen zu.",
+      sr: ""
         },
         context: ["helfen", "waschen", "tragen", "fallen"],
         options: ["fällt", "hilft", "trägt", "wäscht"],
@@ -325,7 +347,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "'sein' (być) i 'haben' (mieć) to najważniejsze czasowniki posiłkowe. Są one bardzo nieregularne i należy je zapamiętać.",
       uk: "'sein' (бути) та 'haben' (мати) є найважливішими допоміжними дієсловами. Вони дуже неправильні, і їх потрібно вивчити напам'ять.",
       sq: "'sein' (me qenë) dhe 'haben' (me pasë) janë foljet ndihmëse më të rëndësishme. Ato janë shumë të parregullta dhe duhen mësuar përmendësh.",
-      de: "'sein' und 'haben' sind die wichtigsten Hilfsverben. Sie sind sehr unregelmäßig und müssen auswendig gelernt werden."
+      de: "'sein' und 'haben' sind die wichtigsten Hilfsverben. Sie sind sehr unregelmäßig und müssen auswendig gelernt werden.",
+      sr: ""
     },
     exercises: [
       {
@@ -336,7 +359,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij poprawną formą 'sein' (ich).",
           uk: "Доповніть правильною формою 'sein' (ich).",
           sq: "Plotësoni me formën e saktë të 'sein' (ich).",
-          de: "Vervollständige mit der korrekten Form von 'sein' (ich)."
+          de: "Vervollständige mit der korrekten Form von 'sein' (ich).",
+      sr: ""
         },
         context: "Ich ______ Student.",
         correctAnswer: "bin",
@@ -349,7 +373,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'haben' (wir).",
           uk: "Виберіть правильну форму 'haben' (wir).",
           sq: "Zgjidhni formën e saktë të 'haben' (wir).",
-          de: "Wähle die korrekte Form von 'haben' (wir)."
+          de: "Wähle die korrekte Form von 'haben' (wir).",
+      sr: ""
         },
         context: "Wir ______ Zeit.",
         options: ["habe", "hast", "hat", "haben"],
@@ -363,7 +388,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zaimki do poprawnych form 'sein'.",
           uk: "Зіставте займенники з правильними формами 'sein'.",
           sq: "Përputhni përemrat me format e sakta të 'sein'.",
-          de: "Ordne die Pronomen den korrekten Formen von 'sein' zu."
+          de: "Ordne die Pronomen den korrekten Formen von 'sein' zu.",
+      sr: ""
         },
         context: ["ich", "du", "er/sie/es", "ihr"],
         options: ["seid", "bist", "bin", "ist"],
@@ -377,7 +403,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'haben' (sie - l.mn.).",
           uk: "Доповніть формою 'haben' (sie - множина).",
           sq: "Plotësoni me 'haben' (sie - shumës).",
-          de: "Vervollständige mit 'haben' (sie - Plural)."
+          de: "Vervollständige mit 'haben' (sie - Plural).",
+      sr: ""
         },
         context: "Sie ______ ein Auto.",
         correctAnswer: "haben",
@@ -390,7 +417,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z 'sein'.",
           uk: "Побудуйте речення з 'sein'.",
           sq: "Ndërtoni një fjali me 'sein'.",
-          de: "Bilde einen Satz mit 'sein'."
+          de: "Bilde einen Satz mit 'sein'.",
+      sr: ""
         },
         context: ["Das", "ist", "mein", "Bruder"],
         correctAnswer: "Das ist mein Bruder",
@@ -403,7 +431,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'sein' (du).",
           uk: "Доповніть формою 'sein' (du).",
           sq: "Plotësoni me 'sein' (du).",
-          de: "Vervollständige mit 'sein' (du)."
+          de: "Vervollständige mit 'sein' (du).",
+      sr: ""
         },
         context: "______ du müde?",
         correctAnswer: "Bist",
@@ -416,7 +445,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'haben' (er).",
           uk: "Виберіть правильну форму 'haben' (er).",
           sq: "Zgjidhni formën e saktë të 'haben' (er).",
-          de: "Wähle die korrekte Form von 'haben' (er)."
+          de: "Wähle die korrekte Form von 'haben' (er).",
+      sr: ""
         },
         context: "Er ______ Hunger.",
         options: ["habe", "hast", "hat", "haben"],
@@ -430,7 +460,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie z 'haben'.",
           uk: "Побудуйте питання з 'haben'.",
           sq: "Ndërtoni pyetje me 'haben'.",
-          de: "Bilde eine Frage mit 'haben'."
+          de: "Bilde eine Frage mit 'haben'.",
+      sr: ""
         },
         context: ["Haben", "Sie", "Kinder", "?"],
         correctAnswer: "Haben Sie Kinder ?",
@@ -443,7 +474,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'sein' (wir).",
           uk: "Доповніть формою 'sein' (wir).",
           sq: "Plotësoni me 'sein' (wir).",
-          de: "Vervollständige mit 'sein' (wir)."
+          de: "Vervollständige mit 'sein' (wir).",
+      sr: ""
         },
         context: "Wir ______ zu Hause.",
         correctAnswer: "sind",
@@ -456,7 +488,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zaimki do poprawnych form 'haben'.",
           uk: "Зіставте займенники з правильними формами 'haben'.",
           sq: "Përputhni përemrat me format e sakta të 'haben'.",
-          de: "Ordne die Pronomen den korrekten Formen von 'haben' zu."
+          de: "Ordne die Pronomen den korrekten Formen von 'haben' zu.",
+      sr: ""
         },
         context: ["ich", "du", "ihr", "sie (plural)"],
         options: ["habt", "haben", "habe", "hast"],
@@ -479,7 +512,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Czasowniki modalne wyrażają umiejętność (können), chęć (wollen) lub konieczność (müssen). Wzór: Podmiot + czasownik modalny (poz. 2) + ... + bezokolicznik (koniec). Uwaga: formy ich/er/sie/es są identyczne.",
       uk: "Модальні дієслова виражають здатність (können), бажання (wollen) або необхідність (müssen). Схема: Підмет + модальне дієслово (поз. 2) + ... + інфінітив (кінець). Примітка: форми ich/er/sie/es однакові.",
       sq: "Foljet modale shprehin aftësi (können), dëshirë (wollen) ose domosdoshmëri (müssen). Modeli: Kryefjala + folje modale (poz. 2) + ... + paskajore (fund). Shënim: format ich/er/sie/es janë identike.",
-      de: "Modalverben drücken Fähigkeit (können), Wunsch (wollen) oder Notwendigkeit (müssen) aus. Muster: Subjekt + Modalverb (Pos. 2) + ... + Infinitiv (Ende). Hinweis: Die Formen ich/er/sie/es sind identisch."
+      de: "Modalverben drücken Fähigkeit (können), Wunsch (wollen) oder Notwendigkeit (müssen) aus. Muster: Subjekt + Modalverb (Pos. 2) + ... + Infinitiv (Ende). Hinweis: Die Formen ich/er/sie/es sind identisch.",
+      sr: ""
     },
     exercises: [
       {
@@ -490,7 +524,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'können' (ich).",
           uk: "Доповніть формою 'können' (ich).",
           sq: "Plotësoni me 'können' (ich).",
-          de: "Vervollständige mit 'können' (ich)."
+          de: "Vervollständige mit 'können' (ich).",
+      sr: ""
         },
         context: "Ich ______ gut Deutsch sprechen.",
         correctAnswer: "kann",
@@ -503,7 +538,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'wollen' (du).",
           uk: "Виберіть правильну форму 'wollen' (du).",
           sq: "Zgjidhni formën e saktë të 'wollen' (du).",
-          de: "Wähle die korrekte Form von 'wollen' (du)."
+          de: "Wähle die korrekte Form von 'wollen' (du).",
+      sr: ""
         },
         context: "______ du ins Kino gehen?",
         options: ["Will", "Willst", "Wollt", "Wollen"],
@@ -517,7 +553,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z czasownikiem modalnym (Satzklammer).",
           uk: "Побудуйте речення з модальним дієсловом (Satzklammer).",
           sq: "Ndërtoni një fjali me folje modale (Satzklammer).",
-          de: "Bilde einen Satz mit einem Modalverb (Satzklammer)."
+          de: "Bilde einen Satz mit einem Modalverb (Satzklammer).",
+      sr: ""
         },
         context: ["Wir", "müssen", "heute", "arbeiten"],
         correctAnswer: "Wir müssen heute arbeiten",
@@ -530,7 +567,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij strukturę zdania czasownikiem modalnym.",
           uk: "Доповніть структуру речення модальним дієсловом.",
           sq: "Plotësoni strukturën e fjalisë me folje modale.",
-          de: "Vervollständige die Satzstruktur mit einem Modalverb."
+          de: "Vervollständige die Satzstruktur mit einem Modalverb.",
+      sr: ""
         },
         context: "Er ______ am Wochenende nicht ______. (arbeiten/müssen)",
         correctAnswer: ["muss", "arbeiten"],
@@ -544,7 +582,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj czasowniki modalne do ich znaczeń.",
           uk: "Зіставте модальні дієслова з їхніми значеннями.",
           sq: "Përputhni foljet modale me kuptimet e tyre.",
-          de: "Ordne die Modalverben ihren Bedeutungen zu."
+          de: "Ordne die Modalverben ihren Bedeutungen zu.",
+      sr: ""
         },
         context: ["können", "wollen", "müssen"],
         options: ["want to/desire", "can/be able to", "must/have to"],
@@ -558,7 +597,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'dürfen' (ich).",
           uk: "Доповніть формою 'dürfen' (ich).",
           sq: "Plotësoni me 'dürfen' (ich).",
-          de: "Vervollständige mit 'dürfen' (ich)."
+          de: "Vervollständige mit 'dürfen' (ich).",
+      sr: ""
         },
         context: "______ ich Sie etwas fragen?",
         correctAnswer: "Darf",
@@ -571,7 +611,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę 'sollen' (wir).",
           uk: "Виберіть правильну форму 'sollen' (wir).",
           sq: "Zgjidhni formën e saktë të 'sollen' (wir).",
-          de: "Wähle die korrekte Form von 'sollen' (wir)."
+          de: "Wähle die korrekte Form von 'sollen' (wir).",
+      sr: ""
         },
         context: "Wann ______ wir kommen?",
         options: ["soll", "sollst", "sollen", "sollt"],
@@ -585,7 +626,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z 'mögen'.",
           uk: "Побудуйте речення з 'mögen'.",
           sq: "Ndërtoni një fjali me 'mögen'.",
-          de: "Bilde einen Satz mit 'mögen'."
+          de: "Bilde einen Satz mit 'mögen'.",
+      sr: ""
         },
         context: ["Ich", "mag", "Schokolade"],
         correctAnswer: "Ich mag Schokolade",
@@ -598,7 +640,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą 'können' (ihr).",
           uk: "Доповніть формою 'können' (ihr).",
           sq: "Plotësoni me 'können' (ihr).",
-          de: "Vervollständige mit 'können' (ihr)."
+          de: "Vervollständige mit 'können' (ihr).",
+      sr: ""
         },
         context: "______ ihr mir helfen?",
         correctAnswer: "Könnt",
@@ -611,7 +654,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj czasowniki modalne do sytuacji.",
           uk: "Зіставте модальні дієслова із ситуаціями.",
           sq: "Përputhni foljet modale me situatat.",
-          de: "Ordne die Modalverben den Situationen zu."
+          de: "Ordne die Modalverben den Situationen zu.",
+      sr: ""
         },
         context: ["können", "müssen", "dürfen", "sollen"],
         options: ["permission", "recommendation", "ability", "necessity"],
@@ -634,7 +678,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
         pl: "Czasowniki rozdzielnie złożone, takie jak einkaufen, aufstehen, anrufen, dzielą się: przedrostek idzie na koniec zdania. Przykład: 'Ich kaufe im Supermarkt ein.' / 'Wann stehst du auf?'",
         uk: "Відокремлювані дієслова, такі як einkaufen, aufstehen, anrufen, розділяються: префікс іде в кінець речення. Приклад: 'Ich kaufe im Supermarkt ein.' / 'Wann stehst du auf?'",
         sq: "Foljet e ndashme si einkaufen, aufstehen, anrufen ndahen: parashtesa shkon në fund të fjalisë. Shembull: 'Ich kaufe im Supermarkt ein.' / 'Wann stehst du auf?'",
-        de: "Trennbare Verben wie einkaufen, aufstehen, anrufen werden geteilt: Die Vorsilbe geht ans Satzende. Beispiel: 'Ich kaufe im Supermarkt ein.' / 'Wann stehst du auf?'"
+        de: "Trennbare Verben wie einkaufen, aufstehen, anrufen werden geteilt: Die Vorsilbe geht ans Satzende. Beispiel: 'Ich kaufe im Supermarkt ein.' / 'Wann stehst du auf?'",
+      sr: ""
     },
     exercises: [
         {
@@ -645,7 +690,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij czasownikiem rozdzielnie złożonym 'einkaufen' (ich).",
                 uk: "Доповніть роздільним дієсловом 'einkaufen' (ich).",
                 sq: "Plotësoni me foljen e ndashme 'einkaufen' (ich).",
-                de: "Vervollständige mit dem trennbaren Verb 'einkaufen' (ich)."
+                de: "Vervollständige mit dem trennbaren Verb 'einkaufen' (ich).",
+      sr: ""
             },
             context: "Ich ______ im Supermarkt ______.",
             correctAnswer: ["kaufe", "ein"]
@@ -658,7 +704,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj zdanie z czasownikiem rozdzielnie złożonym.",
                 uk: "Побудуйте речення з роздільним дієсловом.",
                 sq: "Ndërtoni një fjali me folje të ndashme.",
-                de: "Bilde einen Satz mit einem trennbaren Verb."
+                de: "Bilde einen Satz mit einem trennbaren Verb.",
+      sr: ""
             },
             context: ["Du", "stehst", "um 7 Uhr", "auf"],
             correctAnswer: "Du stehst um 7 Uhr auf"
@@ -671,7 +718,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Gdzie w zdaniach głównych umieszcza się przedrostek?",
                 uk: "Куди йде префікс у головних реченнях?",
                 sq: "Ku shkon parashtesa në fjalitë kryesore?",
-                de: "Wohin kommt die Vorsilbe in Hauptsätzen?"
+                de: "Wohin kommt die Vorsilbe in Hauptsätzen?",
+      sr: ""
             },
             context: "Wir ______ unsere Freunde ______. (anrufen)",
             options: ["anrufen ... ∅", "rufen ... an", "an ... rufen"],
@@ -685,7 +733,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij formą 'fernsehen' (er).",
                 uk: "Доповніть формою 'fernsehen' (er).",
                 sq: "Plotësoni me 'fernsehen' (er).",
-                de: "Vervollständige mit 'fernsehen' (er)."
+                de: "Vervollständige mit 'fernsehen' (er).",
+      sr: ""
             },
             context: "Er ______ jeden Abend ______.",
             correctAnswer: ["sieht", "fern"]
@@ -698,7 +747,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj czasowniki rozdzielnie złożone do ich rozdzielonych form (forma ich).",
                 uk: "Зіставте роздільні дієслова з їхніми розділеними формами (форма ich).",
                 sq: "Përputhni foljet e ndashme me format e tyre të ndara (forma ich).",
-                de: "Ordne trennbare Verben ihren getrennten Formen zu (ich-Form)."
+                de: "Ordne trennbare Verben ihren getrennten Formen zu (ich-Form).",
+      sr: ""
             },
             context: ["mitkommen", "aufstehen", "einkaufen", "anrufen"],
             options: ["rufe ... an", "stehe ... auf", "kaufe ... ein", "komme ... mit"],
@@ -712,7 +762,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij formą 'abfahren' (der Zug).",
                 uk: "Доповніть формою 'abfahren' (der Zug).",
                 sq: "Plotësoni me 'abfahren' (der Zug).",
-                de: "Vervollständige mit 'abfahren' (der Zug)."
+                de: "Vervollständige mit 'abfahren' (der Zug).",
+      sr: ""
             },
             context: "Der Zug ______ um 15:30 ______.",
             correctAnswer: ["fährt", "ab"]
@@ -725,7 +776,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj zdanie z 'zumachen'.",
                 uk: "Побудуйте речення з 'zumachen'.",
                 sq: "Ndërtoni një fjali me 'zumachen'.",
-                de: "Bilde einen Satz mit 'zumachen'."
+                de: "Bilde einen Satz mit 'zumachen'.",
+      sr: ""
             },
             context: ["Ich", "mache", "das Fenster", "zu"],
             correctAnswer: "Ich mache das Fenster zu"
@@ -738,7 +790,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Wybierz poprawne rozdzielenie 'vorstellen' (er).",
                 uk: "Виберіть правильне розділення 'vorstellen' (er).",
                 sq: "Zgjidhni ndarjen e saktë të 'vorstellen' (er).",
-                de: "Wähle die korrekte Trennung von 'vorstellen' (er)."
+                de: "Wähle die korrekte Trennung von 'vorstellen' (er).",
+      sr: ""
             },
             context: "Er ______ sich ______.",
             options: ["vorstellt", "stellt ... vor", "vor ... stellt"],
@@ -752,7 +805,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij formą 'zurückkommen' (wir).",
                 uk: "Доповніть формою 'zurückkommen' (wir).",
                 sq: "Plotësoni me 'zurückkommen' (wir).",
-                de: "Vervollständige mit 'zurückkommen' (wir)."
+                de: "Vervollständige mit 'zurückkommen' (wir).",
+      sr: ""
             },
             context: "Wir ______ morgen ______.",
             correctAnswer: ["kommen", "zurück"]
@@ -765,7 +819,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj czasowniki rozdzielnie złożone do ich czasowników podstawowych.",
                 uk: "Зіставте роздільні дієслова з їхніми основними дієсловами.",
                 sq: "Përputhni foljet e ndashme me foljet e tyre bazë.",
-                de: "Ordne trennbare Verben ihren Basisverben zu."
+                de: "Ordne trennbare Verben ihren Basisverben zu.",
+      sr: ""
             },
             context: ["aufmachen", "weggehen", "herkommen", "ausgehen"],
             options: ["gehen", "kommen", "gehen", "machen"],
@@ -788,7 +843,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Forma du: temat czasownika (często bez -st): Kauf!, Geh! Forma ihr: normalna koniugacja: Kauft!, Geht! Forma Sie: koniugacja + Sie: Kaufen Sie!",
       uk: "Форма du: основа дієслова (часто без -st): Kauf!, Geh! Форма ihr: звичайна форма: Kauft!, Geht! Форма Sie: форма + Sie: Kaufen Sie!",
       sq: "Forma du: rrënja e foljes (shpesh pa -st): Kauf!, Geh! Forma ihr: zgjedhim normal: Kauft!, Geht! Forma Sie: zgjedhim + Sie: Kaufen Sie!",
-      de: "Du-Form: Verbstamm (oft ohne -st): Kauf!, Geh! Ihr-Form: normale Konjugation: Kauft!, Geht! Sie-Form: Konjugation + Sie: Kaufen Sie!"
+      de: "Du-Form: Verbstamm (oft ohne -st): Kauf!, Geh! Ihr-Form: normale Konjugation: Kauft!, Geht! Sie-Form: Konjugation + Sie: Kaufen Sie!",
+      sr: ""
     },
     exercises: [
         {
@@ -799,7 +855,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Podaj polecenie używając formy 'du' czasownika 'kaufen'.",
                 uk: "Дайте команду, використовуючи форму 'du' дієслова 'kaufen'.",
                 sq: "Jepni urdhrin duke përdorur formën 'du' të foljes 'kaufen'.",
-                de: "Gib einen Befehl mit der du-Form von 'kaufen'."
+                de: "Gib einen Befehl mit der du-Form von 'kaufen'.",
+      sr: ""
             },
             context: "______ Brot im Supermarkt!",
             correctAnswer: "Kauf"
@@ -812,7 +869,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Wybierz poprawną formę rozkazującą 'ihr' dla 'gehen'.",
                 uk: "Виберіть правильну наказову форму 'ihr' для 'gehen'.",
                 sq: "Zgjidhni formën e saktë urdhërore 'ihr' të 'gehen'.",
-                de: "Wähle den korrekten Imperativ der ihr-Form von 'gehen'."
+                de: "Wähle den korrekten Imperativ der ihr-Form von 'gehen'.",
+      sr: ""
             },
             context: "______ nach Hause!",
             options: ["Geh", "Geht", "Gehen Sie"],
@@ -826,7 +884,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Podaj formalne polecenie z 'sprechen'.",
                 uk: "Дайте формальну команду з 'sprechen'.",
                 sq: "Jepni urdhrin formal me 'sprechen'.",
-                de: "Gib einen formellen Befehl mit 'sprechen'."
+                de: "Gib einen formellen Befehl mit 'sprechen'.",
+      sr: ""
             },
             context: "______ ______ bitte langsamer!",
             correctAnswer: ["Sprechen", "Sie"]
@@ -839,7 +898,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj formy rozkazujące do ich adresatów.",
                 uk: "Зіставте наказові форми з їхніми адресатами.",
                 sq: "Përputhni format urdhërore me adresuesit e tyre.",
-                de: "Ordne die Imperativformen ihren Adressaten zu."
+                de: "Ordne die Imperativformen ihren Adressaten zu.",
+      sr: ""
             },
             context: ["Komm!", "Kommt!", "Kommen Sie!"],
             options: ["formal (Sie)", "one person (du)", "multiple people (ihr)"],
@@ -853,7 +913,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj zdanie rozkazujące.",
                 uk: "Побудуйте наказове речення.",
                 sq: "Ndërtoni një fjali urdhërore.",
-                de: "Bilde einen Imperativsatz."
+                de: "Bilde einen Imperativsatz.",
+      sr: ""
             },
             context: ["Hilf", "mir", "bitte", "!"],
             correctAnswer: "Hilf mir bitte!"
@@ -866,7 +927,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Podaj formę rozkazującą 'du' dla 'nehmen'.",
                 uk: "Дайте наказову форму 'du' для 'nehmen'.",
                 sq: "Jepni formën urdhërore 'du' të 'nehmen'.",
-                de: "Gib den Imperativ der du-Form von 'nehmen'."
+                de: "Gib den Imperativ der du-Form von 'nehmen'.",
+      sr: ""
             },
             context: "______ den Bus!",
             correctAnswer: "Nimm"
@@ -879,7 +941,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Wybierz poprawną formalną formę rozkazującą 'warten'.",
                 uk: "Виберіть правильну формальну наказову форму 'warten'.",
                 sq: "Zgjidhni formën e saktë formale urdhërore të 'warten'.",
-                de: "Wähle den korrekten formellen Imperativ von 'warten'."
+                de: "Wähle den korrekten formellen Imperativ von 'warten'.",
+      sr: ""
             },
             context: "______ ______ bitte einen Moment!",
             options: ["Warte", "Wartet", "Warten Sie"],
@@ -893,7 +956,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj uprzejme polecenie.",
                 uk: "Побудуйте ввічливу команду.",
                 sq: "Ndërtoni një urdhër të sjellshëm.",
-                de: "Bilde einen höflichen Befehl."
+                de: "Bilde einen höflichen Befehl.",
+      sr: ""
             },
             context: ["Bitte", "seid", "leise", "!"],
             correctAnswer: "Bitte seid leise!"
@@ -906,7 +970,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij tryb rozkazujący czasownikiem rozdzielnie złożonym.",
                 uk: "Доповніть наказовий спосіб роздільним дієсловом.",
                 sq: "Plotësoni urdhëroren me folje të ndashme.",
-                de: "Vervollständige den Imperativ mit einem trennbaren Verb."
+                de: "Vervollständige den Imperativ mit einem trennbaren Verb.",
+      sr: ""
             },
             context: "______ die Tür ______! (aufmachen - du)",
             correctAnswer: ["Mach", "auf"]
@@ -919,7 +984,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj czasowniki do ich form rozkazujących 'du'.",
                 uk: "Зіставте дієслова з їхніми наказовими формами 'du'.",
                 sq: "Përputhni foljet me format e tyre urdhërore 'du'.",
-                de: "Ordne die Verben ihren du-Imperativformen zu."
+                de: "Ordne die Verben ihren du-Imperativformen zu.",
+      sr: ""
             },
             context: ["essen", "lesen", "geben", "fahren"],
             options: ["fahr", "iss", "gib", "lies"],
@@ -942,7 +1008,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Formy przeszłe: sein → war, warst, war, waren, wart, waren; haben → hatte, hattest, hatte, hatten, hattet, hatten. Używane do opisu wydarzeń z przeszłości: 'Früher war mein Großvater Arzt.'",
       uk: "Минулі форми: sein → war, warst, war, waren, wart, waren; haben → hatte, hattest, hatte, hatten, hattet, hatten. Використовується для минулих подій: 'Früher war mein Großvater Arzt.'",
       sq: "Format e së shkuarës: sein → war, warst, war, waren, wart, waren; haben → hatte, hattest, hatte, hatten, hattet, hatten. Përdoret për ngjarje të së shkuarës: 'Früher war mein Großvater Arzt.'",
-      de: "Vergangenheitsformen: sein → war, warst, war, waren, wart, waren; haben → hatte, hattest, hatte, hatten, hattet, hatten. Wird für vergangene Ereignisse verwendet: 'Früher war mein Großvater Arzt.'"
+      de: "Vergangenheitsformen: sein → war, warst, war, waren, wart, waren; haben → hatte, hattest, hatte, hatten, hattet, hatten. Wird für vergangene Ereignisse verwendet: 'Früher war mein Großvater Arzt.'",
+      sr: ""
     },
     exercises: [
         {
@@ -953,7 +1020,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij formą przeszłą 'sein' (ich).",
                 uk: "Доповніть минулою формою 'sein' (ich).",
                 sq: "Plotësoni me formën e shkuar të 'sein' (ich).",
-                de: "Vervollständige mit der Vergangenheitsform von 'sein' (ich)."
+                de: "Vervollständige mit der Vergangenheitsform von 'sein' (ich).",
+      sr: ""
             },
             context: "Ich ______ gestern krank.",
             correctAnswer: "war"
@@ -966,7 +1034,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Wybierz formę przeszłą 'haben' (wir).",
                 uk: "Виберіть минулу форму 'haben' (wir).",
                 sq: "Zgjidhni formën e shkuar të 'haben' (wir).",
-                de: "Wähle die Vergangenheitsform von 'haben' (wir)."
+                de: "Wähle die Vergangenheitsform von 'haben' (wir).",
+      sr: ""
             },
             context: "Wir ______ früher einen Hund.",
             options: ["hatte", "hattest", "hatten", "hattet"],
@@ -980,7 +1049,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj zaimki do form przeszłych 'sein'.",
                 uk: "Зіставте займенники з минулими формами 'sein'.",
                 sq: "Përputhni përemrat me format e shkuara të 'sein'.",
-                de: "Ordne die Pronomen den Vergangenheitsformen von 'sein' zu."
+                de: "Ordne die Pronomen den Vergangenheitsformen von 'sein' zu.",
+      sr: ""
             },
             context: ["du", "ihr", "sie (plural)", "er"],
             options: ["wart", "war", "warst", "waren"],
@@ -994,7 +1064,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj zdanie w czasie przeszłym.",
                 uk: "Побудуйте речення в минулому часі.",
                 sq: "Ndërtoni një fjali në kohën e shkuar.",
-                de: "Bilde einen Satz im Präteritum."
+                de: "Bilde einen Satz im Präteritum.",
+      sr: ""
             },
             context: ["Früher", "hatte", "ich", "keine Zeit"],
             correctAnswer: "Früher hatte ich keine Zeit"
@@ -1007,7 +1078,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij zdanie biograficzne.",
                 uk: "Доповніть біографічне речення.",
                 sq: "Plotësoni fjalinë biografike.",
-                de: "Vervollständige den biographischen Satz."
+                de: "Vervollständige den biographischen Satz.",
+      sr: ""
             },
             context: "Mein Großvater ______ Arzt und ______ ein großes Haus.",
             correctAnswer: ["war", "hatte"]
@@ -1020,7 +1092,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij formą przeszłą 'haben' (du).",
                 uk: "Доповніть минулою формою 'haben' (du).",
                 sq: "Plotësoni me formën e shkuar të 'haben' (du).",
-                de: "Vervollständige mit der Vergangenheitsform von 'haben' (du)."
+                de: "Vervollständige mit der Vergangenheitsform von 'haben' (du).",
+      sr: ""
             },
             context: "______ du Spaß auf der Party?",
             correctAnswer: "Hattest"
@@ -1033,7 +1106,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Wybierz formę przeszłą 'sein' (sie - l.mn.).",
                 uk: "Виберіть минулу форму 'sein' (sie - множина).",
                 sq: "Zgjidhni formën e shkuar të 'sein' (sie - shumës).",
-                de: "Wähle die Vergangenheitsform von 'sein' (sie - Plural)."
+                de: "Wähle die Vergangenheitsform von 'sein' (sie - Plural).",
+      sr: ""
             },
             context: "Sie ______ sehr müde.",
             options: ["war", "warst", "waren", "wart"],
@@ -1047,7 +1121,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj pytanie w czasie przeszłym.",
                 uk: "Побудуйте питання в минулому часі.",
                 sq: "Ndërtoni një pyetje në kohën e shkuar.",
-                de: "Bilde eine Frage im Präteritum."
+                de: "Bilde eine Frage im Präteritum.",
+      sr: ""
             },
             context: ["Waren", "Sie", "schon", "in Berlin", "?"],
             correctAnswer: "Waren Sie schon in Berlin?"
@@ -1060,7 +1135,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij historię w czasie przeszłym.",
                 uk: "Доповніть розповідь у минулому часі.",
                 sq: "Plotësoni tregimin në kohën e shkuar.",
-                de: "Vervollständige die Geschichte im Präteritum."
+                de: "Vervollständige die Geschichte im Präteritum.",
+      sr: ""
             },
             context: "Als Kind ______ ich sehr klein und ______ viele Spielsachen.",
             correctAnswer: ["war", "hatte"]
@@ -1073,7 +1149,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj formy teraźniejsze do przeszłych.",
                 uk: "Зіставте теперішні форми з минулими.",
                 sq: "Përputhni format e tashme me ato të shkuara.",
-                de: "Ordne die Präsensformen den Vergangenheitsformen zu."
+                de: "Ordne die Präsensformen den Vergangenheitsformen zu.",
+      sr: ""
             },
             context: ["ich bin", "du hast", "wir sind", "ihr habt"],
             options: ["wir waren", "ich war", "ihr hattet", "du hattest"],
@@ -1098,7 +1175,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Wszystkie niemieckie rzeczowniki mają rodzaj: męski (der), żeński (die), nijaki (das). Rodzajniki nieokreślone: ein, eine, ein. Rodzaj należy zapamiętać z każdym rzeczownikiem.",
       uk: "Усі німецькі іменники мають рід: чоловічий (der), жіночий (die), середній (das). Неозначені артиклі: ein, eine, ein. Рід потрібно запам'ятовувати з кожним іменником.",
       sq: "Të gjithë emrat gjermanë kanë gjini: mashkullore (der), femërore (die), asnjanëse (das). Nyjet e pashquara: ein, eine, ein. Gjinia duhet të mësohet përmendësh me çdo emër.",
-      de: "Alle deutschen Nomen haben ein Geschlecht: maskulin (der), feminin (die), neutrum (das). Unbestimmte Artikel: ein, eine, ein. Das Geschlecht muss mit jedem Nomen gelernt werden."
+      de: "Alle deutschen Nomen haben ein Geschlecht: maskulin (der), feminin (die), neutrum (das). Unbestimmte Artikel: ein, eine, ein. Das Geschlecht muss mit jedem Nomen gelernt werden.",
+      sr: ""
     },
     exercises: [
         {
@@ -1109,7 +1187,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj rzeczowniki do ich poprawnych rodzajników określonych.",
                 uk: "Зіставте іменники з їхніми правильними означеними артиклями.",
                 sq: "Përputhni emrat me nyjet e tyre të sakta shquese.",
-                de: "Ordne die Nomen ihren korrekten bestimmten Artikeln zu."
+                de: "Ordne die Nomen ihren korrekten bestimmten Artikeln zu.",
+      sr: ""
             },
             context: ["Mann", "Frau", "Kind", "Haus"],
             options: ["das", "der", "die", "das"],
@@ -1123,7 +1202,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij poprawnym rodzajnikiem nieokreślonym.",
                 uk: "Доповніть правильним неозначеним артиклем.",
                 sq: "Plotësoni me nyjen e saktë të pashquar.",
-                de: "Vervollständige mit dem korrekten unbestimmten Artikel."
+                de: "Vervollständige mit dem korrekten unbestimmten Artikel.",
+      sr: ""
             },
             context: "Das ist ______ Buch. (das Buch)",
             correctAnswer: "ein"
@@ -1136,7 +1216,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Wybierz poprawny rodzajnik dla 'Schule'.",
                 uk: "Виберіть правильний артикль для 'Schule'.",
                 sq: "Zgjidhni nyjen e saktë për 'Schule'.",
-                de: "Wähle den korrekten Artikel für 'Schule'."
+                de: "Wähle den korrekten Artikel für 'Schule'.",
+      sr: ""
             },
             context: "______ Schule ist groß.",
             options: ["Der", "Die", "Das"],
@@ -1150,7 +1231,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij rodzajnikiem określonym.",
                 uk: "Доповніть означеним артиклем.",
                 sq: "Plotësoni me nyjen shquese.",
-                de: "Vervollständige mit dem bestimmten Artikel."
+                de: "Vervollständige mit dem bestimmten Artikel.",
+      sr: ""
             },
             context: "______ Auto ist rot. (das Auto)",
             correctAnswer: "Das"
@@ -1163,7 +1245,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj zdanie z poprawnymi rodzajnikami.",
                 uk: "Побудуйте речення з правильними артиклями.",
                 sq: "Ndërtoni fjali me nyjet e sakta.",
-                de: "Bilde einen Satz mit den korrekten Artikeln."
+                de: "Bilde einen Satz mit den korrekten Artikeln.",
+      sr: ""
             },
             context: ["Das", "ist", "eine", "Lehrerin"],
             correctAnswer: "Das ist eine Lehrerin"
@@ -1176,7 +1259,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij rodzajnikiem nieokreślonym dla 'Tisch' (biernik).",
                 uk: "Доповніть неозначеним артиклем для 'Tisch' (знахідний).",
                 sq: "Plotësoni me nyjen e pashquar për 'Tisch' (kallëzore).",
-                de: "Vervollständige mit dem unbestimmten Artikel für 'Tisch' (Akkusativ)."
+                de: "Vervollständige mit dem unbestimmten Artikel für 'Tisch' (Akkusativ).",
+      sr: ""
             },
             context: "Ich brauche ______ Tisch.",
             correctAnswer: "einen"
@@ -1189,7 +1273,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Wybierz poprawny rodzajnik dla 'Universität'.",
                 uk: "Виберіть правильний артикль для 'Universität'.",
                 sq: "Zgjidhni nyjen e saktë për 'Universität'.",
-                de: "Wähle den korrekten Artikel für 'Universität'."
+                de: "Wähle den korrekten Artikel für 'Universität'.",
+      sr: ""
             },
             context: "______ Universität ist sehr modern.",
             options: ["Der", "Die", "Das"],
@@ -1203,7 +1288,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Dopasuj rzeczowniki do rodzajników nieokreślonych (mianownik/biernik).",
                 uk: "Зіставте іменники з неозначеними артиклями (називний/знахідний).",
                 sq: "Përputhni emrat me nyjet e pashquara (emërore/kallëzore).",
-                de: "Ordne Nomen unbestimmten Artikeln zu (Nominativ/Akkusativ)."
+                de: "Ordne Nomen unbestimmten Artikeln zu (Nominativ/Akkusativ).",
+      sr: ""
             },
             context: ["Lampe (sie hat...)", "Computer (er hat...)", "Mädchen (es ist...)", "Stuhl (er braucht...)"],
             options: ["ein", "eine", "einen", "ein"],
@@ -1217,7 +1303,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Zbuduj zdanie z rodzajnikami.",
                 uk: "Побудуйте речення з артиклями.",
                 sq: "Ndërtoni fjali me nyje.",
-                de: "Bilde einen Satz mit Artikeln."
+                de: "Bilde einen Satz mit Artikeln.",
+      sr: ""
             },
             context: ["Der", "Mann", "kauft", "ein", "Auto"],
             correctAnswer: "Der Mann kauft ein Auto"
@@ -1230,7 +1317,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
                 pl: "Uzupełnij poprawnym rodzajnikiem dla 'Telefon'.",
                 uk: "Доповніть правильним артиклем для 'Telefon'.",
                 sq: "Plotësoni me nyjen e saktë për 'Telefon'.",
-                de: "Vervollständige mit dem korrekten Artikel für 'Telefon'."
+                de: "Vervollständige mit dem korrekten Artikel für 'Telefon'.",
+      sr: ""
             },
             context: "______ Telefon klingelt. (das Telefon)",
             correctAnswer: "Das"
@@ -1252,7 +1340,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Mianownik odpowiada na pytanie 'Kto?' (wer) lub 'Co?' (was). Jest to podmiot zdania. Rodzajniki: der/ein, die/eine, das/ein.",
       uk: "Називний відмінок відповідає на питання 'Хто?' (wer) або 'Що?' (was). Це підмет речення. Артиклі: der/ein, die/eine, das/ein.",
       sq: "Rasa emërore i përgjigjet pyetjes 'Kush?' (wer) ose 'Çfarë?' (was). Është kryefjala e fjalisë. Nyjet: der/ein, die/eine, das/ein.",
-      de: "Der Nominativ antwortet auf 'Wer?' oder 'Was?'. Er ist das Subjekt des Satzes. Artikel: der/ein, die/eine, das/ein."
+      de: "Der Nominativ antwortet auf 'Wer?' oder 'Was?'. Er ist das Subjekt des Satzes. Artikel: der/ein, die/eine, das/ein.",
+      sr: ""
     },
     exercises: [
       {
@@ -1263,7 +1352,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij podmiot w mianowniku.",
           uk: "Доповніть підмет у називному відмінку.",
           sq: "Plotësoni kryefjalën në rasën emërore.",
-          de: "Vervollständige das Subjekt im Nominativ."
+          de: "Vervollständige das Subjekt im Nominativ.",
+      sr: ""
         },
         context: "______ Mann arbeitet hier. (der Mann)",
         correctAnswer: "Der",
@@ -1276,7 +1366,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zidentyfikuj mianownik w zdaniu.",
           uk: "Визначте називний відмінок у реченні.",
           sq: "Identifikoni rasën emërore në fjali.",
-          de: "Identifiziere den Nominativ im Satz."
+          de: "Identifiziere den Nominativ im Satz.",
+      sr: ""
         },
         context: "Die Lehrerin erklärt die Grammatik.",
         options: ["Die Lehrerin", "die Grammatik", "erklärt"],
@@ -1290,7 +1381,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z podmiotem w mianowniku.",
           uk: "Побудуйте речення з підметом у називному відмінку.",
           sq: "Ndërtoni fjali me kryefjalë në rasën emërore.",
-          de: "Bilde einen Satz mit einem Subjekt im Nominativ."
+          de: "Bilde einen Satz mit einem Subjekt im Nominativ.",
+      sr: ""
         },
         context: ["Ein", "Student", "lernt", "Deutsch"],
         correctAnswer: "Ein Student lernt Deutsch",
@@ -1303,7 +1395,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Odpowiedz na pytanie 'Wer?'.",
           uk: "Дайте відповідь на запитання 'Wer?'.",
           sq: "Përgjigjjuni pyetjes 'Wer?'.",
-          de: "Beantworte die 'Wer?'-Frage."
+          de: "Beantworte die 'Wer?'-Frage.",
+      sr: ""
         },
         context: "Wer ist das? - Das ist ______ Arzt.",
         correctAnswer: "ein",
@@ -1316,7 +1409,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj pytania do odpowiedzi w mianowniku.",
           uk: "Зіставте питання з відповідями в називному відмінку.",
           sq: "Përputhni pyetjet me përgjigjet në rasën emërore.",
-          de: "Ordne die Fragen den Antworten im Nominativ zu."
+          de: "Ordne die Fragen den Antworten im Nominativ zu.",
+      sr: ""
         },
         context: ["Wer kommt?", "Was ist das?", "Wer arbeitet hier?"],
         options: ["Ein Ingenieur.", "Das ist ein Buch.", "Der Chef."],
@@ -1330,7 +1424,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij podmiot w mianowniku.",
           uk: "Доповніть підмет у називному відмінку.",
           sq: "Plotësoni kryefjalën në rasën emërore.",
-          de: "Vervollständige das Subjekt im Nominativ."
+          de: "Vervollständige das Subjekt im Nominativ.",
+      sr: ""
         },
         context: "______ Katze schläft auf dem Sofa.",
         correctAnswer: "Die",
@@ -1343,7 +1438,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę mianownika.",
           uk: "Виберіть правильну форму називного відмінка.",
           sq: "Zgjidhni formën e saktë emërore.",
-          de: "Wähle die korrekte Nominativform."
+          de: "Wähle die korrekte Nominativform.",
+      sr: ""
         },
         context: "______ Kind spielt im Garten.",
         options: ["Der", "Die", "Das"],
@@ -1357,7 +1453,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie w mianowniku.",
           uk: "Побудуйте речення в називному відмінку.",
           sq: "Ndërtoni fjali në rasën emërore.",
-          de: "Bilde einen Satz im Nominativ."
+          de: "Bilde einen Satz im Nominativ.",
+      sr: ""
         },
         context: ["Eine", "Ärztin", "hilft", "den Patienten"],
         correctAnswer: "Eine Ärztin hilft den Patienten",
@@ -1370,7 +1467,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij rodzajnikiem w mianowniku.",
           uk: "Доповніть артиклем у називному відмінку.",
           sq: "Plotësoni me nyjen në rasën emërore.",
-          de: "Vervollständige mit dem Nominativartikel."
+          de: "Vervollständige mit dem Nominativartikel.",
+      sr: ""
         },
         context: "______ Bus kommt um 8 Uhr.",
         correctAnswer: "Der",
@@ -1383,7 +1481,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj pytania Wer/Was do odpowiedzi.",
           uk: "Зіставте питання Wer/Was з відповідями.",
           sq: "Përputhni pyetjet Wer/Was me përgjigjet.",
-          de: "Ordne Wer/Was-Fragen den Antworten zu."
+          de: "Ordne Wer/Was-Fragen den Antworten zu.",
+      sr: ""
         },
         context: ["Wer singt?", "Was passiert?", "Wer kocht?"],
         options: ["Ein Unfall.", "Die Mutter.", "Der Sänger."],
@@ -1406,7 +1505,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Biernik odpowiada na pytanie 'Kogo?' (wen) lub 'Co?' (was). Jest to dopełnienie bliższe. Rodzajniki się zmieniają: der→den, ein→einen. die/das pozostają bez zmian.",
       uk: "Знахідний відмінок відповідає на питання 'Кого?' (wen) або 'Що?' (was). Це прямий додаток. Артиклі змінюються: der→den, ein→einen. die/das залишаються без змін.",
       sq: "Rasa kallëzore i përgjigjet pyetjes 'Kë?' (wen) ose 'Çfarë?' (was). Është kundrinori i drejtë. Nyjet ndryshojnë: der→den, ein→einen. die/das mbeten të pandryshuara.",
-      de: "Der Akkusativ antwortet auf 'Wen?' oder 'Was?'. Er ist das direkte Objekt. Die Artikel ändern sich: der→den, ein→einen. die/das bleiben unverändert."
+      de: "Der Akkusativ antwortet auf 'Wen?' oder 'Was?'. Er ist das direkte Objekt. Die Artikel ändern sich: der→den, ein→einen. die/das bleiben unverändert.",
+      sr: ""
     },
     exercises: [
       {
@@ -1417,7 +1517,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij dopełnienie bliższe w bierniku.",
           uk: "Доповніть прямий додаток у знахідному відмінку.",
           sq: "Plotësoni kundrinorin e drejtë në rasën kallëzore.",
-          de: "Vervollständige das direkte Objekt im Akkusativ."
+          de: "Vervollständige das direkte Objekt im Akkusativ.",
+      sr: ""
         },
         context: "Ich kaufe ______ Stuhl. (der Stuhl)",
         correctAnswer: "einen",
@@ -1430,7 +1531,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę biernika.",
           uk: "Виберіть правильну форму знахідного відмінка.",
           sq: "Zgjidhni formën e saktë kallëzore.",
-          de: "Wähle die korrekte Akkusativform."
+          de: "Wähle die korrekte Akkusativform.",
+      sr: ""
         },
         context: "Sie liest ______ Buch. (das Buch)",
         options: ["den", "das", "dem"],
@@ -1444,7 +1546,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij rodzajnikiem w bierniku.",
           uk: "Доповніть артиклем у знахідному відмінку.",
           sq: "Plotësoni me nyjen në rasën kallëzore.",
-          de: "Vervollständige mit dem Akkusativartikel."
+          de: "Vervollständige mit dem Akkusativartikel.",
+      sr: ""
         },
         context: "Wir haben ______ Hund. (der Hund)",
         correctAnswer: "einen",
@@ -1457,7 +1560,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z dopełnieniem w bierniku.",
           uk: "Побудуйте речення з додатком у знахідному відмінку.",
           sq: "Ndërtoni fjali me kundrinor në rasën kallëzore.",
-          de: "Bilde einen Satz mit einem Akkusativobjekt."
+          de: "Bilde einen Satz mit einem Akkusativobjekt.",
+      sr: ""
         },
         context: ["Er", "trinkt", "einen", "Kaffee"],
         correctAnswer: "Er trinkt einen Kaffee",
@@ -1470,7 +1574,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj formy mianownika do form biernika.",
           uk: "Зіставте форми називного відмінка з формами знахідного.",
           sq: "Përputhni format emërore me format kallëzore.",
-          de: "Ordne die Nominativformen den Akkusativformen zu."
+          de: "Ordne die Nominativformen den Akkusativformen zu.",
+      sr: ""
         },
         context: ["der Mann", "die Frau", "das Kind", "ein Auto"],
         options: ["ein Auto", "den Mann", "das Kind", "die Frau"],
@@ -1484,7 +1589,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij biernik z 'sehen'.",
           uk: "Доповніть знахідний відмінок з 'sehen'.",
           sq: "Plotësoni kallëzoren me 'sehen'.",
-          de: "Vervollständige den Akkusativ mit 'sehen'."
+          de: "Vervollständige den Akkusativ mit 'sehen'.",
+      sr: ""
         },
         context: "Ich sehe ______ Lehrer. (der Lehrer)",
         correctAnswer: "den",
@@ -1497,7 +1603,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz formę biernika dla rzeczownika rodzaju żeńskiego.",
           uk: "Виберіть форму знахідного відмінка для іменника жіночого роду.",
           sq: "Zgjidhni formën kallëzore për emrin femëror.",
-          de: "Wähle die Akkusativform für ein feminines Nomen."
+          de: "Wähle die Akkusativform für ein feminines Nomen.",
+      sr: ""
         },
         context: "Er besucht ______ Großmutter.",
         options: ["der", "die", "den"],
@@ -1511,7 +1618,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie w bierniku.",
           uk: "Побудуйте речення в знахідному відмінку.",
           sq: "Ndërtoni fjali në rasën kallëzore.",
-          de: "Bilde einen Satz im Akkusativ."
+          de: "Bilde einen Satz im Akkusativ.",
+      sr: ""
         },
         context: ["Wir", "brauchen", "eine", "neue Wohnung"],
         correctAnswer: "Wir brauchen eine neue Wohnung",
@@ -1524,7 +1632,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zaimkiem w bierniku.",
           uk: "Доповніть займенником у знахідному відмінку.",
           sq: "Plotësoni me përemër në rasën kallëzore.",
-          de: "Vervollständige mit dem Akkusativpronomen."
+          de: "Vervollständige mit dem Akkusativpronomen.",
+      sr: ""
         },
         context: "Kennst du ______? (der Professor)",
         correctAnswer: "ihn",
@@ -1537,7 +1646,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj pytania Wen/Was do odpowiedzi w bierniku.",
           uk: "Зіставте питання Wen/Was з відповідями в знахідному відмінку.",
           sq: "Përputhni pyetjet Wen/Was me përgjigjet në kallëzore.",
-          de: "Ordne Wen/Was-Fragen den Akkusativ-Antworten zu."
+          de: "Ordne Wen/Was-Fragen den Akkusativ-Antworten zu.",
+      sr: ""
         },
         context: ["Wen ruft sie an?", "Was isst er?", "Wen besuchen Sie?"],
         options: ["Einen Apfel.", "Meine Eltern.", "Ihren Freund."],
@@ -1560,7 +1670,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Celownik odpowiada na pytanie 'Komu?' (wem). Rodzajniki: der→dem, die→der, das→dem, die(l.mn.)→den. Używany do dopełnień dalszych i po przyimkach z celownikiem.",
       uk: "Давальний відмінок відповідає на питання 'Кому?' (wem). Артиклі: der→dem, die→der, das→dem, die(мн.)→den. Використовується для непрямих додатків і після прийменників, що вимагають давального відмінка.",
       sq: "Rasa dhanore i përgjigjet pyetjes 'Kujt?' (wem). Nyjet: der→dem, die→der, das→dem, die(sh)→den. Përdoret për kundrinorët e zhdrejtë dhe pas parafjalëve që kërkojnë dhanoren.",
-      de: "Der Dativ antwortet auf 'Wem?'. Artikel: der→dem, die→der, das→dem, die(Pl)→den. Wird für indirekte Objekte und nach Dativpräpositionen verwendet."
+      de: "Der Dativ antwortet auf 'Wem?'. Artikel: der→dem, die→der, das→dem, die(Pl)→den. Wird für indirekte Objekte und nach Dativpräpositionen verwendet.",
+      sr: ""
     },
     exercises: [
       {
@@ -1571,7 +1682,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij dopełnienie dalsze w celowniku.",
           uk: "Доповніть непрямий додаток у давальному відмінку.",
           sq: "Plotësoni kundrinorin e zhdrejtë në rasën dhanore.",
-          de: "Vervollständige das indirekte Objekt im Dativ."
+          de: "Vervollständige das indirekte Objekt im Dativ.",
+      sr: ""
         },
         context: "Ich gebe ______ Mann das Buch. (der Mann)",
         correctAnswer: "dem",
@@ -1584,7 +1696,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę celownika.",
           uk: "Виберіть правильну форму давального відмінка.",
           sq: "Zgjidhni formën e saktë dhanore.",
-          de: "Wähle die korrekte Dativform."
+          de: "Wähle die korrekte Dativform.",
+      sr: ""
         },
         context: "Sie hilft ______ Frau. (die Frau)",
         options: ["die", "der", "den"],
@@ -1598,7 +1711,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij z celownikiem po przyimku.",
           uk: "Доповніть давальним відмінком після прийменника.",
           sq: "Plotësoni me dhanore pas parafjale.",
-          de: "Vervollständige mit dem Dativ nach der Präposition."
+          de: "Vervollständige mit dem Dativ nach der Präposition.",
+      sr: ""
         },
         context: "Ich fahre mit ______ Bus. (der Bus)",
         correctAnswer: "dem",
@@ -1611,7 +1725,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z celownikiem.",
           uk: "Побудуйте речення з давальним відмінком.",
           sq: "Ndërtoni fjali me rasën dhanore.",
-          de: "Bilde einen Satz mit Dativ."
+          de: "Bilde einen Satz mit Dativ.",
+      sr: ""
         },
         context: ["Das", "Auto", "gehört", "meinem Vater"],
         correctAnswer: "Das Auto gehört meinem Vater",
@@ -1624,7 +1739,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj przyimki do zwrotów w celowniku.",
           uk: "Зіставте прийменники з фразами в давальному відмінку.",
           sq: "Përputhni parafjalët me frazat në rasën dhanore.",
-          de: "Ordne die Präpositionen den Dativ-Phrasen zu."
+          de: "Ordne die Präpositionen den Dativ-Phrasen zu.",
+      sr: ""
         },
         context: ["aus", "bei", "mit", "zu"],
         options: ["zu der Schule", "aus dem Haus", "bei dem Arzt", "mit der Familie"],
@@ -1638,7 +1754,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij celownik z 'schreiben'.",
           uk: "Доповніть давальний відмінок з 'schreiben'.",
           sq: "Plotësoni dhanoren me 'schreiben'.",
-          de: "Vervollständige den Dativ mit 'schreiben'."
+          de: "Vervollständige den Dativ mit 'schreiben'.",
+      sr: ""
         },
         context: "Er schreibt ______ Schwester einen Brief. (seine Schwester)",
         correctAnswer: "seiner",
@@ -1651,7 +1768,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz formę celownika po 'von' (liczba mnoga).",
           uk: "Виберіть форму давального відмінка після 'von' (множина).",
           sq: "Zgjidhni formën dhanore pas 'von' (shumës).",
-          de: "Wähle die Dativform nach 'von' (Plural)."
+          de: "Wähle die Dativform nach 'von' (Plural).",
+      sr: ""
         },
         context: "Das Geschenk ist von ______ Großeltern.",
         options: ["die", "den", "der"],
@@ -1665,7 +1783,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie w celowniku z 'schenken'.",
           uk: "Побудуйте речення в давальному відмінку з 'schenken'.",
           sq: "Ndërtoni fjali në dhanore me 'schenken'.",
-          de: "Bilde einen Dativsatz mit 'schenken'."
+          de: "Bilde einen Dativsatz mit 'schenken'.",
+      sr: ""
         },
         context: ["Ich", "schenke", "meiner Mutter", "Blumen"],
         correctAnswer: "Ich schenke meiner Mutter Blumen",
@@ -1678,7 +1797,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij celownikiem po 'nach'.",
           uk: "Доповніть давальним відмінком після 'nach'.",
           sq: "Plotësoni me dhanore pas 'nach'.",
-          de: "Vervollständige mit dem Dativ nach 'nach'."
+          de: "Vervollständige mit dem Dativ nach 'nach'.",
+      sr: ""
         },
         context: "Nach ______ Arbeit gehe ich nach Hause. (die Arbeit)",
         correctAnswer: "der",
@@ -1691,7 +1811,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj czasowniki celownikowe do ich znaczeń.",
           uk: "Зіставте дієслова давального відмінка з їхніми значеннями.",
           sq: "Përputhni foljet dhanore me kuptimet e tyre.",
-          de: "Ordne die Dativverben ihren Bedeutungen zu."
+          de: "Ordne die Dativverben ihren Bedeutungen zu.",
+      sr: ""
         },
         context: ["helfen", "gehören", "gefallen", "danken"],
         options: ["to thank", "to help", "to like/please", "to belong"],
@@ -1714,7 +1835,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Niemiecki ma różne końcówki liczby mnogiej: -e, -er, -n, -en, -s. Formy liczby mnogiej należy uczyć się z każdym rzeczownikiem. W celowniku liczby mnogiej dodaje się -n, jeśli go tam jeszcze nie ma.",
       uk: "Німецька мова має різні закінчення множини: -e, -er, -n, -en, -s. Форми множини потрібно вивчати з кожним іменником. У давальному відмінку множини додається -n, якщо його ще немає.",
       sq: "Gjermanishtja ka mbaresa të ndryshme shumsi: -e, -er, -n, -en, -s. Format e shumësit duhen mësuar me çdo emër. Në dhanoren e shumësit, shtohet -n nëse nuk është tashmë i pranishëm.",
-      de: "Im Deutschen gibt es verschiedene Pluralendungen: -e, -er, -n, -en, -s. Pluralformen müssen mit jedem Nomen gelernt werden. Im Dativ Plural wird ein -n hinzugefügt, wenn noch keins vorhanden ist."
+      de: "Im Deutschen gibt es verschiedene Pluralendungen: -e, -er, -n, -en, -s. Pluralformen müssen mit jedem Nomen gelernt werden. Im Dativ Plural wird ein -n hinzugefügt, wenn noch keins vorhanden ist.",
+      sr: ""
     },
     exercises: [
       {
@@ -1725,7 +1847,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj rzeczowniki w liczbie pojedynczej do ich liczby mnogiej.",
           uk: "Зіставте іменники в однині з їхніми формами множини.",
           sq: "Përputhni emrat në njëjës me shumësit e tyre.",
-          de: "Ordne die Nomen im Singular ihren Pluralformen zu."
+          de: "Ordne die Nomen im Singular ihren Pluralformen zu.",
+      sr: ""
         },
         context: ["das Kind", "der Tisch", "die Frau", "das Auto"],
         options: ["die Frauen", "die Autos", "die Kinder", "die Tische"],
@@ -1739,7 +1862,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formą liczby mnogiej.",
           uk: "Доповніть формою множини.",
           sq: "Plotësoni me formën e shumësit.",
-          de: "Vervollständige mit der Pluralform."
+          de: "Vervollständige mit der Pluralform.",
+      sr: ""
         },
         context: "Ich sehe zwei ______. (das Buch)",
         correctAnswer: "Bücher",
@@ -1752,7 +1876,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną liczbę mnogą od 'der Student'.",
           uk: "Виберіть правильну форму множини 'der Student'.",
           sq: "Zgjidhni shumësine e saktë të 'der Student'.",
-          de: "Wähle den korrekten Plural von 'der Student'."
+          de: "Wähle den korrekten Plural von 'der Student'.",
+      sr: ""
         },
         context: "Die ______ lernen Deutsch.",
         options: ["Studenten", "Students", "Studente"],
@@ -1766,7 +1891,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij celownik liczby mnogiej.",
           uk: "Доповніть давальний відмінок множини.",
           sq: "Plotësoni dhanoren në shumës.",
-          de: "Vervollständige den Dativ Plural."
+          de: "Vervollständige den Dativ Plural.",
+      sr: ""
         },
         context: "Ich spreche mit den ______. (die Kinder)",
         correctAnswer: "Kindern",
@@ -1780,7 +1906,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z liczbą mnogą.",
           uk: "Побудуйте речення з формою множини.",
           sq: "Ndërtoni fjali me shumës.",
-          de: "Bilde einen Satz mit Plural."
+          de: "Bilde einen Satz mit Plural.",
+      sr: ""
         },
         context: ["Viele", "Menschen", "arbeiten", "hier"],
         correctAnswer: "Viele Menschen arbeiten hier",
@@ -1793,7 +1920,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij liczbą mnogą od 'der Apfel'.",
           uk: "Доповніть формою множини 'der Apfel'.",
           sq: "Plotësoni me shumesin e 'der Apfel'.",
-          de: "Vervollständige mit dem Plural von 'der Apfel'."
+          de: "Vervollständige mit dem Plural von 'der Apfel'.",
+      sr: ""
         },
         context: "Wir kaufen drei ______.",
         correctAnswer: "Äpfel",
@@ -1806,7 +1934,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz liczbę mnogą od 'die Universität'.",
           uk: "Виберіть форму множини 'die Universität'.",
           sq: "Zgjidhni shumësine e 'die Universität'.",
-          de: "Wähle den Plural von 'die Universität'."
+          de: "Wähle den Plural von 'die Universität'.",
+      sr: ""
         },
         context: "In Deutschland gibt es viele ______.",
         options: ["Universitäte", "Universitäten", "Universitäts"],
@@ -1820,7 +1949,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj liczby mnogie do ich form liczby pojedynczej.",
           uk: "Зіставте форми множини з їхніми формами однини.",
           sq: "Përputhni shumësit me format e tyre njëjës.",
-          de: "Ordne die Pluralformen ihren Singularformen zu."
+          de: "Ordne die Pluralformen ihren Singularformen zu.",
+      sr: ""
         },
         context: ["die Häuser", "die Männer", "die Schulen", "die Handys"],
         options: ["das Handy", "die Schule", "das Haus", "der Mann"],
@@ -1834,7 +1964,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z celownikiem liczby mnogiej.",
           uk: "Побудуйте речення з давальним відмінком множини.",
           sq: "Ndërtoni fjali me dhanoren në shumës.",
-          de: "Bilde einen Satz mit Dativ Plural."
+          de: "Bilde einen Satz mit Dativ Plural.",
+      sr: ""
         },
         context: ["Er", "hilft", "den", "Studenten"],
         correctAnswer: "Er hilft den Studenten",
@@ -1847,7 +1978,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij końcówką celownika liczby mnogiej.",
           uk: "Доповніть закінченням давального відмінка множини.",
           sq: "Plotësoni me mbaresën e dhanores në shumës.",
-          de: "Vervollständige mit der Dativ-Plural-Endung."
+          de: "Vervollständige mit der Dativ-Plural-Endung.",
+      sr: ""
         },
         context: "Die Kinder spielen mit ihren ______. (das Spielzeug -> die Spielzeuge)",
         correctAnswer: "Spielzeugen",
@@ -1869,7 +2001,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Rodzajniki dzierżawcze: mein, dein, sein, ihr, unser, euer, Ihr. Odmieniają się jak 'kein' i zgadzają się z rodzajem i przypadkiem posiadanego rzeczownika.",
       uk: "Присвійні артиклі: mein, dein, sein, ihr, unser, euer, Ihr. Вони відмінюються як 'kein' і узгоджуються з родом та відмінком іменника, до якого відносяться.",
       sq: "Nyjet pronore: mein, dein, sein, ihr, unser, euer, Ihr. Ato lakohen si 'kein' dhe përshtaten me gjininë dhe rasën e emrit që zotërojnë.",
-      de: "Possessivartikel: mein, dein, sein, ihr, unser, euer, Ihr. Sie werden wie 'kein' dekliniert und richten sich nach Genus und Kasus des Nomens."
+      de: "Possessivartikel: mein, dein, sein, ihr, unser, euer, Ihr. Sie werden wie 'kein' dekliniert und richten sich nach Genus und Kasus des Nomens.",
+      sr: ""
     },
     exercises: [
       {
@@ -1880,7 +2013,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij poprawnym zaimkiem dzierżawczym (moja matka).",
           uk: "Доповніть правильним присвійним займенником (моя мати).",
           sq: "Plotësoni me përemrin e saktë pronor (nëna ime).",
-          de: "Vervollständige mit dem korrekten Possessivartikel (meine Mutter)."
+          de: "Vervollständige mit dem korrekten Possessivartikel (meine Mutter).",
+      sr: ""
         },
         context: "Das ist ______ Mutter.",
         correctAnswer: "meine",
@@ -1893,7 +2027,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny zaimek dzierżawczy (jego ojciec).",
           uk: "Виберіть правильний присвійний займенник (його батько).",
           sq: "Zgjidhni përemrin e saktë pronor (babai i tij).",
-          de: "Wähle den korrekten Possessivartikel (sein Vater)."
+          de: "Wähle den korrekten Possessivartikel (sein Vater).",
+      sr: ""
         },
         context: "______ Vater arbeitet hier.",
         options: ["Sein", "Seine", "Seinen"],
@@ -1907,7 +2042,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zaimkiem dzierżawczym w bierniku.",
           uk: "Доповніть присвійним займенником у знахідному відмінку.",
           sq: "Plotësoni me përemër pronor në rasën kallëzore.",
-          de: "Vervollständige mit dem Possessivartikel im Akkusativ."
+          de: "Vervollständige mit dem Possessivartikel im Akkusativ.",
+      sr: ""
         },
         context: "Ich sehe ______ Auto. (dein Auto - neuter)",
         correctAnswer: "dein",
@@ -1920,7 +2056,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zaimki dzierżawcze do osób.",
           uk: "Зіставте присвійні займенники з особами.",
           sq: "Përputhni pronorët me vetat.",
-          de: "Ordne die Possessivartikel den Personen zu."
+          de: "Ordne die Possessivartikel den Personen zu.",
+      sr: ""
         },
         context: ["ich", "du", "er", "sie (she)"],
         options: ["ihr", "mein", "sein", "dein"],
@@ -1934,7 +2071,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z zaimkiem dzierżawczym.",
           uk: "Побудуйте речення з присвійним займенником.",
           sq: "Ndërtoni fjali me përemër pronor.",
-          de: "Bilde einen Satz mit einem Possessivartikel."
+          de: "Bilde einen Satz mit einem Possessivartikel.",
+      sr: ""
         },
         context: ["Unsere", "Lehrerin", "ist", "sehr nett"],
         correctAnswer: "Unsere Lehrerin ist sehr nett",
@@ -1947,7 +2085,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zaimkiem dzierżawczym w celowniku.",
           uk: "Доповніть присвійним займенником у давальному відмінку.",
           sq: "Plotësoni me përemër pronor në rasën dhanore.",
-          de: "Vervollständige mit dem Possessivartikel im Dativ."
+          de: "Vervollständige mit dem Possessivartikel im Dativ.",
+      sr: ""
         },
         context: "Ich helfe ______ Bruder. (mein Bruder)",
         correctAnswer: "meinem",
@@ -1960,7 +2099,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny zaimek dzierżawczy dla liczby mnogiej.",
           uk: "Виберіть правильний присвійний займенник для множини.",
           sq: "Zgjidhni përemrin e saktë pronor për shumës.",
-          de: "Wähle den korrekten Possessivartikel für Plural."
+          de: "Wähle den korrekten Possessivartikel für Plural.",
+      sr: ""
         },
         context: "______ Kinder sind sehr klug. (her children)",
         options: ["Ihr", "Ihre", "Ihren"],
@@ -1974,7 +2114,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie dzierżawcze.",
           uk: "Побудуйте присвійне речення.",
           sq: "Ndërtoni fjali pronore.",
-          de: "Bilde einen Possessivsatz."
+          de: "Bilde einen Possessivsatz.",
+      sr: ""
         },
         context: ["Wo", "ist", "euer", "Haus", "?"],
         correctAnswer: "Wo ist euer Haus?",
@@ -1987,7 +2128,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij formalnym zaimkiem dzierżawczym.",
           uk: "Доповніть формальним присвійним займенником.",
           sq: "Plotësoni me përemër pronor formal.",
-          de: "Vervollständige mit dem formellen Possessivartikel."
+          de: "Vervollständige mit dem formellen Possessivartikel.",
+      sr: ""
         },
         context: "Ist das ______ Koffer? (your suitcase - formal)",
         correctAnswer: "Ihr",
@@ -2000,7 +2142,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj rodzajniki dzierżawcze do ich form mianownikowych.",
           uk: "Зіставте присвійні артиклі з їхніми називними формами.",
           sq: "Përputhni nyjet pronore me format e tyre emërore.",
-          de: "Ordne die Possessivartikel ihren Nominativformen zu."
+          de: "Ordne die Possessivartikel ihren Nominativformen zu.",
+      sr: ""
         },
         context: ["mein Vater", "meine Mutter", "mein Kind", "meine Eltern (pl.)"],
         options: ["meine Eltern", "mein Vater", "mein Kind", "meine Mutter"],
@@ -2025,7 +2168,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Te przyimki zawsze łączą się z celownikiem. Częste skróty: zu dem→zum, zu der→zur, bei dem→beim, von dem→vom.",
       uk: "Ці прийменники завжди вимагають давального відмінка. Поширені скорочення: zu dem→zum, zu der→zur, bei dem→beim, von dem→vom.",
       sq: "Këto parafjalë marrin gjithmonë rasën dhanore. Shkurtimet e zakonshme: zu dem→zum, zu der→zur, bei dem→beim, von dem→vom.",
-      de: "Diese Präpositionen stehen immer mit dem Dativ. Häufige Verschmelzungen: zu dem→zum, zu der→zur, bei dem→beim, von dem→vom."
+      de: "Diese Präpositionen stehen immer mit dem Dativ. Häufige Verschmelzungen: zu dem→zum, zu der→zur, bei dem→beim, von dem→vom.",
+      sr: ""
     },
     exercises: [
       {
@@ -2036,7 +2180,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij poprawną formą celownika.",
           uk: "Доповніть правильною формою давального відмінка.",
           sq: "Plotësoni me formën e saktë dhanore.",
-          de: "Vervollständige mit der korrekten Dativform."
+          de: "Vervollständige mit der korrekten Dativform.",
+      sr: ""
         },
         context: "Ich komme aus ______ Schule. (die Schule)",
         correctAnswer: "der",
@@ -2049,7 +2194,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny przyimek oznaczający 'z'.",
           uk: "Виберіть правильний прийменник для 'with'.",
           sq: "Zgjidhni parafjalën e saktë për 'me'.",
-          de: "Wähle die korrekte Präposition für 'mit'."
+          de: "Wähle die korrekte Präposition für 'mit'.",
+      sr: ""
         },
         context: "Ich fahre ______ dem Bus.",
         options: ["mit", "bei", "von"],
@@ -2063,7 +2209,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij skrótem.",
           uk: "Доповніть скороченням.",
           sq: "Plotësoni me shkurtim.",
-          de: "Vervollständige mit der Verschmelzung."
+          de: "Vervollständige mit der Verschmelzung.",
+      sr: ""
         },
         context: "Wir gehen ______ Arzt. (zu dem Arzt)",
         correctAnswer: "zum",
@@ -2076,7 +2223,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj przyimki do ich znaczeń.",
           uk: "Зіставте прийменники з їхніми значеннями.",
           sq: "Përputhni parafjalët me kuptimet e tyre.",
-          de: "Ordne die Präpositionen ihren Bedeutungen zu."
+          de: "Ordne die Präpositionen ihren Bedeutungen zu.",
+      sr: ""
         },
         context: ["aus", "bei", "nach", "von"],
         options: ["from/by", "out of/from", "at/near", "to/after"],
@@ -2090,7 +2238,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z przyimkiem celownika.",
           uk: "Побудуйте речення з прийменником давального відмінка.",
           sq: "Ndërtoni fjali me parafjalë dhanore.",
-          de: "Bilde einen Satz mit einer Dativpräposition."
+          de: "Bilde einen Satz mit einer Dativpräposition.",
+      sr: ""
         },
         context: ["Sie", "wohnt", "bei", "ihrer Familie"],
         correctAnswer: "Sie wohnt bei ihrer Familie",
@@ -2103,7 +2252,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij 'von' + celownik.",
           uk: "Доповніть 'von' + давальний відмінок.",
           sq: "Plotësoni me 'von' + dhanore.",
-          de: "Vervollständige mit 'von' + Dativ."
+          de: "Vervollständige mit 'von' + Dativ.",
+      sr: ""
         },
         context: "Das ist ein Geschenk von ______ Großmutter. (die Großmutter)",
         correctAnswer: "der",
@@ -2116,7 +2266,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny skrót.",
           uk: "Виберіть правильне скорочення.",
           sq: "Zgjidhni shkurtimin e saktë.",
-          de: "Wähle die korrekte Verschmelzung."
+          de: "Wähle die korrekte Verschmelzung.",
+      sr: ""
         },
         context: "Er geht ______ Post. (zu der Post)",
         options: ["zum", "zur", "bei"],
@@ -2130,7 +2281,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z 'nach'.",
           uk: "Побудуйте речення з 'nach'.",
           sq: "Ndërtoni fjali me 'nach'.",
-          de: "Bilde einen Satz mit 'nach'."
+          de: "Bilde einen Satz mit 'nach'.",
+      sr: ""
         },
         context: ["Nach", "dem Essen", "trinke", "ich Kaffee"],
         correctAnswer: "Nach dem Essen trinke ich Kaffee",
@@ -2143,7 +2295,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij 'bei' + celownik (skrót).",
           uk: "Доповніть 'bei' + давальний відмінок (скорочення).",
           sq: "Plotësoni me 'bei' + dhanore (shkurtim).",
-          de: "Vervollständige mit 'bei' + Dativ (Verschmelzung)."
+          de: "Vervollständige mit 'bei' + Dativ (Verschmelzung).",
+      sr: ""
         },
         context: "Wir kaufen Brot ______ Bäcker. (bei dem Bäcker)",
         correctAnswer: "beim",
@@ -2156,7 +2309,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj przyimki do przykładowych zwrotów.",
           uk: "Зіставте прийменники з прикладами фраз.",
           sq: "Përputhni parafjalët me frazat shembull.",
-          de: "Ordne die Präpositionen den Beispielphrasen zu."
+          de: "Ordne die Präpositionen den Beispielphrasen zu.",
+      sr: ""
         },
         context: ["aus Deutschland", "mit dem Auto", "bei der Arbeit", "zu Hause"],
         options: ["zu", "aus", "bei", "mit"],
@@ -2179,7 +2333,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Wo? (miejsce-celownik): in der Schule, beim Arzt. Wohin? (kierunek-biernik): in die Schule, zum Arzt, nach Hause. Woher? (pochodzenie-celownik): aus der Schule, vom Arzt.",
       uk: "Wo? (місце-давальний): in der Schule, beim Arzt. Wohin? (напрямок-знахідний): in die Schule, zum Arzt, nach Hause. Woher? (походження-давальний): aus der Schule, vom Arzt.",
       sq: "Ku? (vendndodhje-dhanore): in der Schule, beim Arzt. Për ku? (drejtim-kallëzore): in die Schule, zum Arzt, nach Hause. Nga ku? (origjinë-dhanore): aus der Schule, vom Arzt.",
-      de: "Wo? (Ort-Dativ): in der Schule, beim Arzt. Wohin? (Richtung-Akkusativ): in die Schule, zum Arzt, nach Hause. Woher? (Herkunft-Dativ): aus der Schule, vom Arzt."
+      de: "Wo? (Ort-Dativ): in der Schule, beim Arzt. Wohin? (Richtung-Akkusativ): in die Schule, zum Arzt, nach Hause. Woher? (Herkunft-Dativ): aus der Schule, vom Arzt.",
+      sr: ""
     },
     exercises: [
       {
@@ -2190,7 +2345,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny przyimek dla 'Wo?'",
           uk: "Виберіть правильний прийменник для 'Wo?'",
           sq: "Zgjidhni parafjalën e saktë për 'Ku?'",
-          de: "Wähle die korrekte Präposition für 'Wo?'"
+          de: "Wähle die korrekte Präposition für 'Wo?'",
+      sr: ""
         },
         context: "Wo arbeitet er? - Er arbeitet ______ der Bank.",
         options: ["in", "nach", "zu"],
@@ -2204,7 +2360,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij kierunek (Wohin?).",
           uk: "Доповніть напрямок (Wohin?).",
           sq: "Plotësoni drejtimin (Për ku?).",
-          de: "Vervollständige die Richtung (Wohin?)."
+          de: "Vervollständige die Richtung (Wohin?).",
+      sr: ""
         },
         context: "Ich gehe ______ ______ Supermarkt. (to the supermarket)",
         correctAnswer: ["in", "den"],
@@ -2217,7 +2374,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij pochodzenie (Woher?).",
           uk: "Доповніть походження (Woher?).",
           sq: "Plotësoni origjinën (Nga ku?).",
-          de: "Vervollständige die Herkunft (Woher?)."
+          de: "Vervollständige die Herkunft (Woher?).",
+      sr: ""
         },
         context: "Sie kommt ______ ______ Arbeit. (from work)",
         correctAnswer: ["von", "der"],
@@ -2230,7 +2388,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj pytania do odpowiednich odpowiedzi.",
           uk: "Зіставте питання з відповідними відповідями.",
           sq: "Përputhni pyetjet me përgjigjet e duhura.",
-          de: "Ordne die Fragen den passenden Antworten zu."
+          de: "Ordne die Fragen den passenden Antworten zu.",
+      sr: ""
         },
         context: ["Wo wohnst du?", "Wohin gehst du?", "Woher kommst du?"],
         options: ["Aus Deutschland.", "In die Stadt.", "In Berlin."],
@@ -2244,7 +2403,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z przyimkiem miejsca.",
           uk: "Побудуйте речення з прийменником місця.",
           sq: "Ndërtoni fjali me parafjalë vendi.",
-          de: "Bilde einen Satz mit einer lokalen Präposition."
+          de: "Bilde einen Satz mit einer lokalen Präposition.",
+      sr: ""
         },
         context: ["Ich", "arbeite", "in", "einem Büro"],
         correctAnswer: "Ich arbeite in einem Büro",
@@ -2257,7 +2417,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij 'Wohin?' z 'auf'.",
           uk: "Доповніть 'Wohin?' з 'auf'.",
           sq: "Plotësoni 'Për ku?' me 'auf'.",
-          de: "Vervollständige 'Wohin?' mit 'auf'."
+          de: "Vervollständige 'Wohin?' mit 'auf'.",
+      sr: ""
         },
         context: "Wir gehen ______ ______ Markt. (to the market)",
         correctAnswer: ["auf", "den"],
@@ -2270,7 +2431,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny przypadek dla 'Wo?'",
           uk: "Виберіть правильний відмінок для 'Wo?'",
           sq: "Zgjidhni rasën e saktë për 'Ku?'",
-          de: "Wähle den korrekten Kasus für 'Wo?'"
+          de: "Wähle den korrekten Kasus für 'Wo?'",
+      sr: ""
         },
         context: "Wo ist das Buch? - Auf ______ Tisch.",
         options: ["der", "den", "dem"],
@@ -2284,7 +2446,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z 'Woher?'.",
           uk: "Побудуйте речення з 'Woher?'.",
           sq: "Ndërtoni fjali me 'Nga ku?'.",
-          de: "Bilde einen 'Woher?'-Satz."
+          de: "Bilde einen 'Woher?'-Satz.",
+      sr: ""
         },
         context: ["Ich", "komme", "gerade", "vom Arzt"],
         correctAnswer: "Ich komme gerade vom Arzt",
@@ -2297,7 +2460,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij kierunek do kraju (bez rodzajnika).",
           uk: "Доповніть напрямок до країни (без артикля).",
           sq: "Plotësoni drejtimin për në një vend (pa nyje).",
-          de: "Vervollständige die Richtung zu einem Land (ohne Artikel)."
+          de: "Vervollständige die Richtung zu einem Land (ohne Artikel).",
+      sr: ""
         },
         context: "Wir fahren ______ Italien. (to Italy)",
         correctAnswer: "nach",
@@ -2310,7 +2474,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj typy lokalizacji do przyimków 'Wohin?'.",
           uk: "Зіставте типи локацій з прийменниками 'Wohin?'.",
           sq: "Përputhni llojet e vendndodhjeve me parafjalët 'Për ku?'.",
-          de: "Ordne Ortstypen den 'Wohin?'-Präpositionen zu."
+          de: "Ordne Ortstypen den 'Wohin?'-Präpositionen zu.",
+      sr: ""
         },
         context: ["countries (no article)", "buildings/enclosed spaces", "people's homes/shops", "open squares/islands"],
         options: ["zu", "nach", "in", "auf"],
@@ -2335,7 +2500,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Zaimki osobowe zastępują rzeczowniki. Mianownik: ich, du, er, sie, es, wir, ihr, sie, Sie. Muszą zgadzać się z koniugacją czasownika.",
       uk: "Особові займенники замінюють іменники. Називний відмінок: ich, du, er, sie, es, wir, ihr, sie, Sie. Вони повинні узгоджуватися з відмінюванням дієслова.",
       sq: "Përemrat vetorë zëvendësojnë emrat. Emërore: ich, du, er, sie, es, wir, ihr, sie, Sie. Ato duhet të përputhen me zgjedhimin e foljes.",
-      de: "Personalpronomen ersetzen Nomen. Nominativ: ich, du, er, sie, es, wir, ihr, sie, Sie. Sie müssen mit der Verbkonjugation übereinstimmen."
+      de: "Personalpronomen ersetzen Nomen. Nominativ: ich, du, er, sie, es, wir, ihr, sie, Sie. Sie müssen mit der Verbkonjugation übereinstimmen.",
+      sr: ""
     },
     exercises: [
       {
@@ -2346,7 +2512,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zastąp rzeczownik zaimkiem.",
           uk: "Замініть іменник займенником.",
           sq: "Zëvendësoni emrin me përemër.",
-          de: "Ersetze das Nomen durch ein Pronomen."
+          de: "Ersetze das Nomen durch ein Pronomen.",
+      sr: ""
         },
         context: "Der Mann arbeitet. → ______ arbeitet.",
         correctAnswer: "Er",
@@ -2359,7 +2526,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny zaimek dla 'die Frau'.",
           uk: "Виберіть правильний займенник для 'die Frau'.",
           sq: "Zgjidhni përemrin e saktë për 'die Frau'.",
-          de: "Wähle das korrekte Pronomen für 'die Frau'."
+          de: "Wähle das korrekte Pronomen für 'die Frau'.",
+      sr: ""
         },
         context: "Die Frau ist nett. → ______ ist nett.",
         options: ["Er", "Sie", "Es"],
@@ -2373,7 +2541,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj rzeczowniki do ich zaimków.",
           uk: "Зіставте іменники з їхніми займенниками.",
           sq: "Përputhni emrat me përemrat e tyre.",
-          de: "Ordne die Nomen ihren Pronomen zu."
+          de: "Ordne die Nomen ihren Pronomen zu.",
+      sr: ""
         },
         context: ["das Kind", "die Männer", "der Lehrer", "die Bücher"],
         options: ["sie (plural)", "er", "es", "sie (plural)"],
@@ -2387,7 +2556,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z zaimkami.",
           uk: "Побудуйте речення з займенниками.",
           sq: "Ndërtoni fjali me përemra.",
-          de: "Bilde einen Satz mit Pronomen."
+          de: "Bilde einen Satz mit Pronomen.",
+      sr: ""
         },
         context: ["Wir", "sind", "Studenten"],
         correctAnswer: "Wir sind Studenten",
@@ -2400,7 +2570,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zwrot formalny.",
           uk: "Доповніть формальне звертання.",
           sq: "Plotësoni adresimin formal.",
-          de: "Vervollständige die formelle Anrede."
+          de: "Vervollständige die formelle Anrede.",
+      sr: ""
         },
         context: "Wie heißen ______? (formal 'you')",
         correctAnswer: "Sie",
@@ -2413,7 +2584,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zastąp zaimkiem w bierniku.",
           uk: "Замініть займенником у знахідному відмінку.",
           sq: "Zëvendësoni me përemër në rasën kallëzore.",
-          de: "Ersetze mit dem Akkusativpronomen."
+          de: "Ersetze mit dem Akkusativpronomen.",
+      sr: ""
         },
         context: "Ich sehe den Mann. → Ich sehe ______.",
         correctAnswer: "ihn",
@@ -2426,7 +2598,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz zaimek dla 'das Auto'.",
           uk: "Виберіть займенник для 'das Auto'.",
           sq: "Zgjidhni përemrin për 'das Auto'.",
-          de: "Wähle das Pronomen für 'das Auto'."
+          de: "Wähle das Pronomen für 'das Auto'.",
+      sr: ""
         },
         context: "Das Auto ist neu. → ______ ist neu.",
         options: ["Er", "Sie", "Es"],
@@ -2440,7 +2613,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z zastąpieniem zaimka.",
           uk: "Побудуйте речення із заміною займенника.",
           sq: "Ndërtoni fjali me zëvendësim përemri.",
-          de: "Bilde einen Satz mit Pronomenersetzung."
+          de: "Bilde einen Satz mit Pronomenersetzung.",
+      sr: ""
         },
         context: ["Sie", "kauft", "es", "heute"],
         correctAnswer: "Sie kauft es heute",
@@ -2453,7 +2627,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zaimkiem w celowniku.",
           uk: "Доповніть займенником у давальному відмінку.",
           sq: "Plotësoni me përemër në rasën dhanore.",
-          de: "Vervollständige mit dem Dativpronomen."
+          de: "Vervollständige mit dem Dativpronomen.",
+      sr: ""
         },
         context: "Ich helfe der Frau. → Ich helfe ______.",
         correctAnswer: "ihr",
@@ -2466,7 +2641,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zaimki do ich przypadków.",
           uk: "Зіставте займенники з їхніми відмінками.",
           sq: "Përputhni përemrat me rasat e tyre.",
-          de: "Ordne die Pronomen ihren Fällen zu."
+          de: "Ordne die Pronomen ihren Fällen zu.",
+      sr: ""
         },
         context: ["er (Subjekt)", "ihn (Objekt)", "ihm (ind. Objekt)", "sie (Subjekt)"],
         options: ["Akkusativ", "Nominativ", "Dativ", "Nominativ"],
@@ -2489,7 +2665,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "'man' odpowiada angielskiemu 'one' lub 'you' (ogólnie). Czasownik jest zawsze odmieniany w 3. osobie liczby pojedynczej. Przykład: 'In Deutschland isst man oft Brot.'",
       uk: "'man' відповідає англійському 'one' або 'you' (узагальнено). Дієслово завжди відмінюється в 3-й особі однини. Приклад: 'In Deutschland isst man oft Brot.'",
       sq: "'man' korrespondon me anglishten 'one' ose 'you' (e përgjithshme). Folja zgjedhohet gjithmonë në vetën e tretë njëjës. Shembull: 'In Deutschland isst man oft Brot.'",
-      de: "'man' entspricht dem englischen 'one' oder 'you' (allgemein). Das Verb wird immer in der 3. Person Singular konjugiert. Beispiel: 'In Deutschland isst man oft Brot.'"
+      de: "'man' entspricht dem englischen 'one' oder 'you' (allgemein). Das Verb wird immer in der 3. Person Singular konjugiert. Beispiel: 'In Deutschland isst man oft Brot.'",
+      sr: ""
     },
     exercises: [
       {
@@ -2500,7 +2677,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij konstrukcją z 'man'.",
           uk: "Доповніть конструкцією з 'man'.",
           sq: "Plotësoni me konstruksionin 'man'.",
-          de: "Vervollständige mit der 'man'-Konstruktion."
+          de: "Vervollständige mit der 'man'-Konstruktion.",
+      sr: ""
         },
         context: "In Deutschland ______ man viel Bier. (trinken)",
         correctAnswer: "trinkt",
@@ -2513,7 +2691,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formę czasownika z 'man'.",
           uk: "Виберіть правильну форму дієслова з 'man'.",
           sq: "Zgjidhni formën e saktë të foljes me 'man'.",
-          de: "Wähle die korrekte Verbform mit 'man'."
+          de: "Wähle die korrekte Verbform mit 'man'.",
+      sr: ""
         },
         context: "Hier ______ man Deutsch.",
         options: ["spreche", "sprichst", "spricht", "sprechen"],
@@ -2527,7 +2706,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z 'man'.",
           uk: "Побудуйте речення з 'man'.",
           sq: "Ndërtoni fjali me 'man'.",
-          de: "Bilde einen Satz mit 'man'."
+          de: "Bilde einen Satz mit 'man'.",
+      sr: ""
         },
         context: ["In der Bibliothek", "ist", "man", "leise"],
         correctAnswer: "In der Bibliothek ist man leise",
@@ -2540,7 +2720,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij ogólne stwierdzenie.",
           uk: "Доповніть загальне твердження.",
           sq: "Plotësoni pohimin e përgjithshëm.",
-          de: "Vervollständige die allgemeine Aussage."
+          de: "Vervollständige die allgemeine Aussage.",
+      sr: ""
         },
         context: "Wie ______ man das? (sagen)",
         correctAnswer: "sagt",
@@ -2553,7 +2734,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Przetłumacz: 'Można się tu uczyć niemieckiego.'",
           uk: "Перекладіть: 'Тут можна вивчати німецьку.'",
           sq: "Përkthejeni: 'Këtu mund të mësosh gjermanisht.'",
-          de: "Übersetze: 'Hier kann man Deutsch lernen.'"
+          de: "Übersetze: 'Hier kann man Deutsch lernen.'",
+      sr: ""
         },
         context: "",
         options: ["Man kann hier Deutsch lernen.", "Ich kann hier Deutsch lernen.", "Du kannst hier Deutsch lernen."],
@@ -2567,7 +2749,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij 'man' + czasownik modalny.",
           uk: "Доповніть 'man' + модальне дієслово.",
           sq: "Plotësoni me 'man' + folje modale.",
-          de: "Vervollständige mit 'man' + Modalverb."
+          de: "Vervollständige mit 'man' + Modalverb.",
+      sr: ""
         },
         context: "In der Schule ______ man nicht rauchen. (dürfen)",
         correctAnswer: "darf",
@@ -2580,7 +2763,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj ogólną zasadę z 'man'.",
           uk: "Сформулюйте загальне правило з 'man'.",
           sq: "Ndërtoni një rregull të përgjithshëm me 'man'.",
-          de: "Bilde eine allgemeine Regel mit 'man'."
+          de: "Bilde eine allgemeine Regel mit 'man'.",
+      sr: ""
         },
         context: ["Man", "soll", "höflich", "sein"],
         correctAnswer: "Man soll höflich sein",
@@ -2593,7 +2777,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawne tłumaczenie 'man'.",
           uk: "Виберіть правильний переклад 'man'.",
           sq: "Zgjidhni përkthimin e saktë të 'man'.",
-          de: "Wähle die korrekte Übersetzung von 'man'."
+          de: "Wähle die korrekte Übersetzung von 'man'.",
+      sr: ""
         },
         context: "Man arbeitet hier viel.",
         options: ["He works a lot here.", "One works a lot here.", "They work a lot here."],
@@ -2607,7 +2792,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij stwierdzenie kulturowe.",
           uk: "Доповніть культурне твердження.",
           sq: "Plotësoni pohimin kulturor.",
-          de: "Vervollständige die kulturelle Aussage."
+          de: "Vervollständige die kulturelle Aussage.",
+      sr: ""
         },
         context: "In Österreich ______ man gern Kaffee. (trinken)",
         correctAnswer: "trinkt",
@@ -2620,7 +2806,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zdania z 'man' do ich znaczeń.",
           uk: "Зіставте речення з 'man' з їхніми значеннями.",
           sq: "Përputhni fjalitë me 'man' me kuptimet e tyre.",
-          de: "Ordne die 'man'-Sätze ihren Bedeutungen zu."
+          de: "Ordne die 'man'-Sätze ihren Bedeutungen zu.",
+      sr: ""
         },
         context: ["Man lernt nie aus.", "Man weiß nie.", "Man kann nicht alles haben.", "Man muss arbeiten."],
         options: ["You can't have everything.", "One must work.", "You never know.", "You never stop learning."],
@@ -2645,7 +2832,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Podstawowa struktura: Podmiot + Orzeczenie (pozycja 2) + Reszta. Przykład: 'Ich lerne Deutsch.' Czasownik zawsze pozostaje na pozycji 2.",
       uk: "Базова структура: Підмет + Дієслово (позиція 2) + Решта. Приклад: 'Ich lerne Deutsch.' Дієслово завжди залишається на другій позиції.",
       sq: "Struktura bazë: Kryefjalë + Folje (pozicioni 2) + Pjesa tjetër. Shembull: 'Ich lerne Deutsch.' Folja qëndron gjithmonë në pozicionin 2.",
-      de: "Grundstruktur: Subjekt + Verb (Position 2) + Rest. Beispiel: 'Ich lerne Deutsch.' Das Verb bleibt immer an Position 2."
+      de: "Grundstruktur: Subjekt + Verb (Position 2) + Rest. Beispiel: 'Ich lerne Deutsch.' Das Verb bleibt immer an Position 2.",
+      sr: ""
     },
     exercises: [
       {
@@ -2656,7 +2844,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj podstawowe zdanie oznajmujące.",
           uk: "Побудуйте базове розповідне речення.",
           sq: "Ndërtoni një fjali bazë dëftore.",
-          de: "Bilde einen einfachen Aussagesatz."
+          de: "Bilde einen einfachen Aussagesatz.",
+      sr: ""
         },
         context: ["Ich", "lerne", "Deutsch"],
         correctAnswer: "Ich lerne Deutsch",
@@ -2669,7 +2858,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij strukturę zdania.",
           uk: "Доповніть структуру речення.",
           sq: "Plotësoni strukturën e fjalisë.",
-          de: "Vervollständige die Satzstruktur."
+          de: "Vervollständige die Satzstruktur.",
+      sr: ""
         },
         context: "Maria ______ in Berlin. (wohnen)",
         correctAnswer: "wohnt",
@@ -2682,7 +2872,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Gdzie znajduje się czasownik w niemieckich zdaniach głównych?",
           uk: "Де стоїть дієслово в німецьких головних реченнях?",
           sq: "Ku ndodhet folja në fjalitë kryesore gjermane?",
-          de: "Wo steht das Verb in deutschen Hauptsätzen?"
+          de: "Wo steht das Verb in deutschen Hauptsätzen?",
+      sr: ""
         },
         context: "",
         options: ["Position 1", "Position 2", "At the end"],
@@ -2696,7 +2887,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie oznajmujące z dopełnieniem.",
           uk: "Побудуйте розповідне речення з додатком.",
           sq: "Ndërtoni fjali dëftore me kundrinor.",
-          de: "Bilde einen Aussagesatz mit Objekt."
+          de: "Bilde einen Aussagesatz mit Objekt.",
+      sr: ""
         },
         context: ["Sie", "liest", "ein Buch"],
         correctAnswer: "Sie liest ein Buch",
@@ -2709,7 +2901,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij poprawnym szykiem wyrazów.",
           uk: "Доповніть правильним порядком слів.",
           sq: "Plotësoni me rendin e saktë të fjalëve.",
-          de: "Vervollständige mit der korrekten Wortstellung."
+          de: "Vervollständige mit der korrekten Wortstellung.",
+      sr: ""
         },
         context: "Wir ______ heute Hausaufgaben. (machen)",
         correctAnswer: "machen",
@@ -2722,7 +2915,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z wyrażeniem czasowym.",
           uk: "Побудуйте речення з виразом часу.",
           sq: "Ndërtoni fjali me shprehje kohe.",
-          de: "Bilde einen Satz mit einem Zeitausdruck."
+          de: "Bilde einen Satz mit einem Zeitausdruck.",
+      sr: ""
         },
         context: ["Peter", "arbeitet", "jeden Tag"],
         correctAnswer: "Peter arbeitet jeden Tag",
@@ -2735,7 +2929,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny szyk wyrazów.",
           uk: "Виберіть правильний порядок слів.",
           sq: "Zgjidhni rendin e saktë të fjalëve.",
-          de: "Wähle die korrekte Wortstellung."
+          de: "Wähle die korrekte Wortstellung.",
+      sr: ""
         },
         context: "Die Kinder ______ im Garten.",
         options: ["spielen", "spielt", "spielst"],
@@ -2749,7 +2944,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zdanie oznajmujące.",
           uk: "Доповніть розповідне речення.",
           sq: "Plotësoni fjalinë dëftore.",
-          de: "Vervollständige den Aussagesatz."
+          de: "Vervollständige den Aussagesatz.",
+      sr: ""
         },
         context: "Mein Vater ______ Arzt. (sein)",
         correctAnswer: "ist",
@@ -2762,7 +2958,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z lokalizacją.",
           uk: "Побудуйте речення з місцем.",
           sq: "Ndërtoni fjali me vendndodhje.",
-          de: "Bilde einen Satz mit einer Ortsangabe."
+          de: "Bilde einen Satz mit einer Ortsangabe.",
+      sr: ""
         },
         context: ["Die Studenten", "lernen", "in der Universität"],
         correctAnswer: "Die Studenten lernen in der Universität",
@@ -2775,7 +2972,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Połącz części zdań, aby zbudować zdania oznajmujące.",
           uk: "З'єднайте частини речень, щоб утворити розповідні речення.",
           sq: "Përputhni pjesët e fjalive për të ndërtuar fjali dëftore.",
-          de: "Verbinde die Satzteile, um Aussagesätze zu bilden."
+          de: "Verbinde die Satzteile, um Aussagesätze zu bilden.",
+      sr: ""
         },
         context: ["Der Hund", "Die Lehrerin", "Wir", "Es"],
         options: ["regnet heute.", "essen Pizza.", "bellt laut.", "erklärt die Grammatik."],
@@ -2798,7 +2996,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Struktura: Czas/Przysłówek + Orzeczenie (poz. 2) + Podmiot + Reszta. Przykład: 'Heute lerne ich Deutsch.' Czasownik wciąż na pozycji 2.",
       uk: "Структура: Час/Прислівник + Дієслово (поз. 2) + Підмет + Решта. Приклад: 'Heute lerne ich Deutsch.' Дієслово все ще на другій позиції.",
       sq: "Struktura: Koha/Ndajfolja + Folja (poz. 2) + Kryefjala + Pjesa tjetër. Shembull: 'Heute lerne ich Deutsch.' Folja ende në pozicionin 2.",
-      de: "Struktur: Zeit/Adverb + Verb (Pos. 2) + Subjekt + Rest. Beispiel: 'Heute lerne ich Deutsch.' Das Verb bleibt an Position 2."
+      de: "Struktur: Zeit/Adverb + Verb (Pos. 2) + Subjekt + Rest. Beispiel: 'Heute lerne ich Deutsch.' Das Verb bleibt an Position 2.",
+      sr: ""
     },
     exercises: [
       {
@@ -2809,7 +3008,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z inwersją, zaczynając od czasu.",
           uk: "Побудуйте інвертоване речення, починаючи з часу.",
           sq: "Ndërtoni fjali të përmbysur duke filluar me kohën.",
-          de: "Bilde einen Inversionssatz, der mit einer Zeitangabe beginnt."
+          de: "Bilde einen Inversionssatz, der mit einer Zeitangabe beginnt.",
+      sr: ""
         },
         context: ["Heute", "lerne", "ich", "Deutsch"],
         correctAnswer: "Heute lerne ich Deutsch",
@@ -2822,7 +3022,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zdanie z inwersją.",
           uk: "Доповніть інвертоване речення.",
           sq: "Plotësoni fjalinë e përmbysur.",
-          de: "Vervollständige den Inversionssatz."
+          de: "Vervollständige den Inversionssatz.",
+      sr: ""
         },
         context: "Morgen ______ wir ins Kino. (gehen)",
         correctAnswer: "gehen",
@@ -2835,7 +3036,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny szyk wyrazów po wyrażeniu czasowym.",
           uk: "Виберіть правильний порядок слів після виразу часу.",
           sq: "Zgjidhni rendin e saktë të fjalëve pas shprehjes kohore.",
-          de: "Wähle die korrekte Wortstellung nach dem Zeitausdruck."
+          de: "Wähle die korrekte Wortstellung nach dem Zeitausdruck.",
+      sr: ""
         },
         context: "Am Wochenende ______.",
         options: ["ich arbeite nicht", "arbeite ich nicht", "nicht arbeite ich"],
@@ -2849,7 +3051,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie zaczynające się od lokalizacji.",
           uk: "Побудуйте речення, починаючи з місця.",
           sq: "Ndërtoni fjali duke filluar me vendndodhjen.",
-          de: "Bilde einen Satz, der mit einer Ortsangabe beginnt."
+          de: "Bilde einen Satz, der mit einer Ortsangabe beginnt.",
+      sr: ""
         },
         context: ["In Berlin", "wohnt", "meine Schwester"],
         correctAnswer: "In Berlin wohnt meine Schwester",
@@ -2862,7 +3065,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij strukturą z inwersją.",
           uk: "Доповніть інвертованою структурою.",
           sq: "Plotësoni me strukturë të përmbysur.",
-          de: "Vervollständige mit Inversionsstruktur."
+          de: "Vervollständige mit Inversionsstruktur.",
+      sr: ""
         },
         context: "Abends ______ ich gern ______. (fernsehen)",
         correctAnswer: ["sehe", "fern"],
@@ -2875,7 +3079,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z inwersją i przysłówkiem.",
           uk: "Побудуйте інвертоване речення з прислівником.",
           sq: "Ndërtoni fjali të përmbysur me ndajfolje.",
-          de: "Bilde einen Inversionssatz mit einem Adverb."
+          de: "Bilde einen Inversionssatz mit einem Adverb.",
+      sr: ""
         },
         context: ["Manchmal", "trinke", "ich", "Kaffee"],
         correctAnswer: "Manchmal trinke ich Kaffee",
@@ -2888,7 +3093,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną inwersję po 'Dort'.",
           uk: "Виберіть правильну інверсію після 'Dort'.",
           sq: "Zgjidhni përmbysjen e saktë pas 'Dort'.",
-          de: "Wähle die korrekte Inversion nach 'Dort'."
+          de: "Wähle die korrekte Inversion nach 'Dort'.",
+      sr: ""
         },
         context: "Dort ______ meine Eltern.",
         options: ["wohnen", "wohnt", "wohnst"],
@@ -2902,7 +3108,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zdanie z inwersją i czasownikiem modalnym.",
           uk: "Доповніть інвертоване речення з модальним дієсловом.",
           sq: "Plotësoni fjalinë e përmbysur me folje modale.",
-          de: "Vervollständige den Inversionssatz mit einem Modalverb."
+          de: "Vervollständige den Inversionssatz mit einem Modalverb.",
+      sr: ""
         },
         context: "Nächste Woche ______ ich nach München ______. (fahren/müssen)",
         correctAnswer: ["muss", "fahren"],
@@ -2915,7 +3122,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie zaczynające się od 'Hier'.",
           uk: "Побудуйте речення, що починається з 'Hier'.",
           sq: "Ndërtoni fjali duke filluar me 'Hier'.",
-          de: "Bilde einen Satz, der mit 'Hier' beginnt."
+          de: "Bilde einen Satz, der mit 'Hier' beginnt.",
+      sr: ""
         },
         context: ["Hier", "kann", "man", "gut essen"],
         correctAnswer: "Hier kann man gut essen",
@@ -2928,7 +3136,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj wyrażenia czasowe do zdań z inwersją.",
           uk: "Зіставте вирази часу з інвертованими реченнями.",
           sq: "Përputhni shprehjet kohore me fjalitë e përmbysura.",
-          de: "Ordne die Zeitausdrücke den Inversionssätzen zu."
+          de: "Ordne die Zeitausdrücke den Inversionssätzen zu.",
+      sr: ""
         },
         context: ["Gestern", "Jeden Morgen", "Im Winter", "Nach der Arbeit"],
         options: ["gehe ich nach Hause.", "war ich im Kino.", "ist es kalt.", "trinke ich Kaffee."],
@@ -2951,7 +3160,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Struktura: Słowo pytające W + Orzeczenie (poz. 2) + Podmiot + Reszta? Słowa pytające: wer, was, wo, wann, wie, warum, woher, wohin.",
       uk: "Структура: W-слово + Дієслово (поз. 2) + Підмет + Решта? Питальні слова: wer, was, wo, wann, wie, warum, woher, wohin.",
       sq: "Struktura: Fjala pyetëse W + Folja (poz. 2) + Kryefjala + Pjesa tjetër? Fjalët pyetëse: wer, was, wo, wann, wie, warum, woher, wohin.",
-      de: "Struktur: W-Wort + Verb (Pos. 2) + Subjekt + Rest? Fragewörter: wer, was, wo, wann, wie, warum, woher, wohin."
+      de: "Struktur: W-Wort + Verb (Pos. 2) + Subjekt + Rest? Fragewörter: wer, was, wo, wann, wie, warum, woher, wohin.",
+      sr: ""
     },
     exercises: [
       {
@@ -2962,7 +3172,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj słowa pytające (W-Wörter) do ich angielskich znaczeń.",
           uk: "Зіставте питальні слова (W-Wörter) з їхніми англійськими значеннями.",
           sq: "Përputhni fjalët pyetëse (W-Wörter) me kuptimet e tyre në anglisht.",
-          de: "Ordne die W-Wörter ihren englischen Bedeutungen zu."
+          de: "Ordne die W-Wörter ihren englischen Bedeutungen zu.",
+      sr: ""
         },
         context: ["wer", "was", "wo", "wann", "wie", "warum"],
         options: ["why", "how", "when", "what", "who", "where"],
@@ -2976,7 +3187,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij W-pytanie pytające o osobę.",
           uk: "Доповніть W-питання, що запитує про особу.",
           sq: "Plotësoni pyetjen me W- që pyet për personin.",
-          de: "Vervollständige die W-Frage, die nach einer Person fragt."
+          de: "Vervollständige die W-Frage, die nach einer Person fragt.",
+      sr: ""
         },
         context: "______ ist das? - Das ist mein Lehrer.",
         correctAnswer: "Wer",
@@ -2989,7 +3201,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj W-pytanie pytające o lokalizację.",
           uk: "Побудуйте W-питання, що запитує про місцезнаходження.",
           sq: "Ndërtoni pyetje me W- që pyet për vendndodhjen.",
-          de: "Bilde eine W-Frage, die nach einem Ort fragt."
+          de: "Bilde eine W-Frage, die nach einem Ort fragt.",
+      sr: ""
         },
         context: ["Wo", "arbeiten", "Sie", "?"],
         correctAnswer: "Wo arbeiten Sie?",
@@ -3002,7 +3215,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawne słowo pytające (W-Wort) dla czasu.",
           uk: "Виберіть правильне питальне слово (W-Wort) для часу.",
           sq: "Zgjidhni fjalën e saktë pyetëse (W-Wort) për kohën.",
-          de: "Wähle das korrekte W-Wort für die Zeit."
+          de: "Wähle das korrekte W-Wort für die Zeit.",
+      sr: ""
         },
         context: "______ kommst du? - Um 8 Uhr.",
         options: ["Wo", "Wann", "Wie"],
@@ -3016,7 +3230,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij pytanie o pochodzenie.",
           uk: "Доповніть питання про походження.",
           sq: "Plotësoni pyetjen për origjinën.",
-          de: "Vervollständige die Frage nach der Herkunft."
+          de: "Vervollständige die Frage nach der Herkunft.",
+      sr: ""
         },
         context: "______ kommen Sie? - Aus Spanien.",
         correctAnswer: "Woher",
@@ -3029,7 +3244,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie o cel podróży.",
           uk: "Побудуйте питання про місце призначення.",
           sq: "Ndërtoni pyetje për destinacionin.",
-          de: "Bilde eine Frage nach dem Ziel."
+          de: "Bilde eine Frage nach dem Ziel.",
+      sr: ""
         },
         context: ["Wohin", "fährt", "der Bus", "?"],
         correctAnswer: "Wohin fährt der Bus?",
@@ -3042,7 +3258,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz słowo pytające (W-Wort) dla powodu.",
           uk: "Виберіть питальне слово (W-Wort) для причини.",
           sq: "Zgjidhni fjalën pyetëse (W-Wort) për arsyen.",
-          de: "Wähle das W-Wort für den Grund."
+          de: "Wähle das W-Wort für den Grund.",
+      sr: ""
         },
         context: "______ lernst du Deutsch? - Für meinen Job.",
         options: ["Wie", "Warum", "Was"],
@@ -3056,7 +3273,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij pytanie o sposób.",
           uk: "Доповніть питання про спосіб.",
           sq: "Plotësoni pyetjen për mënyrën.",
-          de: "Vervollständige die Frage nach der Art und Weise."
+          de: "Vervollständige die Frage nach der Art und Weise.",
+      sr: ""
         },
         context: "______ geht es dir? - Gut, danke.",
         correctAnswer: "Wie",
@@ -3069,7 +3287,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie o obiekt.",
           uk: "Побудуйте питання про об'єкт.",
           sq: "Ndërtoni pyetje për objektin.",
-          de: "Bilde eine Frage nach dem Objekt."
+          de: "Bilde eine Frage nach dem Objekt.",
+      sr: ""
         },
         context: ["Was", "kaufst", "du", "?"],
         correctAnswer: "Was kaufst du?",
@@ -3082,7 +3301,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj W-pytania do odpowiednich odpowiedzi.",
           uk: "Зіставте W-питання з відповідними відповідями.",
           sq: "Përputhni pyetjet me W- me përgjigjet e duhura.",
-          de: "Ordne die W-Fragen den passenden Antworten zu."
+          de: "Ordne die W-Fragen den passenden Antworten zu.",
+      sr: ""
         },
         context: ["Wer kommt?", "Was machst du?", "Wo wohnst du?", "Wann beginnt der Film?"],
         options: ["Um 20 Uhr.", "In Hamburg.", "Mein Bruder.", "Ich lese."],
@@ -3105,7 +3325,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Struktura: Orzeczenie (poz. 1) + Podmiot + Reszta? Przykład: 'Kommen Sie aus Spanien?' Odpowiedź: 'Ja/Nein, ich komme aus...'",
       uk: "Структура: Дієслово (поз. 1) + Підмет + Решта? Приклад: 'Kommen Sie aus Spanien?' Відповідь: 'Ja/Nein, ich komme aus...'",
       sq: "Struktura: Folja (poz. 1) + Kryefjala + Pjesa tjetër? Shembull: 'Kommen Sie aus Spanien?' Përgjigje: 'Ja/Nein, ich komme aus...'",
-      de: "Struktur: Verb (Pos. 1) + Subjekt + Rest? Beispiel: 'Kommen Sie aus Spanien?' Antwort: 'Ja/Nein, ich komme aus...'"
+      de: "Struktur: Verb (Pos. 1) + Subjekt + Rest? Beispiel: 'Kommen Sie aus Spanien?' Antwort: 'Ja/Nein, ich komme aus...'",
+      sr: ""
     },
     exercises: [
       {
@@ -3116,7 +3337,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie typu tak/nie.",
           uk: "Побудуйте питання типу так/ні.",
           sq: "Ndërtoni pyetje po/jo.",
-          de: "Bilde eine Ja/Nein-Frage."
+          de: "Bilde eine Ja/Nein-Frage.",
+      sr: ""
         },
         context: ["Sprechen", "Sie", "Deutsch", "?"],
         correctAnswer: "Sprechen Sie Deutsch?",
@@ -3129,7 +3351,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij pytanie typu tak/nie.",
           uk: "Доповніть питання типу так/ні.",
           sq: "Plotësoni pyetjen po/jo.",
-          de: "Vervollständige die Ja/Nein-Frage."
+          de: "Vervollständige die Ja/Nein-Frage.",
+      sr: ""
         },
         context: "______ du Zeit? (haben)",
         correctAnswer: "Hast",
@@ -3142,7 +3365,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną formację pytania.",
           uk: "Виберіть правильну форму питання.",
           sq: "Zgjidhni formimin e saktë të pyetjes.",
-          de: "Wähle die korrekte Fragebildung."
+          de: "Wähle die korrekte Fragebildung.",
+      sr: ""
         },
         context: "Ask if they work here.",
         options: ["Arbeiten Sie hier?", "Wo arbeiten Sie?", "Sie arbeiten hier?"],
@@ -3156,7 +3380,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Utwórz pytanie ze zdania oznajmującego.",
           uk: "Утворіть питання з твердження.",
           sq: "Formoni pyetje nga pohimi.",
-          de: "Bilde eine Frage aus der Aussage."
+          de: "Bilde eine Frage aus der Aussage.",
+      sr: ""
         },
         context: "Er kommt aus Italien. → ______ er aus Italien?",
         correctAnswer: "Kommt",
@@ -3169,7 +3394,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie typu tak/nie z czasownikiem modalnym.",
           uk: "Побудуйте питання типу так/ні з модальним дієсловом.",
           sq: "Ndërtoni pyetje po/jo me folje modale.",
-          de: "Bilde eine Ja/Nein-Frage mit einem Modalverb."
+          de: "Bilde eine Ja/Nein-Frage mit einem Modalverb.",
+      sr: ""
         },
         context: ["Können", "Sie", "mir", "helfen", "?"],
         correctAnswer: "Können Sie mir helfen?",
@@ -3182,7 +3408,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie z 'sein'.",
           uk: "Побудуйте питання з 'sein'.",
           sq: "Ndërtoni pyetje me 'sein'.",
-          de: "Bilde eine Frage mit 'sein'."
+          de: "Bilde eine Frage mit 'sein'.",
+      sr: ""
         },
         context: "______ du müde? (sein)",
         correctAnswer: "Bist",
@@ -3195,7 +3422,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawne pytanie typu tak/nie.",
           uk: "Виберіть правильне питання типу так/ні.",
           sq: "Zgjidhni pyetjen e saktë po/jo.",
-          de: "Wähle die korrekte Ja/Nein-Frage."
+          de: "Wähle die korrekte Ja/Nein-Frage.",
+      sr: ""
         },
         context: "Ask if she likes coffee.",
         options: ["Mag sie Kaffee?", "Was mag sie?", "Wie mag sie Kaffee?"],
@@ -3209,7 +3437,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie o posiadanie.",
           uk: "Побудуйте питання про володіння.",
           sq: "Ndërtoni pyetje për pronësinë.",
-          de: "Bilde eine Frage zum Besitz."
+          de: "Bilde eine Frage zum Besitz.",
+      sr: ""
         },
         context: ["Haben", "Sie", "Kinder", "?"],
         correctAnswer: "Haben Sie Kinder?",
@@ -3222,7 +3451,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij pytanie z czasownikiem rozdzielnie złożonym.",
           uk: "Доповніть питання з роздільним дієсловом.",
           sq: "Plotësoni pyetjen me folje të ndashme.",
-          de: "Vervollständige die Frage mit einem trennbaren Verb."
+          de: "Vervollständige die Frage mit einem trennbaren Verb.",
+      sr: ""
         },
         context: "______ du heute ______? (einkaufen)",
         correctAnswer: ["Kaufst", "ein"],
@@ -3235,7 +3465,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj pytania typu tak/nie do odpowiednich odpowiedzi.",
           uk: "Зіставте питання типу так/ні з відповідними відповідями.",
           sq: "Përputhni pyetjet po/jo me përgjigjet e duhura.",
-          de: "Ordne die Ja/Nein-Fragen den passenden Antworten zu."
+          de: "Ordne die Ja/Nein-Fragen den passenden Antworten zu.",
+      sr: ""
         },
         context: ["Wohnst du hier?", "Kannst du schwimmen?", "Hast du Hunger?", "Bist du Student?"],
         options: ["Nein, ich bin Lehrer.", "Ja, sehr.", "Ja, seit zwei Jahren.", "Nein, aber ich lerne es."],
@@ -3258,7 +3489,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Z czasownikami modalnymi: odmieniony modalny na poz. 2, bezokolicznik na końcu. Z czasownikami rozdzielnymi: temat na poz. 2, przedrostek na końcu. Przykłady: 'Wir wollen nach Berlin fahren.' / 'Der Zug fährt ab.'",
       uk: "З модальними дієсловами: відмінюване модальне на поз. 2, інфінітив у кінці. З відокремлюваними дієсловами: основа на поз. 2, префікс у кінці. Приклади: 'Wir wollen nach Berlin fahren.' / 'Der Zug fährt ab.'",
       sq: "Me folje modale: modali i zgjedhuar në poz. 2, paskajorja në fund. Me folje të ndashme: rrënja në poz. 2, parashtesa në fund. Shembuj: 'Wir wollen nach Berlin fahren.' / 'Der Zug fährt ab.'",
-      de: "Bei Modalverben: konjugiertes Modalverb an Pos. 2, Infinitiv am Ende. Bei trennbaren Verben: Stamm an Pos. 2, Präfix am Ende. Beispiele: 'Wir wollen nach Berlin fahren.' / 'Der Zug fährt ab.'"
+      de: "Bei Modalverben: konjugiertes Modalverb an Pos. 2, Infinitiv am Ende. Bei trennbaren Verben: Stamm an Pos. 2, Präfix am Ende. Beispiele: 'Wir wollen nach Berlin fahren.' / 'Der Zug fährt ab.'",
+      sr: ""
     },
     exercises: [
       {
@@ -3269,7 +3501,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z ramą czasownikową (czasownik modalny).",
           uk: "Побудуйте речення з рамковою конструкцією (модальне дієслово).",
           sq: "Ndërtoni fjali me kllapë fjalie (folje modale).",
-          de: "Bilde einen Satz mit einer Modalverbklammer."
+          de: "Bilde einen Satz mit einer Modalverbklammer.",
+      sr: ""
         },
         context: ["Ich", "kann", "gut", "schwimmen"],
         correctAnswer: "Ich kann gut schwimmen",
@@ -3282,7 +3515,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij ramę zdania czasownikiem rozdzielnie złożonym.",
           uk: "Доповніть рамкову конструкцію роздільним дієсловом.",
           sq: "Plotësoni kllapën e fjalisë me folje të ndashme.",
-          de: "Vervollständige die Satzklammer mit einem trennbaren Verb."
+          de: "Vervollständige die Satzklammer mit einem trennbaren Verb.",
+      sr: ""
         },
         context: "Wann ______ der Zug ______? (abfahren)",
         correctAnswer: ["fährt", "ab"],
@@ -3295,7 +3529,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Gdzie umieszcza się bezokolicznik z czasownikami modalnymi?",
           uk: "Де ставиться інфінітив з модальними дієсловами?",
           sq: "Ku shkon paskajorja me foljet modale?",
-          de: "Wohin kommt der Infinitiv bei Modalverben?"
+          de: "Wohin kommt der Infinitiv bei Modalverben?",
+      sr: ""
         },
         context: "Wir müssen heute ______.",
         options: ["arbeiten", "arbeite", "arbeitest"],
@@ -3309,7 +3544,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z ramą czasownikową (czasownik rozdzielny).",
           uk: "Побудуйте речення з рамковою конструкцією (роздільне дієслово).",
           sq: "Ndërtoni fjali me kllapë fjalie (folje e ndashme).",
-          de: "Bilde einen Satz mit einer Klammer für trennbare Verben."
+          de: "Bilde einen Satz mit einer Klammer für trennbare Verben.",
+      sr: ""
         },
         context: ["Sie", "steht", "um 7 Uhr", "auf"],
         correctAnswer: "Sie steht um 7 Uhr auf",
@@ -3322,7 +3558,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zdanie z czasownikiem modalnym.",
           uk: "Доповніть речення з модальним дієсловом.",
           sq: "Plotësoni fjalinë me folje modale.",
-          de: "Vervollständige den Satz mit dem Modalverb."
+          de: "Vervollständige den Satz mit dem Modalverb.",
+      sr: ""
         },
         context: "Wir ______ am Wochenende ins Theater ______. (wollen/gehen)",
         correctAnswer: ["wollen", "gehen"],
@@ -3335,7 +3572,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj ramę zdania z czasownikiem modalnym i czasem.",
           uk: "Побудуйте рамкову конструкцію з модальним дієсловом і часом.",
           sq: "Ndërtoni kllapë me folje modale dhe kohë.",
-          de: "Bilde eine Klammer mit Modalverb und Zeit."
+          de: "Bilde eine Klammer mit Modalverb und Zeit.",
+      sr: ""
         },
         context: ["Du", "musst", "morgen", "früh aufstehen"],
         correctAnswer: "Du musst morgen früh aufstehen",
@@ -3348,7 +3586,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawną strukturę ramową.",
           uk: "Виберіть правильну рамкову структуру.",
           sq: "Zgjidhni strukturën e saktë të kllapës.",
-          de: "Wähle die korrekte Klammerstruktur."
+          de: "Wähle die korrekte Klammerstruktur.",
+      sr: ""
         },
         context: "Er ______ heute nicht ______. (arbeiten/können)",
         options: ["kann ... arbeiten", "arbeiten ... kann", "kann arbeiten"],
@@ -3362,7 +3601,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij ramą z czasownikiem rozdzielnym.",
           uk: "Доповніть рамковою конструкцією з роздільним дієсловом.",
           sq: "Plotësoni me kllapë fjalie (folje e ndashme).",
-          de: "Vervollständige mit einer Klammer für trennbare Verben."
+          de: "Vervollständige mit einer Klammer für trennbare Verben.",
+      sr: ""
         },
         context: "Ich ______ meine Freunde ______. (anrufen)",
         correctAnswer: ["rufe", "an"],
@@ -3375,7 +3615,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie z inwersją i ramą.",
           uk: "Побудуйте інвертоване речення з рамковою конструкцією.",
           sq: "Ndërtoni fjali të përmbysur me kllapë.",
-          de: "Bilde einen Inversionssatz mit Klammer."
+          de: "Bilde einen Inversionssatz mit Klammer.",
+      sr: ""
         },
         context: ["Morgen", "will", "ich", "einkaufen gehen"],
         correctAnswer: "Morgen will ich einkaufen gehen",
@@ -3388,7 +3629,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj typy ram do przykładów.",
           uk: "Зіставте типи рамкових конструкцій з прикладами.",
           sq: "Përputhni llojet e kllapave me shembuj.",
-          de: "Ordne die Klammertypen den Beispielen zu."
+          de: "Ordne die Klammertypen den Beispielen zu.",
+      sr: ""
         },
         context: ["Modal + Infinitive", "Separable Verb", "Perfect Tense", "Infinitive + zu"],
         options: ["Er versucht zu lernen.", "Ich habe geschlafen.", "Sie macht auf.", "Wir können kommen."],
@@ -3413,7 +3655,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Członkowie rodziny: die Mutter, der Vater, die Eltern, der Bruder, die Schwester, die Geschwister, der Sohn, die Tochter, die Großeltern.",
       uk: "Члени сім'ї: die Mutter, der Vater, die Eltern, der Bruder, die Schwester, die Geschwister, der Sohn, die Tochter, die Großeltern.",
       sq: "Anëtarët e familjes: die Mutter, der Vater, die Eltern, der Bruder, die Schwester, die Geschwister, der Sohn, die Tochter, die Großeltern.",
-      de: "Familienmitglieder: die Mutter, der Vater, die Eltern, der Bruder, die Schwester, die Geschwister, der Sohn, die Tochter, die Großeltern."
+      de: "Familienmitglieder: die Mutter, der Vater, die Eltern, der Bruder, die Schwester, die Geschwister, der Sohn, die Tochter, die Großeltern.",
+      sr: ""
     },
     exercises: [
       {
@@ -3424,7 +3667,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj terminy rodzinne do ich angielskich znaczeń.",
           uk: "Зіставте родинні терміни з їхніми англійськими значеннями.",
           sq: "Përputhni termat familjarë me kuptimet e tyre në anglisht.",
-          de: "Ordne die Familienbegriffe ihren englischen Bedeutungen zu."
+          de: "Ordne die Familienbegriffe ihren englischen Bedeutungen zu.",
+      sr: ""
         },
         context: ["die Mutter", "der Vater", "die Geschwister", "die Großeltern"],
         options: ["father", "siblings", "mother", "grandparents"],
@@ -3438,7 +3682,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij opis rodziny.",
           uk: "Доповніть опис родини.",
           sq: "Plotësoni përshkrimin e familjes.",
-          de: "Vervollständige die Familienbeschreibung."
+          de: "Vervollständige die Familienbeschreibung.",
+      sr: ""
         },
         context: "Ich habe einen ______ und eine ______.",
         correctAnswer: ["Bruder", "Schwester"],
@@ -3451,7 +3696,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Jak nazywasz rodziców swoich rodziców?",
           uk: "Як ви називаєте батьків ваших батьків?",
           sq: "Si i quani prindërit e prindërve tuaj?",
-          de: "Wie nennt man die Eltern seiner Eltern?"
+          de: "Wie nennt man die Eltern seiner Eltern?",
+      sr: ""
         },
         context: "",
         options: ["die Geschwister", "die Großeltern", "die Eltern"],
@@ -3465,7 +3711,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie o rodzinie.",
           uk: "Побудуйте речення про сім'ю.",
           sq: "Ndërtoni fjali për familjen.",
-          de: "Bilde einen Satz über die Familie."
+          de: "Bilde einen Satz über die Familie.",
+      sr: ""
         },
         context: ["Meine", "Familie", "ist", "groß"],
         correctAnswer: "Meine Familie ist groß",
@@ -3478,7 +3725,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij terminem rodzinnym.",
           uk: "Доповніть родинним терміном.",
           sq: "Plotësoni me termin familjar.",
-          de: "Vervollständige mit dem Familienbegriff."
+          de: "Vervollständige mit dem Familienbegriff.",
+      sr: ""
         },
         context: "Der ______ meiner Eltern bin ich.",
         correctAnswer: "Sohn",
@@ -3491,7 +3739,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj członków rodziny do ich relacji.",
           uk: "Зіставте членів родини з їхніми стосунками.",
           sq: "Përputhni anëtarët e familjes me marrëdhëniet e tyre.",
-          de: "Ordne Familienmitglieder ihren Beziehungen zu."
+          de: "Ordne Familienmitglieder ihren Beziehungen zu.",
+      sr: ""
         },
         context: ["der Onkel", "die Tante", "der Cousin", "die Nichte"],
         options: ["aunt", "niece", "uncle", "male cousin"],
@@ -3505,7 +3754,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawny termin na 'córka'.",
           uk: "Виберіть правильний термін для 'дочка'.",
           sq: "Zgjidhni termin e saktë për 'vajzë'.",
-          de: "Wähle den korrekten Begriff für 'Tochter'."
+          de: "Wähle den korrekten Begriff für 'Tochter'.",
+      sr: ""
         },
         context: "Meine ______ ist 5 Jahre alt.",
         options: ["Sohn", "Tochter", "Schwester"],
@@ -3519,7 +3769,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie o dziadkach.",
           uk: "Побудуйте речення про дідуся та бабусю.",
           sq: "Ndërtoni fjali për gjyshërit.",
-          de: "Bilde einen Satz über Großeltern."
+          de: "Bilde einen Satz über Großeltern.",
+      sr: ""
         },
         context: ["Meine", "Großeltern", "wohnen", "in Bayern"],
         correctAnswer: "Meine Großeltern wohnen in Bayern",
@@ -3532,7 +3783,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij opis drzewa genealogicznego.",
           uk: "Доповніть опис родовідного дерева.",
           sq: "Plotësoni përshkrimin e pemës familjare.",
-          de: "Vervollständige die Beschreibung des Stammbaums."
+          de: "Vervollständige die Beschreibung des Stammbaums.",
+      sr: ""
         },
         context: "Meine ______ haben zwei Kinder: meinen Bruder und mich.",
         correctAnswer: "Eltern",
@@ -3545,7 +3797,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj terminy rodzinne do form liczby mnogiej.",
           uk: "Зіставте родинні терміни з формами множини.",
           sq: "Përputhni termat familjarë me format e shumësit.",
-          de: "Ordne die Familienbegriffe den Pluralformen zu."
+          de: "Ordne die Familienbegriffe den Pluralformen zu.",
+      sr: ""
         },
         context: ["der Bruder", "die Schwester", "das Kind", "der Sohn"],
         options: ["die Söhne", "die Brüder", "die Kinder", "die Schwestern"],
@@ -3568,7 +3821,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Popularne zawody: der Arzt/die Ärztin, der Ingenieur, die Krankenschwester, der Kellner, die Köchin, der Programmierer, der Bankkaufmann/die Bankkauffrau.",
       uk: "Поширені професії: der Arzt/die Ärztin, der Ingenieur, die Krankenschwester, der Kellner, die Köchin, der Programmierer, der Bankkaufmann/die Bankkauffrau.",
       sq: "Profesionet e zakonshme: der Arzt/die Ärztin, der Ingenieur, die Krankenschwester, der Kellner, die Köchin, der Programmierer, der Bankkaufmann/die Bankkauffrau.",
-      de: "Häufige Berufe: der Arzt/die Ärztin, der Ingenieur, die Krankenschwester, der Kellner, die Köchin, der Programmierer, der Bankkaufmann/die Bankkauffrau."
+      de: "Häufige Berufe: der Arzt/die Ärztin, der Ingenieur, die Krankenschwester, der Kellner, die Köchin, der Programmierer, der Bankkaufmann/die Bankkauffrau.",
+      sr: ""
     },
     exercises: [
       {
@@ -3579,7 +3833,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zawody do ich miejsc pracy.",
           uk: "Зіставте професії з їхніми місцями роботи.",
           sq: "Përputhni profesionet me vendet e tyre të punës.",
-          de: "Ordne die Berufe ihren Arbeitsplätzen zu."
+          de: "Ordne die Berufe ihren Arbeitsplätzen zu.",
+      sr: ""
         },
         context: ["der Arzt", "der Kellner", "die Köchin", "der Programmierer"],
         options: ["im Restaurant", "im Krankenhaus", "im Büro", "in der Küche"],
@@ -3593,7 +3848,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zawód rodzajnikiem.",
           uk: "Доповніть професію артиклем.",
           sq: "Plotësoni profesionin me nyje.",
-          de: "Vervollständige den Beruf mit Artikel."
+          de: "Vervollständige den Beruf mit Artikel.",
+      sr: ""
         },
         context: "Sie ist ______ Krankenschwester.",
         correctAnswer: "eine",
@@ -3606,7 +3862,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz żeńską formę 'der Bankkaufmann'.",
           uk: "Виберіть жіночу форму 'der Bankkaufmann'.",
           sq: "Zgjidhni formën femërore të 'der Bankkaufmann'.",
-          de: "Wähle die weibliche Form von 'der Bankkaufmann'."
+          de: "Wähle die weibliche Form von 'der Bankkaufmann'.",
+      sr: ""
         },
         context: "",
         options: ["die Bankkauffrau", "die Bankkaufmann", "der Bankkauffrau"],
@@ -3620,7 +3877,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie o zawodzie.",
           uk: "Побудуйте речення про професію.",
           sq: "Ndërtoni fjali për profesionin.",
-          de: "Bilde einen Satz über einen Beruf."
+          de: "Bilde einen Satz über einen Beruf.",
+      sr: ""
         },
         context: ["Ich", "arbeite", "als", "Ingenieur"],
         correctAnswer: "Ich arbeite als Ingenieur",
@@ -3633,7 +3891,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zapytaj o zawód.",
           uk: "Запитайте про професію.",
           sq: "Pyetni për profesionin.",
-          de: "Frage nach dem Beruf."
+          de: "Frage nach dem Beruf.",
+      sr: ""
         },
         context: "Was sind Sie von ______?",
         correctAnswer: "Beruf",
@@ -3646,7 +3905,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj zawody do ich narzędzi/sprzętu.",
           uk: "Зіставте професії з їхніми інструментами/обладнанням.",
           sq: "Përputhni profesionet me mjetet/pajisjet e tyre.",
-          de: "Ordne Berufe ihren Werkzeugen/Ausrüstungen zu."
+          de: "Ordne Berufe ihren Werkzeugen/Ausrüstungen zu.",
+      sr: ""
         },
         context: ["der Mechaniker", "die Lehrerin", "der Koch", "der Polizist"],
         options: ["Handschellen", "Tafel", "Pfanne", "Schraubenschlüssel"],
@@ -3660,7 +3920,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz zawód, który wykonuje się w szpitalu.",
           uk: "Виберіть професію, представники якої працюють у лікарні.",
           sq: "Zgjidhni profesionin që punohet në spital.",
-          de: "Wähle den Beruf, der im Krankenhaus arbeitet."
+          de: "Wähle den Beruf, der im Krankenhaus arbeitet.",
+      sr: ""
         },
         context: "",
         options: ["der Bäcker", "die Krankenschwester", "der Friseur"],
@@ -3674,7 +3935,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj pytanie o zawód.",
           uk: "Побудуйте питання про професію.",
           sq: "Ndërtoni pyetje për profesionin.",
-          de: "Bilde eine Frage zum Beruf."
+          de: "Bilde eine Frage zum Beruf.",
+      sr: ""
         },
         context: ["Was", "möchten", "Sie", "werden", "?"],
         correctAnswer: "Was möchten Sie werden?",
@@ -3687,7 +3949,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij męską formą zawodu.",
           uk: "Доповніть чоловічою формою професії.",
           sq: "Plotësoni me formën mashkullore të profesionit.",
-          de: "Vervollständige mit der männlichen Berufsform."
+          de: "Vervollständige mit der männlichen Berufsform.",
+      sr: ""
         },
         context: "Er ist ______ Verkäufer im Supermarkt.",
         correctAnswer: "ein",
@@ -3700,7 +3963,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj opisy stanowisk do zawodów.",
           uk: "Зіставте описи роботи з професіями.",
           sq: "Përputhni përshkrimet e punës me profesionet.",
-          de: "Ordne die Tätigkeitsbeschreibungen den Berufen zu."
+          de: "Ordne die Tätigkeitsbeschreibungen den Berufen zu.",
+      sr: ""
         },
         context: ["hilft kranken Menschen", "unterrichtet Kinder", "repariert Autos", "verkauft Kleidung"],
         options: ["der Verkäufer", "der Arzt", "der Lehrer", "der Mechaniker"],
@@ -3723,7 +3987,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Czynności: arbeiten, lernen, schlafen, einkaufen, essen, trinken. Pory dnia: der Morgen, der Mittag, der Abend. Wyrażenia czasowe: heute, morgen, gestern, am Wochenende.",
       uk: "Дії: arbeiten, lernen, schlafen, einkaufen, essen, trinken. Час: der Morgen, der Mittag, der Abend. Вирази часу: heute, morgen, gestern, am Wochenende.",
       sq: "Aktivitetet: arbeiten, lernen, schlafen, einkaufen, essen, trinken. Kohët: der Morgen, der Mittag, der Abend. Shprehjet kohore: heute, morgen, gestern, am Wochenende.",
-      de: "Aktivitäten: arbeiten, lernen, schlafen, einkaufen, essen, trinken. Tageszeiten: der Morgen, der Mittag, der Abend. Zeitausdrücke: heute, morgen, gestern, am Wochenende."
+      de: "Aktivitäten: arbeiten, lernen, schlafen, einkaufen, essen, trinken. Tageszeiten: der Morgen, der Mittag, der Abend. Zeitausdrücke: heute, morgen, gestern, am Wochenende.",
+      sr: ""
     },
     exercises: [
       {
@@ -3734,7 +3999,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj czynności do odpowiednich pór dnia.",
           uk: "Зіставте дії з відповідним часом.",
           sq: "Përputhni aktivitetet me kohët e duhura.",
-          de: "Ordne die Aktivitäten den passenden Tageszeiten zu."
+          de: "Ordne die Aktivitäten den passenden Tageszeiten zu.",
+      sr: ""
         },
         context: ["frühstücken", "arbeiten", "schlafen", "fernsehen"],
         options: ["am Abend", "am Morgen", "am Tag", "in der Nacht"],
@@ -3748,7 +4014,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij codzienną rutynę.",
           uk: "Доповніть розпорядок дня.",
           sq: "Plotësoni rutinën ditore.",
-          de: "Vervollständige die tägliche Routine."
+          de: "Vervollständige die tägliche Routine.",
+      sr: ""
         },
         context: "______ stehe ich um 7 Uhr auf.",
         correctAnswer: "Morgens",
@@ -3761,7 +4028,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Kiedy zazwyczaj chodzisz na zakupy?",
           uk: "Коли ви зазвичай ходите за покупками?",
           sq: "Kur zakonisht shkoni për pazar?",
-          de: "Wann gehst du typischerweise einkaufen?"
+          de: "Wann gehst du typischerweise einkaufen?",
+      sr: ""
         },
         context: "Ich gehe ______ einkaufen.",
         options: ["am Wochenende", "in der Nacht", "beim Schlafen"],
@@ -3775,7 +4043,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie o weekendzie.",
           uk: "Побудуйте речення про вихідні.",
           sq: "Ndërtoni fjali për fundjavën.",
-          de: "Bilde einen Satz über das Wochenende."
+          de: "Bilde einen Satz über das Wochenende.",
+      sr: ""
         },
         context: ["Am Samstag", "besuche", "ich", "Freunde"],
         correctAnswer: "Am Samstag besuche ich Freunde",
@@ -3788,7 +4057,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij wyrażenie czasowe.",
           uk: "Доповніть вираз часу.",
           sq: "Plotësoni shprehjen kohore.",
-          de: "Vervollständige den Zeitausdruck."
+          de: "Vervollständige den Zeitausdruck.",
+      sr: ""
         },
         context: "______ war ich im Kino. (yesterday)",
         correctAnswer: "Gestern",
@@ -3801,7 +4071,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj pory dnia do czynności.",
           uk: "Зіставте періоди часу з діями.",
           sq: "Përputhni periudhat kohore me aktivitetet.",
-          de: "Ordne Tageszeiten Aktivitäten zu."
+          de: "Ordne Tageszeiten Aktivitäten zu.",
+      sr: ""
         },
         context: ["der Vormittag", "der Nachmittag", "der Abend", "die Nacht"],
         options: ["schlafen", "Mittagessen", "zur Arbeit gehen", "entspannen"],
@@ -3815,7 +4086,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Wybierz poprawne wyrażenie czasowe.",
           uk: "Виберіть правильний вираз часу.",
           sq: "Zgjidhni shprehjen e saktë kohore.",
-          de: "Wähle den korrekten Zeitausdruck."
+          de: "Wähle den korrekten Zeitausdruck.",
+      sr: ""
         },
         context: "______ gehe ich um 22 Uhr ins Bett.",
         options: ["Morgens", "Abends", "Mittags"],
@@ -3829,7 +4101,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie o rutynie tygodniowej.",
           uk: "Побудуйте речення про тижневий розпорядок.",
           sq: "Ndërtoni fjali për rutinën javore.",
-          de: "Bilde einen Satz über eine wöchentliche Routine."
+          de: "Bilde einen Satz über eine wöchentliche Routine.",
+      sr: ""
         },
         context: ["Jeden", "Donnerstag", "gehe", "ich", "zum Sport"],
         correctAnswer: "Jeden Donnerstag gehe ich zum Sport",
@@ -3842,7 +4115,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij przysłówkiem częstotliwości. (zawsze)",
           uk: "Доповніть прислівником частоти. (завжди)",
           sq: "Plotësoni me ndajfoljen e shpeshtësisë. (gjithmonë)",
-          de: "Vervollständige mit dem Häufigkeitsadverb. (immer)"
+          de: "Vervollständige mit dem Häufigkeitsadverb. (immer)",
+      sr: ""
         },
         context: "Ich trinke ______ Kaffee zum Frühstück.",
         correctAnswer: "immer",
@@ -3864,7 +4138,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
       pl: "Oficjalny czas używa zegara 24-godzinnego ('Es ist 14:30 Uhr' → vierzehn Uhr dreißig). Nieoficjalny/potoczny czas używa zegara 12-godzinnego z przyimkami: nach (po), vor (przed), Viertel (kwadrans), halb (pół). Uwaga: 'halb drei' oznacza 2:30, a nie 3:30!",
       uk: "Офіційний час використовує 24-годинний формат ('Es ist 14:30 Uhr' → vierzehn Uhr dreißig). Неофіційний/розмовний час використовує 12-годинний формат з прийменниками: nach (після), vor (до), Viertel (чверть), halb (пів). Увага: 'halb drei' означає 2:30, а не 3:30!",
       sq: "Koha zyrtare përdor orën 24-orëshe ('Es ist 14:30 Uhr' → vierzehn Uhr dreißig). Koha jozyrtare/bisedore përdor një orë 12-orëshe me parafjalë: nach (pas), vor (para), Viertel (çerek), halb (gjysmë). Shënim: 'halb drei' do të thotë 2:30, jo 3:30!",
-      de: "Die offizielle Zeit verwendet die 24-Stunden-Uhr ('Es ist 14:30 Uhr' → vierzehn Uhr dreißig). Die inoffizielle/umgangssprachliche Zeit verwendet eine 12-Stunden-Uhr mit Präpositionen: nach, vor, Viertel, halb. Achtung: 'halb drei' bedeutet 2:30, nicht 3:30!"
+      de: "Die offizielle Zeit verwendet die 24-Stunden-Uhr ('Es ist 14:30 Uhr' → vierzehn Uhr dreißig). Die inoffizielle/umgangssprachliche Zeit verwendet eine 12-Stunden-Uhr mit Präpositionen: nach, vor, Viertel, halb. Achtung: 'halb drei' bedeutet 2:30, nicht 3:30!",
+      sr: ""
     },
     exercises: [
       {
@@ -3875,7 +4150,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj oficjalne godziny do nieoficjalnych.",
           uk: "Зіставте офіційний час з неофіційним.",
           sq: "Përputhni orët zyrtare me ato jozyrtare.",
-          de: "Ordne die offiziellen Uhrzeiten den inoffiziellen zu."
+          de: "Ordne die offiziellen Uhrzeiten den inoffiziellen zu.",
+      sr: ""
         },
         context: ["14:30", "08:15", "19:45", "11:55"],
         options: ["fünf vor zwölf", "Viertel vor acht", "Viertel nach acht", "halb drei"],
@@ -3889,7 +4165,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij 'nach' lub 'vor'.",
           uk: "Доповніть 'nach' або 'vor'.",
           sq: "Plotësoni me 'nach' ose 'vor'.",
-          de: "Vervollständige mit 'nach' oder 'vor'."
+          de: "Vervollständige mit 'nach' oder 'vor'.",
+      sr: ""
         },
         context: "Es ist 10:20 Uhr. Es ist zwanzig ______ zehn.",
         correctAnswer: "nach",
@@ -3902,7 +4179,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij 'nach' lub 'vor'.",
           uk: "Доповніть 'nach' або 'vor'.",
           sq: "Plotësoni me 'nach' ose 'vor'.",
-          de: "Vervollständige mit 'nach' oder 'vor'."
+          de: "Vervollständige mit 'nach' oder 'vor'.",
+      sr: ""
         },
         context: "Es ist 15:40 Uhr. Es ist zwanzig ______ vier.",
         correctAnswer: "vor",
@@ -3915,7 +4193,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Jak powiesz 5:30 (nieoficjalnie)?",
           uk: "Як сказати 5:30 (неофіційно)?",
           sq: "Si thua 5:30 (jozyrtarisht)?",
-          de: "Wie sagt man 5:30 (inoffiziell)?"
+          de: "Wie sagt man 5:30 (inoffiziell)?",
+      sr: ""
         },
         context: "Es ist 5:30 Uhr. Es ist ______.",
         options: ["halb fünf", "halb sechs", "dreißig nach fünf"],
@@ -3930,7 +4209,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zapytaj o godzinę.",
           uk: "Запитайте про час.",
           sq: "Pyetni për orën.",
-          de: "Frage nach der Uhrzeit."
+          de: "Frage nach der Uhrzeit.",
+      sr: ""
         },
         context: ["Wie", "spät", "ist", "es", "?"],
         correctAnswer: "Wie spät ist es?",
@@ -3943,7 +4223,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Napisz godzinę oficjalnie.",
           uk: "Напишіть час офіційно.",
           sq: "Shkruani orën zyrtarisht.",
-          de: "Schreibe die Uhrzeit offiziell."
+          de: "Schreibe die Uhrzeit offiziell.",
+      sr: ""
         },
         context: "Der Zug fährt um ______. (19:05)",
         correctAnswer: "neunzehn Uhr fünf",
@@ -3956,7 +4237,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Jak jest 2:45 nieoficjalnie?",
           uk: "Як буде 2:45 неофіційно?",
           sq: "Sa është ora 2:45 jozyrtarisht?",
-          de: "Was ist 2:45 inoffiziell?"
+          de: "Was ist 2:45 inoffiziell?",
+      sr: ""
         },
         context: "Es ist 2:45 Uhr. Es ist ______.",
         options: ["Viertel nach drei", "drei Viertel drei", "Viertel vor drei"],
@@ -3970,7 +4252,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Odpowiedz na pytanie, używając poprawnego przyimka.",
           uk: "Дайте відповідь на запитання, використовуючи правильний прийменник.",
           sq: "Përgjigjjuni pyetjes me parafjalën e saktë.",
-          de: "Beantworte die Frage mit der richtigen Präposition."
+          de: "Beantworte die Frage mit der richtigen Präposition.",
+      sr: ""
         },
         context: "Wann beginnt der Film? - ______ halb acht.",
         correctAnswer: "Um",
@@ -3983,7 +4266,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Napisz nieoficjalną godzinę.",
           uk: "Напишіть неофіційний час.",
           sq: "Shkruani orën jozyrtare.",
-          de: "Schreibe die inoffizielle Uhrzeit."
+          de: "Schreibe die inoffizielle Uhrzeit.",
+      sr: ""
         },
         context: "Es ist 7:25 Uhr. Es ist fünf vor halb ______.",
         correctAnswer: "acht",
@@ -3996,7 +4280,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj oficjalny czas do nieoficjalnej frazy.",
           uk: "Зіставте офіційний час з неофіційною фразою.",
           sq: "Përputhni orën zyrtare me frazën jozyrtare.",
-          de: "Ordne die offizielle Uhrzeit der inoffiziellen Phrase zu."
+          de: "Ordne die offizielle Uhrzeit der inoffiziellen Phrase zu.",
+      sr: ""
         },
         context: ["13:00", "20:15", "09:30", "16:50"],
         options: ["zehn vor fünf", "Viertel nach acht", "halb zehn", "ein Uhr"],
@@ -4010,7 +4295,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Zbuduj zdanie o spotkaniu.",
           uk: "Побудуйте речення про зустріч.",
           sq: "Ndërtoni një fjali për një takim.",
-          de: "Bilde einen Satz über einen Termin."
+          de: "Bilde einen Satz über einen Termin.",
+      sr: ""
         },
         context: ["Der", "Termin", "ist", "um", "Viertel", "vor", "zehn"],
         correctAnswer: "Der Termin ist um Viertel vor zehn",
@@ -4023,7 +4309,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Kiedy używamy słowa 'Uhr' w mowie potocznej?",
           uk: "Коли ми використовуємо слово 'Uhr' у розмовній мові?",
           sq: "Kur e përdorim fjalën 'Uhr' në të folurën bisedore?",
-          de: "Wann verwenden wir das Wort 'Uhr' in der Umgangssprache?"
+          de: "Wann verwenden wir das Wort 'Uhr' in der Umgangssprache?",
+      sr: ""
         },
         context: "Select the sentence where 'Uhr' is used correctly.",
         options: ["Es ist halb drei Uhr.", "Es ist Viertel nach vier Uhr.", "Es ist genau zehn Uhr.", "Es ist zwanzig vor sechs Uhr."],
@@ -4038,7 +4325,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij zdanie o czasie trwania.",
           uk: "Доповніть речення про тривалість.",
           sq: "Plotësoni fjalinë për kohëzgjatjen.",
-          de: "Vervollständige den Satz über eine Dauer."
+          de: "Vervollständige den Satz über eine Dauer.",
+      sr: ""
         },
         context: "Die Öffnungszeiten sind ______ 9 Uhr ______ 17 Uhr.",
         correctAnswer: ["von", "bis"],
@@ -4051,7 +4339,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Uzupełnij wyrażenie 'chwilę po'.",
           uk: "Доповніть фразу 'незабаром після'.",
           sq: "Plotësoni frazën 'pak pas'.",
-          de: "Vervollständige die Phrase für 'kurz nach'."
+          de: "Vervollständige die Phrase für 'kurz nach'.",
+      sr: ""
         },
         context: "Es ist 16:03. Es ist kurz ______ vier.",
         correctAnswer: "nach",
@@ -4064,7 +4353,8 @@ export const a1_1_Grammar: GrammarTopic[] = [
           pl: "Dopasuj pytanie do najlepszej odpowiedzi.",
           uk: "Зіставте запитання з найкращою відповіддю.",
           sq: "Përputhni pyetjen me përgjigjen më të mirë.",
-          de: "Ordne die Frage der besten Antwort zu."
+          de: "Ordne die Frage der besten Antwort zu.",
+      sr: ""
         },
         context: ["Wie spät ist es?", "Wann kommst du?", "Wie lange dauert der Film?", "Um wie viel Uhr treffen wir uns?"],
         options: ["Ungefähr zwei Stunden.", "Punkt 19 Uhr.", "Es ist halb drei.", "Gegen Mittag."],

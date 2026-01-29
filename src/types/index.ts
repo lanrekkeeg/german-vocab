@@ -20,6 +20,7 @@ export type Translations = {
     german?: string;
     arabic?: string; // Optional for Arabic translations
     italian?: string; // Optional for Italian translations
+    serbian?: string; // Optional for Serbian translations
 };
 export type SentenceCard = {
     german?: string;
@@ -84,6 +85,25 @@ export type LanguageStrings = {
     close: string;
     showFirst: string;
     translation: string;
+    learnRules: string;
+    playGame: string;
+    articlePatternGame: string;
+    articlePatternGameDesc: string;
+    gameMode: string;
+    articlePredict: string;
+    articlePredictDesc: string;
+    difficulty: string;
+    startGame: string;
+    gameOver: string;
+    accuracy: string;
+    bestStreak: string;
+    playAgain: string;
+    backToMenu: string;
+    selectCorrectArticle: string;
+    nextQuestion: string;
+    seeResults: string;
+    studyGuide: string;
+    studyGuideDescription: string;
 };
 
 // =====================================================================
@@ -108,6 +128,8 @@ export interface MultilingualText {
   sq: string;
   de: string;
   ar?: string; // Arabic is optional, so it can be undefined
+  it?: string; // Italian is optional, so it can be undefined
+  sr?: string; // Serbian is optional, so it can be undefined
 }
 
 export type LearningContent = {
@@ -124,7 +146,7 @@ export type LearningContent = {
 // =====================================================================
 // GRAMMAR-RELATED TYPES
 // =====================================================================
-export type QuestionKey = 'en' | 'pl' | 'uk' | 'sq' | 'de' | 'ar';
+export type QuestionKey = 'en' | 'pl' | 'uk' | 'sq' | 'de' | 'ar' | 'sr';
 
 export type Exercise = {
     id: string;
