@@ -120,6 +120,16 @@ export type LanguageStrings = {
     tapToMark: string;
     autoAdvanceHint: string;
     tapCardHint: string;
+    // Listen Mode (within Timed Test)
+    listenMode: string;
+    testMode: string;
+    listenModeDesc: string;
+    pause: string;
+    resume: string;
+    stop: string;
+    nextWordIn: string;
+    listeningComplete: string;
+    wordsListened: string;
     // Word Search Game
     wordSearch: string;
     wordSearchDesc: string;

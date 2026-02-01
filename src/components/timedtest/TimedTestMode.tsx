@@ -1,6 +1,6 @@
 // src/components/timedtest/TimedTestMode.tsx
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { Menu, BookOpen, Check, X, RotateCcw, Clock, Volume2, Eye } from 'lucide-react';
+import { Menu, BookOpen, Check, X, RotateCcw, Clock, Volume2, Eye, Headphones, Square, Pause, Play } from 'lucide-react';
 import { useAppContext } from '../../hooks/useAppContext';
 import { languages } from '../../data/languages';
 import { Card, LanguageStrings } from '../../types';
@@ -139,6 +139,12 @@ export const TimedTestMode = () => {
   const [results, setResults] = useState<{ correct: number; incorrect: number }>({ correct: 0, incorrect: 0 });
   const [missedCards, setMissedCards] = useState<Card[]>([]);
 
+  // Listen mode state
+  const [isListenMode, setIsListenMode] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [listenCountdown, setListenCountdown] = useState(0);
+  const isPausedRef = useRef(false); // Ref to track pause state synchronously
+
   // Auto-advance state
   const [autoAdvanceCountdown, setAutoAdvanceCountdown] = useState(0);
   const autoAdvanceDelay = 2; // seconds to wait after reveal before auto-advancing
@@ -147,6 +153,7 @@ export const TimedTestMode = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const countdownRef = useRef<NodeJS.Timeout | null>(null);
   const autoAdvanceRef = useRef<NodeJS.Timeout | null>(null);
+  const listenModeRef = useRef<NodeJS.Timeout | null>(null);
 
   // Initialize audio
   useEffect(() => {
@@ -177,9 +184,9 @@ export const TimedTestMode = () => {
     setMissedCards([]);
   }, [filteredCards]);
 
-  // Countdown timer effect
+  // Countdown timer effect (TEST MODE ONLY - skip in listen mode)
   useEffect(() => {
-    if (!isTestStarted || isRevealed || isTestComplete) {
+    if (isListenMode || !isTestStarted || isRevealed || isTestComplete) {
       if (countdownRef.current) {
         clearInterval(countdownRef.current);
       }
@@ -206,11 +213,11 @@ export const TimedTestMode = () => {
         clearInterval(countdownRef.current);
       }
     };
-  }, [isTestStarted, currentCardIndex, delay, isRevealed, isTestComplete]);
+  }, [isListenMode, isTestStarted, currentCardIndex, delay, isRevealed, isTestComplete]);
 
-  // Auto-advance timer effect (starts after reveal)
+  // Auto-advance timer effect (TEST MODE ONLY - skip in listen mode)
   useEffect(() => {
-    if (!isRevealed || isTestComplete) {
+    if (isListenMode || !isRevealed || isTestComplete) {
       if (autoAdvanceRef.current) {
         clearInterval(autoAdvanceRef.current);
       }
@@ -248,7 +255,109 @@ export const TimedTestMode = () => {
         clearInterval(autoAdvanceRef.current);
       }
     };
-  }, [isRevealed, currentCardIndex, isTestComplete, shuffledCards.length]);
+  }, [isListenMode, isRevealed, currentCardIndex, isTestComplete, shuffledCards.length]);
+
+  // Store refs for listen mode timer state
+  const listenStateRef = useRef({
+    remainingTime: 0,
+    currentIdx: 0,
+    isRunning: false
+  });
+
+  // Tick function for listen mode - using recursive setTimeout
+  const scheduleTick = useCallback(() => {
+    // Clear any existing timeout
+    if (listenModeRef.current) {
+      clearTimeout(listenModeRef.current);
+      listenModeRef.current = null;
+    }
+
+    // Don't schedule if paused or not running
+    if (isPausedRef.current || !listenStateRef.current.isRunning) {
+      return;
+    }
+
+    listenModeRef.current = setTimeout(() => {
+      // Double-check we should still be running
+      if (isPausedRef.current || !listenStateRef.current.isRunning) {
+        return;
+      }
+
+      const state = listenStateRef.current;
+      state.remainingTime -= 1;
+      setListenCountdown(state.remainingTime);
+
+      if (state.remainingTime <= 0) {
+        // Advance to next word
+        state.currentIdx += 1;
+
+        if (state.currentIdx >= shuffledCards.length) {
+          // Complete
+          state.isRunning = false;
+          setIsTestComplete(true);
+        } else {
+          // Move to next card
+          setCurrentCardIndex(state.currentIdx);
+          state.remainingTime = delay;
+          setListenCountdown(delay);
+
+          // Play audio for new card
+          const card = shuffledCards[state.currentIdx];
+          if (card?.audioSrc && audioRef.current) {
+            audioRef.current.src = card.audioSrc;
+            audioRef.current.play().catch(e => console.error("Error playing audio:", e));
+          }
+
+          // Schedule next tick
+          scheduleTick();
+        }
+      } else {
+        // Schedule next tick
+        scheduleTick();
+      }
+    }, 1000);
+  }, [shuffledCards, delay]);
+
+  // Start listen mode
+  useEffect(() => {
+    // Clear any existing timeout
+    if (listenModeRef.current) {
+      clearTimeout(listenModeRef.current);
+      listenModeRef.current = null;
+    }
+
+    // Only start when listen mode is active
+    if (!isListenMode || !isTestStarted || isTestComplete) {
+      listenStateRef.current.isRunning = false;
+      return;
+    }
+
+    // Initialize state when starting
+    listenStateRef.current.remainingTime = delay;
+    listenStateRef.current.currentIdx = 0;
+    listenStateRef.current.isRunning = true;
+    isPausedRef.current = false;
+    setListenCountdown(delay);
+    setCurrentCardIndex(0);
+
+    // Play audio for first card
+    const firstCard = shuffledCards[0];
+    if (firstCard?.audioSrc && audioRef.current) {
+      audioRef.current.src = firstCard.audioSrc;
+      audioRef.current.play().catch(e => console.error("Error playing audio:", e));
+    }
+
+    // Start the tick cycle
+    scheduleTick();
+
+    return () => {
+      listenStateRef.current.isRunning = false;
+      if (listenModeRef.current) {
+        clearTimeout(listenModeRef.current);
+        listenModeRef.current = null;
+      }
+    };
+  }, [isListenMode, isTestStarted, isTestComplete, delay, shuffledCards, scheduleTick]);
 
   // Section toggle handlers
   const toggleSection = useCallback((section: number) => {
@@ -276,7 +385,49 @@ export const TimedTestMode = () => {
     setIsTestComplete(false);
     setResults({ correct: 0, incorrect: 0 });
     setMissedCards([]);
-  }, [filteredCards]);
+    isPausedRef.current = false;
+    setIsPaused(false);
+    setListenCountdown(delay);
+  }, [filteredCards, delay]);
+
+  // Stop listen mode
+  const stopListening = useCallback(() => {
+    isPausedRef.current = false;
+    listenStateRef.current.isRunning = false;
+    if (listenModeRef.current) {
+      clearTimeout(listenModeRef.current);
+      listenModeRef.current = null;
+    }
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    setIsTestStarted(false);
+    setIsTestComplete(false);
+    setCurrentCardIndex(0);
+    setIsPaused(false);
+  }, []);
+
+  // Toggle pause in listen mode
+  const togglePause = useCallback(() => {
+    if (isPaused) {
+      // Resume - clear pause flag and restart tick cycle
+      isPausedRef.current = false;
+      setIsPaused(false);
+      // Restart the tick cycle
+      scheduleTick();
+    } else {
+      // Pause - set flag and clear any pending timeout
+      isPausedRef.current = true;
+      if (listenModeRef.current) {
+        clearTimeout(listenModeRef.current);
+        listenModeRef.current = null;
+      }
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      setIsPaused(true);
+    }
+  }, [isPaused, scheduleTick]);
 
   // Handle answer
   const handleAnswer = useCallback((gotIt: boolean) => {
@@ -401,6 +552,27 @@ export const TimedTestMode = () => {
               Choose Sections
             </button>
           </div>
+        ) : isTestComplete && isListenMode ? (
+          /* Listen Mode Complete Screen */
+          <div className="p-8 bg-white rounded-xl shadow-lg text-center">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-purple-100 flex items-center justify-center">
+              <Headphones size={40} className="text-purple-600" />
+            </div>
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">{t.listeningComplete}</h2>
+            <p className="text-gray-600 mb-6">{t.wordsListened}: {shuffledCards.length}</p>
+
+            <div className="mb-8 p-6 bg-purple-50 rounded-lg">
+              <div className="text-5xl font-bold text-purple-600 mb-2">{shuffledCards.length}</div>
+              <div className="text-purple-700">{t.flashcards}</div>
+            </div>
+
+            <button
+              onClick={retryAll}
+              className="px-8 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-bold text-lg flex items-center justify-center gap-2 mx-auto"
+            >
+              <RotateCcw size={20} /> {t.playAgain}
+            </button>
+          </div>
         ) : isTestComplete ? (
           /* Results Screen */
           <ResultsScreen
@@ -416,15 +588,41 @@ export const TimedTestMode = () => {
           /* Setup Screen */
           <div className="p-6 bg-white rounded-xl shadow-lg">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">{t.timedTest}</h2>
-            <p className="text-gray-600 mb-6">{t.timedTestDescription}</p>
+            <p className="text-gray-600 mb-6">{isListenMode ? t.listenModeDesc : t.timedTestDescription}</p>
 
-            <div className="mb-6 p-4 bg-cyan-50 rounded-lg">
+            {/* Mode Toggle */}
+            <div className="mb-6">
+              <div className="flex rounded-lg bg-gray-100 p-1">
+                <button
+                  onClick={() => setIsListenMode(false)}
+                  className={`flex-1 py-3 rounded-md flex items-center justify-center gap-2 font-medium transition-all ${
+                    !isListenMode
+                      ? 'bg-white shadow text-cyan-700'
+                      : 'text-gray-600 hover:text-gray-800'
+                  }`}
+                >
+                  <Clock size={20} /> {t.testMode}
+                </button>
+                <button
+                  onClick={() => setIsListenMode(true)}
+                  className={`flex-1 py-3 rounded-md flex items-center justify-center gap-2 font-medium transition-all ${
+                    isListenMode
+                      ? 'bg-white shadow text-purple-700'
+                      : 'text-gray-600 hover:text-gray-800'
+                  }`}
+                >
+                  <Headphones size={20} /> {t.listenMode}
+                </button>
+              </div>
+            </div>
+
+            <div className={`mb-6 p-4 rounded-lg ${isListenMode ? 'bg-purple-50' : 'bg-cyan-50'}`}>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <span className="text-lg font-semibold text-cyan-800">
+                  <span className={`text-lg font-semibold ${isListenMode ? 'text-purple-800' : 'text-cyan-800'}`}>
                     {shuffledCards.length} {t.flashcards}
                   </span>
-                  <span className="text-cyan-600 ml-2">
+                  <span className={`ml-2 ${isListenMode ? 'text-purple-600' : 'text-cyan-600'}`}>
                     ({selectedSections.length} {selectedSections.length === 1 ? 'section' : 'sections'})
                   </span>
                 </div>
@@ -434,10 +632,112 @@ export const TimedTestMode = () => {
 
             <button
               onClick={startTest}
-              className="w-full py-4 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition-colors font-bold text-lg flex items-center justify-center gap-2"
+              className={`w-full py-4 text-white rounded-lg transition-colors font-bold text-lg flex items-center justify-center gap-2 ${
+                isListenMode
+                  ? 'bg-purple-600 hover:bg-purple-700'
+                  : 'bg-cyan-600 hover:bg-cyan-700'
+              }`}
             >
-              <Clock size={24} /> {t.startGame}
+              {isListenMode ? <Headphones size={24} /> : <Clock size={24} />} {t.startGame}
             </button>
+          </div>
+        ) : isListenMode ? (
+          /* Listen Mode Screen */
+          <div className="p-6 bg-white rounded-xl shadow-lg">
+            {/* Header */}
+            <div className="flex justify-between items-center mb-6">
+              <span className="text-gray-600">
+                {t.currentCard} {currentCardIndex + 1} {t.of} {shuffledCards.length}
+              </span>
+              <div className="flex items-center gap-2">
+                <Headphones size={20} className="text-purple-600" />
+                <span className="text-purple-600 font-medium">{t.listenMode}</span>
+              </div>
+            </div>
+
+            {/* Main Card Display */}
+            <div className="min-h-[300px] flex flex-col items-center justify-center p-8 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl mb-6">
+              {/* Audio Icon */}
+              <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 ${
+                isPaused ? 'bg-gray-200' : 'bg-purple-100 animate-pulse'
+              }`}>
+                <Volume2 size={40} className={isPaused ? 'text-gray-400' : 'text-purple-600'} />
+              </div>
+
+              {/* German Word */}
+              <div className="text-center mb-4">
+                <div className="text-sm text-purple-600 mb-2">Deutsch</div>
+                <div className="text-3xl font-bold text-purple-700">
+                  {currentCard?.german || '—'}
+                </div>
+              </div>
+
+              {/* Translation */}
+              <div className="text-center">
+                <div className="text-sm text-gray-500 mb-2">{t.translation}</div>
+                <div className="text-xl text-gray-700">
+                  {currentCard?.translations[language] || '—'}
+                </div>
+              </div>
+
+              {/* Countdown */}
+              <div className="mt-8 text-center">
+                <div className="text-sm text-gray-500 mb-2">
+                  {t.nextWordIn}: {listenCountdown}s
+                </div>
+                <div className="w-40 h-2 bg-gray-200 rounded-full overflow-hidden mx-auto">
+                  <div
+                    className="h-full bg-purple-500 transition-all duration-1000 ease-linear"
+                    style={{ width: `${(listenCountdown / delay) * 100}%` }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div className="flex gap-4 justify-center">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  togglePause();
+                }}
+                className={`px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors ${
+                  isPaused
+                    ? 'bg-green-600 hover:bg-green-700 text-white'
+                    : 'bg-yellow-500 hover:bg-yellow-600 text-white'
+                }`}
+              >
+                {isPaused ? <Play size={20} /> : <Pause size={20} />}
+                {isPaused ? t.resume : t.pause}
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  stopListening();
+                }}
+                className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-semibold flex items-center gap-2"
+              >
+                <Square size={20} /> {t.stop}
+              </button>
+            </div>
+
+            {/* Progress */}
+            <div className="mt-6">
+              <div className="flex justify-between text-sm text-gray-600 mb-1">
+                <span>{currentCardIndex + 1} / {shuffledCards.length}</span>
+                <span className="text-purple-600">{((currentCardIndex + 1) / shuffledCards.length * 100).toFixed(0)}%</span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  className="bg-purple-500 h-2.5 rounded-full transition-all duration-300"
+                  style={{ width: `${((currentCardIndex + 1) / shuffledCards.length) * 100}%` }}
+                />
+              </div>
+            </div>
           </div>
         ) : (
           /* Test Card */
